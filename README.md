@@ -1,18 +1,24 @@
-# <Trouver un nom de projet>
-<Compléter la courte description du projet>
+# *Trouver un nom de projet*
+*Compléter la courte description du projet*
 
 # Table des matières
 * [Présentation du groupe](#présentation-du-groupe-)
 * [Présentation du projet](#présentation-du-projet-)
+* [Structure du projet](#structure-du-projet)
+* [Building](#building)
+* [Utilisation](#utilisation)
+* [Répartition des tâches](#répartition-des-tâches)
+* [TODO](#todo)
+* [Change log](#change-log)
 
-## Présentation du groupe: <Nom du groupe>
+## Présentation du groupe: *Nom du groupe*
 * **papini_j** Julien PAPINI <julien.papini@epita.fr>
 * **loyau_n** Nicolas LOYAU <nicolas.loyau@epita.fr>
 * **murrig_s** Sevan MURRIGUIAN-WATRIN <sevan.murriguian-watrin@epita.fr>
-* **login** Thomas MICHELOT <>
+* **login** Thomas MICHELOT <thomas.michelot@epita.fr>
 
-## Présentation du projet: <Nom du projet>
-<Présentation du projet>
+## Présentation du projet: *Nom du projet*
+*Présentation du projet*
 
 ## Structure du projet
 * **bin/** - Executable final
@@ -28,10 +34,10 @@
 * **website/** - Site internet du projet
 
 ## Building
-<Expliquer comment build le projet>
+*Expliquer comment build le projet*
 
 ## Utilisation
-<Expliquer comment utiliser l'exécutable>
+*Expliquer comment utiliser l'exécutable*
 
 ## Répartition des tâches
 
