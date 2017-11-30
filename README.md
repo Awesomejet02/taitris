@@ -2,8 +2,8 @@
 *Compléter la courte description du projet*
 
 # Table des matières
-* [Présentation du groupe](#présentation-du-groupe-)
-* [Présentation du projet](#présentation-du-projet-)
+* [Présentation du groupe](#présentation-du-groupe-nom-du-groupe)
+* [Présentation du projet](#présentation-du-projet-nom-du-projet)
 * [Structure du projet](#structure-du-projet)
 * [Building](#building)
 * [Utilisation](#utilisation)
@@ -40,7 +40,15 @@
 *Expliquer comment utiliser l'exécutable*
 
 ## Répartition des tâches
+Membre  | Tâche 1 | Tâche 2 | Tâche 3 | Tâche 4 | Tâche 5 | Tâche 6 | Tâche 7 | Etc...
+--------|---------|---------|---------|---------|---------|---------|---------|--------
+Julien  | X       |         |         |         |         | X       |         |
+Nicolas | X       | X       |         |         | X       |         |         |
+Sevan   | X       |         | X       | X       |         |         |         |
+Thomas  |         |         |         |         | X       | X       |         |
 
 ## TODO
+- [X] Trouver une idée de projet
+- [ ] Validation du projet par Krisboul
 
 ## Change log
