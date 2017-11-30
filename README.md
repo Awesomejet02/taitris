@@ -40,12 +40,12 @@
 *Expliquer comment utiliser l'exécutable*
 
 ## Répartition des tâches
-Membre  | Tâche 1 | Tâche 2 | Tâche 3 | Tâche 4 | Tâche 5 | Tâche 6 | Tâche 7 | Etc...
---------|---------|---------|---------|---------|---------|---------|---------|--------
-Julien  | :heavy_check_mark: |         |         |         |         | X       |         |
-Nicolas | X       | X       |         |         | X       |         |         |
-Sevan   | X       |         | X       | X       |         |         |         |
-Thomas  |         |         |         |         | X       | X       |         |
+Membre  | Tâche              | Tâche              | Tâche              | Tâche              | Tâche              | Tâche              
+--------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------
+Julien  | :heavy_check_mark: |                    |                    |                    |                    | :heavy_check_mark:
+Nicolas |                    | :heavy_check_mark: |                    |                    | :heavy_check_mark: |                    
+Sevan   |                    |                    |                    |                    |                    |                    
+Thomas  |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    |                    
 
 ## TODO
 - [X] Trouver une idée de projet
