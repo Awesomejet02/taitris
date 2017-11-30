@@ -1,8 +1,5 @@
-# OS
+# OS specific files
 .DS_Store
 
-# IDE
+# IDE specific files
 .idea/
-
-# Project
-/log/
