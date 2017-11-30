@@ -15,7 +15,7 @@
 * **papini_j** Julien PAPINI <julien.papini@epita.fr>
 * **loyau_n** Nicolas LOYAU <nicolas.loyau@epita.fr>
 * **murrig_s** Sevan MURRIGUIAN-WATRIN <sevan.murriguian-watrin@epita.fr>
-* **login** Thomas MICHELOT <thomas.michelot@epita.fr>
+* **michel_k** Thomas MICHELOT <thomas.michelot@epita.fr>
 
 ## Présentation du projet: *Nom du projet*
 *Présentation du projet*
