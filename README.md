@@ -42,7 +42,7 @@
 ## Répartition des tâches
 Membre  | Tâche 1 | Tâche 2 | Tâche 3 | Tâche 4 | Tâche 5 | Tâche 6 | Tâche 7 | Etc...
 --------|---------|---------|---------|---------|---------|---------|---------|--------
-Julien  | X       |         |         |         |         | X       |         |
+Julien  | :heavy_check_mark: |         |         |         |         | X       |         |
 Nicolas | X       | X       |         |         | X       |         |         |
 Sevan   | X       |         | X       | X       |         |         |         |
 Thomas  |         |         |         |         | X       | X       |         |
