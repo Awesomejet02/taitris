@@ -44,8 +44,8 @@
 Membre  | Tâche              | Tâche              | Tâche              | Tâche              | Tâche              | Tâche              
 --------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------
 Julien  | :heavy_check_mark: |                    |                    |                    |                    | :heavy_check_mark:
-Nicolas | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: 
-Sevan   |                    |                    |                    |                    |                    |                    
+Nicolas | :heavy_check_mark: |                    |                    |                    | :heavy_check_mark: |                   
+Sevan   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: 
 Thomas  |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    |                    
 
 ## TODO
