@@ -52,3 +52,11 @@ Thomas  |                    | :heavy_check_mark: |                    | :heavy_
 - [ ] Validation du projet par Krisboul
 
 ## Change log
+
+## Ressources et liens
+* [Post: Coding a Tetris AI using a Genetic Algorithm](https://luckytoilet.wordpress.com/2011/05/27/coding-a-tetris-ai-using-a-genetic-algorithm/)
+* [Vidéo: How to Make an Evolutionary Tetris AI](https://www.youtube.com/watch?v=xLHCMMGuN0Q)
+* [Github: How_to_make_an_evolutionary_tetris_bot](https://github.com/llSourcell/How_to_make_an_evolutionary_tetris_bot)
+* [Post: TETRIS stacking tutorial](https://www.ryanheise.com/tetris/tetris_stacking.html)
+* [Exemple: Tetris AI](https://leeyiyuan.github.io/tetrisai/)
+* [Github: Sources Tetris AI](https://github.com/LeeYiyuan/tetrisai)
