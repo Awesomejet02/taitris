@@ -10,6 +10,7 @@
 * [Répartition des tâches](#répartition-des-tâches)
 * [TODO](#todo)
 * [Change log](#change-log)
+* [Ressources et liens](#ressources-et-liens)
 
 ## Présentation du groupe: *Nom du groupe*
 * **papini_j** Julien PAPINI <julien.papini@epita.fr>
@@ -43,7 +44,7 @@
 Membre  | Tâche              | Tâche              | Tâche              | Tâche              | Tâche              | Tâche              
 --------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------
 Julien  | :heavy_check_mark: |                    |                    |                    |                    | :heavy_check_mark:
-Nicolas |                    | :heavy_check_mark: |                    |                    | :heavy_check_mark: |                    
+Nicolas | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: 
 Sevan   |                    |                    |                    |                    |                    |                    
 Thomas  |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    |                    
 
