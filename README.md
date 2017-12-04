@@ -1,4 +1,4 @@
-# *Trouver un nom de projet*
+# tAItris
 *Compléter la courte description du projet*
 
 # Table des matières
@@ -12,13 +12,13 @@
 * [Change log](#change-log)
 * [Ressources et liens](#ressources-et-liens)
 
-## Présentation du groupe: *Nom du groupe*
+## Présentation du groupe: S4MasterRace
 * **papini_j** Julien PAPINI <julien.papini@epita.fr>
 * **loyau_n** Nicolas LOYAU <nicolas.loyau@epita.fr>
 * **murrig_s** Sevan MURRIGUIAN-WATRIN <sevan.murriguian-watrin@epita.fr>
 * **michel_k** Thomas MICHELOT <thomas.michelot@epita.fr>
 
-## Présentation du projet: *Nom du projet*
+## Présentation du projet: tAItris
 *Présentation du projet*
 
 ## Structure du projet
