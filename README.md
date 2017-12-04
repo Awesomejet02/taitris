@@ -2,8 +2,8 @@
 *Compléter la courte description du projet*
 
 # Table des matières
-* [Présentation du groupe](#présentation-du-groupe-nom-du-groupe)
-* [Présentation du projet](#présentation-du-projet-nom-du-projet)
+* [Présentation du groupe](#présentation-du-groupe-s4masterrace)
+* [Présentation du projet](#présentation-du-projet-taitris)
 * [Structure du projet](#structure-du-projet)
 * [Building](#building)
 * [Utilisation](#utilisation)
