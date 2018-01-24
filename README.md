@@ -29,17 +29,16 @@ Les méthodes retenues sont, premièrement l'algorithme génétique qui se base 
 La seconde méthode qui nous a attirée utilise un réseau de neurones profonds qui par l'utilisation de couches de neurones successives doit arriver a jouer aussi bien si ce n'est mieux qu'un homme.
 
 ## Structure du projet
-* **bin/** - Executable final
+* **bin/** - Exécutable final
+    * **conf/** - Fichiers de configuration du programme
+    * **log/** - Fichiers logs générés lors de l'exécution
+    * **res/** - Ressources (images, sons, etc...)
 * **build/** - Les fichiers .o générés seront ici
-* **conf/** - Fichiers de configurations
 * **doc/** - Documentation
 	* **pdf/** - Au format PDF (Cahier des charges, rapports de soutenances...)
 * **lib/** - Librairies externes
-* **log/** - Logs pour le debug avec l'extension **.log**
-* **res/** - Fichiers ressources (images, textures, etc...)
 * **src/** - Fichiers sources
 * **test/** - Tests unitaires
-* **website/** - Site internet du projet
 
 ## Building
 *Expliquer comment build le projet*
