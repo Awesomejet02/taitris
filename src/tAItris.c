@@ -1,4 +1,6 @@
-int main(int argc, char *argv[]) {
-  
+#include "tAItris.h"
+
+int main()
+{
   return 0;
 }
