@@ -1,4 +1,0 @@
-#ifndef TAITRIS_TREE_H
-#define TAITRIS_TREE_H
-
-#endif //TAITRIS_TREE_H
