@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "flmnt",
-  1: "l",
-  2: "lt",
+  0: "cdflmnrt",
+  1: "lm",
+  2: "lmt",
   3: "lm",
-  4: "fln",
+  4: "cdflnr",
   5: "l"
 };
 

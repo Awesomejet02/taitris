@@ -1,0 +1,351 @@
+\section{src/utils/matrix.c File Reference}
+\label{matrix_8c}\index{src/utils/matrix.\+c@{src/utils/matrix.\+c}}
+{\ttfamily \#include \char`\"{}matrix.\+h\char`\"{}}\newline
+Include dependency graph for matrix.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{matrix_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ matrix\+\_\+init} (struct \textbf{ matrix} $\ast$mx, size\+\_\+t rows, size\+\_\+t cols)
+\item 
+struct \textbf{ matrix} $\ast$ \textbf{ matrix\+\_\+create} (size\+\_\+t rows, size\+\_\+t cols)
+\item 
+void \textbf{ matrix\+\_\+free} (struct \textbf{ matrix} $\ast$mx)
+\item 
+size\+\_\+t \textbf{ matrix\+\_\+rows} (const struct \textbf{ matrix} $\ast$mx)
+\item 
+size\+\_\+t \textbf{ matrix\+\_\+cols} (const struct \textbf{ matrix} $\ast$mx)
+\item 
+double \textbf{ matrix\+\_\+at} (const struct \textbf{ matrix} $\ast$mx, size\+\_\+t rows, size\+\_\+t cols)
+\item 
+void \textbf{ matrix\+\_\+set} (struct \textbf{ matrix} $\ast$mx, size\+\_\+t rows, size\+\_\+t cols, double value)
+\item 
+struct \textbf{ matrix} $\ast$ \textbf{ matrix\+\_\+copy} (const struct \textbf{ matrix} $\ast$mx)
+\item 
+struct \textbf{ matrix} $\ast$ \textbf{ matrix\+\_\+transpose} (const struct \textbf{ matrix} $\ast$mx)
+\item 
+struct \textbf{ matrix} $\ast$ \textbf{ matrix\+\_\+sum} (const struct \textbf{ matrix} $\ast$mx1, const struct \textbf{ matrix} $\ast$mx2)
+\item 
+struct \textbf{ matrix} $\ast$ \textbf{ matrix\+\_\+product} (const struct \textbf{ matrix} $\ast$mx1, const struct \textbf{ matrix} $\ast$mx2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{matrix_8c_ace105cd24473b52d67874132e81dd55b}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+at@{matrix\+\_\+at}}
+\index{matrix\+\_\+at@{matrix\+\_\+at}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+at()}
+{\footnotesize\ttfamily double matrix\+\_\+at (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx,  }\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get value at {\ttfamily rows} rows and {\ttfamily cols} columns
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+{\em rows} & rows \\
+\hline
+{\em cols} & columns \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value at {\ttfamily rows} rows and {\ttfamily cols} columns
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL 
+
+{\ttfamily mx-\/$>$data} must be not N\+U\+LL 
+
+{\ttfamily rows} must be between zero and {\ttfamily matrix\+\_\+rows(mx)} 
+
+{\ttfamily cols} must be between zero and {\ttfamily matrix\+\_\+cols(mx)}
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a70ad38f54a8deaac09ddd554fa0ecccf}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+cols@{matrix\+\_\+cols}}
+\index{matrix\+\_\+cols@{matrix\+\_\+cols}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+cols()}
+{\footnotesize\ttfamily size\+\_\+t matrix\+\_\+cols (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the number of columns
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of columns
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a6663b065febb290385857b26fdb1a353}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+copy@{matrix\+\_\+copy}}
+\index{matrix\+\_\+copy@{matrix\+\_\+copy}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+copy()}
+{\footnotesize\ttfamily struct \textbf{ matrix}$\ast$ matrix\+\_\+copy (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})}
+
+Copy the matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the copy of {\ttfamily mx}
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL 
+
+{\ttfamily mx-\/$>$data} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_ad2d40d9c13eba774d6bb788021242a95}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+create@{matrix\+\_\+create}}
+\index{matrix\+\_\+create@{matrix\+\_\+create}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+create()}
+{\footnotesize\ttfamily struct \textbf{ matrix}$\ast$ matrix\+\_\+create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})}
+
+Create a matrix of size {\ttfamily rows} rows and {\ttfamily cols} columns
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & number of rows \\
+\hline
+{\em cols} & number of columns\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the initialized matrix of size {\ttfamily rows} rows and {\ttfamily cols} columns
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily rows} must be greater than zero 
+
+{\ttfamily cols} must be greater than zero
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_ac19cd61ef9f183a9b92d6789399f8646}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+free@{matrix\+\_\+free}}
+\index{matrix\+\_\+free@{matrix\+\_\+free}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+free()}
+{\footnotesize\ttfamily void matrix\+\_\+free (\begin{DoxyParamCaption}\item[{struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Free the matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL 
+
+{\ttfamily mx-\/$>$data} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+{\ttfamily mx} is freed 
+
+{\ttfamily mx-\/$>$data} is freed
+\end{DoxyPostcond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a846b4db55574ffabe64ff0604070bde1}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+init@{matrix\+\_\+init}}
+\index{matrix\+\_\+init@{matrix\+\_\+init}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+init()}
+{\footnotesize\ttfamily void matrix\+\_\+init (\begin{DoxyParamCaption}\item[{struct \textbf{ matrix} $\ast$}]{mx,  }\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initialize the matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+{\em rows} & number of rows \\
+\hline
+{\em cols} & number of columns\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL 
+
+{\ttfamily rows} must be greater than zero 
+
+{\ttfamily cols} must be greater than zero
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+{\ttfamily mx} is size of {\ttfamily rows} rows and {\ttfamily cols} columns 
+
+{\ttfamily mx-\/$>$data} is initialized with the right size
+\end{DoxyPostcond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_ab2227c91f0b63b44b9bee2610b3cf48c}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+product@{matrix\+\_\+product}}
+\index{matrix\+\_\+product@{matrix\+\_\+product}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+product()}
+{\footnotesize\ttfamily struct \textbf{ matrix}$\ast$ matrix\+\_\+product (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx1,  }\item[{const struct \textbf{ matrix} $\ast$}]{mx2 }\end{DoxyParamCaption})}
+
+Multiply the matrix {\ttfamily mx1} with {\ttfamily mx2}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx1} & a matrix \\
+\hline
+{\em mx2} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the product of {\ttfamily mx1} with {\ttfamily mx2}
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx1} must be not N\+U\+LL 
+
+{\ttfamily mx1-\/$>$data} must be not N\+U\+LL 
+
+{\ttfamily mx2} must be not N\+U\+LL 
+
+{\ttfamily mx2-\/$>$data} must be not N\+U\+LL 
+
+{\ttfamily matrix\+\_\+cols(mx1)} must be equal to {\ttfamily matrix\+\_\+rows(mx2)}
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+the result is a matrix of {\ttfamily matrix\+\_\+rows(mx1)} rows and {\ttfamily matrix\+\_\+cols(mx2)} cols 
+
+Complexity\+: O(nmp) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a7d9ca687a57f2328a02b9a056964b2fb}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+rows@{matrix\+\_\+rows}}
+\index{matrix\+\_\+rows@{matrix\+\_\+rows}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+rows()}
+{\footnotesize\ttfamily size\+\_\+t matrix\+\_\+rows (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the number of rows
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of rows
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a9e159c4c2c953106b7a1a4f0d4a03616}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+set@{matrix\+\_\+set}}
+\index{matrix\+\_\+set@{matrix\+\_\+set}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+set()}
+{\footnotesize\ttfamily void matrix\+\_\+set (\begin{DoxyParamCaption}\item[{struct \textbf{ matrix} $\ast$}]{mx,  }\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the value at {\ttfamily rows} rows and {\ttfamily cols} columns with {\ttfamily value}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+{\em rows} & rows \\
+\hline
+{\em cols} & columns \\
+\hline
+{\em value} & a value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL 
+
+{\ttfamily mx-\/$>$data} must be not N\+U\+LL 
+
+{\ttfamily rows} must be between zero and {\ttfamily matrix\+\_\+rows(mx)} 
+
+{\ttfamily cols} must be between zero and {\ttfamily matrix\+\_\+cols(mx)}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+the value at {\ttfamily rows} rows and {\ttfamily cols} columns is {\ttfamily value}
+\end{DoxyPostcond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_abeb96dce8ec1087a4ce6695ed1fcf85e}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+sum@{matrix\+\_\+sum}}
+\index{matrix\+\_\+sum@{matrix\+\_\+sum}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+sum()}
+{\footnotesize\ttfamily struct \textbf{ matrix}$\ast$ matrix\+\_\+sum (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx1,  }\item[{const struct \textbf{ matrix} $\ast$}]{mx2 }\end{DoxyParamCaption})}
+
+Sum the matrix {\ttfamily mx1} with {\ttfamily mx2}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx1} & a matrix \\
+\hline
+{\em mx2} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sum of {\ttfamily mx1} and {\ttfamily mx2}
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx1} must be not N\+U\+LL 
+
+{\ttfamily mx1-\/$>$data} must be not N\+U\+LL 
+
+{\ttfamily mx2} must be not N\+U\+LL 
+
+{\ttfamily mx2-\/$>$data} must be not N\+U\+LL 
+
+{\ttfamily matrix\+\_\+rows(mx1)} must be equal to {\ttfamily matrix\+\_\+rows(mx2)} 
+
+{\ttfamily matrix\+\_\+cols(mx1)} must be equal to {\ttfamily matrix\+\_\+cols(mx2)}
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(\+N) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_af82ecbbd42a059dd5db3d038fd75e9db}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+transpose@{matrix\+\_\+transpose}}
+\index{matrix\+\_\+transpose@{matrix\+\_\+transpose}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+transpose()}
+{\footnotesize\ttfamily struct \textbf{ matrix}$\ast$ matrix\+\_\+transpose (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})}
+
+Transpose the matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the transposed matrix
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL 
+
+{\ttfamily mx-\/$>$data} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+transposed matrix is size of {\ttfamily matrix\+\_\+cols(mx)} rows and {\ttfamily matrix\+\_\+rows(mx)} columns 
+
+Complexity\+: O(\+N) 
+\end{DoxyRemark}

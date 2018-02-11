@@ -260,7 +260,7 @@ void list_del_at(struct list *list, size_t pos) {
   }
 }
 
-void list_print(struct list *list)
+void list_print(const struct list *list)
 {
   assert(list != NULL);
 

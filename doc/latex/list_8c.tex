@@ -1,8 +1,7 @@
 \section{src/utils/list.c File Reference}
 \label{list_8c}\index{src/utils/list.\+c@{src/utils/list.\+c}}
 {\ttfamily \#include \char`\"{}list.\+h\char`\"{}}\newline
-Include dependency graph for list.\+c\+:
-\nopagebreak
+Include dependency graph for list.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -52,7 +51,7 @@ void \textbf{ list\+\_\+del\+\_\+after} (struct \textbf{ list} $\ast$\textbf{ li
 \item 
 void \textbf{ list\+\_\+del\+\_\+at} (struct \textbf{ list} $\ast$\textbf{ list}, size\+\_\+t pos)
 \item 
-void \textbf{ list\+\_\+print} (struct \textbf{ list} $\ast$\textbf{ list})
+void \textbf{ list\+\_\+print} (const struct \textbf{ list} $\ast$\textbf{ list})
 \end{DoxyCompactItemize}
 
 
@@ -469,11 +468,11 @@ the next node.
 \begin{DoxyRemark}{Remarks}
 Complexity\+: O(1) 
 \end{DoxyRemark}
-\mbox{\label{list_8c_a16d4d495efa468873a1afafb7a353e38}} 
+\mbox{\label{list_8c_a1ac8fe6b1cacad62605ae8b38a6a25d3}} 
 \index{list.\+c@{list.\+c}!list\+\_\+print@{list\+\_\+print}}
 \index{list\+\_\+print@{list\+\_\+print}!list.\+c@{list.\+c}}
 \subsubsection{list\+\_\+print()}
-{\footnotesize\ttfamily void list\+\_\+print (\begin{DoxyParamCaption}\item[{struct \textbf{ list} $\ast$}]{list }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void list\+\_\+print (\begin{DoxyParamCaption}\item[{const struct \textbf{ list} $\ast$}]{list }\end{DoxyParamCaption})}
 
 Print the list
 
