@@ -21,194 +21,199 @@
     \subitem {first}, 5
     \subitem {length}, 6
   \item {list.\+c}
-    \subitem {list\+\_\+add}, 11
-    \subitem {list\+\_\+advance}, 11
-    \subitem {list\+\_\+append}, 12
-    \subitem {list\+\_\+at}, 12
-    \subitem {list\+\_\+concat}, 14
-    \subitem {list\+\_\+del}, 14
-    \subitem {list\+\_\+del\+\_\+after}, 15
-    \subitem {list\+\_\+del\+\_\+at}, 16
-    \subitem {list\+\_\+first}, 16
-    \subitem {list\+\_\+init}, 17
-    \subitem {list\+\_\+insert\+\_\+after}, 17
-    \subitem {list\+\_\+insert\+\_\+at}, 18
-    \subitem {list\+\_\+is\+\_\+empty}, 18
-    \subitem {list\+\_\+last}, 19
-    \subitem {list\+\_\+length}, 19
-    \subitem {list\+\_\+next}, 20
-    \subitem {list\+\_\+print}, 20
-    \subitem {list\+\_\+reverse}, 21
-    \subitem {list\+\_\+sort}, 21
-    \subitem {list\+\_\+split\+\_\+at}, 22
-    \subitem {list\+\_\+swap}, 23
+    \subitem {list\+\_\+add}, 12
+    \subitem {list\+\_\+advance}, 12
+    \subitem {list\+\_\+append}, 13
+    \subitem {list\+\_\+at}, 13
+    \subitem {list\+\_\+concat}, 15
+    \subitem {list\+\_\+del}, 15
+    \subitem {list\+\_\+del\+\_\+after}, 16
+    \subitem {list\+\_\+del\+\_\+at}, 17
+    \subitem {list\+\_\+first}, 17
+    \subitem {list\+\_\+init}, 18
+    \subitem {list\+\_\+insert\+\_\+after}, 18
+    \subitem {list\+\_\+insert\+\_\+at}, 19
+    \subitem {list\+\_\+is\+\_\+empty}, 19
+    \subitem {list\+\_\+last}, 20
+    \subitem {list\+\_\+length}, 20
+    \subitem {list\+\_\+next}, 21
+    \subitem {list\+\_\+print}, 21
+    \subitem {list\+\_\+reverse}, 22
+    \subitem {list\+\_\+sort}, 22
+    \subitem {list\+\_\+split\+\_\+at}, 23
+    \subitem {list\+\_\+swap}, 24
   \item {list.\+h}
-    \subitem {list\+\_\+add}, 28
-    \subitem {list\+\_\+advance}, 28
-    \subitem {list\+\_\+append}, 29
-    \subitem {list\+\_\+at}, 30
-    \subitem {list\+\_\+concat}, 30
-    \subitem {list\+\_\+del}, 31
-    \subitem {list\+\_\+del\+\_\+after}, 31
-    \subitem {list\+\_\+del\+\_\+at}, 32
-    \subitem {list\+\_\+elt}, 25
-    \subitem {list\+\_\+first}, 32
-    \subitem {list\+\_\+foreach}, 25
-    \subitem {list\+\_\+foreach\+\_\+elt}, 26
-    \subitem {list\+\_\+foreach\+\_\+elt\+\_\+safe}, 26
-    \subitem {list\+\_\+foreach\+\_\+safe}, 27
-    \subitem {list\+\_\+init}, 33
-    \subitem {list\+\_\+insert\+\_\+after}, 33
-    \subitem {list\+\_\+insert\+\_\+at}, 34
-    \subitem {list\+\_\+is\+\_\+empty}, 35
-    \subitem {list\+\_\+last}, 35
-    \subitem {list\+\_\+length}, 36
-    \subitem {list\+\_\+next}, 36
-    \subitem {list\+\_\+print}, 37
-    \subitem {list\+\_\+reverse}, 37
-    \subitem {list\+\_\+sort}, 38
-    \subitem {list\+\_\+split\+\_\+at}, 38
-    \subitem {list\+\_\+swap}, 39
+    \subitem {list\+\_\+add}, 29
+    \subitem {list\+\_\+advance}, 29
+    \subitem {list\+\_\+append}, 30
+    \subitem {list\+\_\+at}, 31
+    \subitem {list\+\_\+concat}, 31
+    \subitem {list\+\_\+del}, 32
+    \subitem {list\+\_\+del\+\_\+after}, 32
+    \subitem {list\+\_\+del\+\_\+at}, 33
+    \subitem {list\+\_\+elt}, 26
+    \subitem {list\+\_\+first}, 33
+    \subitem {list\+\_\+foreach}, 26
+    \subitem {list\+\_\+foreach\+\_\+elt}, 27
+    \subitem {list\+\_\+foreach\+\_\+elt\+\_\+safe}, 27
+    \subitem {list\+\_\+foreach\+\_\+safe}, 28
+    \subitem {list\+\_\+init}, 34
+    \subitem {list\+\_\+insert\+\_\+after}, 34
+    \subitem {list\+\_\+insert\+\_\+at}, 35
+    \subitem {list\+\_\+is\+\_\+empty}, 36
+    \subitem {list\+\_\+last}, 36
+    \subitem {list\+\_\+length}, 37
+    \subitem {list\+\_\+next}, 37
+    \subitem {list\+\_\+print}, 38
+    \subitem {list\+\_\+reverse}, 38
+    \subitem {list\+\_\+sort}, 39
+    \subitem {list\+\_\+split\+\_\+at}, 39
+    \subitem {list\+\_\+swap}, 40
   \item {list\+\_\+add}
-    \subitem {list.\+c}, 11
-    \subitem {list.\+h}, 28
-  \item {list\+\_\+advance}
-    \subitem {list.\+c}, 11
-    \subitem {list.\+h}, 28
-  \item {list\+\_\+append}
     \subitem {list.\+c}, 12
     \subitem {list.\+h}, 29
-  \item {list\+\_\+at}
+  \item {list\+\_\+advance}
     \subitem {list.\+c}, 12
+    \subitem {list.\+h}, 29
+  \item {list\+\_\+append}
+    \subitem {list.\+c}, 13
     \subitem {list.\+h}, 30
-  \item {list\+\_\+concat}
-    \subitem {list.\+c}, 14
-    \subitem {list.\+h}, 30
-  \item {list\+\_\+del}
-    \subitem {list.\+c}, 14
+  \item {list\+\_\+at}
+    \subitem {list.\+c}, 13
     \subitem {list.\+h}, 31
-  \item {list\+\_\+del\+\_\+after}
+  \item {list\+\_\+concat}
     \subitem {list.\+c}, 15
     \subitem {list.\+h}, 31
+  \item {list\+\_\+del}
+    \subitem {list.\+c}, 15
+    \subitem {list.\+h}, 32
+  \item {list\+\_\+del\+\_\+after}
+    \subitem {list.\+c}, 16
+    \subitem {list.\+h}, 32
   \item {list\+\_\+del\+\_\+at}
-    \subitem {list.\+c}, 16
-    \subitem {list.\+h}, 32
+    \subitem {list.\+c}, 17
+    \subitem {list.\+h}, 33
   \item {list\+\_\+elt}
-    \subitem {list.\+h}, 25
+    \subitem {list.\+h}, 26
   \item {list\+\_\+first}
-    \subitem {list.\+c}, 16
-    \subitem {list.\+h}, 32
+    \subitem {list.\+c}, 17
+    \subitem {list.\+h}, 33
   \item {list\+\_\+foreach}
-    \subitem {list.\+h}, 25
+    \subitem {list.\+h}, 26
   \item {list\+\_\+foreach\+\_\+elt}
-    \subitem {list.\+h}, 26
-  \item {list\+\_\+foreach\+\_\+elt\+\_\+safe}
-    \subitem {list.\+h}, 26
-  \item {list\+\_\+foreach\+\_\+safe}
     \subitem {list.\+h}, 27
+  \item {list\+\_\+foreach\+\_\+elt\+\_\+safe}
+    \subitem {list.\+h}, 27
+  \item {list\+\_\+foreach\+\_\+safe}
+    \subitem {list.\+h}, 28
   \item {list\+\_\+init}
-    \subitem {list.\+c}, 17
-    \subitem {list.\+h}, 33
-  \item {list\+\_\+insert\+\_\+after}
-    \subitem {list.\+c}, 17
-    \subitem {list.\+h}, 33
-  \item {list\+\_\+insert\+\_\+at}
     \subitem {list.\+c}, 18
     \subitem {list.\+h}, 34
-  \item {list\+\_\+is\+\_\+empty}
+  \item {list\+\_\+insert\+\_\+after}
     \subitem {list.\+c}, 18
-    \subitem {list.\+h}, 35
-  \item {list\+\_\+last}
+    \subitem {list.\+h}, 34
+  \item {list\+\_\+insert\+\_\+at}
     \subitem {list.\+c}, 19
     \subitem {list.\+h}, 35
-  \item {list\+\_\+length}
+  \item {list\+\_\+is\+\_\+empty}
     \subitem {list.\+c}, 19
     \subitem {list.\+h}, 36
-  \item {list\+\_\+next}
+  \item {list\+\_\+last}
     \subitem {list.\+c}, 20
     \subitem {list.\+h}, 36
+  \item {list\+\_\+length}
+    \subitem {list.\+c}, 20
+    \subitem {list.\+h}, 37
+  \item {list\+\_\+next}
+    \subitem {list.\+c}, 21
+    \subitem {list.\+h}, 37
   \item {list\+\_\+node}, 6
     \subitem {next}, 6
   \item {list\+\_\+print}
-    \subitem {list.\+c}, 20
-    \subitem {list.\+h}, 37
-  \item {list\+\_\+reverse}
-    \subitem {list.\+c}, 21
-    \subitem {list.\+h}, 37
-  \item {list\+\_\+sort}
     \subitem {list.\+c}, 21
     \subitem {list.\+h}, 38
-  \item {list\+\_\+split\+\_\+at}
+  \item {list\+\_\+reverse}
     \subitem {list.\+c}, 22
     \subitem {list.\+h}, 38
-  \item {list\+\_\+swap}
+  \item {list\+\_\+sort}
+    \subitem {list.\+c}, 22
+    \subitem {list.\+h}, 39
+  \item {list\+\_\+split\+\_\+at}
     \subitem {list.\+c}, 23
     \subitem {list.\+h}, 39
+  \item {list\+\_\+swap}
+    \subitem {list.\+c}, 24
+    \subitem {list.\+h}, 40
 
   \indexspace
 
   \item {main}
-    \subitem {t\+A\+Itris.\+c}, 9
+    \subitem {t\+A\+Itris.\+c}, 10
   \item {matrix}, 7
     \subitem {cols}, 7
     \subitem {data}, 7
     \subitem {rows}, 7
   \item {matrix.\+c}
-    \subitem {matrix\+\_\+at}, 40
-    \subitem {matrix\+\_\+cols}, 41
-    \subitem {matrix\+\_\+copy}, 41
+    \subitem {matrix\+\_\+at}, 42
+    \subitem {matrix\+\_\+cols}, 42
+    \subitem {matrix\+\_\+copy}, 43
     \subitem {matrix\+\_\+create}, 43
-    \subitem {matrix\+\_\+free}, 43
-    \subitem {matrix\+\_\+init}, 44
-    \subitem {matrix\+\_\+product}, 44
+    \subitem {matrix\+\_\+dot\+\_\+product}, 44
+    \subitem {matrix\+\_\+free}, 44
+    \subitem {matrix\+\_\+product}, 45
     \subitem {matrix\+\_\+rows}, 45
-    \subitem {matrix\+\_\+set}, 46
-    \subitem {matrix\+\_\+sum}, 46
-    \subitem {matrix\+\_\+transpose}, 47
+    \subitem {matrix\+\_\+scale}, 46
+    \subitem {matrix\+\_\+set}, 47
+    \subitem {matrix\+\_\+sum}, 47
+    \subitem {matrix\+\_\+transpose}, 48
   \item {matrix.\+h}
-    \subitem {matrix\+\_\+at}, 49
-    \subitem {matrix\+\_\+cols}, 49
+    \subitem {matrix\+\_\+at}, 50
+    \subitem {matrix\+\_\+cols}, 51
     \subitem {matrix\+\_\+copy}, 51
-    \subitem {matrix\+\_\+create}, 51
-    \subitem {matrix\+\_\+free}, 52
-    \subitem {matrix\+\_\+init}, 52
+    \subitem {matrix\+\_\+create}, 52
+    \subitem {matrix\+\_\+dot\+\_\+product}, 52
+    \subitem {matrix\+\_\+free}, 53
     \subitem {matrix\+\_\+product}, 53
     \subitem {matrix\+\_\+rows}, 54
-    \subitem {matrix\+\_\+set}, 54
-    \subitem {matrix\+\_\+sum}, 55
+    \subitem {matrix\+\_\+scale}, 54
+    \subitem {matrix\+\_\+set}, 55
+    \subitem {matrix\+\_\+sum}, 56
     \subitem {matrix\+\_\+transpose}, 56
   \item {matrix\+\_\+at}
-    \subitem {matrix.\+c}, 40
-    \subitem {matrix.\+h}, 49
+    \subitem {matrix.\+c}, 42
+    \subitem {matrix.\+h}, 50
   \item {matrix\+\_\+cols}
-    \subitem {matrix.\+c}, 41
-    \subitem {matrix.\+h}, 49
+    \subitem {matrix.\+c}, 42
+    \subitem {matrix.\+h}, 51
   \item {matrix\+\_\+copy}
-    \subitem {matrix.\+c}, 41
+    \subitem {matrix.\+c}, 43
     \subitem {matrix.\+h}, 51
   \item {matrix\+\_\+create}
     \subitem {matrix.\+c}, 43
-    \subitem {matrix.\+h}, 51
+    \subitem {matrix.\+h}, 52
+  \item {matrix\+\_\+dot\+\_\+product}
+    \subitem {matrix.\+c}, 44
+    \subitem {matrix.\+h}, 52
   \item {matrix\+\_\+free}
-    \subitem {matrix.\+c}, 43
-    \subitem {matrix.\+h}, 52
-  \item {matrix\+\_\+init}
     \subitem {matrix.\+c}, 44
-    \subitem {matrix.\+h}, 52
+    \subitem {matrix.\+h}, 53
   \item {matrix\+\_\+product}
-    \subitem {matrix.\+c}, 44
+    \subitem {matrix.\+c}, 45
     \subitem {matrix.\+h}, 53
   \item {matrix\+\_\+rows}
     \subitem {matrix.\+c}, 45
     \subitem {matrix.\+h}, 54
-  \item {matrix\+\_\+set}
+  \item {matrix\+\_\+scale}
     \subitem {matrix.\+c}, 46
     \subitem {matrix.\+h}, 54
-  \item {matrix\+\_\+sum}
-    \subitem {matrix.\+c}, 46
-    \subitem {matrix.\+h}, 55
-  \item {matrix\+\_\+transpose}
+  \item {matrix\+\_\+set}
     \subitem {matrix.\+c}, 47
+    \subitem {matrix.\+h}, 55
+  \item {matrix\+\_\+sum}
+    \subitem {matrix.\+c}, 47
+    \subitem {matrix.\+h}, 56
+  \item {matrix\+\_\+transpose}
+    \subitem {matrix.\+c}, 48
     \subitem {matrix.\+h}, 56
 
   \indexspace
@@ -225,14 +230,14 @@
 
   \item {src/t\+A\+Itris.\+c}, 9
   \item {src/t\+A\+Itris.\+h}, 10
-  \item {src/utils/list.\+c}, 10
-  \item {src/utils/list.\+h}, 23
-  \item {src/utils/matrix.\+c}, 40
-  \item {src/utils/matrix.\+h}, 47
+  \item {src/utils/list.\+c}, 11
+  \item {src/utils/list.\+h}, 24
+  \item {src/utils/matrix.\+c}, 41
+  \item {src/utils/matrix.\+h}, 49
 
   \indexspace
 
   \item {t\+A\+Itris.\+c}
-    \subitem {main}, 9
+    \subitem {main}, 10
 
 \end{theindex}
