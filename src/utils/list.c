@@ -1,3 +1,10 @@
+/**
+ * @file    list.c
+ * @author  S4MasterRace
+ * @version 1.0
+ * @brief   Intrusive list implement
+ */
+
 #include "list.h"
 
 void list_init(struct list *list) {

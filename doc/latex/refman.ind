@@ -158,63 +158,103 @@
     \subitem {matrix\+\_\+cols}, 42
     \subitem {matrix\+\_\+copy}, 43
     \subitem {matrix\+\_\+create}, 43
-    \subitem {matrix\+\_\+dot\+\_\+product}, 44
-    \subitem {matrix\+\_\+free}, 44
-    \subitem {matrix\+\_\+product}, 45
-    \subitem {matrix\+\_\+rows}, 45
-    \subitem {matrix\+\_\+scale}, 46
-    \subitem {matrix\+\_\+set}, 47
-    \subitem {matrix\+\_\+sum}, 47
-    \subitem {matrix\+\_\+transpose}, 48
+    \subitem {matrix\+\_\+create\+\_\+from\+\_\+array}, 44
+    \subitem {matrix\+\_\+diagonal}, 44
+    \subitem {matrix\+\_\+dot\+\_\+product}, 45
+    \subitem {matrix\+\_\+free}, 46
+    \subitem {matrix\+\_\+hadamard\+\_\+product}, 46
+    \subitem {matrix\+\_\+identity}, 47
+    \subitem {matrix\+\_\+is\+\_\+diagonal}, 47
+    \subitem {matrix\+\_\+is\+\_\+square}, 48
+    \subitem {matrix\+\_\+is\+\_\+upper\+\_\+triangulared}, 48
+    \subitem {matrix\+\_\+print}, 49
+    \subitem {matrix\+\_\+product}, 49
+    \subitem {matrix\+\_\+rows}, 50
+    \subitem {matrix\+\_\+scale}, 50
+    \subitem {matrix\+\_\+set}, 51
+    \subitem {matrix\+\_\+sum}, 52
+    \subitem {matrix\+\_\+transpose}, 52
   \item {matrix.\+h}
-    \subitem {matrix\+\_\+at}, 50
-    \subitem {matrix\+\_\+cols}, 51
-    \subitem {matrix\+\_\+copy}, 51
-    \subitem {matrix\+\_\+create}, 52
-    \subitem {matrix\+\_\+dot\+\_\+product}, 52
-    \subitem {matrix\+\_\+free}, 53
-    \subitem {matrix\+\_\+product}, 53
-    \subitem {matrix\+\_\+rows}, 54
-    \subitem {matrix\+\_\+scale}, 54
-    \subitem {matrix\+\_\+set}, 55
-    \subitem {matrix\+\_\+sum}, 56
-    \subitem {matrix\+\_\+transpose}, 56
+    \subitem {matrix\+\_\+at}, 55
+    \subitem {matrix\+\_\+cols}, 55
+    \subitem {matrix\+\_\+copy}, 56
+    \subitem {matrix\+\_\+create}, 56
+    \subitem {matrix\+\_\+create\+\_\+from\+\_\+array}, 57
+    \subitem {matrix\+\_\+diagonal}, 57
+    \subitem {matrix\+\_\+dot\+\_\+product}, 58
+    \subitem {matrix\+\_\+free}, 58
+    \subitem {matrix\+\_\+hadamard\+\_\+product}, 59
+    \subitem {matrix\+\_\+identity}, 60
+    \subitem {matrix\+\_\+is\+\_\+diagonal}, 60
+    \subitem {matrix\+\_\+is\+\_\+square}, 61
+    \subitem {matrix\+\_\+is\+\_\+upper\+\_\+triangulared}, 61
+    \subitem {matrix\+\_\+print}, 62
+    \subitem {matrix\+\_\+product}, 62
+    \subitem {matrix\+\_\+rows}, 63
+    \subitem {matrix\+\_\+scale}, 63
+    \subitem {matrix\+\_\+set}, 64
+    \subitem {matrix\+\_\+sum}, 65
+    \subitem {matrix\+\_\+transpose}, 65
   \item {matrix\+\_\+at}
     \subitem {matrix.\+c}, 42
-    \subitem {matrix.\+h}, 50
+    \subitem {matrix.\+h}, 55
   \item {matrix\+\_\+cols}
     \subitem {matrix.\+c}, 42
-    \subitem {matrix.\+h}, 51
+    \subitem {matrix.\+h}, 55
   \item {matrix\+\_\+copy}
     \subitem {matrix.\+c}, 43
-    \subitem {matrix.\+h}, 51
+    \subitem {matrix.\+h}, 56
   \item {matrix\+\_\+create}
     \subitem {matrix.\+c}, 43
-    \subitem {matrix.\+h}, 52
+    \subitem {matrix.\+h}, 56
+  \item {matrix\+\_\+create\+\_\+from\+\_\+array}
+    \subitem {matrix.\+c}, 44
+    \subitem {matrix.\+h}, 57
+  \item {matrix\+\_\+diagonal}
+    \subitem {matrix.\+c}, 44
+    \subitem {matrix.\+h}, 57
   \item {matrix\+\_\+dot\+\_\+product}
-    \subitem {matrix.\+c}, 44
-    \subitem {matrix.\+h}, 52
+    \subitem {matrix.\+c}, 45
+    \subitem {matrix.\+h}, 58
   \item {matrix\+\_\+free}
-    \subitem {matrix.\+c}, 44
-    \subitem {matrix.\+h}, 53
-  \item {matrix\+\_\+product}
-    \subitem {matrix.\+c}, 45
-    \subitem {matrix.\+h}, 53
-  \item {matrix\+\_\+rows}
-    \subitem {matrix.\+c}, 45
-    \subitem {matrix.\+h}, 54
-  \item {matrix\+\_\+scale}
     \subitem {matrix.\+c}, 46
-    \subitem {matrix.\+h}, 54
-  \item {matrix\+\_\+set}
+    \subitem {matrix.\+h}, 58
+  \item {matrix\+\_\+hadamard\+\_\+product}
+    \subitem {matrix.\+c}, 46
+    \subitem {matrix.\+h}, 59
+  \item {matrix\+\_\+identity}
     \subitem {matrix.\+c}, 47
-    \subitem {matrix.\+h}, 55
-  \item {matrix\+\_\+sum}
+    \subitem {matrix.\+h}, 60
+  \item {matrix\+\_\+is\+\_\+diagonal}
     \subitem {matrix.\+c}, 47
-    \subitem {matrix.\+h}, 56
-  \item {matrix\+\_\+transpose}
+    \subitem {matrix.\+h}, 60
+  \item {matrix\+\_\+is\+\_\+square}
     \subitem {matrix.\+c}, 48
-    \subitem {matrix.\+h}, 56
+    \subitem {matrix.\+h}, 61
+  \item {matrix\+\_\+is\+\_\+upper\+\_\+triangulared}
+    \subitem {matrix.\+c}, 48
+    \subitem {matrix.\+h}, 61
+  \item {matrix\+\_\+print}
+    \subitem {matrix.\+c}, 49
+    \subitem {matrix.\+h}, 62
+  \item {matrix\+\_\+product}
+    \subitem {matrix.\+c}, 49
+    \subitem {matrix.\+h}, 62
+  \item {matrix\+\_\+rows}
+    \subitem {matrix.\+c}, 50
+    \subitem {matrix.\+h}, 63
+  \item {matrix\+\_\+scale}
+    \subitem {matrix.\+c}, 50
+    \subitem {matrix.\+h}, 63
+  \item {matrix\+\_\+set}
+    \subitem {matrix.\+c}, 51
+    \subitem {matrix.\+h}, 64
+  \item {matrix\+\_\+sum}
+    \subitem {matrix.\+c}, 52
+    \subitem {matrix.\+h}, 65
+  \item {matrix\+\_\+transpose}
+    \subitem {matrix.\+c}, 52
+    \subitem {matrix.\+h}, 65
 
   \indexspace
 
@@ -233,7 +273,7 @@
   \item {src/utils/list.\+c}, 11
   \item {src/utils/list.\+h}, 24
   \item {src/utils/matrix.\+c}, 41
-  \item {src/utils/matrix.\+h}, 49
+  \item {src/utils/matrix.\+h}, 53
 
   \indexspace
 

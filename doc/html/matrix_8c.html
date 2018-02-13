@@ -88,22 +88,25 @@ $(document).ready(function(){initNavTree('matrix_8c.html','');});
 <div class="title">matrix.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Matrix implement.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="matrix_8h_source.html">matrix.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for matrix.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="matrix_8c__incl.png" border="0" usemap="#src_2utils_2matrix_8c" alt=""/></div>
 <map name="src_2utils_2matrix_8c" id="src_2utils_2matrix_8c">
-<area shape="rect" id="node2" href="matrix_8h.html" title="Matrix implement. " alt="" coords="135,80,204,107"/>
+<area shape="rect" id="node2" href="matrix_8h.html" title="Matrix implement. " alt="" coords="179,80,248,107"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a846b4db55574ffabe64ff0604070bde1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a846b4db55574ffabe64ff0604070bde1">matrix_init</a> (struct <a class="el" href="structmatrix.html">matrix</a> *mx, size_t rows, size_t cols)</td></tr>
-<tr class="separator:a846b4db55574ffabe64ff0604070bde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2d40d9c13eba774d6bb788021242a95"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#ad2d40d9c13eba774d6bb788021242a95">matrix_create</a> (size_t rows, size_t cols)</td></tr>
 <tr class="separator:ad2d40d9c13eba774d6bb788021242a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268a5429e2e4bc1664045624a82bc09c"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a268a5429e2e4bc1664045624a82bc09c">matrix_create_from_array</a> (size_t rows, size_t cols, const double values[])</td></tr>
+<tr class="separator:a268a5429e2e4bc1664045624a82bc09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac19cd61ef9f183a9b92d6789399f8646"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#ac19cd61ef9f183a9b92d6789399f8646">matrix_free</a> (struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
 <tr class="separator:ac19cd61ef9f183a9b92d6789399f8646"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d9ca687a57f2328a02b9a056964b2fb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a7d9ca687a57f2328a02b9a056964b2fb">matrix_rows</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
@@ -116,14 +119,36 @@ Functions</h2></td></tr>
 <tr class="separator:a9e159c4c2c953106b7a1a4f0d4a03616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6663b065febb290385857b26fdb1a353"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a6663b065febb290385857b26fdb1a353">matrix_copy</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
 <tr class="separator:a6663b065febb290385857b26fdb1a353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af82ecbbd42a059dd5db3d038fd75e9db"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#af82ecbbd42a059dd5db3d038fd75e9db">matrix_transpose</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
-<tr class="separator:af82ecbbd42a059dd5db3d038fd75e9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abeb96dce8ec1087a4ce6695ed1fcf85e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#abeb96dce8ec1087a4ce6695ed1fcf85e">matrix_sum</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx1, const struct <a class="el" href="structmatrix.html">matrix</a> *mx2)</td></tr>
-<tr class="separator:abeb96dce8ec1087a4ce6695ed1fcf85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2227c91f0b63b44b9bee2610b3cf48c"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#ab2227c91f0b63b44b9bee2610b3cf48c">matrix_product</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx1, const struct <a class="el" href="structmatrix.html">matrix</a> *mx2)</td></tr>
-<tr class="separator:ab2227c91f0b63b44b9bee2610b3cf48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace9535ebf3fa66aa5aeed040eeccc1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#ace9535ebf3fa66aa5aeed040eeccc1b3">matrix_transpose</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx, struct <a class="el" href="structmatrix.html">matrix</a> *tmx)</td></tr>
+<tr class="separator:ace9535ebf3fa66aa5aeed040eeccc1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7c4970506bd591d265596d41c7fa0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a4a7c4970506bd591d265596d41c7fa0f">matrix_sum</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx1, const struct <a class="el" href="structmatrix.html">matrix</a> *mx2, struct <a class="el" href="structmatrix.html">matrix</a> *sum)</td></tr>
+<tr class="separator:a4a7c4970506bd591d265596d41c7fa0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52deb76b55ddbb957264866f5c856d0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a52deb76b55ddbb957264866f5c856d0a">matrix_hadamard_product</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx1, const struct <a class="el" href="structmatrix.html">matrix</a> *mx2, struct <a class="el" href="structmatrix.html">matrix</a> *prod)</td></tr>
+<tr class="separator:a52deb76b55ddbb957264866f5c856d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e828fb00afc50e3616adefe87643bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a48e828fb00afc50e3616adefe87643bf">matrix_product</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx1, const struct <a class="el" href="structmatrix.html">matrix</a> *mx2, struct <a class="el" href="structmatrix.html">matrix</a> *prod)</td></tr>
+<tr class="separator:a48e828fb00afc50e3616adefe87643bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3de5b6889de7358d66e2ac1b4c6efb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#aed3de5b6889de7358d66e2ac1b4c6efb">matrix_scale</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx, double scale, struct <a class="el" href="structmatrix.html">matrix</a> *smx)</td></tr>
+<tr class="separator:aed3de5b6889de7358d66e2ac1b4c6efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba7365201acc5889936e1836d14cc8b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a7ba7365201acc5889936e1836d14cc8b">matrix_dot_product</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *v1, const struct <a class="el" href="structmatrix.html">matrix</a> *v2)</td></tr>
+<tr class="separator:a7ba7365201acc5889936e1836d14cc8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa54c9d6ef22a1e0a0ca39221939b8c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#afa54c9d6ef22a1e0a0ca39221939b8c7">matrix_identity</a> (struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
+<tr class="separator:afa54c9d6ef22a1e0a0ca39221939b8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc537e836547fd549f64464c938b1d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a0bc537e836547fd549f64464c938b1d2">matrix_is_square</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
+<tr class="separator:a0bc537e836547fd549f64464c938b1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2379a87492cbb3bf0c4fdc8e58589d1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a2379a87492cbb3bf0c4fdc8e58589d1c">matrix_is_diagonal</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
+<tr class="separator:a2379a87492cbb3bf0c4fdc8e58589d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a4575aa2b0493bbf0b7bee70d30f07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#ae3a4575aa2b0493bbf0b7bee70d30f07">matrix_is_upper_triangulared</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
+<tr class="separator:ae3a4575aa2b0493bbf0b7bee70d30f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74c9bd4f933938a77a0b30ef3204ab09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a74c9bd4f933938a77a0b30ef3204ab09">matrix_diagonal</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *v, struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
+<tr class="separator:a74c9bd4f933938a77a0b30ef3204ab09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f40f546c465fd096679a7f94ea5e8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8c.html#a41f40f546c465fd096679a7f94ea5e8b">matrix_print</a> (const struct <a class="el" href="structmatrix.html">matrix</a> *mx)</td></tr>
+<tr class="separator:a41f40f546c465fd096679a7f94ea5e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Matrix implement. </p>
+<dl class="section author"><dt>Author</dt><dd>S4MasterRace </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ace105cd24473b52d67874132e81dd55b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace105cd24473b52d67874132e81dd55b">&#9670;&nbsp;</a></span>matrix_at()</h2>
 
@@ -163,7 +188,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get value at <code>rows</code> rows and <code>cols</code> columns</p>
+<p>Get value at <code>rows</code> rows and <code>cols</code> columns of <code>mx</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mx</td><td>a matrix </td></tr>
@@ -172,14 +197,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the value at <code>rows</code> rows and <code>cols</code> columns</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the value at <code>rows</code> rows and <code>cols</code> columns of <code>mx</code></dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL </dd>
 <dd>
-<code>mx-&gt;data</code> must be not NULL </dd>
+<code>rows</code> must be between <code>[0, matrix_rows(mx)[</code> </dd>
 <dd>
-<code>rows</code> must be between zero and <code>matrix_rows(mx)</code> </dd>
-<dd>
-<code>cols</code> must be between zero and <code>matrix_cols(mx)</code></dd></dl>
+<code>cols</code> must be between <code>[0, matrix_cols(mx)[</code></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(1) </dd></dl>
 
 </div>
@@ -207,14 +230,14 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get the number of columns</p>
+<p>Get the number of columns of <code>mx</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mx</td><td>a matrix </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of columns</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of columns <code>mx</code></dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(1) </dd></dl>
 
@@ -235,7 +258,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copy the matrix</p>
+<p>Copy the matrix <code>mx</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mx</td><td>a matrix </td></tr>
@@ -243,9 +266,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the copy of <code>mx</code></dd></dl>
-<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL </dd>
-<dd>
-<code>mx-&gt;data</code> must be not NULL</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(1) </dd></dl>
 
 </div>
@@ -291,6 +312,147 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a268a5429e2e4bc1664045624a82bc09c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268a5429e2e4bc1664045624a82bc09c">&#9670;&nbsp;</a></span>matrix_create_from_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmatrix.html">matrix</a>* matrix_create_from_array </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>values</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a matrix of size <code>rows</code> rows and <code>cols</code> columns from <code>values</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rows</td><td>number of rows </td></tr>
+    <tr><td class="paramname">cols</td><td>number of columns </td></tr>
+    <tr><td class="paramname">values</td><td>an array</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the initialized matrix of size <code>rows</code> rows and <code>cols</code> columns from <code>values</code></dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>rows</code> must be greater than zero </dd>
+<dd>
+<code>cols</code> must be greater than zero </dd>
+<dd>
+<code>values</code> must be not NULL</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
+
+</div>
+</div>
+<a id="a74c9bd4f933938a77a0b30ef3204ab09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c9bd4f933938a77a0b30ef3204ab09">&#9670;&nbsp;</a></span>matrix_diagonal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void matrix_diagonal </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Take a vector <code>v</code> and put it to the diagonal of <code>mx</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>a vector </td></tr>
+    <tr><td class="paramname">mx</td><td>a matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>v</code> must be not NULL </dd>
+<dd>
+<code>mx</code> must be not NULL </dd>
+<dd>
+<code>matrix_cols(v)</code> must be equal to one </dd>
+<dd>
+<code>matrix_rows(v)</code> must be equel to <code>matrix_rows(mx)</code> </dd>
+<dd>
+<code>matrix_rows(mx)</code> must be equel to <code>matrix_cols(mx)</code></dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The diagonal of <code>mx</code> is <code>v</code> </dd></dl>
+
+</div>
+</div>
+<a id="a7ba7365201acc5889936e1836d14cc8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ba7365201acc5889936e1836d14cc8b">&#9670;&nbsp;</a></span>matrix_dot_product()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double matrix_dot_product </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Do the dot product of vector <code>v1</code> with vector <code>v2</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v1</td><td>a vector </td></tr>
+    <tr><td class="paramname">v2</td><td>a vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the dot product of vector <code>v1</code> with vector <code>v2</code></dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>v1</code> must be not NULL </dd>
+<dd>
+<code>v2</code> must be not NULL </dd>
+<dd>
+<code>matrix_cols(v1)</code> and <code>matrix_cols(v2)</code> must be equal to one </dd>
+<dd>
+<code>matrix_rows(v1)</code> must be equal to <code>matrix_rows(v2)</code></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
+
+</div>
+</div>
 <a id="ac19cd61ef9f183a9b92d6789399f8646"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac19cd61ef9f183a9b92d6789399f8646">&#9670;&nbsp;</a></span>matrix_free()</h2>
 
@@ -314,91 +476,27 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Free the matrix</p>
+<p>Free the matrix <code>mx</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mx</td><td>a matrix</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL </dd>
-<dd>
-<code>mx-&gt;data</code> must be not NULL</dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd><code>mx</code> is freed </dd>
-<dd>
-<code>mx-&gt;data</code> is freed</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><code>mx</code> is freed</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(1) </dd></dl>
 
 </div>
 </div>
-<a id="a846b4db55574ffabe64ff0604070bde1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a846b4db55574ffabe64ff0604070bde1">&#9670;&nbsp;</a></span>matrix_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void matrix_init </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
-          <td class="paramname"><em>mx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>rows</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>cols</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Initialize the matrix</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mx</td><td>a matrix </td></tr>
-    <tr><td class="paramname">rows</td><td>number of rows </td></tr>
-    <tr><td class="paramname">cols</td><td>number of columns</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL </dd>
-<dd>
-<code>rows</code> must be greater than zero </dd>
-<dd>
-<code>cols</code> must be greater than zero</dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd><code>mx</code> is size of <code>rows</code> rows and <code>cols</code> columns </dd>
-<dd>
-<code>mx-&gt;data</code> is initialized with the right size</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(1) </dd></dl>
-
-</div>
-</div>
-<a id="ab2227c91f0b63b44b9bee2610b3cf48c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2227c91f0b63b44b9bee2610b3cf48c">&#9670;&nbsp;</a></span>matrix_product()</h2>
+<a id="a52deb76b55ddbb957264866f5c856d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52deb76b55ddbb957264866f5c856d0a">&#9670;&nbsp;</a></span>matrix_hadamard_product()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structmatrix.html">matrix</a>* matrix_product </td>
+          <td class="memname">void matrix_hadamard_product </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
           <td class="paramname"><em>mx1</em>, </td>
@@ -407,7 +505,236 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
-          <td class="paramname"><em>mx2</em>&#160;</td>
+          <td class="paramname"><em>mx2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>prod</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Do the hadamard product of matrix <code>mx1</code> with <code>mx2</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mx1</td><td>a matrix </td></tr>
+    <tr><td class="paramname">mx2</td><td>a matrix </td></tr>
+    <tr><td class="paramname">prod</td><td>a matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx1</code> must be not NULL </dd>
+<dd>
+<code>mx2</code> must be not NULL </dd>
+<dd>
+<code>prod</code> must be not NULL </dd>
+<dd>
+<code>matrix_rows(mx1)</code> must be equal to <code>matrix_rows(mx2)</code> </dd>
+<dd>
+<code>matrix_cols(mx1)</code> must be equal to <code>matrix_cols(mx2)</code> </dd>
+<dd>
+<code>matrix_rows(prod)</code> must be equal to <code>matrix_rows(mx1)</code> </dd>
+<dd>
+<code>matrix_cols(prod)</code> must be equal to <code>matrix_cols(mx1)</code></dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><code>prod</code> is the hadamard product of matrix <code>mx1</code> with <code>mx2</code></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
+
+</div>
+</div>
+<a id="afa54c9d6ef22a1e0a0ca39221939b8c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa54c9d6ef22a1e0a0ca39221939b8c7">&#9670;&nbsp;</a></span>matrix_identity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void matrix_identity </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the matrix <code>mx</code> to an identity matrix</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mx</td><td>a matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL </dd>
+<dd>
+<code>matrix_rows(mx)</code> must be equal to <code>matrix_cols(mx)</code></dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><code>mx</code> is an identity matrix</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
+
+</div>
+</div>
+<a id="a2379a87492cbb3bf0c4fdc8e58589d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2379a87492cbb3bf0c4fdc8e58589d1c">&#9670;&nbsp;</a></span>matrix_is_diagonal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int matrix_is_diagonal </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check if the matrix <code>mx</code> is diagonaled</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mx</td><td>a matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>1</code> if the matrix is diagonaled, <code>0</code> otherwise</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
+
+</div>
+</div>
+<a id="a0bc537e836547fd549f64464c938b1d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc537e836547fd549f64464c938b1d2">&#9670;&nbsp;</a></span>matrix_is_square()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int matrix_is_square </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check if the matrix <code>mx</code> is squared</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mx</td><td>a matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>1</code> if the matrix is squared, <code>0</code> otherwise</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(1) </dd></dl>
+
+</div>
+</div>
+<a id="ae3a4575aa2b0493bbf0b7bee70d30f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a4575aa2b0493bbf0b7bee70d30f07">&#9670;&nbsp;</a></span>matrix_is_upper_triangulared()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int matrix_is_upper_triangulared </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check if the matrix <code>mx</code> is upper triangulared</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mx</td><td>a matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>1</code> if the matrix is upper triangulared, <code>0</code> otherwise</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
+
+</div>
+</div>
+<a id="a41f40f546c465fd096679a7f94ea5e8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f40f546c465fd096679a7f94ea5e8b">&#9670;&nbsp;</a></span>matrix_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void matrix_print </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print the matrix <code>mx</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mx</td><td>a matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Print the matrix <code>mx</code> </dd></dl>
+
+</div>
+</div>
+<a id="a48e828fb00afc50e3616adefe87643bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e828fb00afc50e3616adefe87643bf">&#9670;&nbsp;</a></span>matrix_product()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void matrix_product </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>prod</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -421,22 +748,27 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">mx1</td><td>a matrix </td></tr>
     <tr><td class="paramname">mx2</td><td>a matrix </td></tr>
+    <tr><td class="paramname">prod</td><td>a matrix</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the product of <code>mx1</code> with <code>mx2</code></dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code>mx1</code> must be not NULL </dd>
-<dd>
-<code>mx1-&gt;data</code> must be not NULL </dd>
 <dd>
 <code>mx2</code> must be not NULL </dd>
 <dd>
-<code>mx2-&gt;data</code> must be not NULL </dd>
+<code>prod</code> must be not NULL </dd>
 <dd>
-<code>matrix_cols(mx1)</code> must be equal to <code>matrix_rows(mx2)</code></dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>the result is a matrix of <code>matrix_rows(mx1)</code> rows and <code>matrix_cols(mx2)</code> cols </dd>
+<code>prod</code> must be not equal to <code>mx1</code> </dd>
 <dd>
-Complexity: O(nmp) </dd></dl>
+<code>prod</code> must be not equal to <code>mx2</code> </dd>
+<dd>
+<code>matrix_cols(mx1)</code> must be equal to <code>matrix_rows(mx2)</code> </dd>
+<dd>
+<code>matrix_rows(prod)</code> must be equal to <code>matrix_rows(mx1)</code> </dd>
+<dd>
+<code>matrix_cols(prod)</code> must be equal to <code>matrix_cols(mx2)</code></dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><code>prod</code> is the product of <code>mx1</code> with <code>mx2</code></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(nmp) </dd></dl>
 
 </div>
 </div>
@@ -463,16 +795,68 @@ Complexity: O(nmp) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get the number of rows</p>
+<p>Get the number of rows <code>mx</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mx</td><td>a matrix </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of rows</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of rows of <code>mx</code></dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(1) </dd></dl>
+
+</div>
+</div>
+<a id="aed3de5b6889de7358d66e2ac1b4c6efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3de5b6889de7358d66e2ac1b4c6efb">&#9670;&nbsp;</a></span>matrix_scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void matrix_scale </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>mx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>smx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Scale the matrix <code>mx</code> with <code>scale</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mx</td><td>a matrix </td></tr>
+    <tr><td class="paramname">scale</td><td>the scale factor </td></tr>
+    <tr><td class="paramname">smx</td><td>a matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL </dd>
+<dd>
+<code>smx</code> must be not NULL </dd>
+<dd>
+<code>matrix_rows(smx)</code> must be equal to <code>matrix_rows(mx)</code> </dd>
+<dd>
+<code>matrix_cols(smx)</code> must be equal to <code>matrix_cols(mx)</code></dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><code>smx</code> is the <code>scale</code> scaled matrix of <code>mx</code></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
 
 </div>
 </div>
@@ -521,7 +905,7 @@ Complexity: O(nmp) </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set the value at <code>rows</code> rows and <code>cols</code> columns with <code>value</code></p>
+<p>Set the value at <code>rows</code> rows and <code>cols</code> columns with <code>value</code> of <code>mx</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mx</td><td>a matrix </td></tr>
@@ -533,24 +917,22 @@ Complexity: O(nmp) </dd></dl>
 </dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL </dd>
 <dd>
-<code>mx-&gt;data</code> must be not NULL </dd>
+<code>rows</code> must be between <code>[0, matrix_rows(mx)[</code> </dd>
 <dd>
-<code>rows</code> must be between zero and <code>matrix_rows(mx)</code> </dd>
-<dd>
-<code>cols</code> must be between zero and <code>matrix_cols(mx)</code></dd></dl>
+<code>cols</code> must be between <code>[0, matrix_cols(mx)[</code></dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>the value at <code>rows</code> rows and <code>cols</code> columns is <code>value</code></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(1) </dd></dl>
 
 </div>
 </div>
-<a id="abeb96dce8ec1087a4ce6695ed1fcf85e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abeb96dce8ec1087a4ce6695ed1fcf85e">&#9670;&nbsp;</a></span>matrix_sum()</h2>
+<a id="a4a7c4970506bd591d265596d41c7fa0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7c4970506bd591d265596d41c7fa0f">&#9670;&nbsp;</a></span>matrix_sum()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structmatrix.html">matrix</a>* matrix_sum </td>
+          <td class="memname">void matrix_sum </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
           <td class="paramname"><em>mx1</em>, </td>
@@ -559,7 +941,13 @@ Complexity: O(nmp) </dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
-          <td class="paramname"><em>mx2</em>&#160;</td>
+          <td class="paramname"><em>mx2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>sum</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -573,54 +961,72 @@ Complexity: O(nmp) </dd></dl>
   <table class="params">
     <tr><td class="paramname">mx1</td><td>a matrix </td></tr>
     <tr><td class="paramname">mx2</td><td>a matrix </td></tr>
+    <tr><td class="paramname">sum</td><td>a matrix</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the sum of <code>mx1</code> and <code>mx2</code></dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code>mx1</code> must be not NULL </dd>
-<dd>
-<code>mx1-&gt;data</code> must be not NULL </dd>
 <dd>
 <code>mx2</code> must be not NULL </dd>
 <dd>
-<code>mx2-&gt;data</code> must be not NULL </dd>
+<code>sum</code> must be not NULL </dd>
 <dd>
 <code>matrix_rows(mx1)</code> must be equal to <code>matrix_rows(mx2)</code> </dd>
 <dd>
-<code>matrix_cols(mx1)</code> must be equal to <code>matrix_cols(mx2)</code></dd></dl>
+<code>matrix_cols(mx1)</code> must be equal to <code>matrix_cols(mx2)</code> </dd>
+<dd>
+<code>matrix_rows(sum)</code> must be equal to <code>matrix_rows(mx1)</code> </dd>
+<dd>
+<code>matrix_cols(sum)</code> must be equal to <code>matrix_cols(mx1)</code></dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><code>sum</code> is the sum of matrix <code>mx1</code> with <code>mx2</code></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
 
 </div>
 </div>
-<a id="af82ecbbd42a059dd5db3d038fd75e9db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af82ecbbd42a059dd5db3d038fd75e9db">&#9670;&nbsp;</a></span>matrix_transpose()</h2>
+<a id="ace9535ebf3fa66aa5aeed040eeccc1b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace9535ebf3fa66aa5aeed040eeccc1b3">&#9670;&nbsp;</a></span>matrix_transpose()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structmatrix.html">matrix</a>* matrix_transpose </td>
+          <td class="memname">void matrix_transpose </td>
           <td>(</td>
           <td class="paramtype">const struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
-          <td class="paramname"><em>mx</em></td><td>)</td>
+          <td class="paramname"><em>mx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">struct <a class="el" href="structmatrix.html">matrix</a> *&#160;</td>
+          <td class="paramname"><em>tmx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Transpose the matrix</p>
+<p>Transpose the matrix <code>mx</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mx</td><td>a matrix </td></tr>
+    <tr><td class="paramname">tmx</td><td>a matrix</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the transposed matrix</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code>mx</code> must be not NULL </dd>
 <dd>
-<code>mx-&gt;data</code> must be not NULL</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>transposed matrix is size of <code>matrix_cols(mx)</code> rows and <code>matrix_rows(mx)</code> columns </dd>
+<code>tmx</code> must be not NULL </dd>
 <dd>
-Complexity: O(N) </dd></dl>
+<code>tmx</code> must be not equal to <code>mx</code> </dd>
+<dd>
+<code>matrix_rows(tmx)</code> must be equal to <code>matrix_cols(mx)</code> </dd>
+<dd>
+<code>matrix_cols(tmx)</code> must be equal to <code>matrix_rows(mx)</code></dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><code>tmx</code> is the transposed matrix of <code>mx</code></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Complexity: O(N) </dd></dl>
 
 </div>
 </div>

@@ -6,17 +6,20 @@ Matrix implement.
 
 
 {\ttfamily \#include \char`\"{}matrix.\+h\char`\"{}}\newline
-Include dependency graph for matrix.\+c\+:\nopagebreak
+Include dependency graph for matrix.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=320pt]{matrix_8c__incl}
+\includegraphics[width=350pt]{matrix_8c__incl}
 \end{center}
 \end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 struct \textbf{ matrix} $\ast$ \textbf{ matrix\+\_\+create} (size\+\_\+t rows, size\+\_\+t cols)
+\item 
+struct \textbf{ matrix} $\ast$ \textbf{ matrix\+\_\+create\+\_\+from\+\_\+array} (size\+\_\+t rows, size\+\_\+t cols, const double values[$\,$])
 \item 
 void \textbf{ matrix\+\_\+free} (struct \textbf{ matrix} $\ast$mx)
 \item 
@@ -34,11 +37,25 @@ void \textbf{ matrix\+\_\+transpose} (const struct \textbf{ matrix} $\ast$mx, st
 \item 
 void \textbf{ matrix\+\_\+sum} (const struct \textbf{ matrix} $\ast$mx1, const struct \textbf{ matrix} $\ast$mx2, struct \textbf{ matrix} $\ast$sum)
 \item 
+void \textbf{ matrix\+\_\+hadamard\+\_\+product} (const struct \textbf{ matrix} $\ast$mx1, const struct \textbf{ matrix} $\ast$mx2, struct \textbf{ matrix} $\ast$prod)
+\item 
 void \textbf{ matrix\+\_\+product} (const struct \textbf{ matrix} $\ast$mx1, const struct \textbf{ matrix} $\ast$mx2, struct \textbf{ matrix} $\ast$prod)
 \item 
 void \textbf{ matrix\+\_\+scale} (const struct \textbf{ matrix} $\ast$mx, double scale, struct \textbf{ matrix} $\ast$smx)
 \item 
 double \textbf{ matrix\+\_\+dot\+\_\+product} (const struct \textbf{ matrix} $\ast$v1, const struct \textbf{ matrix} $\ast$v2)
+\item 
+void \textbf{ matrix\+\_\+identity} (struct \textbf{ matrix} $\ast$mx)
+\item 
+int \textbf{ matrix\+\_\+is\+\_\+square} (const struct \textbf{ matrix} $\ast$mx)
+\item 
+int \textbf{ matrix\+\_\+is\+\_\+diagonal} (const struct \textbf{ matrix} $\ast$mx)
+\item 
+int \textbf{ matrix\+\_\+is\+\_\+upper\+\_\+triangulared} (const struct \textbf{ matrix} $\ast$mx)
+\item 
+void \textbf{ matrix\+\_\+diagonal} (const struct \textbf{ matrix} $\ast$v, struct \textbf{ matrix} $\ast$mx)
+\item 
+void \textbf{ matrix\+\_\+print} (const struct \textbf{ matrix} $\ast$mx)
 \end{DoxyCompactItemize}
 
 
@@ -154,6 +171,65 @@ the initialized matrix of size {\ttfamily rows} rows and {\ttfamily cols} column
 \begin{DoxyRemark}{Remarks}
 Complexity\+: O(1) 
 \end{DoxyRemark}
+\mbox{\label{matrix_8c_a268a5429e2e4bc1664045624a82bc09c}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+create\+\_\+from\+\_\+array@{matrix\+\_\+create\+\_\+from\+\_\+array}}
+\index{matrix\+\_\+create\+\_\+from\+\_\+array@{matrix\+\_\+create\+\_\+from\+\_\+array}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+create\+\_\+from\+\_\+array()}
+{\footnotesize\ttfamily struct \textbf{ matrix}$\ast$ matrix\+\_\+create\+\_\+from\+\_\+array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols,  }\item[{const double}]{values[$\,$] }\end{DoxyParamCaption})}
+
+Create a matrix of size {\ttfamily rows} rows and {\ttfamily cols} columns from {\ttfamily values}
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & number of rows \\
+\hline
+{\em cols} & number of columns \\
+\hline
+{\em values} & an array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the initialized matrix of size {\ttfamily rows} rows and {\ttfamily cols} columns from {\ttfamily values}
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily rows} must be greater than zero 
+
+{\ttfamily cols} must be greater than zero 
+
+{\ttfamily values} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(\+N) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a74c9bd4f933938a77a0b30ef3204ab09}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+diagonal@{matrix\+\_\+diagonal}}
+\index{matrix\+\_\+diagonal@{matrix\+\_\+diagonal}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+diagonal()}
+{\footnotesize\ttfamily void matrix\+\_\+diagonal (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{v,  }\item[{struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})}
+
+Take a vector {\ttfamily v} and put it to the diagonal of {\ttfamily mx}
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & a vector \\
+\hline
+{\em mx} & a matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily v} must be not N\+U\+LL 
+
+{\ttfamily mx} must be not N\+U\+LL 
+
+{\ttfamily matrix\+\_\+cols(v)} must be equal to one 
+
+{\ttfamily matrix\+\_\+rows(v)} must be equel to {\ttfamily matrix\+\_\+rows(mx)} 
+
+{\ttfamily matrix\+\_\+rows(mx)} must be equel to {\ttfamily matrix\+\_\+cols(mx)}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The diagonal of {\ttfamily mx} is {\ttfamily v} 
+\end{DoxyPostcond}
 \mbox{\label{matrix_8c_a7ba7365201acc5889936e1836d14cc8b}} 
 \index{matrix.\+c@{matrix.\+c}!matrix\+\_\+dot\+\_\+product@{matrix\+\_\+dot\+\_\+product}}
 \index{matrix\+\_\+dot\+\_\+product@{matrix\+\_\+dot\+\_\+product}!matrix.\+c@{matrix.\+c}}
@@ -206,6 +282,153 @@ Free the matrix {\ttfamily mx}
 \begin{DoxyRemark}{Remarks}
 Complexity\+: O(1) 
 \end{DoxyRemark}
+\mbox{\label{matrix_8c_a52deb76b55ddbb957264866f5c856d0a}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+hadamard\+\_\+product@{matrix\+\_\+hadamard\+\_\+product}}
+\index{matrix\+\_\+hadamard\+\_\+product@{matrix\+\_\+hadamard\+\_\+product}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+hadamard\+\_\+product()}
+{\footnotesize\ttfamily void matrix\+\_\+hadamard\+\_\+product (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx1,  }\item[{const struct \textbf{ matrix} $\ast$}]{mx2,  }\item[{struct \textbf{ matrix} $\ast$}]{prod }\end{DoxyParamCaption})}
+
+Do the hadamard product of matrix {\ttfamily mx1} with {\ttfamily mx2}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx1} & a matrix \\
+\hline
+{\em mx2} & a matrix \\
+\hline
+{\em prod} & a matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx1} must be not N\+U\+LL 
+
+{\ttfamily mx2} must be not N\+U\+LL 
+
+{\ttfamily prod} must be not N\+U\+LL 
+
+{\ttfamily matrix\+\_\+rows(mx1)} must be equal to {\ttfamily matrix\+\_\+rows(mx2)} 
+
+{\ttfamily matrix\+\_\+cols(mx1)} must be equal to {\ttfamily matrix\+\_\+cols(mx2)} 
+
+{\ttfamily matrix\+\_\+rows(prod)} must be equal to {\ttfamily matrix\+\_\+rows(mx1)} 
+
+{\ttfamily matrix\+\_\+cols(prod)} must be equal to {\ttfamily matrix\+\_\+cols(mx1)}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+{\ttfamily prod} is the hadamard product of matrix {\ttfamily mx1} with {\ttfamily mx2}
+\end{DoxyPostcond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(\+N) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_afa54c9d6ef22a1e0a0ca39221939b8c7}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+identity@{matrix\+\_\+identity}}
+\index{matrix\+\_\+identity@{matrix\+\_\+identity}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+identity()}
+{\footnotesize\ttfamily void matrix\+\_\+identity (\begin{DoxyParamCaption}\item[{struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})}
+
+Set the matrix {\ttfamily mx} to an identity matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL 
+
+{\ttfamily matrix\+\_\+rows(mx)} must be equal to {\ttfamily matrix\+\_\+cols(mx)}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+{\ttfamily mx} is an identity matrix
+\end{DoxyPostcond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(\+N) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a2379a87492cbb3bf0c4fdc8e58589d1c}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+is\+\_\+diagonal@{matrix\+\_\+is\+\_\+diagonal}}
+\index{matrix\+\_\+is\+\_\+diagonal@{matrix\+\_\+is\+\_\+diagonal}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+is\+\_\+diagonal()}
+{\footnotesize\ttfamily int matrix\+\_\+is\+\_\+diagonal (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if the matrix {\ttfamily mx} is diagonaled
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} if the matrix is diagonaled, {\ttfamily 0} otherwise
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(\+N) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a0bc537e836547fd549f64464c938b1d2}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+is\+\_\+square@{matrix\+\_\+is\+\_\+square}}
+\index{matrix\+\_\+is\+\_\+square@{matrix\+\_\+is\+\_\+square}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+is\+\_\+square()}
+{\footnotesize\ttfamily int matrix\+\_\+is\+\_\+square (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if the matrix {\ttfamily mx} is squared
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} if the matrix is squared, {\ttfamily 0} otherwise
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(1) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_ae3a4575aa2b0493bbf0b7bee70d30f07}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+is\+\_\+upper\+\_\+triangulared@{matrix\+\_\+is\+\_\+upper\+\_\+triangulared}}
+\index{matrix\+\_\+is\+\_\+upper\+\_\+triangulared@{matrix\+\_\+is\+\_\+upper\+\_\+triangulared}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+is\+\_\+upper\+\_\+triangulared()}
+{\footnotesize\ttfamily int matrix\+\_\+is\+\_\+upper\+\_\+triangulared (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if the matrix {\ttfamily mx} is upper triangulared
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} if the matrix is upper triangulared, {\ttfamily 0} otherwise
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Complexity\+: O(\+N) 
+\end{DoxyRemark}
+\mbox{\label{matrix_8c_a41f40f546c465fd096679a7f94ea5e8b}} 
+\index{matrix.\+c@{matrix.\+c}!matrix\+\_\+print@{matrix\+\_\+print}}
+\index{matrix\+\_\+print@{matrix\+\_\+print}!matrix.\+c@{matrix.\+c}}
+\subsubsection{matrix\+\_\+print()}
+{\footnotesize\ttfamily void matrix\+\_\+print (\begin{DoxyParamCaption}\item[{const struct \textbf{ matrix} $\ast$}]{mx }\end{DoxyParamCaption})}
+
+Print the matrix {\ttfamily mx}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & a matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily mx} must be not N\+U\+LL
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Print the matrix {\ttfamily mx} 
+\end{DoxyPostcond}
 \mbox{\label{matrix_8c_a48e828fb00afc50e3616adefe87643bf}} 
 \index{matrix.\+c@{matrix.\+c}!matrix\+\_\+product@{matrix\+\_\+product}}
 \index{matrix\+\_\+product@{matrix\+\_\+product}!matrix.\+c@{matrix.\+c}}

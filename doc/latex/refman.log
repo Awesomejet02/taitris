@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.2.10)  12 FEB 2018 23:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.2.10)  13 FEB 2018 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1085,11 +1085,14 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 65.
- [2] [3])
+ [2] [3] [4])
 \tf@toc=\write4
 \openout4 = `refman.toc'.
 
- [4]
+ [5]
+[6
+
+]
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 18.66588pt on input line 122.
@@ -1108,7 +1111,6 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 ) [1
 
-
 ] [2
 
 ]
@@ -1122,7 +1124,7 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-<structlist__coll__graph.pdf, id=37, 176.66pt x 167.62625pt>
+<structlist__coll__graph.pdf, id=43, 176.66pt x 167.62625pt>
 File: structlist__coll__graph.pdf Graphic file (type pdf)
 
 <use structlist__coll__graph.pdf>
@@ -1153,7 +1155,7 @@ LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 6.29996pt on input line 1.
 
-<structlist__node__coll__graph.pdf, id=52, 176.66pt x 100.375pt>
+<structlist__node__coll__graph.pdf, id=59, 176.66pt x 100.375pt>
 File: structlist__node__coll__graph.pdf Graphic file (type pdf)
 
 <use structlist__node__coll__graph.pdf>
@@ -1164,40 +1166,40 @@ Package pdftex.def Info: structlist__node__coll__graph.pdf used on input line 1
 
 ]
 Chapter 4.
-(./tAItris_8c.tex <tAItris_8c__incl.pdf, id=71, 148.555pt x 156.585pt>
+(./tAItris_8c.tex <tAItris_8c__incl.pdf, id=77, 148.555pt x 156.585pt>
 File: tAItris_8c__incl.pdf Graphic file (type pdf)
 
 <use tAItris_8c__incl.pdf>
-Package pdftex.def Info: tAItris_8c__incl.pdf used on input line 14.
+Package pdftex.def Info: tAItris_8c__incl.pdf used on input line 13.
 (pdftex.def)             Requested size: 148.0pt x 156.0064pt.
 
-Underfull \hbox (badness 10000) detected at line 27
+Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 30
+Underfull \hbox (badness 10000) detected at line 29
 [][][]
  []
 
 ) (./tAItris_8h.tex [9 <./tAItris_8c__incl.pdf>]
-<tAItris_8h__dep__incl.pdf, id=81, 148.555pt x 156.585pt>
+<tAItris_8h__dep__incl.pdf, id=87, 148.555pt x 156.585pt>
 File: tAItris_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use tAItris_8h__dep__incl.pdf>
-Package pdftex.def Info: tAItris_8h__dep__incl.pdf used on input line 13.
+Package pdftex.def Info: tAItris_8h__dep__incl.pdf used on input line 12.
 (pdftex.def)             Requested size: 148.0pt x 156.0064pt.
 
-Underfull \hbox (badness 10000) detected at line 21
+Underfull \hbox (badness 10000) detected at line 20
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
 
-) (./list_8c.tex <list_8c__incl.pdf, id=82, 335.2525pt x 212.795pt>
+) (./list_8c.tex <list_8c__incl.pdf, id=88, 335.2525pt x 212.795pt>
 File: list_8c__incl.pdf Graphic file (type pdf)
 
 <use list_8c__incl.pdf>
@@ -1499,406 +1501,26 @@ Underfull \hbox (badness 10000) detected at line 617
 [][][]
  []
 
-) (./list_8h.tex <list_8h__incl.pdf, id=141, 335.2525pt x 156.585pt>
+) (./list_8h.tex <list_8h__incl.pdf, id=148, 335.2525pt x 156.585pt>
 File: list_8h__incl.pdf Graphic file (type pdf)
 
 <use list_8h__incl.pdf>
 Package pdftex.def Info: list_8h__incl.pdf used on input line 16.
 (pdftex.def)             Requested size: 334.0pt x 155.99922pt.
 
-<list_8h__dep__incl.pdf, id=142, 155.58125pt x 156.585pt>
+<list_8h__dep__incl.pdf, id=149, 155.58125pt x 156.585pt>
 File: list_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use list_8h__dep__incl.pdf>
-Package pdftex.def Info: list_8h__dep__incl.pdf used on input line 24.
+Package pdftex.def Info: list_8h__dep__incl.pdf used on input line 23.
 (pdftex.def)             Requested size: 155.0pt x 156.00162pt.
  [24 <./list_8h__incl.pdf>] [25 <./list_8h__dep__incl.pdf>]
-Underfull \hbox (badness 10000) detected at line 97
+Underfull \hbox (badness 10000) detected at line 96
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 100
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 123
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 126
-[][][]
- []
-
-LaTeX Font Info:    Font shape `T1/pcr/bx/it' in size <8> not available
-(Font)              Font shape `T1/pcr/b/it' tried instead on input line 133.
-LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <8> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 133.
-[26]
-Underfull \hbox (badness 10000) detected at line 142
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 147
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 174
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 181
-[][][]
- []
-
-[27]
-Underfull \hbox (badness 10000) detected at line 211
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 218
-[][][]
- []
-
-[28]
-Underfull \hbox (badness 10000) detected at line 242
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 249
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 270
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 275
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 278
-[][][]
- []
-
-[29]
-Underfull \hbox (badness 10000) detected at line 296
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 299
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 302
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 320
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 325
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 328
-[][][]
- []
-
-[30]
-Underfull \hbox (badness 10000) detected at line 346
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 349
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 356
-[][][]
- []
-
-[31]
-Underfull \hbox (badness 10000) detected at line 374
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 381
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 384
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 400
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 405
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 408
-[][][]
- []
-
-[32]
-Underfull \hbox (badness 10000) detected at line 426
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 435
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 438
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 456
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 463
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 466
-[][][]
- []
-
-[33]
-Underfull \hbox (badness 10000) detected at line 482
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 485
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 490
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 506
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 509
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 514
-[][][]
- []
-
-[34]
-Underfull \hbox (badness 10000) detected at line 534
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 543
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 546
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 566
-[][][]
- []
-
-[35]
-Underfull \hbox (badness 10000) detected at line 573
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 576
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 592
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 595
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 598
-[][][]
- []
-
-[36]
-Underfull \hbox (badness 10000) detected at line 614
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 617
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 620
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 636
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 639
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 642
-[][][]
- []
-
-[37]
-Underfull \hbox (badness 10000) detected at line 658
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 661
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 664
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 693
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 696
-[][][]
- []
-
-[38]
-Underfull \hbox (badness 10000) detected at line 720
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 725
-[][][]
- []
-
-[39]
-Underfull \hbox (badness 10000) detected at line 763
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 772
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 790
-[][][]
- []
-
-[40]
-Underfull \hbox (badness 10000) detected at line 797
-[][][]
- []
-
-) (./matrix_8c.tex <matrix_8c__incl.pdf, id=212, 321.2pt x 212.795pt>
-File: matrix_8c__incl.pdf Graphic file (type pdf)
-
-<use matrix_8c__incl.pdf>
-Package pdftex.def Info: matrix_8c__incl.pdf used on input line 13.
-(pdftex.def)             Requested size: 320.0pt x 212.00543pt.
-
-Underfull \hbox (badness 10000) detected at line 48
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 51
-[][][]
- []
-
-[41 <./matrix_8c__incl.pdf>]
-Underfull \hbox (badness 10000) detected at line 74
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 77
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 84
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 100
-[][][]
- []
-
-[42]
-Underfull \hbox (badness 10000) detected at line 103
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 106
+Underfull \hbox (badness 10000) detected at line 99
 [][][]
  []
 
@@ -1912,73 +1534,741 @@ Underfull \hbox (badness 10000) detected at line 125
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 128
+LaTeX Font Info:    Font shape `T1/pcr/bx/it' in size <8> not available
+(Font)              Font shape `T1/pcr/b/it' tried instead on input line 132.
+LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <8> not available
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 132.
+[26]
+Underfull \hbox (badness 10000) detected at line 141
 [][][]
  []
 
-[43]
+
 Underfull \hbox (badness 10000) detected at line 146
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 149
+Underfull \hbox (badness 10000) detected at line 173
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 154
+Underfull \hbox (badness 10000) detected at line 180
+[][][]
+ []
+
+[27]
+Underfull \hbox (badness 10000) detected at line 210
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 172
+Underfull \hbox (badness 10000) detected at line 217
+[][][]
+ []
+
+[28]
+Underfull \hbox (badness 10000) detected at line 241
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 175
+Underfull \hbox (badness 10000) detected at line 248
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 184
+Underfull \hbox (badness 10000) detected at line 269
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 274
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 277
+[][][]
+ []
+
+[29]
+Underfull \hbox (badness 10000) detected at line 295
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 298
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 301
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 319
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 324
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 327
+[][][]
+ []
+
+[30]
+Underfull \hbox (badness 10000) detected at line 345
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 348
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 355
+[][][]
+ []
+
+[31]
+Underfull \hbox (badness 10000) detected at line 373
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 380
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 383
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 399
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 404
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 407
+[][][]
+ []
+
+[32]
+Underfull \hbox (badness 10000) detected at line 425
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 434
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 437
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 455
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 462
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 465
+[][][]
+ []
+
+[33]
+Underfull \hbox (badness 10000) detected at line 481
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 484
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 489
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 505
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 508
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 513
+[][][]
+ []
+
+[34]
+Underfull \hbox (badness 10000) detected at line 533
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 542
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 545
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 565
+[][][]
+ []
+
+[35]
+Underfull \hbox (badness 10000) detected at line 572
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 575
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 591
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 594
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 597
+[][][]
+ []
+
+[36]
+Underfull \hbox (badness 10000) detected at line 613
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 616
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 619
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 635
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 638
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 641
+[][][]
+ []
+
+[37]
+Underfull \hbox (badness 10000) detected at line 657
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 660
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 663
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 692
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 695
+[][][]
+ []
+
+[38]
+Underfull \hbox (badness 10000) detected at line 719
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 724
+[][][]
+ []
+
+[39]
+Underfull \hbox (badness 10000) detected at line 762
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 771
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 789
+[][][]
+ []
+
+[40]
+Underfull \hbox (badness 10000) detected at line 796
+[][][]
+ []
+
+) (./matrix_8c.tex <matrix_8c__incl.pdf, id=218, 385.44pt x 212.795pt>
+File: matrix_8c__incl.pdf Graphic file (type pdf)
+
+<use matrix_8c__incl.pdf>
+Package pdftex.def Info: matrix_8c__incl.pdf used on input line 14.
+(pdftex.def)             Requested size: 350.0pt x 193.22812pt.
+ [41 <./matrix_8c__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 65
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 68
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 91
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 94
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 101
+[][][]
+ []
+
+[42]
+Underfull \hbox (badness 10000) detected at line 117
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 120
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 123
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 139
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 142
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 145
+[][][]
+ []
+
+[43]
+Underfull \hbox (badness 10000) detected at line 163
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 166
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 171
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 191
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 194
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 201
 [][][]
  []
 
 [44]
-Underfull \hbox (badness 10000) detected at line 200
+Underfull \hbox (badness 10000) detected at line 219
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 203
+Underfull \hbox (badness 10000) detected at line 230
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 206
+Underfull \hbox (badness 10000) detected at line 248
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 226
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 243
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 246
+Underfull \hbox (badness 10000) detected at line 251
 [][][]
  []
 
 [45]
-Underfull \hbox (badness 10000) detected at line 262
+Underfull \hbox (badness 10000) detected at line 260
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 276
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 279
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 282
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 302
+[][][]
+ []
+
+[46]
+Underfull \hbox (badness 10000) detected at line 317
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 320
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 336
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 341
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 344
+[][][]
+ []
+
+[47]
+Underfull \hbox (badness 10000) detected at line 360
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 363
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 366
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 382
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 385
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 388
+[][][]
+ []
+
+[48]
+Underfull \hbox (badness 10000) detected at line 404
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 407
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 410
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 426
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 429
+[][][]
+ []
+
+[49]
+Underfull \hbox (badness 10000) detected at line 449
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 466
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 469
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 485
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 488
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 491
+[][][]
+ []
+
+[50]
+Underfull \hbox (badness 10000) detected at line 511
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 520
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 523
+[][][]
+ []
+
+[51]
+Underfull \hbox (badness 10000) detected at line 545
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 552
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 555
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 575
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 590
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 593
+[][][]
+ []
+
+[52]
+Underfull \hbox (badness 10000) detected at line 611
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 622
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 625
+[][][]
+ []
+
+) (./matrix_8h.tex <matrix_8h__incl.pdf, id=263, 385.44pt x 156.585pt>
+File: matrix_8h__incl.pdf Graphic file (type pdf)
+
+<use matrix_8h__incl.pdf>
+Package pdftex.def Info: matrix_8h__incl.pdf used on input line 18.
+(pdftex.def)             Requested size: 350.0pt x 142.18674pt.
+
+<matrix_8h__dep__incl.pdf, id=264, 169.63374pt x 156.585pt>
+File: matrix_8h__dep__incl.pdf Graphic file (type pdf)
+
+<use matrix_8h__dep__incl.pdf>
+Package pdftex.def Info: matrix_8h__dep__incl.pdf used on input line 26.
+(pdftex.def)             Requested size: 169.0pt x 156.0064pt.
+ [53 <./matrix_8h__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 82
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 85
+[][][]
+ []
+
+[54 <./matrix_8h__dep__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 108
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 111
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 118
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 134
+[][][]
+ []
+
+[55]
+Underfull \hbox (badness 10000) detected at line 137
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 140
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 156
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 159
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 162
+[][][]
+ []
+
+[56]
+Underfull \hbox (badness 10000) detected at line 180
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 183
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 188
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 208
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 211
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 218
+[][][]
+ []
+
+[57]
+Underfull \hbox (badness 10000) detected at line 236
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 247
 [][][]
  []
 
@@ -1993,56 +2283,67 @@ Underfull \hbox (badness 10000) detected at line 268
  []
 
 
-Underfull \hbox (badness 10000) detected at line 288
+Underfull \hbox (badness 10000) detected at line 277
+[][][]
+ []
+
+[58]
+Underfull \hbox (badness 10000) detected at line 293
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 297
-[][][]
- []
-
-[46]
-Underfull \hbox (badness 10000) detected at line 300
+Underfull \hbox (badness 10000) detected at line 296
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 322
+Underfull \hbox (badness 10000) detected at line 299
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 329
+Underfull \hbox (badness 10000) detected at line 319
+[][][]
+ []
+
+[59]
+Underfull \hbox (badness 10000) detected at line 334
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 332
+Underfull \hbox (badness 10000) detected at line 337
 [][][]
  []
 
 
-Overfull \vbox (30.93913pt too high) has occurred while \output is active []
-
-
-[47]
-Underfull \hbox (badness 10000) detected at line 352
+Underfull \hbox (badness 10000) detected at line 353
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 367
+Underfull \hbox (badness 10000) detected at line 358
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 370
+Underfull \hbox (badness 10000) detected at line 361
+[][][]
+ []
+
+[60]
+Underfull \hbox (badness 10000) detected at line 377
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 388
+Underfull \hbox (badness 10000) detected at line 380
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 383
 [][][]
  []
 
@@ -2056,229 +2357,148 @@ Underfull \hbox (badness 10000) detected at line 402
 [][][]
  []
 
-) (./matrix_8h.tex <matrix_8h__incl.pdf, id=241, 321.2pt x 156.585pt>
-File: matrix_8h__incl.pdf Graphic file (type pdf)
 
-<use matrix_8h__incl.pdf>
-Package pdftex.def Info: matrix_8h__incl.pdf used on input line 16.
-(pdftex.def)             Requested size: 320.0pt x 156.004pt.
- [48]
-<matrix_8h__dep__incl.pdf, id=245, 169.63374pt x 156.585pt>
-File: matrix_8h__dep__incl.pdf Graphic file (type pdf)
-
-<use matrix_8h__dep__incl.pdf>
-Package pdftex.def Info: matrix_8h__dep__incl.pdf used on input line 24.
-(pdftex.def)             Requested size: 169.0pt x 156.0064pt.
- [49 <./matrix_8h__incl.pdf> <./matrix_8h__dep__incl.pdf
-
-pdfTeX warning: pdflatex (file ./matrix_8h__dep__incl.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
->]
-Underfull \hbox (badness 10000) detected at line 64
+Underfull \hbox (badness 10000) detected at line 405
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 67
+Overfull \vbox (4.62793pt too high) has occurred while \output is active []
+
+
+[61]
+Underfull \hbox (badness 10000) detected at line 421
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 90
+Underfull \hbox (badness 10000) detected at line 424
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 93
-[][][]
- []
-
-[50]
-Underfull \hbox (badness 10000) detected at line 100
+Underfull \hbox (badness 10000) detected at line 427
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 116
+Underfull \hbox (badness 10000) detected at line 443
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 119
+Underfull \hbox (badness 10000) detected at line 446
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 122
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+Underfull \hbox (badness 10000) detected at line 466
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 138
+Underfull \hbox (badness 10000) detected at line 483
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 141
-[][][]
- []
-
-[51]
-Underfull \hbox (badness 10000) detected at line 144
+Underfull \hbox (badness 10000) detected at line 486
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 162
+Underfull \hbox (badness 10000) detected at line 502
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 165
+Underfull \hbox (badness 10000) detected at line 505
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 170
+Underfull \hbox (badness 10000) detected at line 508
 [][][]
  []
 
-[52]
-Underfull \hbox (badness 10000) detected at line 188
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 191
+[63]
+Underfull \hbox (badness 10000) detected at line 528
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 200
+Underfull \hbox (badness 10000) detected at line 537
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 216
+Underfull \hbox (badness 10000) detected at line 540
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 219
+Underfull \hbox (badness 10000) detected at line 562
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 222
+Underfull \hbox (badness 10000) detected at line 569
 [][][]
  []
 
-[53]
-Underfull \hbox (badness 10000) detected at line 242
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 259
+[64]
+Underfull \hbox (badness 10000) detected at line 572
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 262
+Underfull \hbox (badness 10000) detected at line 592
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 278
+Underfull \hbox (badness 10000) detected at line 607
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 281
+Underfull \hbox (badness 10000) detected at line 610
+[][][]
+ []
+
+[65]
+Underfull \hbox (badness 10000) detected at line 628
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 284
-[][][]
- []
-
-[54]
-Underfull \hbox (badness 10000) detected at line 304
+Underfull \hbox (badness 10000) detected at line 639
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 313
+Underfull \hbox (badness 10000) detected at line 642
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 316
-[][][]
- []
-
-[55]
-Underfull \hbox (badness 10000) detected at line 338
-[][][]
- []
+) [66] (./refman.ind [67
 
 
-Underfull \hbox (badness 10000) detected at line 345
-[][][]
- []
 
-
-Underfull \hbox (badness 10000) detected at line 348
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 368
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 383
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 386
-[][][]
- []
-
-[56]
-Underfull \hbox (badness 10000) detected at line 404
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 415
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 418
-[][][]
- []
-
-) [57] [58
-
-] (./refman.ind [59
-
-
-] [60] [61
+] [68] [69
 
 ]) (./refman.aux) ) 
 Here is how much of TeX's memory you used:
- 8427 strings out of 494916
- 120354 string characters out of 6179763
- 206883 words of memory out of 5000000
- 11464 multiletter control sequences out of 15000+600000
+ 8459 strings out of 494916
+ 121211 string characters out of 6179763
+ 210681 words of memory out of 5000000
+ 11496 multiletter control sequences out of 15000+600000
  60784 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,14n,92p,807b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,14n,92p,817b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
@@ -2291,10 +2511,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (67 pages, 221560 bytes).
+Output written on refman.pdf (77 pages, 233701 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
+ 374 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
