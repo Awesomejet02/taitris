@@ -22,7 +22,7 @@ add_executable(tAItris
         src/tAItris.h
         src/core/board.c
         src/core/board.h
-        )
+        src/ai/genetic/tools.c src/ai/genetic/tools.h)
 
 target_link_libraries(tAItris ${SDL_LIBRARY}
         ${SDL_IMAGE_LIBRARIES}
