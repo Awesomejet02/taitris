@@ -8,7 +8,6 @@
 #ifndef TAITRIS_TAITRIS_H
 #define TAITRIS_TAITRIS_H
 
-#include "ui/menu.h"
-#include "ui/gameUI.h"
+#include "core/board.h"
 
 #endif //TAITRIS_TAITRIS_H
