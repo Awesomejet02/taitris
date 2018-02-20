@@ -12,10 +12,10 @@
 #include "gameUI.h"
 #include "../core/gameplay.h"
 
-TTF_Font *load_font(char *path, size_t size); //"../bin/font/font.ttf"
+TTF_Font *load_font(char *path, int size);
 
 SDL_Surface *createMenu();
 
-void eventManager();
+void eventManager(SDL_Surface *screen);
 
 #endif //TAITRIS_MENU_H

@@ -24,6 +24,6 @@ void wait_for_keypressed(void);
 
 SDL_Surface *load_image(char *path);
 
-SDL_Surface *initWindow(size_t x, size_t y);
+SDL_Surface *initWindow(int x, int y);
 
 #endif //TAITRIS_GUI_H

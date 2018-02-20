@@ -23,6 +23,7 @@ SDL_Surface *drawScore(SDL_Surface *screen, int score) {
   SDL_Surface *toBlit = NULL;
   SDL_Rect _score = {20, 20, 0, 0};
   SDL_Rect _text = {35, 35, 0, 0};
+
   toBlit = SDL_CreateRGBSurface(0, 200, 210, 32, 0, 0, 0, 0);
   SDL_BlitSurface(toBlit, NULL, screen, &_score);
   SDL_FreeSurface(toBlit);
@@ -30,63 +31,61 @@ SDL_Surface *drawScore(SDL_Surface *screen, int score) {
   TTF_Font *font = NULL;
   SDL_Color white_color = {255, 255, 255, 0};
   init_TTF();
-  font = load_font("res/font/font.ttf", 40);
-  char buffer[128];
-  sprintf(buffer, "Score : %d", score);
 
+  font = load_font("res/font/font.ttf", 40);
+
+  char buffer[128];
+
+  sprintf(buffer, "Score : %d", score);
   toBlit = TTF_RenderText_Blended(font, buffer, white_color);
   SDL_BlitSurface(toBlit, NULL, screen, &_text);
   SDL_FreeSurface(toBlit);
-  _text.y += 60;
 
+  _text.y += 60;
   sprintf(buffer, "Niveau : 0");
   toBlit = TTF_RenderText_Blended(font, buffer, white_color);
   SDL_BlitSurface(toBlit, NULL, screen, &_text);
   SDL_FreeSurface(toBlit);
+
   _text.y += 60;
   toBlit = TTF_RenderText_Blended(font, "Ligne(s) : 0", white_color);
   SDL_BlitSurface(toBlit, NULL, screen, &_text);
   SDL_FreeSurface(toBlit);
+
   SDL_Flip(screen);
   return screen;
 }
 
 SDL_Surface *createWindow(SDL_Surface *screen) {
-  SDL_Surface /**board,*/ *toBlit = NULL;
-  SDL_Rect /*_board = {355, 20, 0, 0},*/ _back = {0, 0, 0, 0};
-  SDL_Rect _score = {20, 20, 0, 0}, _next = {650, 20, 0, 0};
-  SDL_Rect _text = {35, 35, 0, 0};
+  SDL_Surface *toBlit = NULL;
+  SDL_Rect _back = {0, 0, 0, 0};
+  SDL_Rect _next = {650, 20, 0, 0};
+
   toBlit = load_image("res/sprites/game_background.bmp");
   SDL_BlitSurface(toBlit, NULL, screen, &_back);
   SDL_FreeSurface(toBlit);
-  //board =  SDL_CreateRGBSurface(0, 250, 500, 32, 0, 0, 0, 0);
-  //SDL_FillRect(board, NULL, SDL_MapRGB(screen->format, 0, 0, 0));
-  //SDL_BlitSurface(board, NULL, screen, &_board);
-  //toBlit =  SDL_CreateRGBSurface(0, 200, 210, 32, 0, 0, 0, 0);
-  //SDL_BlitSurface(toBlit, NULL, screen, &_score);
+
   toBlit = SDL_CreateRGBSurface(0, 100, 100, 32, 0, 0, 0, 0);
   SDL_BlitSurface(toBlit, NULL, screen, &_next);
   SDL_FreeSurface(toBlit);
+
   //Text
   TTF_Font *font = NULL;
   SDL_Color white_color = {255, 255, 255, 0};
   init_TTF();
+
   font = load_font("res/font/font.ttf", 40);
-  /*  toBlit = TTF_RenderText_Blended(font, "Score : 0", white_color);
-      SDL_BlitSurface(toBlit, NULL, screen, &_text);
-      _text.y += 60;
-      toBlit = TTF_RenderText_Blended(font, "Niveau : 1", white_color);
-      SDL_BlitSurface(toBlit, NULL, screen, &_text);
-      _text.y += 60;
-      toBlit = TTF_RenderText_Blended(font, "Ligne(s) : 0", white_color);
-      SDL_BlitSurface(toBlit, NULL, screen, &_text);*/
-  toBlit = TTF_RenderText_Blended(font, "Next", white_color);
+
   _next.y += 105;
   _next.x += 17;
+  toBlit = TTF_RenderText_Blended(font, "Next", white_color);
   SDL_BlitSurface(toBlit, NULL, screen, &_next);
   SDL_FreeSurface(toBlit);
+
   SDL_Flip(screen);
+
   screen = drawScore(screen, 50);
+
   return screen;
 }
 

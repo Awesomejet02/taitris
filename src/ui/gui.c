@@ -18,9 +18,8 @@ void init_SDL() {
 
 void init_TTF() {
   if (TTF_Init() == -1) {
-    fprintf(stderr, "Erreur d'initialisation de TTF_Init : %s\n",
+    errx(EXIT_FAILURE, "Erreur d'initialisation de TTF_Init : %s\n",
             TTF_GetError());
-    exit(EXIT_FAILURE);
   }
 }
 
@@ -42,27 +41,24 @@ void wait_for_keypressed(void) {
 
 SDL_Surface *load_image(char *path) {
   SDL_Surface *img;
-  // Load an image using SDL_image with format detection
   img = IMG_Load(path);
   if (!img)
-    // If it fails, die with an error message
-    errx(3, "can't load %s: %s", path, IMG_GetError());
+    errx(EXIT_FAILURE, "can't load %s: %s", path, IMG_GetError());
   return img;
 }
 
-SDL_Surface *initWindow(size_t x, size_t y) {
+SDL_Surface *initWindow(int x, int y) {
   SDL_Surface *screen = NULL;
-  SDL_Rect _screen;
-  _screen.x = _screen.y = 0;
-  //Init the window and display plain color
+
   SDL_putenv("SDL_VIDEO_WINDOW_POS=center");
+
   screen = SDL_SetVideoMode(x, y, 0,
-                            SDL_HWSURFACE | SDL_ANYFORMAT | SDL_DOUBLEBUF); //1368, 768
-  SDL_WM_SetCaption("Tetris", NULL);
+                            SDL_HWSURFACE | SDL_ANYFORMAT | SDL_DOUBLEBUF);
+
+  SDL_WM_SetCaption("tAItris", NULL);
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 0, 0, 0));
   SDL_Flip(screen);
   return screen;
-  //Titre fenetr//SDL_FreeSurface(screen);
 }
 
 void test() {
