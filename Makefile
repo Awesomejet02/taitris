@@ -9,15 +9,15 @@ OBJS:=$(SRCS:%=$(BUILD_DIR)/%.o)
 DEPS:=$(OBJS:.o=.d)
 
 CC=gcc
-CPPFLAGS=
+CPPFLAGS= -MMD `pkg-config --cflags sdl`
 CFLAGS= -Wall -Wextra -std=c99 -O0 -g3
 LDFLAGS=
-LDLIBS=
+LDLIBS= `pkg-config --libs sdl` -export-dynamic -lSDL_ttf -lSDL_image -lm
 
 all: $(BIN_DIR)/$(TARGET_EXEC)
 
 $(BIN_DIR)/$(TARGET_EXEC): $(OBJS)
-	$(CC) $(OBJS) -o $@ $(LDFLAGS)
+	$(CC) $(OBJS) -o $@ $(LDFLAGS) $(LDLIBS)
 
 # Assembly
 $(BUILD_DIR)/%.s.o: %.s
@@ -27,7 +27,7 @@ $(BUILD_DIR)/%.s.o: %.s
 # C source
 $(BUILD_DIR)/%.c.o: %.c
 	$(MKDIR_P) $(dir $@)
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@ $(LDLIBS)
 
 .PHONY: clean
 
