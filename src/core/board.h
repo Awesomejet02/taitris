@@ -17,14 +17,20 @@ struct board {
   size_t width;
   size_t height;
 
-  int *state;
+  int *data;
 };
 
 extern inline
 struct board *board_create(size_t width, size_t height);
 
 extern inline
+void board_init(struct board *brd);
+
+extern inline
 void board_free(struct board *brd);
+
+extern inline
+struct board *board_copy(const struct board *brd);
 
 extern inline
 int board_at(const struct board *brd, size_t x, size_t y);

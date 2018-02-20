@@ -35,7 +35,7 @@ int main() {
        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
   };
 
-  brd->state = test;
+  brd->data = test;
 
   size_t *lines;
   size_t llines = board_get_completed_lines(brd, &lines);

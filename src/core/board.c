@@ -17,20 +17,32 @@ struct board *board_create(size_t width, size_t height) {
   brd->width = width;
   brd->height = height;
 
-  brd->state = calloc(width * height, sizeof(int));
-
-  for (size_t y = 0; y < height; y++)
-    for (size_t x = 0; x < width; x++)
-      board_set(brd, x, y, -1);
+  brd->data = malloc(width * height * sizeof(int));
+  board_init(brd);
 
   return brd;
+}
+
+void board_init(struct board *brd) {
+  assert(brd != NULL);
+
+  memset(brd->data, -1, brd->width * brd->height * sizeof(int));
 }
 
 void board_free(struct board *brd) {
   assert(brd != NULL);
 
-  free(brd->state);
+  free(brd->data);
   free(brd);
+}
+
+struct board *board_copy(const struct board *brd) {
+  assert(brd != NULL);
+
+  struct board *bcp = board_create(brd->width, brd->height);
+  memcpy(bcp->data, brd->data, brd->width * brd->height * sizeof(int));
+
+  return bcp;
 }
 
 int board_at(const struct board *brd, size_t x, size_t y) {
@@ -40,7 +52,7 @@ int board_at(const struct board *brd, size_t x, size_t y) {
   assert(x < brd->width);
   assert(y < brd->height);
 
-  return *(brd->state + y * brd->width + x);
+  return *(brd->data + y * brd->width + x);
 }
 
 void board_set(struct board *brd, size_t x, size_t y, int state) {
@@ -50,7 +62,7 @@ void board_set(struct board *brd, size_t x, size_t y, int state) {
   assert(x < brd->width);
   assert(y < brd->height);
 
-  *(brd->state + y * brd->width + x) = state;
+  *(brd->data + y * brd->width + x) = state;
 }
 
 void board_remove_line(struct board *brd, size_t line) {
