@@ -143,13 +143,13 @@ int board_check_position(const struct board *brd, struct piece pc) {
 
   for (size_t i = 0; i < PIECE_HEIGHT; i++) {
     for (size_t j = 0; j < PIECE_WIDTH; j++) {
+      if (pc.shapes[pc.angle][i][j] == 0) continue;
+
       size_t y = pc.y + i;
       size_t x = pc.x + j;
 
       if (x >= BOARD_WIDTH || y >= BOARD_HEIGHT) return 0;
-
-      if (pc.shapes[pc.angle][i][j] > 0 &&
-          board_at(brd, x, y) != BOARD_CELL_EMPTY) return 0;
+      if (board_at(brd, x, y) != BOARD_CELL_EMPTY) return 0;
     }
   }
 
