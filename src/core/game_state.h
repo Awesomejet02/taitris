@@ -10,7 +10,6 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 #include <assert.h>
 
 #include "board.h"
@@ -28,8 +27,7 @@ struct game_state {
 
   int state;
 
-  time_t game_start;
-  time_t pause_start;
+  double time;
 
   struct piece piece_current;
   struct piece piece_next;
@@ -45,15 +43,6 @@ void gs_init(struct game_state *gs);
 
 extern inline
 void gs_free(struct game_state *gs);
-
-extern inline
-void gs_set_state(struct game_state *gs, int state);
-
-extern inline
-time_t gs_current_time();
-
-extern inline
-time_t gs_elapsed_time(const struct game_state *gs);
 
 extern inline
 void gs_next_piece(struct game_state *gs);

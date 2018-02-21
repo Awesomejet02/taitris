@@ -48,8 +48,13 @@ struct piece {
   int shapes[PIECE_ANGLES][PIECE_HEIGHT][PIECE_WIDTH];
 };
 
+extern inline
 void piece_random(struct piece *pc, size_t x, size_t y);
+
+extern inline
 void piece_move(struct piece *pc, int dx, int dy);
+
+extern inline
 void piece_rotate(struct piece *pc, int rotation);
 
 #endif //TAITRIS_PIECE_H

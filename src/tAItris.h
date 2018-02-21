@@ -10,6 +10,4 @@
 
 #include "utils/random.h"
 
-#include "core/game_state.h"
-
 #endif //TAITRIS_TAITRIS_H
