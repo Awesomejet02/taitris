@@ -58,7 +58,7 @@ extern inline
 void board_break_line(struct board *brd, size_t line);
 
 extern inline
-void board_break_lines(struct board *brd, const size_t *lines, size_t llines);
+void board_break_lines(struct board *brd, const size_t *lines);
 
 extern inline
 void board_merge_piece(struct board *brd, struct piece pc);
