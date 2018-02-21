@@ -7,18 +7,13 @@
 
 #include "board.h"
 
-struct board *board_create(size_t width, size_t height) {
-  assert(width > 0);
-  assert(height > 0);
-
+struct board *board_create() {
   struct board *brd = malloc(sizeof(struct board));
-  memset(brd, 0, sizeof(struct board));
 
-  brd->width = width;
-  brd->height = height;
-
-  brd->data = malloc(width * height * sizeof(int));
-  board_init(brd);
+  if(!brd)
+    errx(EXIT_FAILURE, "Can't initialize board of size %d x %d",
+         BOARD_WIDTH,
+         BOARD_HEIGHT);
 
   return brd;
 }
@@ -26,87 +21,72 @@ struct board *board_create(size_t width, size_t height) {
 void board_init(struct board *brd) {
   assert(brd != NULL);
 
-  memset(brd->data, BOARD_CELL_EMPTY, brd->width * brd->height * sizeof(int));
+  memset(brd, -1, sizeof(struct board));
 }
 
 void board_free(struct board *brd) {
   assert(brd != NULL);
 
-  free(brd->data);
   free(brd);
 }
 
 struct board *board_copy(const struct board *brd) {
   assert(brd != NULL);
 
-  struct board *bcp = board_create(brd->width, brd->height);
-  memcpy(bcp->data, brd->data, brd->width * brd->height * sizeof(int));
+  struct board *cbrd = board_create();
+  memcpy(cbrd, brd, sizeof(struct board));
 
-  return bcp;
+  return cbrd;
 }
 
 int board_at(const struct board *brd, size_t x, size_t y) {
   assert(brd != NULL);
   assert(x >= 0);
   assert(y >= 0);
-  assert(x < brd->width);
-  assert(y < brd->height);
+  assert(x < BOARD_WIDTH);
+  assert(y < BOARD_HEIGHT);
 
-  return *(brd->data + y * brd->width + x);
+  return brd->data[y][x];
 }
 
 void board_set(struct board *brd, size_t x, size_t y, int state) {
   assert(brd != NULL);
   assert(x >= 0);
   assert(y >= 0);
-  assert(x < brd->width);
-  assert(y < brd->height);
-  assert(state >= -1);
-  assert(state < 7);
+  assert(x < BOARD_WIDTH);
+  assert(y < BOARD_HEIGHT);
 
-  *(brd->data + y * brd->width + x) = state;
+  brd->data[y][x] = state;
 }
 
 void board_remove_line(struct board *brd, size_t line) {
   assert(brd != NULL);
   assert(line >= 0);
-  assert(line < brd->height);
+  assert(line < BOARD_HEIGHT);
 
-  for (size_t x = 0; x < brd->width; x++)
+  for (size_t x = 0; x < BOARD_WIDTH; x++)
     board_set(brd, x, line, BOARD_CELL_EMPTY);
 }
 
 void board_move_line(struct board *brd, size_t src, size_t dest) {
   assert(brd != NULL);
   assert(src >= 0);
-  assert(src < brd->height);
+  assert(src < BOARD_HEIGHT);
   assert(dest >= 0);
-  assert(dest < brd->height);
+  assert(dest < BOARD_HEIGHT);
 
-  for (size_t x = 0; x < brd->width; x++) {
+  for (size_t x = 0; x < BOARD_WIDTH; x++) {
     board_set(brd, x, dest, board_at(brd, x, src));
     board_set(brd, x, src, BOARD_CELL_EMPTY);
   }
 }
 
-void board_print(const struct board *brd) {
-  assert(brd != NULL);
-
-  for (size_t y = 0; y < brd->height; y++) {
-    for (size_t x = 0; x < brd->width; x++) {
-      printf("%2d ", board_at(brd, x, y));
-    }
-    printf("\n");
-  }
-  printf("\n");
-}
-
 int board_is_line_complete(const struct board *brd, size_t line) {
   assert(brd != NULL);
   assert(line >= 0);
-  assert(line < brd->height);
+  assert(line < BOARD_HEIGHT);
 
-  for (size_t x = 0; x < brd->width; x++)
+  for (size_t x = 0; x < BOARD_WIDTH; x++)
     if (board_at(brd, x, line) == BOARD_CELL_EMPTY)
       return 0;
 
@@ -117,9 +97,9 @@ size_t board_get_completed_lines(const struct board *brd, size_t **lines) {
   assert(brd != NULL);
 
   size_t count = 0;
-  *lines = calloc(brd->height, sizeof(size_t));
+  *lines = calloc(BOARD_HEIGHT, sizeof(size_t));
 
-  for (size_t y = 0; y < brd->height; y++) {
+  for (size_t y = 0; y < BOARD_HEIGHT; y++) {
     if (board_is_line_complete(brd, y)) {
       (*lines)[count] = y;
       count++;
@@ -132,7 +112,7 @@ size_t board_get_completed_lines(const struct board *brd, size_t **lines) {
 void board_break_line(struct board *brd, size_t line) {
   assert(brd != NULL);
   assert(line >= 0);
-  assert(line < brd->height);
+  assert(line < BOARD_HEIGHT);
 
   board_remove_line(brd, line);
 
@@ -170,7 +150,7 @@ int board_check_position(const struct board *brd, struct piece pc) {
       size_t y = pc.y + i;
       size_t x = pc.x + j;
 
-      if (x < 0 || x >= brd->width || y < 0 || y >= brd->height) return 0;
+      if (x < 0 || x >= BOARD_WIDTH || y < 0 || y >= BOARD_HEIGHT) return 0;
 
       if (pc.shapes[pc.angle][i][j] > 0 &&
           board_at(brd, x, y) != BOARD_CELL_EMPTY) return 0;
@@ -178,4 +158,16 @@ int board_check_position(const struct board *brd, struct piece pc) {
   }
 
   return 1;
+}
+
+void board_print(const struct board *brd) {
+  assert(brd != NULL);
+
+  for (size_t y = 0; y < BOARD_HEIGHT; y++) {
+    for (size_t x = 0; x < BOARD_WIDTH; x++)
+      printf("%2d ", board_at(brd, x, y));
+
+    printf("\n");
+  }
+  printf("\n");
 }

@@ -23,6 +23,7 @@
 #define PIECE_Z 5
 #define PIECE_S 6
 #define PIECE_COUNT 7
+
 #define PIECE_WIDTH 4
 #define PIECE_HEIGHT 4
 
@@ -30,11 +31,12 @@
 #define PIECE_ANGLE_RIGHT 1
 #define PIECE_ANGLE_DOWN 2
 #define PIECE_ANGLE_LEFT 3
+#define PIECE_ANGLES 4
 
 #define PIECE_ROTATE_LEFT (-1)
 #define PIECE_ROTATE_RIGHT 1
 
-extern const int PIECE_SHAPES[7][4][PIECE_HEIGHT][PIECE_WIDTH];
+const int PIECE_SHAPES[PIECE_COUNT][PIECE_ANGLES][PIECE_HEIGHT][PIECE_WIDTH];
 
 struct piece {
   size_t id;
@@ -44,7 +46,7 @@ struct piece {
 
   size_t angle;
 
-  int shapes[4][4][4];
+  int shapes[PIECE_ANGLES][PIECE_HEIGHT][PIECE_WIDTH];
 };
 
 void piece_random(struct piece *pc, size_t x, size_t y, int first);
