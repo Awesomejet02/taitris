@@ -18,4 +18,8 @@ void board_heights(const struct board *brd, size_t *heights);
 
 extern inline
 size_t bumpiness(const struct board *brd);
+
+extern inline
+size_t aggregate_height(const struct board *brd);
+
 #endif //TAITRIS_TOOLS_H

@@ -46,3 +46,22 @@ size_t bumpiness(const struct board *brd)
   free(heights);
   return bumpiness;
 }
+
+size_t aggregate_height(const struct board *brd)
+{
+  assert(brd != NULL);
+
+  size_t agg_height = 0;
+  for(size_t x = 0; x < brd->width; ++x)
+  {
+    agg_height += board_height(brd, x);
+  }
+  return agg_height;
+};
+
+size_t holes(const struct board *brd)
+{
+  //TODO
+  //FIXME
+  return 0;
+}
