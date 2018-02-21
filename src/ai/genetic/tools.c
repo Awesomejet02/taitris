@@ -3,7 +3,6 @@
 //
 
 #include "tools.h"
-#include "../../core/board.h"
 
 size_t board_height(const struct board *brd, size_t x)
 {
@@ -94,3 +93,4 @@ size_t holes(const struct board *brd)
   return holes;
 }
 
+//size_t board_get_completed_lines(const struct board *brd, size_t **lines)
