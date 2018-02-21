@@ -176,6 +176,6 @@ int board_check_position(const struct board *brd, struct piece pc) {
           board_at(brd, x, y) != BOARD_CELL_EMPTY) return 0;
     }
   }
-  
+
   return 1;
 }

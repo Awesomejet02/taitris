@@ -202,10 +202,55 @@ void piece_move(struct piece *pc, int dx, int dy) {
   pc->y += dy;
 }
 
+int piece_can_move(struct piece pc, const struct board *brd, int dx, int dy) {
+  assert(brd != NULL);
+
+  struct piece npc;
+  memcpy(&npc, &pc, sizeof(struct piece));
+  piece_move(&npc, dx, dy);
+
+  return board_check_position(brd, npc);
+}
+
+
+int piece_try_move(struct piece *pc, const struct board *brd, int dx, int dy) {
+  assert(pc != NULL);
+  assert(brd != NULL);
+
+  if (piece_can_move(*pc, brd, dx, dy)) {
+    piece_move(pc, dx, dy);
+    return 1;
+  }
+
+  return 0;
+}
+
 void piece_rotate(struct piece *pc, int rotation) {
   assert(pc != NULL);
 
   pc->angle += rotation;
   pc->angle = pc->angle > 3 ? 0 : pc->angle;
   pc->angle = pc->angle < 0 ? 3 : pc->angle;
+}
+
+int piece_can_rotate(struct piece pc, const struct board *brd, int rotation) {
+  assert(brd != NULL);
+
+  struct piece npc;
+  memcpy(&npc, &pc, sizeof(struct piece));
+  piece_rotate(&npc, rotation);
+
+  return board_check_position(brd, npc);
+}
+
+int piece_try_rotate(struct piece *pc, const struct board *brd, int rotation) {
+  assert(pc != NULL);
+  assert(brd != NULL);
+
+  if (piece_can_rotate(*pc, brd, rotation)) {
+    piece_rotate(pc, rotation);
+    return 1;
+  }
+
+  return 0;
 }
