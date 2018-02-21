@@ -18,6 +18,8 @@
 #define GS_STATE_PAUSED 0
 #define GS_STATE_PLAYING 1
 #define GS_STATE_GAMEOVER 2
+#define GS_SPAWN_X (BOARD_WIDTH / 2 - PIECE_WIDTH / 2)
+#define GS_SPAWN_Y 0
 
 struct game_state {
   int level;
@@ -45,6 +47,6 @@ extern inline
 void gs_free(struct game_state *gs);
 
 extern inline
-void gs_next_piece(struct game_state *gs);
+int gs_next_piece(struct game_state *gs);
 
 #endif //TAITRIS_GAME_STATE_H

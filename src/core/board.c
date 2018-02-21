@@ -97,7 +97,7 @@ size_t board_get_completed_lines(const struct board *brd, size_t **lines) {
   for (size_t y = 0; y < BOARD_HEIGHT; y++) {
     if (board_is_line_complete(brd, y)) {
       if (lines != NULL)
-        (*lines)[count] = y;
+        (*lines)[y] = 1;
 
       count++;
     }
@@ -120,13 +120,13 @@ void board_break_line(struct board *brd, size_t line) {
   }
 }
 
-void board_break_lines(struct board *brd, const size_t *lines, size_t llines) {
+void board_break_lines(struct board *brd, const size_t *lines) {
   assert(brd != NULL);
   assert(lines != NULL);
-  if (llines == 0) return;
 
-  for (size_t i = 0; i < llines; i++)
-    board_break_line(brd, lines[i]);
+  for (size_t i = 0; i < BOARD_HEIGHT; i++)
+    if (lines[i])
+      board_break_line(brd, i);
 }
 
 void board_merge_piece(struct board *brd, struct piece pc) {

@@ -9,7 +9,6 @@
 #define TAITRIS_TAITRIS_H
 
 #include "utils/random.h"
-#include "core/game_state.h"
-#include "core/motion.h"
+#include "ui/gui.h"
 
 #endif //TAITRIS_TAITRIS_H

@@ -22,6 +22,8 @@ add_executable(tAItris
         src/core/game_state.c src/core/game_state.h
         src/core/piece.c src/core/piece.h
         src/core/motion.c src/core/motion.h
+        src/core/game.c src/core/game.h
+        src/ui/gui.c src/ui/gui.h
         src/ai/genetic/tools.c src/ai/genetic/tools.h)
 
 target_link_libraries(tAItris ${SDL_LIBRARY}

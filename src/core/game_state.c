@@ -28,7 +28,7 @@ void gs_init(struct game_state *gs) {
 
   board_init(gs->board);
 
-  piece_random(&gs->piece_next, BOARD_WIDTH / 2 - PIECE_WIDTH / 2, 0);
+  piece_random(&gs->piece_next, GS_SPAWN_X, GS_SPAWN_Y);
 
   gs_next_piece(gs);
 }
@@ -40,7 +40,9 @@ void gs_free(struct game_state *gs) {
   free(gs);
 }
 
-void gs_next_piece(struct game_state *gs) {
+int gs_next_piece(struct game_state *gs) {
   memcpy(&gs->piece_current, &gs->piece_next, sizeof(struct piece));
-  piece_random(&gs->piece_next, BOARD_WIDTH / 2 - PIECE_WIDTH / 2, 0);
+  piece_random(&gs->piece_next, GS_SPAWN_X, GS_SPAWN_Y);
+
+  return board_check_position(gs->board, gs->piece_current);
 }
