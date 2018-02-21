@@ -8,7 +8,6 @@
 size_t board_height(const struct board *brd, size_t x)
 {
   assert(brd != NULL);
-  assert(x >= 0);
   assert(x < BOARD_WIDTH);
 
   size_t height = BOARD_HEIGHT;
@@ -94,3 +93,4 @@ size_t holes(const struct board *brd)
 
   return holes;
 }
+
