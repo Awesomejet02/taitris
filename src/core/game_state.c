@@ -31,6 +31,10 @@ void gs_init(struct game_state *gs) {
   gs->pause_start = 0;
 
   board_init(gs->board);
+
+  piece_random(&gs->piece_next, gs->board->width / 2 - PIECE_WIDTH / 2, 0, 1);
+
+  gs_next_piece(gs);
 }
 
 void gs_free(struct game_state *gs) {
@@ -42,6 +46,8 @@ void gs_free(struct game_state *gs) {
 
 void gs_set_state(struct game_state *gs, int state) {
   assert(gs != NULL);
+  assert(state >= 0);
+  assert(state < 3);
 
   if (gs->state == GS_STATE_PLAYING && state == GS_STATE_PAUSED)
     gs->pause_start = gs_current_time();
@@ -64,6 +70,11 @@ time_t gs_elapsed_time(const struct game_state *gs) {
   assert(gs != NULL);
 
   return gs_current_time() - gs->game_start;
+}
+
+void gs_next_piece(struct game_state *gs) {
+  memcpy(&gs->piece_current, &gs->piece_next, sizeof(struct piece));
+  piece_random(&gs->piece_next, gs->board->width / 2 - PIECE_WIDTH / 2, 0, 1);
 }
 
 // TODO: Faire les pièces

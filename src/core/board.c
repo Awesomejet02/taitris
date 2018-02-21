@@ -26,7 +26,7 @@ struct board *board_create(size_t width, size_t height) {
 void board_init(struct board *brd) {
   assert(brd != NULL);
 
-  memset(brd->data, -1, brd->width * brd->height * sizeof(int));
+  memset(brd->data, BOARD_CELL_EMPTY, brd->width * brd->height * sizeof(int));
 }
 
 void board_free(struct board *brd) {
@@ -61,6 +61,8 @@ void board_set(struct board *brd, size_t x, size_t y, int state) {
   assert(y >= 0);
   assert(x < brd->width);
   assert(y < brd->height);
+  assert(state >= -1);
+  assert(state < 7);
 
   *(brd->data + y * brd->width + x) = state;
 }
@@ -71,7 +73,7 @@ void board_remove_line(struct board *brd, size_t line) {
   assert(line < brd->height);
 
   for (size_t x = 0; x < brd->width; x++)
-    board_set(brd, x, line, -1);
+    board_set(brd, x, line, BOARD_CELL_EMPTY);
 }
 
 void board_move_line(struct board *brd, size_t src, size_t dest) {
@@ -83,7 +85,7 @@ void board_move_line(struct board *brd, size_t src, size_t dest) {
 
   for (size_t x = 0; x < brd->width; x++) {
     board_set(brd, x, dest, board_at(brd, x, src));
-    board_set(brd, x, src, -1);
+    board_set(brd, x, src, BOARD_CELL_EMPTY);
   }
 }
 
@@ -105,7 +107,7 @@ int board_is_line_complete(const struct board *brd, size_t line) {
   assert(line < brd->height);
 
   for (size_t x = 0; x < brd->width; x++)
-    if (board_at(brd, x, line) == -1)
+    if (board_at(brd, x, line) == BOARD_CELL_EMPTY)
       return 0;
 
   return 1;
@@ -149,4 +151,31 @@ void board_break_lines(struct board *brd, const size_t *lines, size_t llines) {
 
   for (size_t i = 0; i < llines; i++)
     board_break_line(brd, lines[i]);
+}
+
+void board_merge_piece(struct board *brd, struct piece pc) {
+  assert(brd != NULL);
+
+  for (size_t i = 0; i < PIECE_HEIGHT; i++)
+    for (size_t j = 0; j < PIECE_WIDTH; j++)
+      if (pc.shapes[pc.angle][i][j] > 0)
+        board_set(brd, pc.x + j, pc.y + i, (int) pc.id);
+}
+
+int board_check_position(const struct board *brd, struct piece pc) {
+  assert(brd != NULL);
+
+  for (size_t i = 0; i < PIECE_HEIGHT; i++) {
+    for (size_t j = 0; j < PIECE_WIDTH; j++) {
+      size_t y = pc.y + i;
+      size_t x = pc.x + j;
+
+      if (x < 0 || x >= brd->width || y < 0 || y >= brd->height) return 0;
+
+      if (pc.shapes[pc.angle][i][j] > 0 &&
+          board_at(brd, x, y) != BOARD_CELL_EMPTY) return 0;
+    }
+  }
+  
+  return 1;
 }

@@ -14,6 +14,7 @@
 #include <assert.h>
 
 #include "board.h"
+#include "piece.h"
 
 #define GS_STATE_PAUSED 0
 #define GS_STATE_PLAYING 1
@@ -29,6 +30,9 @@ struct game_state {
 
   time_t game_start;
   time_t pause_start;
+
+  struct piece piece_current;
+  struct piece piece_next;
 
   struct board *board;
 };
@@ -50,5 +54,8 @@ time_t gs_current_time();
 
 extern inline
 time_t gs_elapsed_time(const struct game_state *gs);
+
+extern inline
+void gs_next_piece(struct game_state *gs);
 
 #endif //TAITRIS_GAME_STATE_H

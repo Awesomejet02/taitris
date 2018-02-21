@@ -8,6 +8,8 @@
 #ifndef TAITRIS_TAITRIS_H
 #define TAITRIS_TAITRIS_H
 
-#include "core/board.h"
+#include "utils/random.h"
+
+#include "core/game_state.h"
 
 #endif //TAITRIS_TAITRIS_H
