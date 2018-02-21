@@ -41,8 +41,6 @@ struct board *board_copy(const struct board *brd) {
 
 int board_at(const struct board *brd, size_t x, size_t y) {
   assert(brd != NULL);
-  assert(x >= 0);
-  assert(y >= 0);
   assert(x < BOARD_WIDTH);
   assert(y < BOARD_HEIGHT);
 
@@ -51,8 +49,6 @@ int board_at(const struct board *brd, size_t x, size_t y) {
 
 void board_set(struct board *brd, size_t x, size_t y, int state) {
   assert(brd != NULL);
-  assert(x >= 0);
-  assert(y >= 0);
   assert(x < BOARD_WIDTH);
   assert(y < BOARD_HEIGHT);
 
@@ -61,18 +57,16 @@ void board_set(struct board *brd, size_t x, size_t y, int state) {
 
 void board_remove_line(struct board *brd, size_t line) {
   assert(brd != NULL);
-  assert(line >= 0);
   assert(line < BOARD_HEIGHT);
 
   for (size_t x = 0; x < BOARD_WIDTH; x++)
     board_set(brd, x, line, BOARD_CELL_EMPTY);
 }
 
+
 void board_move_line(struct board *brd, size_t src, size_t dest) {
   assert(brd != NULL);
-  assert(src >= 0);
   assert(src < BOARD_HEIGHT);
-  assert(dest >= 0);
   assert(dest < BOARD_HEIGHT);
 
   for (size_t x = 0; x < BOARD_WIDTH; x++) {
@@ -83,7 +77,6 @@ void board_move_line(struct board *brd, size_t src, size_t dest) {
 
 int board_is_line_complete(const struct board *brd, size_t line) {
   assert(brd != NULL);
-  assert(line >= 0);
   assert(line < BOARD_HEIGHT);
 
   for (size_t x = 0; x < BOARD_WIDTH; x++)
@@ -111,7 +104,6 @@ size_t board_get_completed_lines(const struct board *brd, size_t **lines) {
 
 void board_break_line(struct board *brd, size_t line) {
   assert(brd != NULL);
-  assert(line >= 0);
   assert(line < BOARD_HEIGHT);
 
   board_remove_line(brd, line);
@@ -150,7 +142,7 @@ int board_check_position(const struct board *brd, struct piece pc) {
       size_t y = pc.y + i;
       size_t x = pc.x + j;
 
-      if (x < 0 || x >= BOARD_WIDTH || y < 0 || y >= BOARD_HEIGHT) return 0;
+      if (x >= BOARD_WIDTH || y >= BOARD_HEIGHT) return 0;
 
       if (pc.shapes[pc.angle][i][j] > 0 &&
           board_at(brd, x, y) != BOARD_CELL_EMPTY) return 0;

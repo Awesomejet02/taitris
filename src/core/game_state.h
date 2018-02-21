@@ -38,7 +38,7 @@ struct game_state {
 };
 
 extern inline
-struct game_state *gs_create(size_t brd_width, size_t brd_height);
+struct game_state *gs_create();
 
 extern inline
 void gs_init(struct game_state *gs);

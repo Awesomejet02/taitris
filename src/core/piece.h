@@ -13,7 +13,6 @@
 #include <string.h>
 
 #include "../utils/random.h"
-#include "board.h"
 
 #define PIECE_I 0
 #define PIECE_O 1
@@ -49,14 +48,8 @@ struct piece {
   int shapes[PIECE_ANGLES][PIECE_HEIGHT][PIECE_WIDTH];
 };
 
-void piece_random(struct piece *pc, size_t x, size_t y, int first);
-
+void piece_random(struct piece *pc, size_t x, size_t y);
 void piece_move(struct piece *pc, int dx, int dy);
-int piece_can_move(struct piece pc, const struct board *brd, int dx, int dy);
-int piece_try_move(struct piece *pc, const struct board *brd, int dx, int dy);
-
 void piece_rotate(struct piece *pc, int rotation);
-int piece_can_rotate(struct piece pc, const struct board *brd, int rotation);
-int piece_try_rotate(struct piece *pc, const struct board *brd, int rotation);
 
 #endif //TAITRIS_PIECE_H

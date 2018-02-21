@@ -7,14 +7,11 @@
 
 #include "game_state.h"
 
-struct game_state *gs_create(size_t brd_width, size_t brd_height) {
-  assert(brd_width > 0);
-  assert(brd_height > 0);
-
+struct game_state *gs_create() {
   struct game_state *gs = malloc(sizeof(struct game_state));
   memset(gs, 0, sizeof(struct game_state));
 
-  gs->board = board_create(brd_width, brd_height);
+  gs->board = board_create();
 
   return gs;
 }
@@ -32,7 +29,7 @@ void gs_init(struct game_state *gs) {
 
   board_init(gs->board);
 
-  piece_random(&gs->piece_next, gs->board->width / 2 - PIECE_WIDTH / 2, 0, 1);
+  piece_random(&gs->piece_next, BOARD_WIDTH / 2 - PIECE_WIDTH / 2, 0);
 
   gs_next_piece(gs);
 }
@@ -74,12 +71,5 @@ time_t gs_elapsed_time(const struct game_state *gs) {
 
 void gs_next_piece(struct game_state *gs) {
   memcpy(&gs->piece_current, &gs->piece_next, sizeof(struct piece));
-  piece_random(&gs->piece_next, gs->board->width / 2 - PIECE_WIDTH / 2, 0, 1);
+  piece_random(&gs->piece_next, BOARD_WIDTH / 2 - PIECE_WIDTH / 2, 0);
 }
-
-// TODO: Faire les pièces
-// TODO: Game loop
-// TODO: Random
-// TODO: Pièce vers le board
-// TODO: Rotation des pièces
-// TODO: Déplacement des pièces

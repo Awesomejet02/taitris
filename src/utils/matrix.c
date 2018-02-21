@@ -97,9 +97,7 @@ size_t matrix_cols(const struct matrix *mx) {
 
 double matrix_at(const struct matrix *mx, size_t rows, size_t cols) {
   assert(mx != NULL);
-  assert(rows >= 0);
   assert(rows < mx->rows);
-  assert(cols >= 0);
   assert(cols < mx->cols);
 
   return *(mx->data + cols * mx->rows + rows);
@@ -107,9 +105,7 @@ double matrix_at(const struct matrix *mx, size_t rows, size_t cols) {
 
 void matrix_set(struct matrix *mx, size_t rows, size_t cols, double value) {
   assert(mx != NULL);
-  assert(rows >= 0);
   assert(rows < mx->rows);
-  assert(cols >= 0);
   assert(cols < mx->cols);
 
   *(mx->data + cols * mx->rows + rows) = value;
