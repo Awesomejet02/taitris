@@ -94,3 +94,25 @@ size_t holes(const struct board *brd)
 }
 
 //size_t board_get_completed_lines(const struct board *brd, size_t **lines)
+
+void make_line(struct board *brd, size_t y)
+{
+  for(size_t x = 0; x < BOARD_WIDTH; ++x)
+  {
+    board_set(brd, x, y, 42);
+  }
+}
+
+size_t coalescent_clears(const struct board *brd)
+{
+  size_t *lines;
+  size_t c = board_get_completed_lines(brd, &lines);
+
+  for(size_t x = 0; x < BOARD_HEIGHT; ++x)
+  {
+    printf("%zu\n", lines[x]);
+  }
+  printf("\n");
+
+  return c;
+}

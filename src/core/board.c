@@ -63,7 +63,6 @@ void board_remove_line(struct board *brd, size_t line) {
     board_set(brd, x, line, BOARD_CELL_EMPTY);
 }
 
-
 void board_move_line(struct board *brd, size_t src, size_t dest) {
   assert(brd != NULL);
   assert(src < BOARD_HEIGHT);

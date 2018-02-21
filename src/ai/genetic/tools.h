@@ -27,4 +27,10 @@ size_t hole(const struct board *brd, size_t x);
 
 extern inline
 size_t holes(const struct board *brd);
+
+extern inline
+size_t coalescent_clears(const struct board *brd);
+
+extern inline
+void make_line(struct board *brd, size_t y);
 #endif //TAITRIS_TOOLS_H
