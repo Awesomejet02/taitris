@@ -19,6 +19,7 @@ struct board *board_create(size_t width, size_t height) {
 
   brd->state = calloc(width * height, sizeof(int));
 
+  //TODO change that to a memset please
   for (size_t y = 0; y < height; y++)
     for (size_t x = 0; x < width; x++)
       board_set(brd, x, y, -1);
@@ -100,6 +101,7 @@ int board_is_line_complete(const struct board *brd, size_t line) {
 }
 
 size_t board_get_completed_lines(const struct board *brd, size_t **lines) {
+  //TODO if lines == NULL just return number of lines please
   assert(brd != NULL);
 
   size_t count = 0;
