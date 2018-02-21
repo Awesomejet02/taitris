@@ -22,4 +22,9 @@ size_t bumpiness(const struct board *brd);
 extern inline
 size_t aggregate_height(const struct board *brd);
 
+extern inline
+size_t hole(const struct board *brd, size_t x);
+
+extern inline
+size_t holes(const struct board *brd);
 #endif //TAITRIS_TOOLS_H
