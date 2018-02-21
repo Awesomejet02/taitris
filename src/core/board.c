@@ -90,11 +90,15 @@ size_t board_get_completed_lines(const struct board *brd, size_t **lines) {
   assert(brd != NULL);
 
   size_t count = 0;
-  *lines = calloc(BOARD_HEIGHT, sizeof(size_t));
+
+  if (lines != NULL)
+    *lines = calloc(BOARD_HEIGHT, sizeof(size_t));
 
   for (size_t y = 0; y < BOARD_HEIGHT; y++) {
     if (board_is_line_complete(brd, y)) {
-      (*lines)[count] = y;
+      if (lines != NULL)
+        (*lines)[count] = y;
+
       count++;
     }
   }
