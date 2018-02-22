@@ -4,6 +4,17 @@
 
 #include "tools.h"
 
+void board_heights(const struct board *brd, size_t *heights)
+{
+  assert(brd != NULL);
+  assert(heights != NULL);
+
+  for(size_t x = 0; x < BOARD_WIDTH; ++x)
+  {
+    heights[x] = board_height(brd,x);
+  }
+}
+
 size_t board_height(const struct board *brd, size_t x)
 {
   assert(brd != NULL);
@@ -15,17 +26,6 @@ size_t board_height(const struct board *brd, size_t x)
   {}
 
   return height;
-}
-
-void board_heights(const struct board *brd, size_t *heights)
-{
-  assert(brd != NULL);
-  assert(heights != NULL);
-
-  for(size_t x = 0; x < BOARD_WIDTH; ++x)
-  {
-    heights[x] = board_height(brd,x);
-  }
 }
 
 size_t bumpiness(const struct board *brd)
@@ -93,8 +93,6 @@ size_t holes(const struct board *brd)
   return holes;
 }
 
-//size_t board_get_completed_lines(const struct board *brd, size_t **lines)
-
 void make_line(struct board *brd, size_t y)
 {
   for(size_t x = 0; x < BOARD_WIDTH; ++x)
@@ -103,16 +101,10 @@ void make_line(struct board *brd, size_t y)
   }
 }
 
-size_t coalescent_clears(const struct board *brd)
+size_t clears(const struct board *brd)
 {
   size_t *lines;
   size_t c = board_get_completed_lines(brd, &lines);
-
-  for(size_t x = 0; x < BOARD_HEIGHT; ++x)
-  {
-    printf("%zu\n", lines[x]);
-  }
-  printf("\n");
-
   return c;
 }
+
