@@ -9,6 +9,16 @@
 #include "../ai/genetic/tools.h"
 #include "../ai/genetic/engine.h"
 
+//TODO MOVE THIS SHIT
+#define KNRM  "\x1B[0m"
+#define KRED  "\x1B[31m"
+#define KGRN  "\x1B[32m"
+#define KYEL  "\x1B[33m"
+#define KBLU  "\x1B[34m"
+#define KMAG  "\x1B[35m"
+#define KCYN  "\x1B[36m"
+#define KWHT  "\x1B[37m"
+
 void game_tick(double dt, struct game_state *gs, struct input *in) {
   static double tickDown = 0;
   static double tickMove = 0;
@@ -54,7 +64,8 @@ void game_tick(double dt, struct game_state *gs, struct input *in) {
     board_merge_piece(gs->board, gs->piece_current);
     //START_AI
     double rank = get_rank(gs->board);
-    printf("Current rank: %f\n", rank);
+    show_features(gs->board);
+    printf("Current rank: %s%f%s\n\n", KRED, rank, KNRM);
     //END_AI
     gs_next_piece(gs);
 
