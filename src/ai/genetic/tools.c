@@ -74,6 +74,7 @@ size_t hole(const struct board *brd, size_t x)
       while(h + 1 < BOARD_HEIGHT && board_at(brd, x, h + 1) == BOARD_CELL_EMPTY)
       {
         ++h;
+        ++holes;
       }
     }
     ++h; //go down
