@@ -16,4 +16,9 @@ struct ai_coefs {
     //double blockades;
 };
 
+extern
+struct ai_coefs *get_coefs();
+
+extern
+double get_rank(struct board *brd);
 #endif //TAITRIS_ENGINE_H

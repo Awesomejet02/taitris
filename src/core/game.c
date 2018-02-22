@@ -6,6 +6,8 @@
  */
 
 #include "game.h"
+#include "../ai/genetic/tools.h"
+#include "../ai/genetic/engine.h"
 
 void game_tick(double dt, struct game_state *gs, struct input *in) {
   static double tickDown = 0;
@@ -38,6 +40,10 @@ void game_tick(double dt, struct game_state *gs, struct input *in) {
 
   if (spawn) {
     board_merge_piece(gs->board, gs->piece_current);
+    //START_AI
+    double rank = get_rank(gs->board);
+    printf("Current rank: %f\n", rank);
+    //END_AI
     gs_next_piece(gs);
 
     if (board_check_position(gs->board, gs->piece_current) == 0)
