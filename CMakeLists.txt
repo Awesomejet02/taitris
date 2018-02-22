@@ -23,6 +23,7 @@ add_executable(tAItris
         src/core/game_state.c src/core/game_state.h
         src/core/piece.c src/core/piece.h
         src/core/motion.c src/core/motion.h
+        src/core/board.c src/core/board.h
         src/core/event.c src/core/event.h
         src/core/game.c src/core/game.h
         src/core/input.c src/core/input.h
