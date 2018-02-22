@@ -15,6 +15,7 @@ include_directories(${SDL_INCLUDE_DIR}
 
 add_executable(tAItris
         src/tAItris.c src/tAItris.h
+
         src/utils/list.c src/utils/list.h
         src/utils/matrix.c src/utils/matrix.h
         src/utils/random.c src/utils/random.h
@@ -28,7 +29,8 @@ add_executable(tAItris
         src/core/input.c src/core/input.h
         src/ui/gui.c src/ui/gui.h
         src/ui/render.c src/ui/render.h
-        src/ai/genetic/tools.c src/ai/genetic/tools.h)
+        src/ai/genetic/tools.c src/ai/genetic/tools.h
+        src/ai/genetic/engine.c src/ai/genetic/engine.h)
 
 target_link_libraries(tAItris ${SDL_LIBRARY}
         ${SDL_IMAGE_LIBRARIES}
