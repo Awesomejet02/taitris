@@ -14,18 +14,18 @@
 #include <SDL_image.h>
 #include <SDL/SDL_ttf.h>
 
+#include "../core/board.h"
+#include "render.h"
+
 #define GUI_TITLE "tAItris"
-#define GUI_WIDTH 200
-#define GUI_HEIGHT 800
-
-extern
-SDL_Surface *gui_get_window(SDL_Surface *window);
+#define GUI_WIDTH (BOARD_WIDTH * RENDER_CELL_SIZE + 500)
+#define GUI_HEIGHT (BOARD_HEIGHT * RENDER_CELL_SIZE)
 
 extern inline
-void gui_init();
+SDL_Surface* gui_init();
 
 extern inline
-void gui_free();
+void gui_free(SDL_Surface *win);
 
 extern inline
 SDL_Surface* gui_load_image(char *path);

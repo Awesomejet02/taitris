@@ -7,28 +7,40 @@
 
 #include "game.h"
 
-struct game_state *get_game_state() {
-  static struct game_state *gs = NULL;
+void game_tick(double dt, struct game_state *gs, struct input *in) {
+  static double tickDown = 0;
+  static double tickMove = 0;
+  tickDown += dt;
+  tickMove += dt;
 
-  if (gs == NULL) gs = gs_create();
+  int spawn = 0;
 
-  return gs;
-}
+  if (tickMove > 0.1) {
+    tickMove = 0;
 
-void game_init() {
-  struct game_state *gs = get_game_state();
-  gs_init(gs);
+    motion_try_move(&gs->piece_current, gs->board, in->moveX, 0);
+    motion_try_rotate(&gs->piece_current, gs->board, in->rotate);
 
-  while (game_tick()) {}
+    if(!motion_try_move(&gs->piece_current, gs->board, 0, in->moveY))
+      spawn = 1;
+  }
 
-  game_quit();
-}
+  if (tickDown > 0.5) {
+    tickDown = 0;
 
-int game_tick() {
-  return 0;
-}
+    if(!motion_try_move(&gs->piece_current, gs->board, 0, 1))
+      spawn = 1;
+  }
 
-void game_quit() {
-  struct game_state *gs = get_game_state();
-  gs_free(gs);
+  size_t *lines;
+  if (board_get_completed_lines(gs->board, &lines))
+    board_break_lines(gs->board, lines);
+
+  if (spawn) {
+    board_merge_piece(gs->board, gs->piece_current);
+    gs_next_piece(gs);
+
+    if (board_check_position(gs->board, gs->piece_current) == 0)
+      gs->state = GS_STATE_QUIT;
+  }
 }

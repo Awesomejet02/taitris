@@ -9,13 +9,9 @@
 #define TAITRIS_GAME_H
 
 #include "game_state.h"
+#include "motion.h"
+#include "input.h"
 
-struct game_state *get_game_state();
-
-void game_init();
-
-int game_tick();
-
-void game_quit();
+void game_tick(double dt, struct game_state *gs, struct input *in);
 
 #endif //TAITRIS_GAME_H

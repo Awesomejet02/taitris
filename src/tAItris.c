@@ -10,16 +10,30 @@
 int main() {
   random_init();
 
-  gui_init();
+  SDL_Surface *win = gui_init();
 
-  int running = 1;
-  SDL_Event event;
+  struct game_state *gs = gs_create();
+  gs_init(gs);
 
-  while (running) {
+  double last_time = time_get_current();
 
+  struct input in;
+  memset(&in, 0, sizeof(struct input));
+
+  while(gs->state != GS_STATE_QUIT) {
+    double new_time = time_get_current();
+    double delta = new_time - last_time;
+    last_time = new_time;
+
+    event_handle(gs, &in);
+
+    game_tick(delta, gs, &in);
+
+    render_handle(win, gs);
   }
 
-  gui_free();
+  gs_free(gs);
+  gui_free(win);
 
   return 0;
 }

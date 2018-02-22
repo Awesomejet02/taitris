@@ -7,16 +7,7 @@
 
 #include "gui.h"
 
-SDL_Surface *gui_get_window(SDL_Surface *window) {
-  static SDL_Surface *win = NULL;
-
-  if (win == NULL && window != NULL)
-    win = window;
-
-  return win;
-}
-
-void gui_init() {
+SDL_Surface* gui_init() {
   if(SDL_Init(SDL_INIT_VIDEO) == -1)
     errx(EXIT_FAILURE,"Could not initialize SDL: %s", SDL_GetError());
 
@@ -24,19 +15,20 @@ void gui_init() {
     errx(EXIT_FAILURE, "Could not initialize TTF_Init: %s",
          TTF_GetError());
 
-  SDL_putenv("SDL_VIDEO_WINDOW_POS=center");
-  SDL_Surface *win = SDL_SetVideoMode(GUI_WIDTH, GUI_HEIGHT, 0,
-                            SDL_HWSURFACE | SDL_ANYFORMAT | SDL_DOUBLEBUF);
+  SDL_Surface *win = NULL;
 
+  SDL_putenv("SDL_VIDEO_WINDOW_POS=center");
+  win = SDL_SetVideoMode(GUI_WIDTH, GUI_HEIGHT, 0,
+                         SDL_HWSURFACE | SDL_ANYFORMAT | SDL_DOUBLEBUF);
   SDL_WM_SetCaption(GUI_TITLE, NULL);
   SDL_FillRect(win, NULL, SDL_MapRGB(win->format, 0, 0, 0));
   SDL_Flip(win);
 
-  gui_get_window(win);
+  return win;
 }
 
-void gui_free() {
-  SDL_FreeSurface(gui_get_window(NULL));
+void gui_free(SDL_Surface *win) {
+  SDL_FreeSurface(win);
   SDL_Quit();
 }
 
