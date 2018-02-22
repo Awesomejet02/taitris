@@ -175,7 +175,11 @@ void render_next_piece(SDL_Surface *screen, struct piece pc) {
 }
 
 void render_score(SDL_Surface *screen, int score) {
-  TTF_Font *font = gui_load_font("res/font/font.ttf", 50);
+  static TTF_Font *font = NULL;
+
+  if (!font)
+    font = gui_load_font("res/font/font.ttf", 50);
+
   SDL_Color white_color = {255, 255, 255, 0};
   char str_score[50];
   sprintf(str_score, "Score: %d", score);
