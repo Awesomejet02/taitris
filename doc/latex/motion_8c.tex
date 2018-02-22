@@ -1,0 +1,73 @@
+\section{src/core/motion.c File Reference}
+\label{motion_8c}\index{src/core/motion.\+c@{src/core/motion.\+c}}
+
+
+No description.  
+
+
+{\ttfamily \#include \char`\"{}motion.\+h\char`\"{}}\newline
+Include dependency graph for motion.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ motion\+\_\+can\+\_\+move} (struct \textbf{ piece} pc, const struct \textbf{ board} $\ast$brd, int dx, int dy)
+\item 
+int \textbf{ motion\+\_\+can\+\_\+rotate} (struct \textbf{ piece} pc, const struct \textbf{ board} $\ast$brd, int rotation)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+move} (struct \textbf{ piece} $\ast$pc, const struct \textbf{ board} $\ast$brd, int dx, int dy)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+rotate} (struct \textbf{ piece} $\ast$pc, const struct \textbf{ board} $\ast$brd, int rotation)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+move\+\_\+down} (struct \textbf{ piece} $\ast$pc, const struct \textbf{ board} $\ast$brd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+No description. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\label{motion_8c_a44d62ec0304b3efce7d5d76f597fed22}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+can\+\_\+move@{motion\+\_\+can\+\_\+move}}
+\index{motion\+\_\+can\+\_\+move@{motion\+\_\+can\+\_\+move}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+can\+\_\+move()}
+{\footnotesize\ttfamily int motion\+\_\+can\+\_\+move (\begin{DoxyParamCaption}\item[{struct \textbf{ piece}}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_afd171d9e0c9f0884598c492d7d3ed8e9}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+can\+\_\+rotate@{motion\+\_\+can\+\_\+rotate}}
+\index{motion\+\_\+can\+\_\+rotate@{motion\+\_\+can\+\_\+rotate}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+can\+\_\+rotate()}
+{\footnotesize\ttfamily int motion\+\_\+can\+\_\+rotate (\begin{DoxyParamCaption}\item[{struct \textbf{ piece}}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{int}]{rotation }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_a29682f9162cac571bd205e47492c5ab8}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+try\+\_\+move@{motion\+\_\+try\+\_\+move}}
+\index{motion\+\_\+try\+\_\+move@{motion\+\_\+try\+\_\+move}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+try\+\_\+move()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+move (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_a416d5d5b14ef78b17dd4f892627556ac}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+try\+\_\+move\+\_\+down@{motion\+\_\+try\+\_\+move\+\_\+down}}
+\index{motion\+\_\+try\+\_\+move\+\_\+down@{motion\+\_\+try\+\_\+move\+\_\+down}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+try\+\_\+move\+\_\+down()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+move\+\_\+down (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_a249827f1bf1b0101949ba0818d13d8f5}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+try\+\_\+rotate@{motion\+\_\+try\+\_\+rotate}}
+\index{motion\+\_\+try\+\_\+rotate@{motion\+\_\+try\+\_\+rotate}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+try\+\_\+rotate()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+rotate (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{int}]{rotation }\end{DoxyParamCaption})}
+

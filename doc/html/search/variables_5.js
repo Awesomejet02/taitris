@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rows',['rows',['../structmatrix.html#ad161320eba27a8b966baac47bee35c46',1,'matrix']]]
+  ['holes',['holes',['../structai__coefs.html#acf9e4d84dfc5d65f5a85fc4dc3a5fadb',1,'ai_coefs']]]
 ];

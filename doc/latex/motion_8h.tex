@@ -1,0 +1,82 @@
+\section{src/core/motion.h File Reference}
+\label{motion_8h}\index{src/core/motion.\+h@{src/core/motion.\+h}}
+
+
+No description.  
+
+
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}piece.\+h\char`\"{}}\newline
+Include dependency graph for motion.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ motion\+\_\+can\+\_\+move} (struct \textbf{ piece} pc, const struct \textbf{ board} $\ast$brd, int dx, int dy)
+\item 
+int \textbf{ motion\+\_\+can\+\_\+rotate} (struct \textbf{ piece} pc, const struct \textbf{ board} $\ast$brd, int rotation)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+move} (struct \textbf{ piece} $\ast$pc, const struct \textbf{ board} $\ast$brd, int dx, int dy)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+rotate} (struct \textbf{ piece} $\ast$pc, const struct \textbf{ board} $\ast$brd, int rotation)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+move\+\_\+down} (struct \textbf{ piece} $\ast$pc, const struct \textbf{ board} $\ast$brd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+No description. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\label{motion_8h_a44d62ec0304b3efce7d5d76f597fed22}} 
+\index{motion.\+h@{motion.\+h}!motion\+\_\+can\+\_\+move@{motion\+\_\+can\+\_\+move}}
+\index{motion\+\_\+can\+\_\+move@{motion\+\_\+can\+\_\+move}!motion.\+h@{motion.\+h}}
+\subsubsection{motion\+\_\+can\+\_\+move()}
+{\footnotesize\ttfamily int motion\+\_\+can\+\_\+move (\begin{DoxyParamCaption}\item[{struct \textbf{ piece}}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8h_afd171d9e0c9f0884598c492d7d3ed8e9}} 
+\index{motion.\+h@{motion.\+h}!motion\+\_\+can\+\_\+rotate@{motion\+\_\+can\+\_\+rotate}}
+\index{motion\+\_\+can\+\_\+rotate@{motion\+\_\+can\+\_\+rotate}!motion.\+h@{motion.\+h}}
+\subsubsection{motion\+\_\+can\+\_\+rotate()}
+{\footnotesize\ttfamily int motion\+\_\+can\+\_\+rotate (\begin{DoxyParamCaption}\item[{struct \textbf{ piece}}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{int}]{rotation }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8h_a29682f9162cac571bd205e47492c5ab8}} 
+\index{motion.\+h@{motion.\+h}!motion\+\_\+try\+\_\+move@{motion\+\_\+try\+\_\+move}}
+\index{motion\+\_\+try\+\_\+move@{motion\+\_\+try\+\_\+move}!motion.\+h@{motion.\+h}}
+\subsubsection{motion\+\_\+try\+\_\+move()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+move (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8h_a416d5d5b14ef78b17dd4f892627556ac}} 
+\index{motion.\+h@{motion.\+h}!motion\+\_\+try\+\_\+move\+\_\+down@{motion\+\_\+try\+\_\+move\+\_\+down}}
+\index{motion\+\_\+try\+\_\+move\+\_\+down@{motion\+\_\+try\+\_\+move\+\_\+down}!motion.\+h@{motion.\+h}}
+\subsubsection{motion\+\_\+try\+\_\+move\+\_\+down()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+move\+\_\+down (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8h_a249827f1bf1b0101949ba0818d13d8f5}} 
+\index{motion.\+h@{motion.\+h}!motion\+\_\+try\+\_\+rotate@{motion\+\_\+try\+\_\+rotate}}
+\index{motion\+\_\+try\+\_\+rotate@{motion\+\_\+try\+\_\+rotate}!motion.\+h@{motion.\+h}}
+\subsubsection{motion\+\_\+try\+\_\+rotate()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+rotate (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{int}]{rotation }\end{DoxyParamCaption})}
+

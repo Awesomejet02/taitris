@@ -7,11 +7,11 @@
 
 #include "gui.h"
 
-SDL_Surface* gui_init() {
-  if(SDL_Init(SDL_INIT_VIDEO) == -1)
-    errx(EXIT_FAILURE,"Could not initialize SDL: %s", SDL_GetError());
+SDL_Surface *gui_init() {
+  if (SDL_Init(SDL_INIT_VIDEO) == -1)
+    errx(EXIT_FAILURE, "Could not initialize SDL: %s", SDL_GetError());
 
-  if(TTF_Init() == -1)
+  if (TTF_Init() == -1)
     errx(EXIT_FAILURE, "Could not initialize TTF_Init: %s",
          TTF_GetError());
 
@@ -32,11 +32,20 @@ void gui_free(SDL_Surface *win) {
   SDL_Quit();
 }
 
-SDL_Surface* gui_load_image(char *path) {
+SDL_Surface *gui_load_image(char *path) {
   SDL_Surface *img;
   img = IMG_Load(path);
 
   if (!img) errx(EXIT_FAILURE, "Can't load %s: %s", path, IMG_GetError());
 
   return img;
+}
+
+TTF_Font *gui_load_font(char *path, int size) {
+  TTF_Font *font = NULL;
+  font = TTF_OpenFont(path, size);
+
+  if (!font) errx(EXIT_FAILURE, "TTF_OpenFont: %s\n", TTF_GetError());
+
+  return font;
 }

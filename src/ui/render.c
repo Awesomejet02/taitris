@@ -13,6 +13,7 @@ void render_handle(SDL_Surface *screen, const struct game_state *gs) {
   render_board(screen, gs->board);
   render_piece(screen, gs->piece_current);
   render_next_piece(screen, gs->piece_next);
+  render_score(screen, gs->score);
 
   SDL_Flip(screen);
 }
@@ -171,4 +172,20 @@ void render_next_piece(SDL_Surface *screen, struct piece pc) {
       SDL_FillRect(screen, &cell, color);
     }
   }
+}
+
+void render_score(SDL_Surface *screen, int score) {
+  TTF_Font *font = gui_load_font("res/font/font.ttf", 50);
+  SDL_Color white_color = {255, 255, 255, 0};
+  char str_score[50];
+  sprintf(str_score, "Score: %d", score);
+  SDL_Surface *toBlit = TTF_RenderText_Blended(font, str_score, white_color);
+  SDL_Rect rect = {
+      BOARD_WIDTH * RENDER_CELL_SIZE + 20,
+      500,
+      460,
+      460
+  };
+  SDL_BlitSurface(toBlit, NULL, screen, &rect);
+  SDL_FreeSurface(toBlit);
 }

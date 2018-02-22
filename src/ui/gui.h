@@ -30,4 +30,7 @@ void gui_free(SDL_Surface *win);
 extern inline
 SDL_Surface* gui_load_image(char *path);
 
+extern inline
+TTF_Font *gui_load_font(char *path, int size);
+
 #endif //TAITRIS_GUI_H
