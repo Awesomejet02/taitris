@@ -1,0 +1,96 @@
+\section{src/ui/render.h File Reference}
+\label{render_8h}\index{src/ui/render.\+h@{src/ui/render.\+h}}
+
+
+No description.  
+
+
+{\ttfamily \#include $<$S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../core/game\+\_\+state.\+h\char`\"{}}\newline
+Include dependency graph for render.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{render_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ R\+E\+N\+D\+E\+R\+\_\+\+F\+PS}~30
+\item 
+\#define \textbf{ R\+E\+N\+D\+E\+R\+\_\+\+C\+E\+L\+L\+\_\+\+S\+I\+ZE}~64
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ render\+\_\+handle} (S\+D\+L\+\_\+\+Surface $\ast$screen, const struct \textbf{ game\+\_\+state} $\ast$gs)
+\item 
+void \textbf{ render\+\_\+board} (S\+D\+L\+\_\+\+Surface $\ast$screen, const struct \textbf{ board} $\ast$brd)
+\item 
+void \textbf{ render\+\_\+piece} (S\+D\+L\+\_\+\+Surface $\ast$screen, struct \textbf{ piece} pc)
+\item 
+void \textbf{ render\+\_\+next\+\_\+piece} (S\+D\+L\+\_\+\+Surface $\ast$screen, struct \textbf{ piece} pc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+No description. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{render_8h_a5330c5ad1244a89bc3670addda01eeef}} 
+\index{render.\+h@{render.\+h}!R\+E\+N\+D\+E\+R\+\_\+\+C\+E\+L\+L\+\_\+\+S\+I\+ZE@{R\+E\+N\+D\+E\+R\+\_\+\+C\+E\+L\+L\+\_\+\+S\+I\+ZE}}
+\index{R\+E\+N\+D\+E\+R\+\_\+\+C\+E\+L\+L\+\_\+\+S\+I\+ZE@{R\+E\+N\+D\+E\+R\+\_\+\+C\+E\+L\+L\+\_\+\+S\+I\+ZE}!render.\+h@{render.\+h}}
+\subsubsection{R\+E\+N\+D\+E\+R\+\_\+\+C\+E\+L\+L\+\_\+\+S\+I\+ZE}
+{\footnotesize\ttfamily \#define R\+E\+N\+D\+E\+R\+\_\+\+C\+E\+L\+L\+\_\+\+S\+I\+ZE~64}
+
+\mbox{\label{render_8h_a223e1142775e9fb1c5e6726f8745927d}} 
+\index{render.\+h@{render.\+h}!R\+E\+N\+D\+E\+R\+\_\+\+F\+PS@{R\+E\+N\+D\+E\+R\+\_\+\+F\+PS}}
+\index{R\+E\+N\+D\+E\+R\+\_\+\+F\+PS@{R\+E\+N\+D\+E\+R\+\_\+\+F\+PS}!render.\+h@{render.\+h}}
+\subsubsection{R\+E\+N\+D\+E\+R\+\_\+\+F\+PS}
+{\footnotesize\ttfamily \#define R\+E\+N\+D\+E\+R\+\_\+\+F\+PS~30}
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{render_8h_ac4e08c5521b8cfdc4aacd662469e8caf}} 
+\index{render.\+h@{render.\+h}!render\+\_\+board@{render\+\_\+board}}
+\index{render\+\_\+board@{render\+\_\+board}!render.\+h@{render.\+h}}
+\subsubsection{render\+\_\+board()}
+{\footnotesize\ttfamily void render\+\_\+board (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Surface $\ast$}]{screen,  }\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})}
+
+\mbox{\label{render_8h_ae6614230ba5be0480043779fa8d3f9a4}} 
+\index{render.\+h@{render.\+h}!render\+\_\+handle@{render\+\_\+handle}}
+\index{render\+\_\+handle@{render\+\_\+handle}!render.\+h@{render.\+h}}
+\subsubsection{render\+\_\+handle()}
+{\footnotesize\ttfamily void render\+\_\+handle (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Surface $\ast$}]{screen,  }\item[{const struct \textbf{ game\+\_\+state} $\ast$}]{gs }\end{DoxyParamCaption})}
+
+\mbox{\label{render_8h_af45e8be6206218b6ce90c1cd10e5af05}} 
+\index{render.\+h@{render.\+h}!render\+\_\+next\+\_\+piece@{render\+\_\+next\+\_\+piece}}
+\index{render\+\_\+next\+\_\+piece@{render\+\_\+next\+\_\+piece}!render.\+h@{render.\+h}}
+\subsubsection{render\+\_\+next\+\_\+piece()}
+{\footnotesize\ttfamily void render\+\_\+next\+\_\+piece (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Surface $\ast$}]{screen,  }\item[{struct \textbf{ piece}}]{pc }\end{DoxyParamCaption})}
+
+\mbox{\label{render_8h_a279af1bf532d87bb3e19de4ac662e47b}} 
+\index{render.\+h@{render.\+h}!render\+\_\+piece@{render\+\_\+piece}}
+\index{render\+\_\+piece@{render\+\_\+piece}!render.\+h@{render.\+h}}
+\subsubsection{render\+\_\+piece()}
+{\footnotesize\ttfamily void render\+\_\+piece (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Surface $\ast$}]{screen,  }\item[{struct \textbf{ piece}}]{pc }\end{DoxyParamCaption})}
+

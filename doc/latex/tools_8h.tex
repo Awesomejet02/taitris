@@ -1,0 +1,114 @@
+\section{src/ai/genetic/tools.h File Reference}
+\label{tools_8h}\index{src/ai/genetic/tools.\+h@{src/ai/genetic/tools.\+h}}
+{\ttfamily \#include \char`\"{}../../core/board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../core/game\+\_\+state.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../core/motion.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../core/piece.\+h\char`\"{}}\newline
+Include dependency graph for tools.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tools_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{tools_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ A\+BS}(X)~(((X) $<$ 0) ? (-\/1 $\ast$ (X)) \+: (X))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \textbf{ board\+\_\+height} (const struct \textbf{ board} $\ast$brd, size\+\_\+t x)
+\item 
+void \textbf{ board\+\_\+heights} (const struct \textbf{ board} $\ast$brd, size\+\_\+t $\ast$heights)
+\item 
+size\+\_\+t \textbf{ bumpiness} (const struct \textbf{ board} $\ast$brd)
+\item 
+size\+\_\+t \textbf{ aggregate\+\_\+height} (const struct \textbf{ board} $\ast$brd)
+\item 
+size\+\_\+t \textbf{ hole} (const struct \textbf{ board} $\ast$brd, size\+\_\+t x)
+\item 
+size\+\_\+t \textbf{ holes} (const struct \textbf{ board} $\ast$brd)
+\item 
+size\+\_\+t \textbf{ coalescent\+\_\+clears} (const struct \textbf{ board} $\ast$brd)
+\item 
+void \textbf{ make\+\_\+line} (struct \textbf{ board} $\ast$brd, size\+\_\+t y)
+\item 
+size\+\_\+t \textbf{ clears} (const struct \textbf{ board} $\ast$brd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{tools_8h_adefab4344518e9d35a80d87c20c0fa48}} 
+\index{tools.\+h@{tools.\+h}!A\+BS@{A\+BS}}
+\index{A\+BS@{A\+BS}!tools.\+h@{tools.\+h}}
+\subsubsection{A\+BS}
+{\footnotesize\ttfamily \#define A\+BS(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~(((X) $<$ 0) ? (-\/1 $\ast$ (X)) \+: (X))}
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{tools_8h_af641e6b38f455ac3f9f1a5f49d3bc787}} 
+\index{tools.\+h@{tools.\+h}!aggregate\+\_\+height@{aggregate\+\_\+height}}
+\index{aggregate\+\_\+height@{aggregate\+\_\+height}!tools.\+h@{tools.\+h}}
+\subsubsection{aggregate\+\_\+height()}
+{\footnotesize\ttfamily size\+\_\+t aggregate\+\_\+height (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{tools_8h_a4ca7e6505b351ba190d31948268ff2cb}} 
+\index{tools.\+h@{tools.\+h}!board\+\_\+height@{board\+\_\+height}}
+\index{board\+\_\+height@{board\+\_\+height}!tools.\+h@{tools.\+h}}
+\subsubsection{board\+\_\+height()}
+{\footnotesize\ttfamily size\+\_\+t board\+\_\+height (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{tools_8h_ab2be749cc3ff926d84d4d19b40db0c5f}} 
+\index{tools.\+h@{tools.\+h}!board\+\_\+heights@{board\+\_\+heights}}
+\index{board\+\_\+heights@{board\+\_\+heights}!tools.\+h@{tools.\+h}}
+\subsubsection{board\+\_\+heights()}
+{\footnotesize\ttfamily void board\+\_\+heights (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t $\ast$}]{heights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{tools_8h_a32300283b4df94743b9dae9d7bdaf119}} 
+\index{tools.\+h@{tools.\+h}!bumpiness@{bumpiness}}
+\index{bumpiness@{bumpiness}!tools.\+h@{tools.\+h}}
+\subsubsection{bumpiness()}
+{\footnotesize\ttfamily size\+\_\+t bumpiness (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{tools_8h_afd326c0778c693b0752754323b425bd2}} 
+\index{tools.\+h@{tools.\+h}!clears@{clears}}
+\index{clears@{clears}!tools.\+h@{tools.\+h}}
+\subsubsection{clears()}
+{\footnotesize\ttfamily size\+\_\+t clears (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{tools_8h_ac556c43db39f31aabe6297e22966a9f3}} 
+\index{tools.\+h@{tools.\+h}!coalescent\+\_\+clears@{coalescent\+\_\+clears}}
+\index{coalescent\+\_\+clears@{coalescent\+\_\+clears}!tools.\+h@{tools.\+h}}
+\subsubsection{coalescent\+\_\+clears()}
+{\footnotesize\ttfamily size\+\_\+t coalescent\+\_\+clears (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{tools_8h_a1415ca3c57c0a6fdb689276670d75c90}} 
+\index{tools.\+h@{tools.\+h}!hole@{hole}}
+\index{hole@{hole}!tools.\+h@{tools.\+h}}
+\subsubsection{hole()}
+{\footnotesize\ttfamily size\+\_\+t hole (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{tools_8h_a0febcc8c076fd7843176561167fabac1}} 
+\index{tools.\+h@{tools.\+h}!holes@{holes}}
+\index{holes@{holes}!tools.\+h@{tools.\+h}}
+\subsubsection{holes()}
+{\footnotesize\ttfamily size\+\_\+t holes (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{tools_8h_a97d0b3536ca1b715182ae405fd4fe643}} 
+\index{tools.\+h@{tools.\+h}!make\+\_\+line@{make\+\_\+line}}
+\index{make\+\_\+line@{make\+\_\+line}!tools.\+h@{tools.\+h}}
+\subsubsection{make\+\_\+line()}
+{\footnotesize\ttfamily void make\+\_\+line (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

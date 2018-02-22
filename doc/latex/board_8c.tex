@@ -1,0 +1,153 @@
+\section{src/core/board.c File Reference}
+\label{board_8c}\index{src/core/board.\+c@{src/core/board.\+c}}
+
+
+No description.  
+
+
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+Include dependency graph for board.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{board_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ board} $\ast$ \textbf{ board\+\_\+create} ()
+\item 
+void \textbf{ board\+\_\+init} (struct \textbf{ board} $\ast$brd)
+\item 
+void \textbf{ board\+\_\+free} (struct \textbf{ board} $\ast$brd)
+\item 
+struct \textbf{ board} $\ast$ \textbf{ board\+\_\+copy} (const struct \textbf{ board} $\ast$brd)
+\item 
+int \textbf{ board\+\_\+at} (const struct \textbf{ board} $\ast$brd, size\+\_\+t x, size\+\_\+t y)
+\item 
+void \textbf{ board\+\_\+set} (struct \textbf{ board} $\ast$brd, size\+\_\+t x, size\+\_\+t y, int state)
+\item 
+void \textbf{ board\+\_\+remove\+\_\+line} (struct \textbf{ board} $\ast$brd, size\+\_\+t line)
+\item 
+void \textbf{ board\+\_\+move\+\_\+line} (struct \textbf{ board} $\ast$brd, size\+\_\+t src, size\+\_\+t dest)
+\item 
+int \textbf{ board\+\_\+is\+\_\+line\+\_\+complete} (const struct \textbf{ board} $\ast$brd, size\+\_\+t line)
+\item 
+size\+\_\+t \textbf{ board\+\_\+get\+\_\+completed\+\_\+lines} (const struct \textbf{ board} $\ast$brd, size\+\_\+t $\ast$$\ast$lines)
+\item 
+void \textbf{ board\+\_\+break\+\_\+line} (struct \textbf{ board} $\ast$brd, size\+\_\+t line)
+\item 
+void \textbf{ board\+\_\+break\+\_\+lines} (struct \textbf{ board} $\ast$brd, const size\+\_\+t $\ast$lines)
+\item 
+void \textbf{ board\+\_\+merge\+\_\+piece} (struct \textbf{ board} $\ast$brd, struct \textbf{ piece} pc)
+\item 
+int \textbf{ board\+\_\+check\+\_\+position} (const struct \textbf{ board} $\ast$brd, struct \textbf{ piece} pc)
+\item 
+void \textbf{ board\+\_\+print} (const struct \textbf{ board} $\ast$brd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+No description. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\label{board_8c_af9d59403454f43dc13caa724554dce78}} 
+\index{board.\+c@{board.\+c}!board\+\_\+at@{board\+\_\+at}}
+\index{board\+\_\+at@{board\+\_\+at}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+at()}
+{\footnotesize\ttfamily int board\+\_\+at (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{x,  }\item[{size\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a273970b38366ac7968ad05805c9674ad}} 
+\index{board.\+c@{board.\+c}!board\+\_\+break\+\_\+line@{board\+\_\+break\+\_\+line}}
+\index{board\+\_\+break\+\_\+line@{board\+\_\+break\+\_\+line}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+break\+\_\+line()}
+{\footnotesize\ttfamily void board\+\_\+break\+\_\+line (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_afa8d5a563ecd52ae02e10cbb645c3782}} 
+\index{board.\+c@{board.\+c}!board\+\_\+break\+\_\+lines@{board\+\_\+break\+\_\+lines}}
+\index{board\+\_\+break\+\_\+lines@{board\+\_\+break\+\_\+lines}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+break\+\_\+lines()}
+{\footnotesize\ttfamily void board\+\_\+break\+\_\+lines (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd,  }\item[{const size\+\_\+t $\ast$}]{lines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_af76d449d544ab57f7adaa2bf4d89b060}} 
+\index{board.\+c@{board.\+c}!board\+\_\+check\+\_\+position@{board\+\_\+check\+\_\+position}}
+\index{board\+\_\+check\+\_\+position@{board\+\_\+check\+\_\+position}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+check\+\_\+position()}
+{\footnotesize\ttfamily int board\+\_\+check\+\_\+position (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{struct \textbf{ piece}}]{pc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a1e27212e0cf664697c846562ae704dc2}} 
+\index{board.\+c@{board.\+c}!board\+\_\+copy@{board\+\_\+copy}}
+\index{board\+\_\+copy@{board\+\_\+copy}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+copy()}
+{\footnotesize\ttfamily struct \textbf{ board}$\ast$ board\+\_\+copy (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})}
+
+\mbox{\label{board_8c_a590e915531ea7b532175b43fac0aa3a2}} 
+\index{board.\+c@{board.\+c}!board\+\_\+create@{board\+\_\+create}}
+\index{board\+\_\+create@{board\+\_\+create}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+create()}
+{\footnotesize\ttfamily struct \textbf{ board}$\ast$ board\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{board_8c_a29ce3ebc1a2bd8e6d1dce7e45c4cf3df}} 
+\index{board.\+c@{board.\+c}!board\+\_\+free@{board\+\_\+free}}
+\index{board\+\_\+free@{board\+\_\+free}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+free()}
+{\footnotesize\ttfamily void board\+\_\+free (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a7e412d165de7cbf6c668a1e8202bb15a}} 
+\index{board.\+c@{board.\+c}!board\+\_\+get\+\_\+completed\+\_\+lines@{board\+\_\+get\+\_\+completed\+\_\+lines}}
+\index{board\+\_\+get\+\_\+completed\+\_\+lines@{board\+\_\+get\+\_\+completed\+\_\+lines}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+get\+\_\+completed\+\_\+lines()}
+{\footnotesize\ttfamily size\+\_\+t board\+\_\+get\+\_\+completed\+\_\+lines (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t $\ast$$\ast$}]{lines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_ad0ed1aa92b6d55bfcf82c5ffa2306c8c}} 
+\index{board.\+c@{board.\+c}!board\+\_\+init@{board\+\_\+init}}
+\index{board\+\_\+init@{board\+\_\+init}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+init()}
+{\footnotesize\ttfamily void board\+\_\+init (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a6660f858472cab9be47a59241f4d20b3}} 
+\index{board.\+c@{board.\+c}!board\+\_\+is\+\_\+line\+\_\+complete@{board\+\_\+is\+\_\+line\+\_\+complete}}
+\index{board\+\_\+is\+\_\+line\+\_\+complete@{board\+\_\+is\+\_\+line\+\_\+complete}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+is\+\_\+line\+\_\+complete()}
+{\footnotesize\ttfamily int board\+\_\+is\+\_\+line\+\_\+complete (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a7b287e4e327ee01cc4d8fecfc9f580d7}} 
+\index{board.\+c@{board.\+c}!board\+\_\+merge\+\_\+piece@{board\+\_\+merge\+\_\+piece}}
+\index{board\+\_\+merge\+\_\+piece@{board\+\_\+merge\+\_\+piece}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+merge\+\_\+piece()}
+{\footnotesize\ttfamily void board\+\_\+merge\+\_\+piece (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd,  }\item[{struct \textbf{ piece}}]{pc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a0d12914ac12389ecbfe2181d6d37ca56}} 
+\index{board.\+c@{board.\+c}!board\+\_\+move\+\_\+line@{board\+\_\+move\+\_\+line}}
+\index{board\+\_\+move\+\_\+line@{board\+\_\+move\+\_\+line}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+move\+\_\+line()}
+{\footnotesize\ttfamily void board\+\_\+move\+\_\+line (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{src,  }\item[{size\+\_\+t}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a5b330150c360732662e8ade21782ceab}} 
+\index{board.\+c@{board.\+c}!board\+\_\+print@{board\+\_\+print}}
+\index{board\+\_\+print@{board\+\_\+print}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+print()}
+{\footnotesize\ttfamily void board\+\_\+print (\begin{DoxyParamCaption}\item[{const struct \textbf{ board} $\ast$}]{brd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a3226412915027b501268d21990806292}} 
+\index{board.\+c@{board.\+c}!board\+\_\+remove\+\_\+line@{board\+\_\+remove\+\_\+line}}
+\index{board\+\_\+remove\+\_\+line@{board\+\_\+remove\+\_\+line}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+remove\+\_\+line()}
+{\footnotesize\ttfamily void board\+\_\+remove\+\_\+line (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{board_8c_a0a13fafac262382a3d46168a8f3bea62}} 
+\index{board.\+c@{board.\+c}!board\+\_\+set@{board\+\_\+set}}
+\index{board\+\_\+set@{board\+\_\+set}!board.\+c@{board.\+c}}
+\subsubsection{board\+\_\+set()}
+{\footnotesize\ttfamily void board\+\_\+set (\begin{DoxyParamCaption}\item[{struct \textbf{ board} $\ast$}]{brd,  }\item[{size\+\_\+t}]{x,  }\item[{size\+\_\+t}]{y,  }\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

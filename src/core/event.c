@@ -38,7 +38,7 @@ void event_handle(struct game_state *gs, struct input *in) {
           default: break;
         }
         break;
-      case SDL_KEYUP:
+      /* case SDL_KEYUP:
         switch (event.key.keysym.sym) {
           case SDLK_SPACE:
             in->rotate = 0;
@@ -60,7 +60,7 @@ void event_handle(struct game_state *gs, struct input *in) {
             break;
           default: break;
         }
-        break;
+        break; */
       default: break;
     }
   }

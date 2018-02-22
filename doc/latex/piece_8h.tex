@@ -1,0 +1,229 @@
+\section{src/core/piece.h File Reference}
+\label{piece_8h}\index{src/core/piece.\+h@{src/core/piece.\+h}}
+
+
+No description.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../utils/random.\+h\char`\"{}}\newline
+Include dependency graph for piece.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{piece_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{piece_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ piece}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+I}~0
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+O}~1
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+T}~2
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+L}~3
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+J}~4
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+Z}~5
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+S}~6
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT}~7
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH}~4
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT}~4
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+UP}~0
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+R\+I\+G\+HT}~1
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+D\+O\+WN}~2
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+L\+E\+FT}~3
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES}~4
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+L\+E\+FT}~(-\/1)
+\item 
+\#define \textbf{ P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+R\+I\+G\+HT}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ piece\+\_\+random} (struct \textbf{ piece} $\ast$pc, size\+\_\+t x, size\+\_\+t y)
+\item 
+void \textbf{ piece\+\_\+move} (struct \textbf{ piece} $\ast$pc, int dx, int dy)
+\item 
+void \textbf{ piece\+\_\+rotate} (struct \textbf{ piece} $\ast$pc, int rotation)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \textbf{ P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+ES} [\textbf{ P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT}][\textbf{ P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES}][\textbf{ P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT}][\textbf{ P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH}]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+No description. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{piece_8h_a7651297f25bb454ba6381e1c2f0ec04a}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+D\+O\+WN@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+D\+O\+WN}}
+\index{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+D\+O\+WN@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+D\+O\+WN}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+D\+O\+WN}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+D\+O\+WN~2}
+
+\mbox{\label{piece_8h_ad25a993e90f645aa7d7651adf650e51d}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+L\+E\+FT@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+L\+E\+FT}}
+\index{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+L\+E\+FT@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+L\+E\+FT}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+L\+E\+FT}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+L\+E\+FT~3}
+
+\mbox{\label{piece_8h_abf98bf1ad32ce58c5fa85df607e35407}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+R\+I\+G\+HT@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+R\+I\+G\+HT}}
+\index{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+R\+I\+G\+HT@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+R\+I\+G\+HT}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+R\+I\+G\+HT}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+R\+I\+G\+HT~1}
+
+\mbox{\label{piece_8h_a7452501247a73a9decd4a021ee8030b2}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+UP@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+UP}}
+\index{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+UP@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+UP}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+UP}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+E\+\_\+\+UP~0}
+
+\mbox{\label{piece_8h_a45d1e9768cbb0fe160fb97b7f47e3347}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES}}
+\index{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES@{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES~4}
+
+\mbox{\label{piece_8h_a5b9184bdc00e9c9ab6594aea6ea35112}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT@{P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT}}
+\index{P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT@{P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT~7}
+
+\mbox{\label{piece_8h_ad8eac8f6a24533f84ba2be5fbefa1644}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT@{P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT}}
+\index{P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT@{P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT~4}
+
+\mbox{\label{piece_8h_a91f2021e61458e0777dab6373eedd60b}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+I@{P\+I\+E\+C\+E\+\_\+I}}
+\index{P\+I\+E\+C\+E\+\_\+I@{P\+I\+E\+C\+E\+\_\+I}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+I}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+I~0}
+
+\mbox{\label{piece_8h_afeee888737fee08d7151943e80de0a15}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+J@{P\+I\+E\+C\+E\+\_\+J}}
+\index{P\+I\+E\+C\+E\+\_\+J@{P\+I\+E\+C\+E\+\_\+J}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+J}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+J~4}
+
+\mbox{\label{piece_8h_ad29ec00683ddc760a084b83009b3160c}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+L@{P\+I\+E\+C\+E\+\_\+L}}
+\index{P\+I\+E\+C\+E\+\_\+L@{P\+I\+E\+C\+E\+\_\+L}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+L}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+L~3}
+
+\mbox{\label{piece_8h_a35b88195092e30210aba2f4d646f3a9c}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+O@{P\+I\+E\+C\+E\+\_\+O}}
+\index{P\+I\+E\+C\+E\+\_\+O@{P\+I\+E\+C\+E\+\_\+O}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+O}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+O~1}
+
+\mbox{\label{piece_8h_a525f44cc5c3e7c3cfc846364b2983575}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+L\+E\+FT@{P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+L\+E\+FT}}
+\index{P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+L\+E\+FT@{P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+L\+E\+FT}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+L\+E\+FT}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+L\+E\+FT~(-\/1)}
+
+\mbox{\label{piece_8h_a96616e68596e842766c50155546ccfd6}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+R\+I\+G\+HT@{P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+R\+I\+G\+HT}}
+\index{P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+R\+I\+G\+HT@{P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+R\+I\+G\+HT}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+R\+I\+G\+HT}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+R\+O\+T\+A\+T\+E\+\_\+\+R\+I\+G\+HT~1}
+
+\mbox{\label{piece_8h_ad279ae03554c3ed297ec003495db1e2b}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+S@{P\+I\+E\+C\+E\+\_\+S}}
+\index{P\+I\+E\+C\+E\+\_\+S@{P\+I\+E\+C\+E\+\_\+S}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+S}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+S~6}
+
+\mbox{\label{piece_8h_a2a6cc746fc6654970a62559f1d77a962}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+T@{P\+I\+E\+C\+E\+\_\+T}}
+\index{P\+I\+E\+C\+E\+\_\+T@{P\+I\+E\+C\+E\+\_\+T}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+T}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+T~2}
+
+\mbox{\label{piece_8h_a3133e70647d4ab89f00ebb455ad964b8}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH@{P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH}}
+\index{P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH@{P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH~4}
+
+\mbox{\label{piece_8h_aee707398916fd4752f85e771787c023c}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+Z@{P\+I\+E\+C\+E\+\_\+Z}}
+\index{P\+I\+E\+C\+E\+\_\+Z@{P\+I\+E\+C\+E\+\_\+Z}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+Z}
+{\footnotesize\ttfamily \#define P\+I\+E\+C\+E\+\_\+Z~5}
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{piece_8h_a4642eff00c1b15fd507057c44e6736a0}} 
+\index{piece.\+h@{piece.\+h}!piece\+\_\+move@{piece\+\_\+move}}
+\index{piece\+\_\+move@{piece\+\_\+move}!piece.\+h@{piece.\+h}}
+\subsubsection{piece\+\_\+move()}
+{\footnotesize\ttfamily void piece\+\_\+move (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{piece_8h_af5ed528ee08179282cc95a5431aba453}} 
+\index{piece.\+h@{piece.\+h}!piece\+\_\+random@{piece\+\_\+random}}
+\index{piece\+\_\+random@{piece\+\_\+random}!piece.\+h@{piece.\+h}}
+\subsubsection{piece\+\_\+random()}
+{\footnotesize\ttfamily void piece\+\_\+random (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{size\+\_\+t}]{x,  }\item[{size\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{piece_8h_af73ec0a224e50fee25089a256145bbd2}} 
+\index{piece.\+h@{piece.\+h}!piece\+\_\+rotate@{piece\+\_\+rotate}}
+\index{piece\+\_\+rotate@{piece\+\_\+rotate}!piece.\+h@{piece.\+h}}
+\subsubsection{piece\+\_\+rotate()}
+{\footnotesize\ttfamily void piece\+\_\+rotate (\begin{DoxyParamCaption}\item[{struct \textbf{ piece} $\ast$}]{pc,  }\item[{int}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\label{piece_8h_a04d86212c54927c5c8e728121c430fde}} 
+\index{piece.\+h@{piece.\+h}!P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+ES@{P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+ES}}
+\index{P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+ES@{P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+ES}!piece.\+h@{piece.\+h}}
+\subsubsection{P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+ES}
+{\footnotesize\ttfamily const int P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+ES[\textbf{ P\+I\+E\+C\+E\+\_\+\+C\+O\+U\+NT}][\textbf{ P\+I\+E\+C\+E\+\_\+\+A\+N\+G\+L\+ES}][\textbf{ P\+I\+E\+C\+E\+\_\+\+H\+E\+I\+G\+HT}][\textbf{ P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH}]}
+

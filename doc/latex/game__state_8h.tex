@@ -1,0 +1,136 @@
+\section{src/core/game\+\_\+state.h File Reference}
+\label{game__state_8h}\index{src/core/game\+\_\+state.\+h@{src/core/game\+\_\+state.\+h}}
+
+
+No description.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}piece.\+h\char`\"{}}\newline
+Include dependency graph for game\+\_\+state.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__state_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__state_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ game\+\_\+state}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}~0
+\item 
+\#define \textbf{ G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG}~1
+\item 
+\#define \textbf{ G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+G\+A\+M\+E\+O\+V\+ER}~2
+\item 
+\#define \textbf{ G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT}~3
+\item 
+\#define \textbf{ G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+X}~(\textbf{ B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+TH} / 2 -\/ \textbf{ P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH} / 2)
+\item 
+\#define \textbf{ G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+Y}~0
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ game\+\_\+state} $\ast$ \textbf{ gs\+\_\+create} ()
+\item 
+void \textbf{ gs\+\_\+init} (struct \textbf{ game\+\_\+state} $\ast$gs)
+\item 
+void \textbf{ gs\+\_\+free} (struct \textbf{ game\+\_\+state} $\ast$gs)
+\item 
+int \textbf{ gs\+\_\+next\+\_\+piece} (struct \textbf{ game\+\_\+state} $\ast$gs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+No description. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{game__state_8h_a567e40456d0cedf161e5b94fff22af02}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+X@{G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+X}}
+\index{G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+X@{G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+X}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+X}
+{\footnotesize\ttfamily \#define G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+X~(\textbf{ B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+TH} / 2 -\/ \textbf{ P\+I\+E\+C\+E\+\_\+\+W\+I\+D\+TH} / 2)}
+
+\mbox{\label{game__state_8h_af4c02c3953885a9a2e336c681eb624c0}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+Y@{G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+Y}}
+\index{G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+Y@{G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+Y}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+Y}
+{\footnotesize\ttfamily \#define G\+S\+\_\+\+S\+P\+A\+W\+N\+\_\+Y~0}
+
+\mbox{\label{game__state_8h_a0757c8f80c12a530ceac5624778e2548}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+G\+A\+M\+E\+O\+V\+ER@{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+G\+A\+M\+E\+O\+V\+ER}}
+\index{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+G\+A\+M\+E\+O\+V\+ER@{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+G\+A\+M\+E\+O\+V\+ER}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+G\+A\+M\+E\+O\+V\+ER}
+{\footnotesize\ttfamily \#define G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+G\+A\+M\+E\+O\+V\+ER~2}
+
+\mbox{\label{game__state_8h_a7ef130fee7114c3366010336ab565243}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED@{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}}
+\index{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED@{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED}
+{\footnotesize\ttfamily \#define G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+A\+U\+S\+ED~0}
+
+\mbox{\label{game__state_8h_adc2963e7b1c014ccf0c4b6ba63c0f602}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG@{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG}}
+\index{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG@{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG}
+{\footnotesize\ttfamily \#define G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+L\+A\+Y\+I\+NG~1}
+
+\mbox{\label{game__state_8h_a5cd26c1f8bb736755dadc45b64e1b7fd}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT@{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT}}
+\index{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT@{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT}
+{\footnotesize\ttfamily \#define G\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+Q\+U\+IT~3}
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{game__state_8h_a4981c5cc902057758e4bd907b9629cfd}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!gs\+\_\+create@{gs\+\_\+create}}
+\index{gs\+\_\+create@{gs\+\_\+create}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{gs\+\_\+create()}
+{\footnotesize\ttfamily struct \textbf{ game\+\_\+state}$\ast$ gs\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{game__state_8h_ac5fb586f3c5c1944e06cebb422811313}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!gs\+\_\+free@{gs\+\_\+free}}
+\index{gs\+\_\+free@{gs\+\_\+free}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{gs\+\_\+free()}
+{\footnotesize\ttfamily void gs\+\_\+free (\begin{DoxyParamCaption}\item[{struct \textbf{ game\+\_\+state} $\ast$}]{gs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{game__state_8h_af05255e813cc97e090bf3abcdb0348ce}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!gs\+\_\+init@{gs\+\_\+init}}
+\index{gs\+\_\+init@{gs\+\_\+init}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{gs\+\_\+init()}
+{\footnotesize\ttfamily void gs\+\_\+init (\begin{DoxyParamCaption}\item[{struct \textbf{ game\+\_\+state} $\ast$}]{gs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{game__state_8h_ad9732608b1a3947bc6741965ab3aabe2}} 
+\index{game\+\_\+state.\+h@{game\+\_\+state.\+h}!gs\+\_\+next\+\_\+piece@{gs\+\_\+next\+\_\+piece}}
+\index{gs\+\_\+next\+\_\+piece@{gs\+\_\+next\+\_\+piece}!game\+\_\+state.\+h@{game\+\_\+state.\+h}}
+\subsubsection{gs\+\_\+next\+\_\+piece()}
+{\footnotesize\ttfamily int gs\+\_\+next\+\_\+piece (\begin{DoxyParamCaption}\item[{struct \textbf{ game\+\_\+state} $\ast$}]{gs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
