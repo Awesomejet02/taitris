@@ -108,3 +108,19 @@ size_t clears(const struct board *brd)
   return c;
 }
 
+//TODO MOVE THIS
+#define KNRM  "\x1B[0m"
+#define KRED  "\x1B[31m"
+#define KGRN  "\x1B[32m"
+#define KYEL  "\x1B[33m"
+#define KBLU  "\x1B[34m"
+#define KMAG  "\x1B[35m"
+#define KCYN  "\x1B[36m"
+#define KWHT  "\x1B[37m"
+void show_features(const struct board *brd)
+{
+  printf("holes: %s%zu%s\n", KGRN, holes(brd), KNRM);
+  printf("aggregate_height: %s%zu%s\n", KGRN, aggregate_height(brd), KNRM);
+  printf("clears: %s%zu%s\n", KGRN, clears(brd), KNRM);
+  printf("bumpiness: %s%zu%s\n", KGRN, bumpiness(brd), KNRM);
+}

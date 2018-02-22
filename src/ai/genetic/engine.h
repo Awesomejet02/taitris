@@ -7,14 +7,14 @@
 
 #include "tools.h"
 
-struct ai_coefs {
+typedef struct ai_coefs {
     double agg_height;
     double holes;
     double clears;
     double bumpiness;
     //double tetris;
     //double blockades;
-};
+} ai_coefs;
 
 extern
 struct ai_coefs *get_coefs();

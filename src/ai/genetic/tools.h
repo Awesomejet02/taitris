@@ -38,4 +38,7 @@ void make_line(struct board *brd, size_t y);
 
 extern inline
 size_t clears(const struct board *brd);
+
+extern
+void show_features(const struct board *brd);
 #endif //TAITRIS_TOOLS_H
