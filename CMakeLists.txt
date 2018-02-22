@@ -20,7 +20,6 @@ add_executable(tAItris
         src/utils/matrix.c src/utils/matrix.h
         src/utils/random.c src/utils/random.h
         src/utils/timing.c src/utils/timing.h
-        src/core/board.c src/core/board.h
         src/core/game_state.c src/core/game_state.h
         src/core/piece.c src/core/piece.h
         src/core/motion.c src/core/motion.h
@@ -29,6 +28,8 @@ add_executable(tAItris
         src/core/input.c src/core/input.h
         src/ui/gui.c src/ui/gui.h
         src/ui/render.c src/ui/render.h
+        src/ai/genetic/tools.c src/ai/genetic/tools.h
+        src/ai/genetic/engine.c src/ai/genetic/engine.h
         src/ai/genetic/tools.c src/ai/genetic/tools.h
         src/ai/genetic/engine.c src/ai/genetic/engine.h)
 
