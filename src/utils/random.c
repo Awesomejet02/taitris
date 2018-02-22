@@ -7,42 +7,19 @@
 
 #include "random.h"
 
-int *generateRandom(int size, int cache) {
-  int *tab = malloc(sizeof(int) * cache);
-  for (int i = 0; i < cache; i++)
-    tab[i] = i % size;
+void random_init() {
+  struct timespec curr;
+  clock_gettime(CLOCK_MONOTONIC, &curr);
 
-  shuffle(tab);
+  unsigned int seed = (unsigned int) curr.tv_sec * 1000000000 + ((unsigned int) curr.tv_nsec);
 
-  return tab;
+  srandom(seed);
 }
 
-void swap(int *tab, int a, int b) {
-  int save = tab[a];
-  tab[a] = tab[b];
-  tab[b] = save;
+size_t random_size_t(size_t min, size_t max) {
+  return (size_t) random() % (max - min) + min;
 }
 
-void shuffle(int *tab) {
-  struct timespec ts;
-  clock_gettime(CLOCK_MONOTONIC, &ts);
-  srandom((unsigned int) (ts.tv_nsec ^ ts.tv_sec));
-
-  int r;
-  for (int i = 0; i < 70; i++) {
-    r = i + (int) (random() % (70 - i));
-    swap(tab, i, r);
-  }
-}
-
-int getRandom() {
-  static int index = -1;
-  static int *data = NULL;
-
-  if (index < 0 || index >= 70) {
-    data = generateRandom(1, 70);
-    index = 0;
-  }
-
-  return data[index++];
+int random_int(int min, int max) {
+  return (int) random() % (max - min) + min;
 }

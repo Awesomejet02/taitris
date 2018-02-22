@@ -10,7 +10,7 @@ DEPS:=$(OBJS:.o=.d)
 
 CC=gcc
 CPPFLAGS= -MMD `pkg-config --cflags sdl`
-CFLAGS= -Wall -Wextra -std=c99 -O0 -g3
+CFLAGS= -Wall -Wextra -std=c99 -fgnu89-inline -O0 -g3
 LDFLAGS=
 LDLIBS= `pkg-config --libs sdl` -export-dynamic -lSDL_ttf -lSDL_image -lm
 

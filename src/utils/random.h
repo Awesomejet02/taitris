@@ -11,12 +11,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-int *generateRandom(int size, int cache);
+extern inline
+void random_init();
 
-void swap(int *tab, int a, int b);
+extern inline
+size_t random_size_t(size_t min, size_t max);
 
-void shuffle(int *tab);
-
-int getRandom();
+extern inline
+int random_int(int min, int max);
 
 #endif //TAITRIS_RANDOM_H
