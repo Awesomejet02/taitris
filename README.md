@@ -19,6 +19,8 @@ Les méthodes retenues sont, premièrement l'algorithme génétique qui se base 
 La seconde méthode qui nous a attirée utilise un réseau de neurones profonds qui par l'utilisation de couches de neurones successives doit arriver a jouer aussi bien si ce n'est mieux qu'un homme.
 
 ## Structure du projet
+* **bin/** - Exécutables
+* **build/** - Build
 * **data/** - Données (IA, deep learning, etc...)
 * **doc/** - Documentation
 	* **html/** - Documentation du code au format html
