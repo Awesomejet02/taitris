@@ -1,6 +1,15 @@
 # tAItris
 Projet du quatrième semestre de l'EPITA
 
+## Table des matières
+* [Présentation du groupe](#présentation-du-groupe-s4masterrace)
+* [Présentation du projet](#présentation-du-projet-taitris)
+* [Structure du projet](#structure-du-projet)
+* [Dépendances](#dépendances)
+* [Générer le projet](#générer-le-projet)
+* [Utilisation](#utilisation)
+* [Ressources et liens](#ressources-et-liens)
+
 ## Présentation du groupe: S4MasterRace
 * **papini_j** Julien PAPINI <julien.papini@epita.fr>
 * **loyau_n** Nicolas LOYAU <nicolas.loyau@epita.fr>
