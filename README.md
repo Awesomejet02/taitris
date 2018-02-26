@@ -50,6 +50,9 @@ La seconde méthode qui nous a attirée utilise un réseau de neurones profonds 
 #### Déplacer le dossier ressource et de données dans bin
 `make resources`
 
+#### Générer la documentation avec doxygen
+`make doc`
+
 #### Nettoyer la compilation
 `make clean`
 

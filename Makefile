@@ -60,10 +60,13 @@ clean: ## Clean the project
 run: $(BIN_DIR) ## Run the exec
 	$(BIN_DIR)/$(EXEC)
 
+doc: ## Make documentation
+	doxygen Doxyfile
+
 help: ## Show help
 	@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-10s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
 
-.PHONY: clean help resources save run $(BIN_DIR)/$(RES_DIR) $(BIN_DIR)/$(DATA_DIR)
+.PHONY: clean help resources save run doc $(BIN_DIR)/$(RES_DIR) $(BIN_DIR)/$(DATA_DIR)
 
 COM_COLOR   = \033[0;34m
 OBJ_COLOR   = \033[0;36m

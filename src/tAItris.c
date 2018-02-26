@@ -1,8 +1,8 @@
 /**
  * @file    tAItris.c
  * @author  S4MasterRace
- * @version 1.0
- * @brief   No description
+ * @version 2.0
+ * @brief   Main file
  */
 
 int main() {
