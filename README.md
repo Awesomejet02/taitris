@@ -39,6 +39,13 @@ La seconde méthode qui nous a attirée utilise un réseau de neurones profonds 
 * **src/** - Code source
 
 ## Dépendances
+### Génération du projet
+* **libsdl2-dev** - version 2.0.5+dfsg1-2
+
+### Génération de la documentation
+* **doxygen** - version 1.8.13-4+b1
+* **graphviz** - version 2.38.0-17
+* **texlive** - version 2016.20170123-5
 
 ## Générer le projet
 #### Afficher l'aide du Makefile

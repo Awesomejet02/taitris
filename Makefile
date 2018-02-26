@@ -7,6 +7,9 @@ RES_DIR := ./res
 DATA_DIR := ./data
 BUILD_DIR := ./build
 BIN_DIR := ./bin
+LATEX_DIR := ./doc/latex
+
+DOCPDF := Documentation.pdf
 
 SRC := $(shell find $(SRC_DIR) -name *.c)
 OBJ := $(subst $(SRC_DIR),$(BUILD_DIR),$(SRC:.c=.o))
@@ -17,10 +20,10 @@ FIND ?= find
 RSYNC ?= rsync
 
 CC := gcc
-CPPFLAGS := -MMD
+CPPFLAGS := -MMD `pkg-config --cflags sdl2`
 CFLAGS := -Wall -Wextra -std=c99 -O0 -g3
 LDFLAGS :=
-LDLIBS :=
+LDLIBS := `pkg-config --libs sdl2`
 
 all: $(BIN_DIR) ## Make the project
 
@@ -62,6 +65,7 @@ run: $(BIN_DIR) ## Run the exec
 
 doc: ## Make documentation
 	doxygen Doxyfile
+	cd $(LATEX_DIR); make; $(RM) ../pdf/$(DOCPDF); mv refman.pdf ../pdf/$(DOCPDF)
 
 help: ## Show help
 	@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-10s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
