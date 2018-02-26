@@ -32,8 +32,26 @@ La seconde méthode qui nous a attirée utilise un réseau de neurones profonds 
 ## Dépendances
 
 ## Générer le projet
+### Afficher l'aide du Makefile
+`make help`
+
+### Compiler le projet
+`make`
+
+### Déplacer le dossier ressource et de données dans bin
+`make resources`
+
+### Nettoyer la compilation
+`make clean`
 
 ## Utilisation
+### Lancer l'exécutable
+`make run`
+ou
+`./bin/tAItris`
+
+### Sauvegarder les fichiers de données
+`make save`
 
 ## Ressources et liens
 * [Post: Coding a Tetris AI using a Genetic Algorithm](https://luckytoilet.wordpress.com/2011/05/27/coding-a-tetris-ai-using-a-genetic-algorithm/)
