@@ -32,25 +32,27 @@ La seconde méthode qui nous a attirée utilise un réseau de neurones profonds 
 ## Dépendances
 
 ## Générer le projet
-### Afficher l'aide du Makefile
+#### Afficher l'aide du Makefile
 `make help`
 
-### Compiler le projet
+#### Compiler le projet
 `make`
 
-### Déplacer le dossier ressource et de données dans bin
+#### Déplacer le dossier ressource et de données dans bin
 `make resources`
 
-### Nettoyer la compilation
+#### Nettoyer la compilation
 `make clean`
 
 ## Utilisation
-### Lancer l'exécutable
+#### Lancer l'exécutable
 `make run`
+
 ou
+
 `./bin/tAItris`
 
-### Sauvegarder les fichiers de données
+#### Sauvegarder les fichiers de données
 `make save`
 
 ## Ressources et liens
