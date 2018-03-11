@@ -1,0 +1,64 @@
+/**
+ * @file    ansi_code.h
+ * @author  S4MasterRace
+ * @version 2.0
+ * @brief   ANSI escape code
+ */
+#ifndef TAITRIS_ANSI_CODE_H
+#define TAITRIS_ANSI_CODE_H
+
+#define ANSI_ESC "\x1b"
+
+#define ANSI_SGR(_code_) \
+  ANSI_ESC "[" #_code_ "m"
+
+#define ANSI_RESET       ANSI_SGR(0)
+
+#define ANSI_BOLD        ANSI_SGR(1)
+#define ANSI_FAINT       ANSI_SGR(2)
+#define ANSI_ITALIC      ANSI_SGR(3)
+#define ANSI_UNDERLINE   ANSI_SGR(4)
+#define ANSI_SBLINK      ANSI_SGR(5)
+#define ANSI_RBLINK      ANSI_SGR(6)
+#define ANSI_CROSSEDOUT  ANSI_SGR(9)
+#define ANSI_FRAMED      ANSI_SGR(51)
+#define ANSI_ENCIRCLED   ANSI_SGR(52)
+#define ANSI_OVERLINED   ANSI_SGR(53)
+
+#define ANSI_FG_DEFAULT  ANSI_SGR(39)
+#define ANSI_FG_BLACK    ANSI_SGR(30)
+#define ANSI_FG_RED      ANSI_SGR(31)
+#define ANSI_FG_GREEN    ANSI_SGR(32)
+#define ANSI_FG_YELLOW   ANSI_SGR(33)
+#define ANSI_FG_BLUE     ANSI_SGR(34)
+#define ANSI_FG_MAGENTA  ANSI_SGR(35)
+#define ANSI_FG_CYAN     ANSI_SGR(36)
+#define ANSI_FG_WHITE    ANSI_SGR(37)
+#define ANSI_FG_BBLACK   ANSI_SGR(90)
+#define ANSI_FG_BRED     ANSI_SGR(91)
+#define ANSI_FG_BGREEN   ANSI_SGR(92)
+#define ANSI_FG_BYELLOW  ANSI_SGR(93)
+#define ANSI_FG_BBLUE    ANSI_SGR(94)
+#define ANSI_FG_BMAGENTA ANSI_SGR(95)
+#define ANSI_FG_BCYAN    ANSI_SGR(96)
+#define ANSI_FG_BWHITE   ANSI_SGR(97)
+
+#define ANSI_BG_DEFAULT  ANSI_SGR(49)
+#define ANSI_BG_BLACK    ANSI_SGR(40)
+#define ANSI_BG_RED      ANSI_SGR(41)
+#define ANSI_BG_GREEN    ANSI_SGR(42)
+#define ANSI_BG_YELLOW   ANSI_SGR(43)
+#define ANSI_BG_BLUE     ANSI_SGR(44)
+#define ANSI_BG_MAGENTA  ANSI_SGR(45)
+#define ANSI_BG_CYAN     ANSI_SGR(46)
+#define ANSI_BG_WHITE    ANSI_SGR(47)
+#define ANSI_BG_BBLACK   ANSI_SGR(100)
+#define ANSI_BG_BRED     ANSI_SGR(101)
+#define ANSI_BG_BGREEN   ANSI_SGR(102)
+#define ANSI_BG_BYELLOW  ANSI_SGR(103)
+#define ANSI_BG_BBLUE    ANSI_SGR(104)
+#define ANSI_BG_BMAGENTA ANSI_SGR(105)
+#define ANSI_BG_BCYAN    ANSI_SGR(106)
+#define ANSI_BG_BWHITE   ANSI_SGR(107)
+
+#endif //TAITRIS_ANSI_CODE_H
