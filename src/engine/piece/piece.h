@@ -15,7 +15,7 @@
 #include "piece_type.h"
 #include "piece_shape.h"
 #include "../angle.h"
-#include "../../utils/random.h"
+#include "seven_bag.h"
 
 typedef struct {
   PieceType type;
@@ -41,8 +41,11 @@ void piece_rotate(Piece *pc, Rotation rotation) {
 }
 
 Piece *piece_create(PieceType type, int x, int y, Angle angle);
+
 void piece_free(Piece *pc);
+
 Piece *piece_copy(const Piece *pc);
+
 Piece *piece_random(int x, int y, Angle angle);
 
 #endif //TAITRIS_PIECE_H

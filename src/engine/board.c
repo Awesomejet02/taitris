@@ -89,3 +89,26 @@ void board_break_lines(Board *brd, const int *hist) {
   if (delta)
     board_down_lines(brd, y + delta + 1, delta);
 }
+
+int board_merge_piece(Board *brd, const Piece *pc) {
+  assert(brd != NULL);
+  assert(pc != NULL);
+
+  for (int i = 0; i < PIECE_SHAPE_HEIGHT; i++) {
+    for (int j = 0; j < PIECE_SHAPE_WIDTH; j++) {
+      if (pc->shape->shape[pc->angle][i][j]) {
+        int x = pc->x + j;
+        int y = pc->y - i;
+
+        if (x < 0 || y < 0 ||
+            x >= brd->width || y >= brd->height ||
+            board_at(brd, x, y) != CELL_EMPTY)
+          return 0;
+
+        board_set(brd, x, y, pc->shape->fill);
+      }
+    }
+  }
+
+  return 1;
+}

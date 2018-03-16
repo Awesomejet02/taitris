@@ -5,14 +5,13 @@
  * @brief   Debug state
  */
 #include "debug_state.h"
-#include "../../engine/state.h"
-#include "../../engine/piece/piece.h"
-#include "../../engine/piece/piece_shape.h"
 
 void debug_state_print_line_number(const Board *brd, int y) {
   printf(ANSI_RESET);
 
-  if (board_is_line_complete(brd, y))
+  if (y >= brd->height)
+    printf(ANSI_FG_RED);
+  else if (board_is_line_complete(brd, y))
     printf(ANSI_FG_GREEN);
 
   printf("%2d", y);
@@ -125,21 +124,23 @@ void debug_state_print(const State *state) {
 
   const Board *brd = state->board;
 
-  for (int y = board_reverse_y(brd, 0); y >= 0; y--) {
+  for (int y = (brd->height + BOARD_HIDDEN - 1); y >= 0; y--) {
     printf(" ");
 
     debug_state_print_line_number(brd, y);
 
-    printf(" |");
+    if (y >= brd->height) printf(ANSI_FG_RED);
+    printf(" |" ANSI_RESET);
 
     for (int x = 0; x < brd->width; x++) {
       if (!debug_state_print_current_piece(state->current_piece, x, y)) {
-        Cell c = board_at(brd, x, y);
+        Cell c = y < brd->height ? board_at(brd, x, y) : CELL_EMPTY;
         debug_state_print_cell(c);
       }
     }
 
-    printf("| ");
+    if (y >= brd->height) printf(ANSI_FG_RED);
+    printf("| " ANSI_RESET);
 
     debug_state_print_next_piece(state->next_piece, board_reverse_y(brd, y));
     debug_state_print_infos(state, board_reverse_y(brd, y + 8));

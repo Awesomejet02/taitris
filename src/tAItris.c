@@ -7,14 +7,20 @@
 
 #include "utils/random.h"
 
+#include "engine/piece/piece_queue.h"
 #include "engine/state.h"
 #include "debug/engine/debug_state.h"
 
 int main() {
   random_init();
 
+  PieceQueue *q = piece_queue_create();
+
   State *state = state_create();
-  state_init(state);
+  state_init(state, q);
+
+  State *state2 = state_create();
+  state_init(state2, q);
 
   /*Cell c[22][10] = {
       { CELL_EMPTY, CELL_EMPTY, CELL_EMPTY, CELL_EMPTY, CELL_EMPTY, CELL_EMPTY, CELL_EMPTY, CELL_EMPTY, CELL_EMPTY, CELL_EMPTY },
@@ -42,9 +48,18 @@ int main() {
   };
   memcpy(state->board->cells, &c, sizeof(Cell) * state->board->width * state->board->height);*/
 
+  //debug_state_print(state);
+
+  while (state_step(state)) {}
+  while (state_step(state2)) {}
+
   debug_state_print(state);
+  debug_state_print(state2);
 
   state_free(state);
+  state_free(state2);
+
+  piece_queue_free(q);
 
   return 0;
 }

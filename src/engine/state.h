@@ -15,10 +15,9 @@
 #include "board.h"
 #include "piece/piece.h"
 #include "piece/piece_shape.h"
+#include "piece/piece_queue.h"
+#include "motion.h"
 #include "../utils/safe_op.h"
-
-#define SPAWN_X (BOARD_WIDTH / 2 - PIECE_SHAPE_WIDTH / 2)
-#define SPAWN_Y (BOARD_HEIGHT - 1)
 
 typedef struct {
   unsigned int score;
@@ -28,6 +27,9 @@ typedef struct {
   unsigned int input_counts;
 
   Board *board;
+
+  PieceQueue *piece_queue;
+  size_t piece_queue_index;
 
   Piece *current_piece;
   Piece *next_piece;
@@ -86,8 +88,17 @@ void state_add_input_counts(State *state, unsigned int input_counts) {
 }
 
 State *state_create();
-void state_init(State *state);
+
+void state_init(State *state, PieceQueue *q);
+
 void state_free(State *state);
+
 State *state_copy(const State *state);
+
+Piece *state_create_piece(State *state);
+
+void state_next_piece(State *state);
+
+int state_step(State *state);
 
 #endif //TAITRIS_STATE_H

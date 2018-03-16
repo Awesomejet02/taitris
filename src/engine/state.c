@@ -2,7 +2,7 @@
  * @file    state.c
  * @author  S4MasterRace
  * @version 2.0
- * @brief   No description
+ * @brief   State
  */
 #include "state.h"
 
@@ -19,8 +19,9 @@ State *state_create() {
   return state;
 }
 
-void state_init(State *state) {
+void state_init(State *state, PieceQueue *q) {
   assert(state != NULL);
+  assert(q != NULL);
 
   state->score = 0;
   state->level = 1;
@@ -30,8 +31,10 @@ void state_init(State *state) {
 
   board_init(state->board);
 
-  state->current_piece = piece_random(SPAWN_X, SPAWN_Y, ANGLE_UP);
-  state->next_piece = piece_random(SPAWN_X, SPAWN_Y, ANGLE_UP);
+  state->piece_queue = q;
+  state->piece_queue_index = 0;
+
+  state_next_piece(state);
 }
 
 void state_free(State *state) {
@@ -44,7 +47,7 @@ void state_free(State *state) {
 }
 
 State *state_copy(const State *state) {
-  assert(state);
+  assert(state != NULL);
 
   State *cstate = state_create();
   memcpy(cstate, state, sizeof(State));
@@ -55,4 +58,65 @@ State *state_copy(const State *state) {
   cstate->next_piece = piece_copy(state->next_piece);
 
   return cstate;
+}
+
+Piece *state_create_piece(State *state) {
+  int spawnX = state->board->width / 2 - PIECE_SHAPE_WIDTH / 2;
+  int spawnY = state->board->height + BOARD_HIDDEN - 1;
+
+  Piece *pc = piece_create(
+      piece_queue_get(state->piece_queue, state->piece_queue_index),
+      spawnX,
+      spawnY,
+      ANGLE_UP
+  );
+
+  state->piece_queue_index++;
+
+  return pc;
+}
+
+void state_next_piece(State *state) {
+  assert(state != NULL);
+
+  if (state->current_piece != NULL) {
+    piece_free(state->current_piece);
+    state->current_piece = NULL;
+  }
+
+
+
+  if (state->next_piece != NULL) {
+    state->current_piece = state->next_piece;
+    state->next_piece = NULL;
+  } else {
+    state->current_piece = state_create_piece(state);
+  }
+
+  if (state->next_piece != NULL) {
+    piece_free(state->next_piece);
+    state->next_piece = NULL;
+  }
+
+  state->next_piece = state_create_piece(state);
+
+  motion_try_move(state->current_piece, state->board, 0, -1);
+}
+
+int state_step(State *state) {
+  assert(state != NULL);
+
+  state_add_step(state, 1);
+
+  motion_try_move(state->current_piece, state->board, random_int(-1, 2), 0);
+  motion_try_rotate(state->current_piece, state->board, (Rotation) random_int(-1, 2));
+
+  if (!motion_try_move(state->current_piece, state->board, 0, -1)) {
+    if (!board_merge_piece(state->board, state->current_piece))
+      return 0;
+
+    state_next_piece(state);
+  }
+
+  return 1;
 }

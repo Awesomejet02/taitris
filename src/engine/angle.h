@@ -21,10 +21,10 @@ typedef enum {
 } Rotation;
 
 static inline
-Angle angle_rotate(Angle angle, Rotation rotation) {
-  if (angle == ANGLE_UP && rotation == ROTATE_LEFT) angle = ANGLE_LEFT;
-  else if (angle == ANGLE_LEFT && rotation == ROTATE_RIGHT) angle = ANGLE_UP;
-  else angle += rotation;
+Angle angle_rotate(Angle angle, Rotation r) {
+  if (angle == ANGLE_UP && r == ROTATE_LEFT) angle = ANGLE_LEFT;
+  else if (angle == ANGLE_LEFT && r == ROTATE_RIGHT) angle = ANGLE_UP;
+  else angle += r;
 
   return angle;
 }
