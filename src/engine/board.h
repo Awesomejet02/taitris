@@ -12,10 +12,12 @@
 #include <string.h>
 #include <err.h>
 
+#include "piece/piece.h"
 #include "cell.h"
 
 #define BOARD_WIDTH 10
-#define BOARD_HEIGHT 22
+#define BOARD_HEIGHT 20
+#define BOARD_HIDDEN 2
 
 typedef struct {
   int width;
@@ -79,10 +81,17 @@ int board_is_line_complete(const Board *brd, int line) {
 }
 
 Board *board_create(int width, int height);
+
 void board_init(Board *brd);
+
 void board_free(Board *brd);
+
 Board *board_copy(Board *brd);
+
 size_t board_get_completed_lines(const Board *brd, int *hist);
+
 void board_break_lines(Board *brd, const int *hist);
+
+int board_merge_piece(Board *brd, const Piece *pc);
 
 #endif //TAITRIS_BOARD_H

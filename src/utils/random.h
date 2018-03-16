@@ -16,6 +16,11 @@ void random_init() {
 }
 
 static inline
+void random_init_seed(unsigned int seed) {
+  srandom(seed);
+}
+
+static inline
 int random_int(int min, int max) {
   return (int) (random() % (max - min) + min);
 }

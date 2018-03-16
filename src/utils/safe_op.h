@@ -7,9 +7,7 @@
 #ifndef TAITRIS_SAFE_OP_H
 #define TAITRIS_SAFE_OP_H
 
-#include <stdlib.h>
 #include <limits.h>
-#include <err.h>
 
 #define SAFE_OP_SUCCESS   0
 #define SAFE_OP_OVERFLOW  1

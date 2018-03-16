@@ -36,5 +36,5 @@ Piece *piece_copy(const Piece *pc) {
 }
 
 Piece *piece_random(int x, int y, Angle angle) {
-  return piece_create((PieceType) random_int(0, PIECE_TYPE_ESIZE), x, y, angle);
+  return piece_create(seven_bag_draw(), x, y, angle);
 }

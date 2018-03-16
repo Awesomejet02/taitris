@@ -2,7 +2,7 @@
  * @file    debug.h
  * @author  S4MasterRace
  * @version 2.0
- * @brief   No description
+ * @brief   Debug
  */
 #ifndef TAITRIS_DEBUG_H
 #define TAITRIS_DEBUG_H
