@@ -25,8 +25,6 @@ void debug_state_print_infos(const State *state, int y);
 
 void debug_state_print_next_piece(const Piece *pc, int y);
 
-int debug_state_print_current_piece(const Piece *pc, int x, int y);
-
 void debug_state_print(const State *state);
 
 #endif //TAITRIS_DEBUG_STATE_H

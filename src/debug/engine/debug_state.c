@@ -97,19 +97,6 @@ void debug_state_print_next_piece(const Piece *pc, int y) {
   printf(ANSI_RESET);
 }
 
-int debug_state_print_current_piece(const Piece *pc, int x, int y) {
-  x -= pc->x;
-  y = pc->y - y;
-
-  if (x >= 0 && x < PIECE_SHAPE_WIDTH && y >= 0 && y < PIECE_SHAPE_HEIGHT &&
-      pc->shape->shape[pc->angle][y][x]) {
-    debug_state_print_cell(pc->shape->fill);
-    return 1;
-  }
-
-  return 0;
-}
-
 void debug_state_print(const State *state) {
   printf(DEBUG_STATE_TAG "Printing state ");
 
@@ -133,12 +120,8 @@ void debug_state_print(const State *state) {
     if (y >= brd->height) printf(ANSI_FG_RED);
     printf(" |" ANSI_RESET);
 
-    for (int x = 0; x < brd->width; x++) {
-      if (!debug_state_print_current_piece(state->current_piece, x, y)) {
-        Cell c = y < brd->height ? board_at(brd, x, y) : CELL_EMPTY;
-        debug_state_print_cell(c);
-      }
-    }
+    for (int x = 0; x < brd->width; x++)
+      debug_state_print_cell(state_at(state, x, y));
 
     if (y >= brd->height) printf(ANSI_FG_RED);
     printf("| " ANSI_RESET);
