@@ -9,5 +9,5 @@ void genetic_show_stats(State *state)
   assert(state != NULL);
 
   show_features(state->board);
-  printf("Rank: " ANSI_FG_RED "%f\n" ANSI_RESET, get_rank(state));
+  printf("Rank: " ANSI_FG_RED "%f\n\n" ANSI_RESET, get_rank(state));
 }

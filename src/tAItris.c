@@ -19,9 +19,12 @@ int main() {
   State *state = state_create();
   state_init(state, q);
 
+  int i = 0;
   while (state_step(state))
   {
     genetic_show_stats(state);
+    if (i++ == 19)
+      break;
   }
 
   debug_state_print(state);

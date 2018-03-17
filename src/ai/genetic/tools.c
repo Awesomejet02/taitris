@@ -4,39 +4,38 @@
 
 #include "tools.h"
 
-void board_heights(const Board *brd, size_t *heights)
+void board_heights(const Board *brd, int *heights)
 {
   assert(brd != NULL);
   assert(heights != NULL);
 
-  for(size_t x = 0; x < BOARD_WIDTH; ++x)
+  for(int x = 0; x < brd->width; ++x)
   {
     heights[x] = board_height(brd,x);
   }
 }
 
-size_t board_height(const Board *brd, size_t x)
+int board_height(const Board *brd, int x)
 {
   assert(brd != NULL);
-  assert(x < BOARD_WIDTH);
+  assert(x < brd->width);
 
-  size_t height = BOARD_HEIGHT;
+  int height = brd->height - 1;
 
-  for(size_t y = 0; y < BOARD_HEIGHT && board_at(brd,x,y) == -1; ++y, --height)
-  {}
+  for(; height != 0 && board_at(brd, x, height) == CELL_EMPTY; --height);
 
   return height;
 }
 
-size_t bumpiness(const Board *brd)
+int bumpiness(const Board *brd)
 {
   assert(brd != NULL);
 
-  size_t bumpiness = 0;
-  size_t *heights = malloc(BOARD_WIDTH * sizeof(size_t));
+  int bumpiness = 0;
+  int *heights = malloc(brd->width * sizeof(int));
   board_heights(brd, heights);
 
-  for(size_t x = 0; x < BOARD_WIDTH - 1; ++x)
+  for(int x = 0; x < brd->width - 1; ++x)
   {
     int diff = heights[x] - heights[x + 1]; //TODO fix the ABS macro but not mandatory
     bumpiness += ABS(diff);
@@ -46,32 +45,32 @@ size_t bumpiness(const Board *brd)
   return bumpiness;
 }
 
-size_t aggregate_height(const Board *brd)
+int aggregate_height(const Board *brd)
 {
   assert(brd != NULL);
 
   size_t agg_height = 0;
-  for(size_t x = 0; x < BOARD_WIDTH; ++x)
+  for(int x = 0; x < brd->width; ++x)
   {
     agg_height += board_height(brd, x);
   }
   return agg_height;
 }
 
-size_t hole(const Board *brd, size_t x)
+int hole(const Board *brd, int x)
 {
-  size_t h = board_height(brd, x);
+  int h = board_height(brd, x);
   if (h == 0)
     return 0;
 
-  size_t holes = 0;
-  h = BOARD_HEIGHT - h; //point to board cell
-  while(h < BOARD_HEIGHT)
+  int holes = 0;
+  h = brd->height - h; //point to board cell
+  while(h < brd->height)
   {
     if(board_at(brd, x, h) == CELL_EMPTY)
     {
       ++holes;
-      while(h + 1 < BOARD_HEIGHT && board_at(brd, x, h + 1) == CELL_EMPTY)
+      while(h + 1 < brd->height && board_at(brd, x, h + 1) == CELL_EMPTY)
       {
         ++h;
         ++holes;
@@ -83,10 +82,10 @@ size_t hole(const Board *brd, size_t x)
   return holes;
 }
 
-size_t holes(const Board *brd)
+int holes(const Board *brd)
 {
-  size_t holes = 0;
-  for(size_t x = 0; x < BOARD_WIDTH; ++x)
+  int holes = 0;
+  for(int x = 0; x < brd->width; ++x)
   {
     holes += hole(brd, x);
   }
@@ -94,17 +93,16 @@ size_t holes(const Board *brd)
   return holes;
 }
 
-size_t clears(const Board *brd)
+int clears(const Board *brd)
 {
-  size_t *lines;
-  size_t c = board_get_completed_lines(brd, &lines);
+  size_t c = board_get_completed_lines(brd, NULL);
   return c;
 }
 
 void show_features(const Board *brd)
 {
-  printf("holes: " ANSI_FG_GREEN "%zu\n" ANSI_RESET, holes(brd));
-  printf("aggregate_height: " ANSI_FG_GREEN "%zu\n" ANSI_RESET , aggregate_height(brd));
-  printf("clears: " ANSI_FG_GREEN "%zu\n" ANSI_RESET, clears(brd));
-  printf("bumpiness: " ANSI_FG_GREEN "%zu\n" ANSI_RESET, bumpiness(brd));
+  printf("holes: " ANSI_FG_GREEN "%d\n" ANSI_RESET, holes(brd));
+  printf("aggregate_height: " ANSI_FG_GREEN "%d\n" ANSI_RESET , aggregate_height(brd));
+  printf("clears: " ANSI_FG_GREEN "%d\n" ANSI_RESET, clears(brd));
+  printf("bumpiness: " ANSI_FG_GREEN "%d\n" ANSI_RESET, bumpiness(brd));
 }

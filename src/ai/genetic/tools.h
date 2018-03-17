@@ -11,21 +11,21 @@
 
 #define ABS(X) (((X) < 0) ? (-1 * (X)) : (X))
 
-size_t board_height(const Board *brd, size_t x);
+int board_height(const Board *brd, int x);
 
-void board_heights(const Board *brd, size_t *heights);
+void board_heights(const Board *brd, int *heights);
 
-size_t bumpiness(const Board *brd);
+int bumpiness(const Board *brd);
 
-size_t aggregate_height(const Board *brd);
+int aggregate_height(const Board *brd);
 
-size_t hole(const Board *brd, size_t x);
+int hole(const Board *brd, int x);
 
-size_t holes(const Board *brd);
+int holes(const Board *brd);
 
 size_t coalescent_clears(const Board *brd);
 
-size_t clears(const Board *brd);
+int clears(const Board *brd);
 
 void show_features(const Board *brd);
 #endif //TAITRIS_TOOLS_H
