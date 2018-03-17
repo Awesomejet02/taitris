@@ -22,9 +22,9 @@ int board_height(const Board *brd, int x)
 
   int height = brd->height - 1;
 
-  for(; height != 0 && board_at(brd, x, height) == CELL_EMPTY; --height);
+  for(; height >= 0 && board_at(brd, x, height) == CELL_EMPTY; --height);
 
-  return height;
+  return height + 1;
 }
 
 int bumpiness(const Board *brd)
@@ -49,7 +49,7 @@ int aggregate_height(const Board *brd)
 {
   assert(brd != NULL);
 
-  size_t agg_height = 0;
+  int agg_height = 0;
   for(int x = 0; x < brd->width; ++x)
   {
     agg_height += board_height(brd, x);
@@ -64,19 +64,14 @@ int hole(const Board *brd, int x)
     return 0;
 
   int holes = 0;
-  h = brd->height - h; //point to board cell
-  while(h < brd->height)
+  int y = 0;
+  while(y < h)
   {
-    if(board_at(brd, x, h) == CELL_EMPTY)
+    if(board_at(brd, x, y) == CELL_EMPTY)
     {
       ++holes;
-      while(h + 1 < brd->height && board_at(brd, x, h + 1) == CELL_EMPTY)
-      {
-        ++h;
-        ++holes;
-      }
     }
-    ++h; //go down
+    ++y;
   }
 
   return holes;
