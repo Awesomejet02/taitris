@@ -46,21 +46,14 @@ void piece_queue_extend(PieceQueue *q) {
   assert(q != NULL);
 
   size_t newLength = q->length + PIECE_QUEUE_LENGTH;
+  q->data = realloc(q->data, newLength);
 
-  PieceType *newData = malloc(newLength * sizeof(PieceType));
-
-  if (newData == NULL)
+  if (q->data == NULL)
     errx(EXIT_FAILURE, "Can't extend piece queue data of length %zu",
          newLength);
 
-  memset(newData, 0, newLength * sizeof(PieceType));
-  memcpy(newData, q->data, q->length);
+  piece_queue_fill_data(q->data + q->length, PIECE_QUEUE_LENGTH);
 
-  piece_queue_fill_data(newData + q->length, PIECE_QUEUE_LENGTH);
-
-  free(q->data);
-
-  q->data = newData;
   q->length = newLength;
 }
 
