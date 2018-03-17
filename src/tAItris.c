@@ -20,12 +20,7 @@ int main() {
   State *state = state_create();
   state_init(state, q);
 
-  debug_state_print(state);
-
-  while (state_step(state))
-  {
-    debug_state_print(state);
-  }
+  while (state_step(state));
 
   debug_state_print(state);
 

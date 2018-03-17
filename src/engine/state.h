@@ -109,13 +109,14 @@ Cell state_at(const State *state, int x, int y) {
   assert(y >= 0);
   assert(y < (state->board->height + BOARD_HIDDEN));
 
-  int px = x - state->current_piece->x;
-  int py = state->current_piece->y - y;
+  Piece *pc = state->current_piece;
+  int px = x - pc->x;
+  int py = pc->y - y;
 
   if (px >= 0 && py >= 0 &&
       px < PIECE_SHAPE_WIDTH && py < PIECE_SHAPE_HEIGHT &&
-      state->current_piece->shape->shape[state->current_piece->angle][py][px])
-    return state->current_piece->shape->fill;
+      pc->shape->shape[pc->angle][py][px] != CELL_EMPTY)
+    return pc->shape->fill;
 
   if (y < state->board->height)
     return board_at(state->board, x, y);
