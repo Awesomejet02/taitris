@@ -20,7 +20,23 @@ int main() {
   State *state = state_create();
   state_init(state, q);
 
-  while (state_step(state));
+  //while (state_step(state));
+
+  debug_state_print(state);
+
+  Input inputs[] = {
+      INPUT_MOVE_LEFT,
+      INPUT_MOVE_LEFT,
+      INPUT_MOVE_LEFT,
+      INPUT_MOVE_LEFT,
+      INPUT_SOFT_DROP,
+      INPUT_SOFT_DROP,
+      INPUT_SOFT_DROP,
+      INPUT_SOFT_DROP,
+      INPUT_ROTATE_LEFT
+  };
+
+  state_apply_inputs(state, inputs, 9);
 
   debug_state_print(state);
 

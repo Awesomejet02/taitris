@@ -129,3 +129,43 @@ int state_step(State *state) {
 
   return 1;
 }
+
+int state_apply_input(State *state, Input input) {
+  assert(state != NULL);
+
+  state_add_input_counts(state, 1);
+
+  switch (input) {
+    case INPUT_MOVE_LEFT:
+      return motion_try_move(state->current_piece, state->board, -1, 0);
+    case INPUT_MOVE_RIGHT:
+      return motion_try_move(state->current_piece, state->board, 1, 0);
+    case INPUT_ROTATE_RIGHT:
+      return motion_try_rotate(state->current_piece, state->board,
+                               ROTATE_RIGHT);
+    case INPUT_ROTATE_LEFT:
+      return motion_try_rotate(state->current_piece, state->board,
+                               ROTATE_LEFT);
+    case INPUT_SOFT_DROP:
+      return motion_try_move(state->current_piece, state->board, 0, -1);
+    case INPUT_HARD_DROP:
+      return motion_try_down(state->current_piece, state->board);
+    default:
+      return 0;
+  }
+}
+
+int state_apply_inputs(State *state, Input input[], size_t len) {
+  assert(state != NULL);
+  assert(input != NULL);
+
+  if (len == 0) return 0;
+
+  int succ = 1;
+
+  for (size_t i = 0; i < len; i++)
+    if (!state_apply_input(state, input[i]))
+      succ = 0;
+
+  return succ;
+}

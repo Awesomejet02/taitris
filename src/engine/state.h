@@ -17,6 +17,7 @@
 #include "piece/piece_shape.h"
 #include "piece/piece_queue.h"
 #include "motion.h"
+#include "input.h"
 #include "../utils/safe_op.h"
 
 typedef struct {
@@ -123,5 +124,9 @@ Cell state_at(const State *state, int x, int y) {
 
   return CELL_EMPTY;
 }
+
+int state_apply_input(State *state, Input input);
+
+int state_apply_inputs(State *state, Input input[], size_t len);
 
 #endif //TAITRIS_STATE_H
