@@ -5,6 +5,7 @@
  * @brief   State
  */
 #include "state.h"
+#include "board.h"
 
 State *state_create() {
   State *state = malloc(sizeof(State));
@@ -114,6 +115,14 @@ int state_step(State *state) {
   if (!motion_try_move(state->current_piece, state->board, 0, -1)) {
     if (!board_merge_piece(state->board, state->current_piece))
       return 0;
+
+    int hist[state->board->height];
+    size_t count = board_get_completed_lines(state->board, hist);
+
+    if (count) {
+      state_add_broken_lines(state, (unsigned int) count);
+      board_break_lines(state->board, hist);
+    }
 
     state_next_piece(state);
   }
