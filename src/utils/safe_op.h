@@ -2,7 +2,7 @@
  * @file    safe_op.h
  * @author  S4MasterRace
  * @version 2.0
- * @brief   Sage operations
+ * @brief   Safe operations
  */
 #ifndef TAITRIS_SAFE_OP_H
 #define TAITRIS_SAFE_OP_H

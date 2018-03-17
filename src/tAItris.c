@@ -6,10 +6,6 @@
  */
 
 #include "utils/random.h"
-#include "engine/piece/piece_queue.h"
-#include "engine/state.h"
-#include "debug/engine/debug_state.h"
-#include "ai/genetic/core.h"
 
 #include "engine/piece/piece_queue.h"
 #include "engine/state.h"

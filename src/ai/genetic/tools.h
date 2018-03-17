@@ -1,6 +1,9 @@
-//
-// Created by dotty on 2/20/18.
-//
+/**
+ * @file    tools.h
+ * @author  S4MasterRace
+ * @version 2.0
+ * @brief   Tools for the genetic algorithm
+ */
 
 #ifndef TAITRIS_TOOLS_H
 #define TAITRIS_TOOLS_H

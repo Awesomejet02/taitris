@@ -1,6 +1,9 @@
-//
-// Created by dotty on 2/22/18.
-//
+/**
+ * @file    engine.c
+ * @author  S4MasterRace
+ * @version 2.0
+ * @brief   Engine for the genetic algorithm
+ */
 
 #include "engine.h"
 #include "../../engine/state.h"

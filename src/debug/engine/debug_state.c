@@ -4,6 +4,7 @@
  * @version 2.0
  * @brief   Debug state
  */
+
 #include "debug_state.h"
 
 void debug_state_print_line_number(const Board *brd, int y) {

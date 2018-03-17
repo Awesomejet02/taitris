@@ -1,6 +1,9 @@
-//
-// Created by dotty on 2/20/18.
-//
+/**
+ * @file    tools.c
+ * @author  S4MasterRace
+ * @version 2.0
+ * @brief   Tools for the genetic algorithm
+ */
 
 #include "tools.h"
 

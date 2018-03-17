@@ -1,6 +1,9 @@
-//
-// Created by dotty on 2/22/18.
-//
+/**
+ * @file    engine.h
+ * @author  S4MasterRace
+ * @version 2.0
+ * @brief   Engine for the genetic algorithm
+ */
 
 #ifndef TAITRIS_ENGINE_H
 #define TAITRIS_ENGINE_H
