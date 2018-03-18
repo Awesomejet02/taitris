@@ -15,11 +15,14 @@ typedef struct {
     double holes;
     double clears;
     double bumpiness;
-    //double tetris;
-    //double blockades;
 } AiCoefs;
 
-AiCoefs *get_coefs();
+double genetic_get_rank(State *state);
 
-double get_rank(State *state);
+AiCoefs *genetic_coefs_get();
+
+AiCoefs *genetic_aicoefs_random();
+
+void genetic_aicoefs_free(AiCoefs *coefs);
+
 #endif //TAITRIS_ENGINE_H
