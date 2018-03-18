@@ -18,6 +18,8 @@
 #define SCORE_SDROP 1
 #define SCORE_HDROP 2
 
+#define SCORE_LVL_PER_LINE 10
+
 static inline
 unsigned int score_get(int combo, unsigned int level) {
   switch (combo) {

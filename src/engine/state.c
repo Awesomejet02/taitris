@@ -122,7 +122,15 @@ int state_step(State *state) {
     if (count) {
       unsigned int score = score_compute_break(hist, count, state->level);
       state_add_score(state, score);
+
       state_add_broken_lines(state, (unsigned int) count);
+
+      unsigned int d = state->broken_lines / SCORE_LVL_PER_LINE;
+      d += 1 - state->level;
+
+      if (d)
+        state_add_level(state, d);
+
       board_break_lines(state->board, hist);
     }
 
@@ -137,6 +145,8 @@ int state_apply_input(State *state, Input input) {
 
   state_add_input_counts(state, 1);
 
+  int moved = 0;
+
   switch (input) {
     case INPUT_MOVE_LEFT:
       return motion_try_move(state->current_piece, state->board, -1, 0);
@@ -149,9 +159,13 @@ int state_apply_input(State *state, Input input) {
       return motion_try_rotate(state->current_piece, state->board,
                                ROTATE_LEFT);
     case INPUT_SOFT_DROP:
-      return motion_try_move(state->current_piece, state->board, 0, -1);
+      moved = motion_try_move(state->current_piece, state->board, 0, -1);
+      if (moved) state_add_score(state, (unsigned int) SCORE_SDROP * moved);
+      return moved > 0;
     case INPUT_HARD_DROP:
-      return motion_try_down(state->current_piece, state->board);
+      moved = motion_try_down(state->current_piece, state->board);
+      if (moved) state_add_score(state, (unsigned int) SCORE_HDROP * moved);
+      return moved > 0;
     default:
       return 0;
   }

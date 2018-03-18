@@ -45,7 +45,7 @@ int motion_try_down(Piece *pc, const Board *brd) {
   int moved = 0;
 
   while (motion_try_move(pc, brd, 0, -1))
-    moved = 1;
+    moved++;
 
   return moved;
 }
