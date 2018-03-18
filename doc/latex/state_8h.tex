@@ -1,0 +1,145 @@
+\section{src/engine/state.h File Reference}
+\label{state_8h}\index{src/engine/state.\+h@{src/engine/state.\+h}}
+
+
+\doxyref{State}{p.}{structState}.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$err.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}piece/piece.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}piece/piece\+\_\+shape.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}piece/piece\+\_\+queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../utils/safe\+\_\+op.\+h\char`\"{}}\newline
+Include dependency graph for state.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{state_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{state_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ State}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ State} $\ast$ \textbf{ state\+\_\+create} ()
+\item 
+void \textbf{ state\+\_\+init} (\textbf{ State} $\ast$state, \textbf{ Piece\+Queue} $\ast$q)
+\item 
+void \textbf{ state\+\_\+free} (\textbf{ State} $\ast$state)
+\item 
+\textbf{ State} $\ast$ \textbf{ state\+\_\+copy} (const \textbf{ State} $\ast$state)
+\item 
+\textbf{ Piece} $\ast$ \textbf{ state\+\_\+create\+\_\+piece} (\textbf{ State} $\ast$state)
+\item 
+void \textbf{ state\+\_\+next\+\_\+piece} (\textbf{ State} $\ast$state)
+\item 
+int \textbf{ state\+\_\+step} (\textbf{ State} $\ast$state)
+\item 
+int \textbf{ state\+\_\+apply\+\_\+input} (\textbf{ State} $\ast$state, \textbf{ Input} input)
+\item 
+int \textbf{ state\+\_\+apply\+\_\+inputs} (\textbf{ State} $\ast$state, \textbf{ Input} input[$\,$], size\+\_\+t len)
+\item 
+int \textbf{ state\+\_\+can\+\_\+apply\+\_\+input} (\textbf{ State} $\ast$state, \textbf{ Input} input)
+\item 
+int \textbf{ state\+\_\+can\+\_\+apply\+\_\+inputs} (\textbf{ State} $\ast$state, \textbf{ Input} input[$\,$], size\+\_\+t len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{State}{p.}{structState}. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\label{state_8h_ad93fdb98f5dc85b8fb3683e02631f369}} 
+\index{state.\+h@{state.\+h}!state\+\_\+apply\+\_\+input@{state\+\_\+apply\+\_\+input}}
+\index{state\+\_\+apply\+\_\+input@{state\+\_\+apply\+\_\+input}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+apply\+\_\+input()}
+{\footnotesize\ttfamily int state\+\_\+apply\+\_\+input (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state,  }\item[{\textbf{ Input}}]{input }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_ad1dbcd902c0cb09e397a59eea30de21b}} 
+\index{state.\+h@{state.\+h}!state\+\_\+apply\+\_\+inputs@{state\+\_\+apply\+\_\+inputs}}
+\index{state\+\_\+apply\+\_\+inputs@{state\+\_\+apply\+\_\+inputs}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+apply\+\_\+inputs()}
+{\footnotesize\ttfamily int state\+\_\+apply\+\_\+inputs (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state,  }\item[{\textbf{ Input}}]{input[$\,$],  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_ac4ed6442134df1ae3b4aae730290f6a3}} 
+\index{state.\+h@{state.\+h}!state\+\_\+can\+\_\+apply\+\_\+input@{state\+\_\+can\+\_\+apply\+\_\+input}}
+\index{state\+\_\+can\+\_\+apply\+\_\+input@{state\+\_\+can\+\_\+apply\+\_\+input}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+can\+\_\+apply\+\_\+input()}
+{\footnotesize\ttfamily int state\+\_\+can\+\_\+apply\+\_\+input (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state,  }\item[{\textbf{ Input}}]{input }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_a61a69f8f17434cec27e85e3f71cc0d89}} 
+\index{state.\+h@{state.\+h}!state\+\_\+can\+\_\+apply\+\_\+inputs@{state\+\_\+can\+\_\+apply\+\_\+inputs}}
+\index{state\+\_\+can\+\_\+apply\+\_\+inputs@{state\+\_\+can\+\_\+apply\+\_\+inputs}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+can\+\_\+apply\+\_\+inputs()}
+{\footnotesize\ttfamily int state\+\_\+can\+\_\+apply\+\_\+inputs (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state,  }\item[{\textbf{ Input}}]{input[$\,$],  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_addc44143a8bd40469bda8490abb37dfd}} 
+\index{state.\+h@{state.\+h}!state\+\_\+copy@{state\+\_\+copy}}
+\index{state\+\_\+copy@{state\+\_\+copy}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+copy()}
+{\footnotesize\ttfamily \textbf{ State}$\ast$ state\+\_\+copy (\begin{DoxyParamCaption}\item[{const \textbf{ State} $\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_a062a4e5de219642b719e52a9e23e9abc}} 
+\index{state.\+h@{state.\+h}!state\+\_\+create@{state\+\_\+create}}
+\index{state\+\_\+create@{state\+\_\+create}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+create()}
+{\footnotesize\ttfamily \textbf{ State}$\ast$ state\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_a9ce2081e85b17a281b25cd633342edf5}} 
+\index{state.\+h@{state.\+h}!state\+\_\+create\+\_\+piece@{state\+\_\+create\+\_\+piece}}
+\index{state\+\_\+create\+\_\+piece@{state\+\_\+create\+\_\+piece}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+create\+\_\+piece()}
+{\footnotesize\ttfamily \textbf{ Piece}$\ast$ state\+\_\+create\+\_\+piece (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_a8c884ea08b83339c02525c6b581d4448}} 
+\index{state.\+h@{state.\+h}!state\+\_\+free@{state\+\_\+free}}
+\index{state\+\_\+free@{state\+\_\+free}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+free()}
+{\footnotesize\ttfamily void state\+\_\+free (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_adcb5cdc65623cbd0d6d073eb5c8f7e1f}} 
+\index{state.\+h@{state.\+h}!state\+\_\+init@{state\+\_\+init}}
+\index{state\+\_\+init@{state\+\_\+init}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+init()}
+{\footnotesize\ttfamily void state\+\_\+init (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state,  }\item[{\textbf{ Piece\+Queue} $\ast$}]{q }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_a5f417880078be22e9de4ef37ad5d692d}} 
+\index{state.\+h@{state.\+h}!state\+\_\+next\+\_\+piece@{state\+\_\+next\+\_\+piece}}
+\index{state\+\_\+next\+\_\+piece@{state\+\_\+next\+\_\+piece}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+next\+\_\+piece()}
+{\footnotesize\ttfamily void state\+\_\+next\+\_\+piece (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\label{state_8h_a1975f06362a2e02c66671595393bedcd}} 
+\index{state.\+h@{state.\+h}!state\+\_\+step@{state\+\_\+step}}
+\index{state\+\_\+step@{state\+\_\+step}!state.\+h@{state.\+h}}
+\subsubsection{state\+\_\+step()}
+{\footnotesize\ttfamily int state\+\_\+step (\begin{DoxyParamCaption}\item[{\textbf{ State} $\ast$}]{state }\end{DoxyParamCaption})}
+

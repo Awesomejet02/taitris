@@ -18,6 +18,7 @@
 #include "piece/piece_queue.h"
 #include "motion.h"
 #include "input.h"
+#include "score.h"
 #include "../utils/safe_op.h"
 
 typedef struct {
@@ -88,20 +89,6 @@ void state_add_input_counts(State *state, unsigned int input_counts) {
          state->input_counts, input_counts);
 }
 
-State *state_create();
-
-void state_init(State *state, PieceQueue *q);
-
-void state_free(State *state);
-
-State *state_copy(const State *state);
-
-Piece *state_create_piece(State *state);
-
-void state_next_piece(State *state);
-
-int state_step(State *state);
-
 static inline
 Cell state_at(const State *state, int x, int y) {
   assert(state != NULL);
@@ -125,8 +112,26 @@ Cell state_at(const State *state, int x, int y) {
   return CELL_EMPTY;
 }
 
+State *state_create();
+
+void state_init(State *state, PieceQueue *q);
+
+void state_free(State *state);
+
+State *state_copy(const State *state);
+
+Piece *state_create_piece(State *state);
+
+void state_next_piece(State *state);
+
+int state_step(State *state);
+
 int state_apply_input(State *state, Input input);
 
 int state_apply_inputs(State *state, Input input[], size_t len);
+
+int state_can_apply_input(State *state, Input input);
+
+int state_can_apply_inputs(State *state, Input input[], size_t len);
 
 #endif //TAITRIS_STATE_H

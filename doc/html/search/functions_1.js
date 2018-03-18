@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['board_5fbreak_5flines',['board_break_lines',['../board_8c.html#a6c85e1a231846cafebb7ac9f9bc3910a',1,'board_break_lines(Board *brd, const int *hist):&#160;board.c'],['../board_8h.html#a6c85e1a231846cafebb7ac9f9bc3910a',1,'board_break_lines(Board *brd, const int *hist):&#160;board.c']]],
+  ['board_5fcopy',['board_copy',['../board_8c.html#ac42ca212e2ffbc90b074b6a842c8ceb9',1,'board_copy(Board *brd):&#160;board.c'],['../board_8h.html#ac42ca212e2ffbc90b074b6a842c8ceb9',1,'board_copy(Board *brd):&#160;board.c']]],
+  ['board_5fcreate',['board_create',['../board_8c.html#ae7e09c531608d7a5808f1c6b1d220770',1,'board_create(int width, int height):&#160;board.c'],['../board_8h.html#ae7e09c531608d7a5808f1c6b1d220770',1,'board_create(int width, int height):&#160;board.c']]],
+  ['board_5ffree',['board_free',['../board_8c.html#a77b9336423c3e286f4456a4739dcad31',1,'board_free(Board *brd):&#160;board.c'],['../board_8h.html#a77b9336423c3e286f4456a4739dcad31',1,'board_free(Board *brd):&#160;board.c']]],
+  ['board_5fget_5fcompleted_5flines',['board_get_completed_lines',['../board_8c.html#aafdfe55583b35684b3aeefce6047f1d6',1,'board_get_completed_lines(const Board *brd, int *hist):&#160;board.c'],['../board_8h.html#aafdfe55583b35684b3aeefce6047f1d6',1,'board_get_completed_lines(const Board *brd, int *hist):&#160;board.c']]],
+  ['board_5fheight',['board_height',['../tools_8c.html#a91ae5afacda12393e4a93ca8c298832c',1,'board_height(const Board *brd, int x):&#160;tools.c'],['../tools_8h.html#a91ae5afacda12393e4a93ca8c298832c',1,'board_height(const Board *brd, int x):&#160;tools.c']]],
+  ['board_5fheights',['board_heights',['../tools_8c.html#a0074ffa2b0873ffccfdbc813ccf02ba0',1,'board_heights(const Board *brd, int *heights):&#160;tools.c'],['../tools_8h.html#a0074ffa2b0873ffccfdbc813ccf02ba0',1,'board_heights(const Board *brd, int *heights):&#160;tools.c']]],
+  ['board_5finit',['board_init',['../board_8c.html#a00449701ed118c6c9c907f3371b32921',1,'board_init(Board *brd):&#160;board.c'],['../board_8h.html#a00449701ed118c6c9c907f3371b32921',1,'board_init(Board *brd):&#160;board.c']]],
+  ['board_5fmerge_5fpiece',['board_merge_piece',['../board_8c.html#acc71ac2aa1a547f8817ace71aad751ef',1,'board_merge_piece(Board *brd, const Piece *pc):&#160;board.c'],['../board_8h.html#acc71ac2aa1a547f8817ace71aad751ef',1,'board_merge_piece(Board *brd, const Piece *pc):&#160;board.c']]],
+  ['bumpiness',['bumpiness',['../tools_8c.html#aa5a5f3a20ab3b8a9894c2826b02f5a70',1,'bumpiness(const Board *brd):&#160;tools.c'],['../tools_8h.html#aa5a5f3a20ab3b8a9894c2826b02f5a70',1,'bumpiness(const Board *brd):&#160;tools.c']]]
+];

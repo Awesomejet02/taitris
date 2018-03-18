@@ -1,0 +1,104 @@
+\section{src/engine/score.h File Reference}
+\label{score_8h}\index{src/engine/score.\+h@{src/engine/score.\+h}}
+
+
+Scoring system.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for score.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{score_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE}~100
+\item 
+\#define \textbf{ S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE}~300
+\item 
+\#define \textbf{ S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE}~500
+\item 
+\#define \textbf{ S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS}~800
+\item 
+\#define \textbf{ S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP}~1
+\item 
+\#define \textbf{ S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP}~2
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \textbf{ score\+\_\+compute\+\_\+break} (const int hist[$\,$], size\+\_\+t len, unsigned int level)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Scoring system. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{score_8h_abf3a94c8c811229ec8c21ba8097f4a8f}} 
+\index{score.\+h@{score.\+h}!S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE@{S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE}}
+\index{S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE@{S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE}!score.\+h@{score.\+h}}
+\subsubsection{S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE}
+{\footnotesize\ttfamily \#define S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE~300}
+
+\mbox{\label{score_8h_a21b90b04662b40af6aa45e9db2b005a1}} 
+\index{score.\+h@{score.\+h}!S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP@{S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP}}
+\index{S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP@{S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP}!score.\+h@{score.\+h}}
+\subsubsection{S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP}
+{\footnotesize\ttfamily \#define S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP~2}
+
+\mbox{\label{score_8h_a1a58f663e89e5e3d71342ed0c26a865f}} 
+\index{score.\+h@{score.\+h}!S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP@{S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP}}
+\index{S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP@{S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP}!score.\+h@{score.\+h}}
+\subsubsection{S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP}
+{\footnotesize\ttfamily \#define S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP~1}
+
+\mbox{\label{score_8h_aa4a6e169ddc7c2058e3ef7759008a695}} 
+\index{score.\+h@{score.\+h}!S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE@{S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE}}
+\index{S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE@{S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE}!score.\+h@{score.\+h}}
+\subsubsection{S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE}
+{\footnotesize\ttfamily \#define S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE~100}
+
+\mbox{\label{score_8h_a5df0041655615401e0b0885839356aa5}} 
+\index{score.\+h@{score.\+h}!S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS@{S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS}}
+\index{S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS@{S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS}!score.\+h@{score.\+h}}
+\subsubsection{S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS}
+{\footnotesize\ttfamily \#define S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS~800}
+
+\mbox{\label{score_8h_a48ce26ac27575c8cfe35effa16a22927}} 
+\index{score.\+h@{score.\+h}!S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE@{S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE}}
+\index{S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE@{S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE}!score.\+h@{score.\+h}}
+\subsubsection{S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE}
+{\footnotesize\ttfamily \#define S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE~500}
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{score_8h_a2879d92d899fcd81e056a304c03b3698}} 
+\index{score.\+h@{score.\+h}!score\+\_\+compute\+\_\+break@{score\+\_\+compute\+\_\+break}}
+\index{score\+\_\+compute\+\_\+break@{score\+\_\+compute\+\_\+break}!score.\+h@{score.\+h}}
+\subsubsection{score\+\_\+compute\+\_\+break()}
+{\footnotesize\ttfamily unsigned int score\+\_\+compute\+\_\+break (\begin{DoxyParamCaption}\item[{const int}]{hist[$\,$],  }\item[{size\+\_\+t}]{len,  }\item[{unsigned int}]{level }\end{DoxyParamCaption})}
+

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../tAItris_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'tAItris.c']]]
+  ['aggregate_5fheight',['aggregate_height',['../tools_8c.html#ad841ef8c1553fc39aedf9ff99c4338c8',1,'aggregate_height(const Board *brd):&#160;tools.c'],['../tools_8h.html#ad841ef8c1553fc39aedf9ff99c4338c8',1,'aggregate_height(const Board *brd):&#160;tools.c']]]
 ];

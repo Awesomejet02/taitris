@@ -1,0 +1,81 @@
+\section{src/engine/motion.c File Reference}
+\label{motion_8c}\index{src/engine/motion.\+c@{src/engine/motion.\+c}}
+
+
+Motion.  
+
+
+{\ttfamily \#include \char`\"{}motion.\+h\char`\"{}}\newline
+Include dependency graph for motion.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ motion\+\_\+is\+\_\+valid} (const \textbf{ Piece} $\ast$pc, const \textbf{ Board} $\ast$brd)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+move} (\textbf{ Piece} $\ast$pc, const \textbf{ Board} $\ast$brd, int dx, int dy)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+down} (\textbf{ Piece} $\ast$pc, const \textbf{ Board} $\ast$brd)
+\item 
+int \textbf{ motion\+\_\+try\+\_\+rotate} (\textbf{ Piece} $\ast$pc, const \textbf{ Board} $\ast$brd, \textbf{ Rotation} r)
+\item 
+int \textbf{ motion\+\_\+can\+\_\+move} (const \textbf{ Piece} $\ast$pc, const \textbf{ Board} $\ast$brd, int dx, int dy)
+\item 
+int \textbf{ motion\+\_\+can\+\_\+rotate} (const \textbf{ Piece} $\ast$pc, const \textbf{ Board} $\ast$brd, \textbf{ Rotation} r)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Motion. 
+
+\begin{DoxyAuthor}{Author}
+S4\+Master\+Race 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\mbox{\label{motion_8c_ab199a2d7f6a562940345b4ec28e32ed2}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+can\+\_\+move@{motion\+\_\+can\+\_\+move}}
+\index{motion\+\_\+can\+\_\+move@{motion\+\_\+can\+\_\+move}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+can\+\_\+move()}
+{\footnotesize\ttfamily int motion\+\_\+can\+\_\+move (\begin{DoxyParamCaption}\item[{const \textbf{ Piece} $\ast$}]{pc,  }\item[{const \textbf{ Board} $\ast$}]{brd,  }\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_ad3500291202fdc724ca7babd2df944ba}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+can\+\_\+rotate@{motion\+\_\+can\+\_\+rotate}}
+\index{motion\+\_\+can\+\_\+rotate@{motion\+\_\+can\+\_\+rotate}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+can\+\_\+rotate()}
+{\footnotesize\ttfamily int motion\+\_\+can\+\_\+rotate (\begin{DoxyParamCaption}\item[{const \textbf{ Piece} $\ast$}]{pc,  }\item[{const \textbf{ Board} $\ast$}]{brd,  }\item[{\textbf{ Rotation}}]{r }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_ae67cef6a127c61180c181edb84120ef9}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+is\+\_\+valid@{motion\+\_\+is\+\_\+valid}}
+\index{motion\+\_\+is\+\_\+valid@{motion\+\_\+is\+\_\+valid}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+is\+\_\+valid()}
+{\footnotesize\ttfamily int motion\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{const \textbf{ Piece} $\ast$}]{pc,  }\item[{const \textbf{ Board} $\ast$}]{brd }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_af0d588d036f656d0f629b8115b45df60}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+try\+\_\+down@{motion\+\_\+try\+\_\+down}}
+\index{motion\+\_\+try\+\_\+down@{motion\+\_\+try\+\_\+down}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+try\+\_\+down()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+down (\begin{DoxyParamCaption}\item[{\textbf{ Piece} $\ast$}]{pc,  }\item[{const \textbf{ Board} $\ast$}]{brd }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_a2cf016bccf6ca6fa09a3cb5362fbd6b7}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+try\+\_\+move@{motion\+\_\+try\+\_\+move}}
+\index{motion\+\_\+try\+\_\+move@{motion\+\_\+try\+\_\+move}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+try\+\_\+move()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+move (\begin{DoxyParamCaption}\item[{\textbf{ Piece} $\ast$}]{pc,  }\item[{const \textbf{ Board} $\ast$}]{brd,  }\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+\mbox{\label{motion_8c_a89a0f1321575d3346ebd65f5e2953d71}} 
+\index{motion.\+c@{motion.\+c}!motion\+\_\+try\+\_\+rotate@{motion\+\_\+try\+\_\+rotate}}
+\index{motion\+\_\+try\+\_\+rotate@{motion\+\_\+try\+\_\+rotate}!motion.\+c@{motion.\+c}}
+\subsubsection{motion\+\_\+try\+\_\+rotate()}
+{\footnotesize\ttfamily int motion\+\_\+try\+\_\+rotate (\begin{DoxyParamCaption}\item[{\textbf{ Piece} $\ast$}]{pc,  }\item[{const \textbf{ Board} $\ast$}]{brd,  }\item[{\textbf{ Rotation}}]{r }\end{DoxyParamCaption})}
+

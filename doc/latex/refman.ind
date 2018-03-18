@@ -1,15 +1,713 @@
 \begin{theindex}
 
-  \item {main}
-    \subitem {t\+A\+Itris.\+c}, 3
+  \item {A\+BS}
+    \subitem {tools.\+h}, 23
+  \item {A\+N\+G\+L\+E\+\_\+\+E\+S\+I\+ZE}
+    \subitem {angle.\+h}, 32
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+B\+L\+A\+CK}
+    \subitem {ansi\+\_\+code.\+h}, 74
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+B\+L\+UE}
+    \subitem {ansi\+\_\+code.\+h}, 74
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+C\+Y\+AN}
+    \subitem {ansi\+\_\+code.\+h}, 74
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+G\+R\+E\+EN}
+    \subitem {ansi\+\_\+code.\+h}, 74
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+L\+A\+CK}
+    \subitem {ansi\+\_\+code.\+h}, 74
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+L\+UE}
+    \subitem {ansi\+\_\+code.\+h}, 74
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+M\+A\+G\+E\+N\+TA}
+    \subitem {ansi\+\_\+code.\+h}, 75
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+R\+ED}
+    \subitem {ansi\+\_\+code.\+h}, 75
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+W\+H\+I\+TE}
+    \subitem {ansi\+\_\+code.\+h}, 75
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+Y\+E\+L\+L\+OW}
+    \subitem {ansi\+\_\+code.\+h}, 75
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+C\+Y\+AN}
+    \subitem {ansi\+\_\+code.\+h}, 75
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+D\+E\+F\+A\+U\+LT}
+    \subitem {ansi\+\_\+code.\+h}, 75
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+G\+R\+E\+EN}
+    \subitem {ansi\+\_\+code.\+h}, 75
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+M\+A\+G\+E\+N\+TA}
+    \subitem {ansi\+\_\+code.\+h}, 75
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+R\+ED}
+    \subitem {ansi\+\_\+code.\+h}, 76
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+W\+H\+I\+TE}
+    \subitem {ansi\+\_\+code.\+h}, 76
+  \item {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+Y\+E\+L\+L\+OW}
+    \subitem {ansi\+\_\+code.\+h}, 76
+  \item {A\+N\+S\+I\+\_\+\+B\+O\+LD}
+    \subitem {ansi\+\_\+code.\+h}, 76
+  \item {A\+N\+S\+I\+\_\+\+C\+R\+O\+S\+S\+E\+D\+O\+UT}
+    \subitem {ansi\+\_\+code.\+h}, 76
+  \item {A\+N\+S\+I\+\_\+\+E\+N\+C\+I\+R\+C\+L\+ED}
+    \subitem {ansi\+\_\+code.\+h}, 76
+  \item {A\+N\+S\+I\+\_\+\+E\+SC}
+    \subitem {ansi\+\_\+code.\+h}, 76
+  \item {A\+N\+S\+I\+\_\+\+F\+A\+I\+NT}
+    \subitem {ansi\+\_\+code.\+h}, 76
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+B\+L\+A\+CK}
+    \subitem {ansi\+\_\+code.\+h}, 77
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+B\+L\+UE}
+    \subitem {ansi\+\_\+code.\+h}, 77
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+C\+Y\+AN}
+    \subitem {ansi\+\_\+code.\+h}, 77
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+G\+R\+E\+EN}
+    \subitem {ansi\+\_\+code.\+h}, 77
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+L\+A\+CK}
+    \subitem {ansi\+\_\+code.\+h}, 77
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+L\+UE}
+    \subitem {ansi\+\_\+code.\+h}, 77
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+M\+A\+G\+E\+N\+TA}
+    \subitem {ansi\+\_\+code.\+h}, 77
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+R\+ED}
+    \subitem {ansi\+\_\+code.\+h}, 77
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+W\+H\+I\+TE}
+    \subitem {ansi\+\_\+code.\+h}, 78
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+Y\+E\+L\+L\+OW}
+    \subitem {ansi\+\_\+code.\+h}, 78
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+C\+Y\+AN}
+    \subitem {ansi\+\_\+code.\+h}, 78
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+D\+E\+F\+A\+U\+LT}
+    \subitem {ansi\+\_\+code.\+h}, 78
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+G\+R\+E\+EN}
+    \subitem {ansi\+\_\+code.\+h}, 78
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+M\+A\+G\+E\+N\+TA}
+    \subitem {ansi\+\_\+code.\+h}, 78
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+R\+ED}
+    \subitem {ansi\+\_\+code.\+h}, 78
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+W\+H\+I\+TE}
+    \subitem {ansi\+\_\+code.\+h}, 78
+  \item {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+Y\+E\+L\+L\+OW}
+    \subitem {ansi\+\_\+code.\+h}, 79
+  \item {A\+N\+S\+I\+\_\+\+F\+R\+A\+M\+ED}
+    \subitem {ansi\+\_\+code.\+h}, 79
+  \item {A\+N\+S\+I\+\_\+\+I\+T\+A\+L\+IC}
+    \subitem {ansi\+\_\+code.\+h}, 79
+  \item {A\+N\+S\+I\+\_\+\+O\+V\+E\+R\+L\+I\+N\+ED}
+    \subitem {ansi\+\_\+code.\+h}, 79
+  \item {A\+N\+S\+I\+\_\+\+R\+B\+L\+I\+NK}
+    \subitem {ansi\+\_\+code.\+h}, 79
+  \item {A\+N\+S\+I\+\_\+\+R\+E\+S\+ET}
+    \subitem {ansi\+\_\+code.\+h}, 79
+  \item {A\+N\+S\+I\+\_\+\+S\+B\+L\+I\+NK}
+    \subitem {ansi\+\_\+code.\+h}, 79
+  \item {A\+N\+S\+I\+\_\+\+S\+GR}
+    \subitem {ansi\+\_\+code.\+h}, 79
+  \item {A\+N\+S\+I\+\_\+\+U\+N\+D\+E\+R\+L\+I\+NE}
+    \subitem {ansi\+\_\+code.\+h}, 80
+  \item {agg\+\_\+height}
+    \subitem {Ai\+Coefs}, 5
+  \item {aggregate\+\_\+height}
+    \subitem {tools.\+c}, 19
+    \subitem {tools.\+h}, 23
+  \item {Ai\+Coefs}, 5
+    \subitem {agg\+\_\+height}, 5
+    \subitem {bumpiness}, 5
+    \subitem {clears}, 5
+    \subitem {holes}, 5
+  \item {Angle}
+    \subitem {angle.\+h}, 32
+  \item {angle}
+    \subitem {Piece}, 7
+  \item {angle.\+h}
+    \subitem {A\+N\+G\+L\+E\+\_\+\+E\+S\+I\+ZE}, 32
+    \subitem {Angle}, 32
+    \subitem {Rotation}, 32
+  \item {ansi\+\_\+code.\+h}
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+B\+L\+A\+CK}, 74
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+B\+L\+UE}, 74
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+C\+Y\+AN}, 74
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+G\+R\+E\+EN}, 74
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+L\+A\+CK}, 74
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+L\+UE}, 74
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+M\+A\+G\+E\+N\+TA}, 75
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+R\+ED}, 75
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+W\+H\+I\+TE}, 75
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+B\+Y\+E\+L\+L\+OW}, 75
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+C\+Y\+AN}, 75
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+D\+E\+F\+A\+U\+LT}, 75
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+G\+R\+E\+EN}, 75
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+M\+A\+G\+E\+N\+TA}, 75
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+R\+ED}, 76
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+W\+H\+I\+TE}, 76
+    \subitem {A\+N\+S\+I\+\_\+\+B\+G\+\_\+\+Y\+E\+L\+L\+OW}, 76
+    \subitem {A\+N\+S\+I\+\_\+\+B\+O\+LD}, 76
+    \subitem {A\+N\+S\+I\+\_\+\+C\+R\+O\+S\+S\+E\+D\+O\+UT}, 76
+    \subitem {A\+N\+S\+I\+\_\+\+E\+N\+C\+I\+R\+C\+L\+ED}, 76
+    \subitem {A\+N\+S\+I\+\_\+\+E\+SC}, 76
+    \subitem {A\+N\+S\+I\+\_\+\+F\+A\+I\+NT}, 76
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+B\+L\+A\+CK}, 77
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+B\+L\+UE}, 77
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+C\+Y\+AN}, 77
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+G\+R\+E\+EN}, 77
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+L\+A\+CK}, 77
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+L\+UE}, 77
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+M\+A\+G\+E\+N\+TA}, 77
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+R\+ED}, 77
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+W\+H\+I\+TE}, 78
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+Y\+E\+L\+L\+OW}, 78
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+C\+Y\+AN}, 78
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+D\+E\+F\+A\+U\+LT}, 78
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+G\+R\+E\+EN}, 78
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+M\+A\+G\+E\+N\+TA}, 78
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+R\+ED}, 78
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+W\+H\+I\+TE}, 78
+    \subitem {A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+Y\+E\+L\+L\+OW}, 79
+    \subitem {A\+N\+S\+I\+\_\+\+F\+R\+A\+M\+ED}, 79
+    \subitem {A\+N\+S\+I\+\_\+\+I\+T\+A\+L\+IC}, 79
+    \subitem {A\+N\+S\+I\+\_\+\+O\+V\+E\+R\+L\+I\+N\+ED}, 79
+    \subitem {A\+N\+S\+I\+\_\+\+R\+B\+L\+I\+NK}, 79
+    \subitem {A\+N\+S\+I\+\_\+\+R\+E\+S\+ET}, 79
+    \subitem {A\+N\+S\+I\+\_\+\+S\+B\+L\+I\+NK}, 79
+    \subitem {A\+N\+S\+I\+\_\+\+S\+GR}, 79
+    \subitem {A\+N\+S\+I\+\_\+\+U\+N\+D\+E\+R\+L\+I\+NE}, 80
 
   \indexspace
 
-  \item {src/t\+A\+Itris.\+c}, 3
+  \item {B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+HT}
+    \subitem {board.\+h}, 36
+  \item {B\+O\+A\+R\+D\+\_\+\+H\+I\+D\+D\+EN}
+    \subitem {board.\+h}, 36
+  \item {B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+TH}
+    \subitem {board.\+h}, 37
+  \item {Board}, 6
+    \subitem {cells}, 6
+    \subitem {height}, 6
+    \subitem {width}, 6
+  \item {board}
+    \subitem {State}, 10
+  \item {board.\+c}
+    \subitem {board\+\_\+break\+\_\+lines}, 33
+    \subitem {board\+\_\+copy}, 34
+    \subitem {board\+\_\+create}, 34
+    \subitem {board\+\_\+free}, 34
+    \subitem {board\+\_\+get\+\_\+completed\+\_\+lines}, 34
+    \subitem {board\+\_\+init}, 34
+    \subitem {board\+\_\+merge\+\_\+piece}, 34
+  \item {board.\+h}
+    \subitem {B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+HT}, 36
+    \subitem {B\+O\+A\+R\+D\+\_\+\+H\+I\+D\+D\+EN}, 36
+    \subitem {B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+TH}, 37
+    \subitem {board\+\_\+break\+\_\+lines}, 37
+    \subitem {board\+\_\+copy}, 37
+    \subitem {board\+\_\+create}, 37
+    \subitem {board\+\_\+free}, 37
+    \subitem {board\+\_\+get\+\_\+completed\+\_\+lines}, 37
+    \subitem {board\+\_\+init}, 38
+    \subitem {board\+\_\+merge\+\_\+piece}, 38
+    \subitem {board\+\_\+reverse\+\_\+y}, 36
+  \item {board\+\_\+break\+\_\+lines}
+    \subitem {board.\+c}, 33
+    \subitem {board.\+h}, 37
+  \item {board\+\_\+copy}
+    \subitem {board.\+c}, 34
+    \subitem {board.\+h}, 37
+  \item {board\+\_\+create}
+    \subitem {board.\+c}, 34
+    \subitem {board.\+h}, 37
+  \item {board\+\_\+free}
+    \subitem {board.\+c}, 34
+    \subitem {board.\+h}, 37
+  \item {board\+\_\+get\+\_\+completed\+\_\+lines}
+    \subitem {board.\+c}, 34
+    \subitem {board.\+h}, 37
+  \item {board\+\_\+height}
+    \subitem {tools.\+c}, 20
+    \subitem {tools.\+h}, 23
+  \item {board\+\_\+heights}
+    \subitem {tools.\+c}, 20
+    \subitem {tools.\+h}, 23
+  \item {board\+\_\+init}
+    \subitem {board.\+c}, 34
+    \subitem {board.\+h}, 38
+  \item {board\+\_\+merge\+\_\+piece}
+    \subitem {board.\+c}, 34
+    \subitem {board.\+h}, 38
+  \item {board\+\_\+reverse\+\_\+y}
+    \subitem {board.\+h}, 36
+  \item {broken\+\_\+lines}
+    \subitem {State}, 10
+  \item {bumpiness}
+    \subitem {Ai\+Coefs}, 5
+    \subitem {tools.\+c}, 20
+    \subitem {tools.\+h}, 23
+
+  \indexspace
+
+  \item {C\+E\+L\+L\+\_\+\+E\+S\+I\+ZE}
+    \subitem {cell.\+h}, 39
+  \item {Cell}
+    \subitem {cell.\+h}, 39
+  \item {cell.\+h}
+    \subitem {C\+E\+L\+L\+\_\+\+E\+S\+I\+ZE}, 39
+    \subitem {Cell}, 39
+  \item {cells}
+    \subitem {Board}, 6
+  \item {clears}
+    \subitem {Ai\+Coefs}, 5
+    \subitem {tools.\+c}, 20
+    \subitem {tools.\+h}, 23
+  \item {coalescent\+\_\+clears}
+    \subitem {tools.\+h}, 24
+  \item {core.\+c}
+    \subitem {genetic\+\_\+show\+\_\+stats}, 14
+  \item {core.\+h}
+    \subitem {genetic\+\_\+show\+\_\+stats}, 15
+  \item {current\+\_\+piece}
+    \subitem {State}, 10
+
+  \indexspace
+
+  \item {D\+E\+B\+U\+G\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+L\+OR}
+    \subitem {debug\+\_\+state.\+h}, 29
+  \item {D\+E\+B\+U\+G\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+A\+ME}
+    \subitem {debug\+\_\+state.\+h}, 29
+  \item {D\+E\+B\+U\+G\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+AG}
+    \subitem {debug\+\_\+state.\+h}, 29
+  \item {D\+E\+B\+U\+G\+\_\+\+T\+AG}
+    \subitem {debug.\+h}, 26
+  \item {data}
+    \subitem {Piece\+Queue}, 8
+  \item {debug.\+h}
+    \subitem {D\+E\+B\+U\+G\+\_\+\+T\+AG}, 26
+  \item {debug\+\_\+state.\+c}
+    \subitem {debug\+\_\+state\+\_\+print}, 27
+    \subitem {debug\+\_\+state\+\_\+print\+\_\+cell}, 27
+    \subitem {debug\+\_\+state\+\_\+print\+\_\+infos}, 27
+    \subitem {debug\+\_\+state\+\_\+print\+\_\+line\+\_\+number}, 27
+    \subitem {debug\+\_\+state\+\_\+print\+\_\+next\+\_\+piece}, 28
+  \item {debug\+\_\+state.\+h}
+    \subitem {D\+E\+B\+U\+G\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+L\+OR}, 
+		29
+    \subitem {D\+E\+B\+U\+G\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+A\+ME}, 29
+    \subitem {D\+E\+B\+U\+G\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+AG}, 29
+    \subitem {debug\+\_\+state\+\_\+print}, 30
+    \subitem {debug\+\_\+state\+\_\+print\+\_\+cell}, 30
+    \subitem {debug\+\_\+state\+\_\+print\+\_\+infos}, 30
+    \subitem {debug\+\_\+state\+\_\+print\+\_\+line\+\_\+number}, 30
+    \subitem {debug\+\_\+state\+\_\+print\+\_\+next\+\_\+piece}, 30
+  \item {debug\+\_\+state\+\_\+print}
+    \subitem {debug\+\_\+state.\+c}, 27
+    \subitem {debug\+\_\+state.\+h}, 30
+  \item {debug\+\_\+state\+\_\+print\+\_\+cell}
+    \subitem {debug\+\_\+state.\+c}, 27
+    \subitem {debug\+\_\+state.\+h}, 30
+  \item {debug\+\_\+state\+\_\+print\+\_\+infos}
+    \subitem {debug\+\_\+state.\+c}, 27
+    \subitem {debug\+\_\+state.\+h}, 30
+  \item {debug\+\_\+state\+\_\+print\+\_\+line\+\_\+number}
+    \subitem {debug\+\_\+state.\+c}, 27
+    \subitem {debug\+\_\+state.\+h}, 30
+  \item {debug\+\_\+state\+\_\+print\+\_\+next\+\_\+piece}
+    \subitem {debug\+\_\+state.\+c}, 28
+    \subitem {debug\+\_\+state.\+h}, 30
+
+  \indexspace
+
+  \item {engine.\+c}
+    \subitem {get\+\_\+coefs}, 16
+    \subitem {get\+\_\+rank}, 17
+  \item {engine.\+h}
+    \subitem {get\+\_\+coefs}, 18
+    \subitem {get\+\_\+rank}, 18
+
+  \indexspace
+
+  \item {fill}
+    \subitem {Piece\+Shape}, 9
+
+  \indexspace
+
+  \item {genetic\+\_\+show\+\_\+stats}
+    \subitem {core.\+c}, 14
+    \subitem {core.\+h}, 15
+  \item {get\+\_\+coefs}
+    \subitem {engine.\+c}, 16
+    \subitem {engine.\+h}, 18
+  \item {get\+\_\+rank}
+    \subitem {engine.\+c}, 17
+    \subitem {engine.\+h}, 18
+
+  \indexspace
+
+  \item {height}
+    \subitem {Board}, 6
+  \item {hole}
+    \subitem {tools.\+c}, 20
+    \subitem {tools.\+h}, 24
+  \item {holes}
+    \subitem {Ai\+Coefs}, 5
+    \subitem {tools.\+c}, 20
+    \subitem {tools.\+h}, 24
+
+  \indexspace
+
+  \item {I\+N\+P\+U\+T\+\_\+\+E\+S\+I\+ZE}
+    \subitem {input.\+h}, 40
+  \item {Input}
+    \subitem {input.\+h}, 41
+  \item {input.\+h}
+    \subitem {I\+N\+P\+U\+T\+\_\+\+E\+S\+I\+ZE}, 40
+    \subitem {Input}, 41
+  \item {input\+\_\+counts}
+    \subitem {State}, 10
+
+  \indexspace
+
+  \item {length}
+    \subitem {Piece\+Queue}, 8
+  \item {level}
+    \subitem {State}, 10
+
+  \indexspace
+
+  \item {main}
+    \subitem {t\+A\+Itris.\+c}, 72
+  \item {motion.\+c}
+    \subitem {motion\+\_\+can\+\_\+move}, 42
+    \subitem {motion\+\_\+can\+\_\+rotate}, 42
+    \subitem {motion\+\_\+is\+\_\+valid}, 42
+    \subitem {motion\+\_\+try\+\_\+down}, 42
+    \subitem {motion\+\_\+try\+\_\+move}, 43
+    \subitem {motion\+\_\+try\+\_\+rotate}, 43
+  \item {motion.\+h}
+    \subitem {motion\+\_\+can\+\_\+move}, 44
+    \subitem {motion\+\_\+can\+\_\+rotate}, 44
+    \subitem {motion\+\_\+is\+\_\+valid}, 45
+    \subitem {motion\+\_\+try\+\_\+down}, 45
+    \subitem {motion\+\_\+try\+\_\+move}, 45
+    \subitem {motion\+\_\+try\+\_\+rotate}, 45
+  \item {motion\+\_\+can\+\_\+move}
+    \subitem {motion.\+c}, 42
+    \subitem {motion.\+h}, 44
+  \item {motion\+\_\+can\+\_\+rotate}
+    \subitem {motion.\+c}, 42
+    \subitem {motion.\+h}, 44
+  \item {motion\+\_\+is\+\_\+valid}
+    \subitem {motion.\+c}, 42
+    \subitem {motion.\+h}, 45
+  \item {motion\+\_\+try\+\_\+down}
+    \subitem {motion.\+c}, 42
+    \subitem {motion.\+h}, 45
+  \item {motion\+\_\+try\+\_\+move}
+    \subitem {motion.\+c}, 43
+    \subitem {motion.\+h}, 45
+  \item {motion\+\_\+try\+\_\+rotate}
+    \subitem {motion.\+c}, 43
+    \subitem {motion.\+h}, 45
+
+  \indexspace
+
+  \item {next\+\_\+piece}
+    \subitem {State}, 10
+
+  \indexspace
+
+  \item {P\+I\+E\+C\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}
+    \subitem {piece\+\_\+queue.\+h}, 53
+  \item {P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+HT}
+    \subitem {piece\+\_\+shape.\+h}, 55
+  \item {P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+TH}
+    \subitem {piece\+\_\+shape.\+h}, 56
+  \item {P\+I\+E\+C\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+S\+I\+ZE}
+    \subitem {piece\+\_\+type.\+h}, 57
+  \item {Piece}, 7
+    \subitem {angle}, 7
+    \subitem {shape}, 7
+    \subitem {type}, 7
+    \subitem {x}, 7
+    \subitem {y}, 8
+  \item {piece.\+c}
+    \subitem {piece\+\_\+copy}, 46
+    \subitem {piece\+\_\+create}, 47
+    \subitem {piece\+\_\+free}, 47
+    \subitem {piece\+\_\+random}, 47
+  \item {piece.\+h}
+    \subitem {piece\+\_\+copy}, 49
+    \subitem {piece\+\_\+create}, 49
+    \subitem {piece\+\_\+free}, 49
+    \subitem {piece\+\_\+random}, 49
+  \item {piece\+\_\+copy}
+    \subitem {piece.\+c}, 46
+    \subitem {piece.\+h}, 49
+  \item {piece\+\_\+create}
+    \subitem {piece.\+c}, 47
+    \subitem {piece.\+h}, 49
+  \item {piece\+\_\+free}
+    \subitem {piece.\+c}, 47
+    \subitem {piece.\+h}, 49
+  \item {piece\+\_\+queue}
+    \subitem {State}, 11
+  \item {piece\+\_\+queue.\+c}
+    \subitem {piece\+\_\+queue\+\_\+create}, 51
+    \subitem {piece\+\_\+queue\+\_\+extend}, 51
+    \subitem {piece\+\_\+queue\+\_\+fill\+\_\+data}, 51
+    \subitem {piece\+\_\+queue\+\_\+free}, 51
+    \subitem {piece\+\_\+queue\+\_\+get}, 51
+  \item {piece\+\_\+queue.\+h}
+    \subitem {P\+I\+E\+C\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+L\+E\+N\+G\+TH}, 
+		53
+    \subitem {piece\+\_\+queue\+\_\+create}, 53
+    \subitem {piece\+\_\+queue\+\_\+extend}, 53
+    \subitem {piece\+\_\+queue\+\_\+fill\+\_\+data}, 54
+    \subitem {piece\+\_\+queue\+\_\+free}, 54
+    \subitem {piece\+\_\+queue\+\_\+get}, 54
+  \item {piece\+\_\+queue\+\_\+create}
+    \subitem {piece\+\_\+queue.\+c}, 51
+    \subitem {piece\+\_\+queue.\+h}, 53
+  \item {piece\+\_\+queue\+\_\+extend}
+    \subitem {piece\+\_\+queue.\+c}, 51
+    \subitem {piece\+\_\+queue.\+h}, 53
+  \item {piece\+\_\+queue\+\_\+fill\+\_\+data}
+    \subitem {piece\+\_\+queue.\+c}, 51
+    \subitem {piece\+\_\+queue.\+h}, 54
+  \item {piece\+\_\+queue\+\_\+free}
+    \subitem {piece\+\_\+queue.\+c}, 51
+    \subitem {piece\+\_\+queue.\+h}, 54
+  \item {piece\+\_\+queue\+\_\+get}
+    \subitem {piece\+\_\+queue.\+c}, 51
+    \subitem {piece\+\_\+queue.\+h}, 54
+  \item {piece\+\_\+queue\+\_\+index}
+    \subitem {State}, 11
+  \item {piece\+\_\+random}
+    \subitem {piece.\+c}, 47
+    \subitem {piece.\+h}, 49
+  \item {piece\+\_\+shape.\+h}
+    \subitem {P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+E\+\_\+\+H\+E\+I\+G\+HT}, 
+		55
+    \subitem {P\+I\+E\+C\+E\+\_\+\+S\+H\+A\+P\+E\+\_\+\+W\+I\+D\+TH}, 
+		56
+  \item {piece\+\_\+type.\+h}
+    \subitem {P\+I\+E\+C\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+S\+I\+ZE}, 57
+    \subitem {Piece\+Type}, 57
+  \item {Piece\+Queue}, 8
+    \subitem {data}, 8
+    \subitem {length}, 8
+  \item {Piece\+Shape}, 8
+    \subitem {fill}, 9
+    \subitem {shape}, 9
+  \item {Piece\+Type}
+    \subitem {piece\+\_\+type.\+h}, 57
+
+  \indexspace
+
+  \item {Rotation}
+    \subitem {angle.\+h}, 32
+
+  \indexspace
+
+  \item {S\+A\+F\+E\+\_\+\+O\+P\+\_\+\+O\+V\+E\+R\+F\+L\+OW}
+    \subitem {safe\+\_\+op.\+h}, 83
+  \item {S\+A\+F\+E\+\_\+\+O\+P\+\_\+\+S\+U\+C\+C\+E\+SS}
+    \subitem {safe\+\_\+op.\+h}, 83
+  \item {S\+A\+F\+E\+\_\+\+O\+P\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}
+    \subitem {safe\+\_\+op.\+h}, 83
+  \item {S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE}
+    \subitem {score.\+h}, 63
+  \item {S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP}
+    \subitem {score.\+h}, 64
+  \item {S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP}
+    \subitem {score.\+h}, 64
+  \item {S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE}
+    \subitem {score.\+h}, 64
+  \item {S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS}
+    \subitem {score.\+h}, 64
+  \item {S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE}
+    \subitem {score.\+h}, 64
+  \item {safe\+\_\+op.\+h}
+    \subitem {S\+A\+F\+E\+\_\+\+O\+P\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 83
+    \subitem {S\+A\+F\+E\+\_\+\+O\+P\+\_\+\+S\+U\+C\+C\+E\+SS}, 83
+    \subitem {S\+A\+F\+E\+\_\+\+O\+P\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}, 
+		83
+  \item {score}
+    \subitem {State}, 11
+  \item {score.\+c}
+    \subitem {score\+\_\+compute\+\_\+break}, 62
+  \item {score.\+h}
+    \subitem {S\+C\+O\+R\+E\+\_\+\+D\+O\+U\+B\+LE}, 63
+    \subitem {S\+C\+O\+R\+E\+\_\+\+H\+D\+R\+OP}, 64
+    \subitem {S\+C\+O\+R\+E\+\_\+\+S\+D\+R\+OP}, 64
+    \subitem {S\+C\+O\+R\+E\+\_\+\+S\+I\+N\+G\+LE}, 64
+    \subitem {S\+C\+O\+R\+E\+\_\+\+T\+E\+T\+R\+IS}, 64
+    \subitem {S\+C\+O\+R\+E\+\_\+\+T\+R\+I\+P\+LE}, 64
+    \subitem {score\+\_\+compute\+\_\+break}, 64
+  \item {score\+\_\+compute\+\_\+break}
+    \subitem {score.\+c}, 62
+    \subitem {score.\+h}, 64
+  \item {seven\+\_\+bag.\+c}
+    \subitem {seven\+\_\+bag\+\_\+draw}, 59
+    \subitem {seven\+\_\+bag\+\_\+init}, 59
+    \subitem {seven\+\_\+bag\+\_\+shuffle}, 59
+    \subitem {seven\+\_\+bag\+\_\+swap}, 59
+  \item {seven\+\_\+bag.\+h}
+    \subitem {seven\+\_\+bag\+\_\+draw}, 60
+    \subitem {seven\+\_\+bag\+\_\+init}, 61
+    \subitem {seven\+\_\+bag\+\_\+shuffle}, 61
+    \subitem {seven\+\_\+bag\+\_\+swap}, 61
+  \item {seven\+\_\+bag\+\_\+draw}
+    \subitem {seven\+\_\+bag.\+c}, 59
+    \subitem {seven\+\_\+bag.\+h}, 60
+  \item {seven\+\_\+bag\+\_\+init}
+    \subitem {seven\+\_\+bag.\+c}, 59
+    \subitem {seven\+\_\+bag.\+h}, 61
+  \item {seven\+\_\+bag\+\_\+shuffle}
+    \subitem {seven\+\_\+bag.\+c}, 59
+    \subitem {seven\+\_\+bag.\+h}, 61
+  \item {seven\+\_\+bag\+\_\+swap}
+    \subitem {seven\+\_\+bag.\+c}, 59
+    \subitem {seven\+\_\+bag.\+h}, 61
+  \item {shape}
+    \subitem {Piece}, 7
+    \subitem {Piece\+Shape}, 9
+  \item {show\+\_\+features}
+    \subitem {tools.\+c}, 21
+    \subitem {tools.\+h}, 24
+  \item {src/ai/genetic/core.\+c}, 13
+  \item {src/ai/genetic/core.\+h}, 14
+  \item {src/ai/genetic/engine.\+c}, 16
+  \item {src/ai/genetic/engine.\+h}, 17
+  \item {src/ai/genetic/tools.\+c}, 19
+  \item {src/ai/genetic/tools.\+h}, 21
+  \item {src/debug/debug.\+h}, 25
+  \item {src/debug/engine/debug\+\_\+state.\+c}, 26
+  \item {src/debug/engine/debug\+\_\+state.\+h}, 28
+  \item {src/engine/angle.\+h}, 31
+  \item {src/engine/board.\+c}, 32
+  \item {src/engine/board.\+h}, 35
+  \item {src/engine/cell.\+h}, 38
+  \item {src/engine/input.\+h}, 40
+  \item {src/engine/motion.\+c}, 41
+  \item {src/engine/motion.\+h}, 43
+  \item {src/engine/piece/piece.\+c}, 46
+  \item {src/engine/piece/piece.\+h}, 47
+  \item {src/engine/piece/piece\+\_\+queue.\+c}, 50
+  \item {src/engine/piece/piece\+\_\+queue.\+h}, 52
+  \item {src/engine/piece/piece\+\_\+shape.\+h}, 54
+  \item {src/engine/piece/piece\+\_\+type.\+h}, 56
+  \item {src/engine/piece/seven\+\_\+bag.\+c}, 58
+  \item {src/engine/piece/seven\+\_\+bag.\+h}, 59
+  \item {src/engine/score.\+c}, 61
+  \item {src/engine/score.\+h}, 62
+  \item {src/engine/state.\+c}, 65
+  \item {src/engine/state.\+h}, 68
+  \item {src/t\+A\+Itris.\+c}, 71
+  \item {src/utils/ansi\+\_\+code.\+h}, 72
+  \item {src/utils/random.\+h}, 80
+  \item {src/utils/safe\+\_\+op.\+h}, 81
+  \item {State}, 9
+    \subitem {board}, 10
+    \subitem {broken\+\_\+lines}, 10
+    \subitem {current\+\_\+piece}, 10
+    \subitem {input\+\_\+counts}, 10
+    \subitem {level}, 10
+    \subitem {next\+\_\+piece}, 10
+    \subitem {piece\+\_\+queue}, 11
+    \subitem {piece\+\_\+queue\+\_\+index}, 11
+    \subitem {score}, 11
+    \subitem {step}, 11
+  \item {state.\+c}
+    \subitem {state\+\_\+apply\+\_\+input}, 66
+    \subitem {state\+\_\+apply\+\_\+inputs}, 66
+    \subitem {state\+\_\+can\+\_\+apply\+\_\+input}, 66
+    \subitem {state\+\_\+can\+\_\+apply\+\_\+inputs}, 66
+    \subitem {state\+\_\+copy}, 66
+    \subitem {state\+\_\+create}, 66
+    \subitem {state\+\_\+create\+\_\+piece}, 67
+    \subitem {state\+\_\+free}, 67
+    \subitem {state\+\_\+init}, 67
+    \subitem {state\+\_\+next\+\_\+piece}, 67
+    \subitem {state\+\_\+step}, 67
+  \item {state.\+h}
+    \subitem {state\+\_\+apply\+\_\+input}, 69
+    \subitem {state\+\_\+apply\+\_\+inputs}, 69
+    \subitem {state\+\_\+can\+\_\+apply\+\_\+input}, 69
+    \subitem {state\+\_\+can\+\_\+apply\+\_\+inputs}, 70
+    \subitem {state\+\_\+copy}, 70
+    \subitem {state\+\_\+create}, 70
+    \subitem {state\+\_\+create\+\_\+piece}, 70
+    \subitem {state\+\_\+free}, 70
+    \subitem {state\+\_\+init}, 70
+    \subitem {state\+\_\+next\+\_\+piece}, 71
+    \subitem {state\+\_\+step}, 71
+  \item {state\+\_\+apply\+\_\+input}
+    \subitem {state.\+c}, 66
+    \subitem {state.\+h}, 69
+  \item {state\+\_\+apply\+\_\+inputs}
+    \subitem {state.\+c}, 66
+    \subitem {state.\+h}, 69
+  \item {state\+\_\+can\+\_\+apply\+\_\+input}
+    \subitem {state.\+c}, 66
+    \subitem {state.\+h}, 69
+  \item {state\+\_\+can\+\_\+apply\+\_\+inputs}
+    \subitem {state.\+c}, 66
+    \subitem {state.\+h}, 70
+  \item {state\+\_\+copy}
+    \subitem {state.\+c}, 66
+    \subitem {state.\+h}, 70
+  \item {state\+\_\+create}
+    \subitem {state.\+c}, 66
+    \subitem {state.\+h}, 70
+  \item {state\+\_\+create\+\_\+piece}
+    \subitem {state.\+c}, 67
+    \subitem {state.\+h}, 70
+  \item {state\+\_\+free}
+    \subitem {state.\+c}, 67
+    \subitem {state.\+h}, 70
+  \item {state\+\_\+init}
+    \subitem {state.\+c}, 67
+    \subitem {state.\+h}, 70
+  \item {state\+\_\+next\+\_\+piece}
+    \subitem {state.\+c}, 67
+    \subitem {state.\+h}, 71
+  \item {state\+\_\+step}
+    \subitem {state.\+c}, 67
+    \subitem {state.\+h}, 71
+  \item {step}
+    \subitem {State}, 11
 
   \indexspace
 
   \item {t\+A\+Itris.\+c}
-    \subitem {main}, 3
+    \subitem {main}, 72
+  \item {tools.\+c}
+    \subitem {aggregate\+\_\+height}, 19
+    \subitem {board\+\_\+height}, 20
+    \subitem {board\+\_\+heights}, 20
+    \subitem {bumpiness}, 20
+    \subitem {clears}, 20
+    \subitem {hole}, 20
+    \subitem {holes}, 20
+    \subitem {show\+\_\+features}, 21
+  \item {tools.\+h}
+    \subitem {A\+BS}, 23
+    \subitem {aggregate\+\_\+height}, 23
+    \subitem {board\+\_\+height}, 23
+    \subitem {board\+\_\+heights}, 23
+    \subitem {bumpiness}, 23
+    \subitem {clears}, 23
+    \subitem {coalescent\+\_\+clears}, 24
+    \subitem {hole}, 24
+    \subitem {holes}, 24
+    \subitem {show\+\_\+features}, 24
+  \item {type}
+    \subitem {Piece}, 7
+
+  \indexspace
+
+  \item {width}
+    \subitem {Board}, 6
+
+  \indexspace
+
+  \item {x}
+    \subitem {Piece}, 7
+
+  \indexspace
+
+  \item {y}
+    \subitem {Piece}, 8
 
 \end{theindex}

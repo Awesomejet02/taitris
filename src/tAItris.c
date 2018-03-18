@@ -24,19 +24,13 @@ int main() {
 
   debug_state_print(state);
 
-  Input inputs[] = {
-      INPUT_MOVE_LEFT,
-      INPUT_MOVE_LEFT,
-      INPUT_MOVE_LEFT,
-      INPUT_MOVE_LEFT,
-      INPUT_SOFT_DROP,
-      INPUT_SOFT_DROP,
-      INPUT_SOFT_DROP,
-      INPUT_SOFT_DROP,
-      INPUT_ROTATE_LEFT
-  };
+  size_t s = 5;
+  Input inputs[s];
 
-  state_apply_inputs(state, inputs, 9);
+  for (int i = 0; i < s; i++)
+    inputs[i] = (Input) random_int(0, 6);
+
+  state_apply_inputs(state, inputs, s);
 
   debug_state_print(state);
 
