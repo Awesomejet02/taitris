@@ -6,7 +6,7 @@
  */
 #include "piece_queue.h"
 
-PieceQueue *piece_queue_create() {
+PieceQueue *piece_queue_create(unsigned int seed) {
   PieceQueue *q = malloc(sizeof(PieceQueue));
 
   if (q == NULL)
@@ -14,6 +14,9 @@ PieceQueue *piece_queue_create() {
 
   memset(q, 0, sizeof(PieceQueue));
 
+  random_init_seed(seed);
+
+  q->seed = seed;
   q->length = PIECE_QUEUE_LENGTH;
   q->data = malloc(q->length * sizeof(PieceType));
 

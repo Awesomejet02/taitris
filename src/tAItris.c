@@ -15,7 +15,8 @@
 int main() {
   random_init();
 
-  PieceQueue *q = piece_queue_create();
+  unsigned int seed = (unsigned int) time(NULL);
+  PieceQueue *q = piece_queue_create(seed);
 
   State *state = state_create();
   state_init(state, q);

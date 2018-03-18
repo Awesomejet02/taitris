@@ -14,16 +14,18 @@
 
 #include "piece_type.h"
 #include "seven_bag.h"
+#include "../../utils/random.h"
 
 #define PIECE_QUEUE_LENGTH 100
 
 typedef struct {
+  unsigned int seed;
   size_t length;
 
   PieceType *data;
 } PieceQueue;
 
-PieceQueue *piece_queue_create();
+PieceQueue *piece_queue_create(unsigned int seed);
 void piece_queue_free(PieceQueue *q);
 void piece_queue_fill_data(PieceType *data, size_t length);
 void piece_queue_extend(PieceQueue *q);
