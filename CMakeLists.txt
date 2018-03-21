@@ -4,7 +4,7 @@ project(tAItris C)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -std=c99 -O0 -g3")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -lm -Wextra -std=c99 -O0 -g3")
 add_definitions(-D_XOPEN_SOURCE=500)
 
 find_package(SDL2 REQUIRED)
