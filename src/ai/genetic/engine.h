@@ -10,6 +10,12 @@
 
 #include "tools.h"
 
+typedef struct
+{
+    Piece *piece;
+    double score;
+} AiBest;
+
 typedef struct {
     double agg_height;
     double holes;
@@ -24,5 +30,10 @@ AiCoefs *genetic_coefs_get();
 AiCoefs *genetic_aicoefs_random();
 
 void genetic_aicoefs_free(AiCoefs *coefs);
+
+AiBest *genetic_aibest_create(Piece *p, double s);
+
+void genetic_aibest_free(AiBest *ab);
+
 
 #endif //TAITRIS_ENGINE_H

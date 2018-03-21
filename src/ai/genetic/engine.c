@@ -8,6 +8,7 @@
 #include "engine.h"
 #include "../../utils/random.h"
 #include "../../engine/state.h"
+#include "../../engine/piece/piece.h"
 
 double genetic_get_rank(State *state)
 {
@@ -60,3 +61,53 @@ void genetic_aicoefs_free(AiCoefs *coefs)
   free(coefs);
 }
 
+AiBest *genetic_aibest_create(Piece *p, double s)
+{
+  assert(p != NULL);
+
+  AiBest *ab = malloc(sizeof(AiBest));
+
+  if(ab == NULL)
+  {
+    errx(EXIT_FAILURE, "Can't initialize AiBest.");
+  }
+
+  ab->piece = p;
+  ab->score = s;
+
+  return ab;
+}
+
+void genetic_aibest_free(AiBest *ab)
+{
+  assert(ab != NULL);
+
+  piece_free(ab->piece);
+  free(ab);
+}
+
+AiBest *_genetic_best(State *state, int workingPieceIdx)
+{//FIXME
+  assert(state != NULL);
+  assert(workingPieceIdx >= 0);
+  assert(workingPieceIdx < 3);
+
+  double bestPiece = NULL;
+  double bestScore = 0;
+  Piece *workingPiece = (workingPieceIdx) ? state->next_piece : state->current_piece;
+
+
+
+  return NULL; //FIXME
+}
+
+Piece *genetic_best(State *state)
+{
+  assert(state != NULL);
+
+  State *state_cpy = state_copy(state);
+  AiBest *aiBest = _genetic_best(state_cpy, 0);
+  Piece *piece = aiBest->piece;
+  genetic_aibest_free(aiBest);
+  return piece;
+}
