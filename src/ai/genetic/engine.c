@@ -63,8 +63,6 @@ void genetic_aicoefs_free(AiCoefs *coefs)
 
 AiBest *genetic_aibest_create(Piece *p, double s)
 {
-  assert(p != NULL);
-
   AiBest *ab = malloc(sizeof(AiBest));
 
   if(ab == NULL)
@@ -92,13 +90,52 @@ AiBest *_genetic_best(State *state, int workingPieceIdx)
   assert(workingPieceIdx >= 0);
   assert(workingPieceIdx < 3);
 
-  double bestPiece = NULL;
+
+  Piece *bestPiece = NULL;
   double bestScore = 0;
+  //FIXME change this next line to put the working piece as the current_piece in state
   Piece *workingPiece = (workingPieceIdx) ? state->next_piece : state->current_piece;
+  AiBest *aiBest = genetic_aibest_create(NULL, 0);
 
+  for(int rotation = 0; rotation < 4; ++rotation){
+    //FIXME SAVE PIECE ?
+    for(int i = 0; i < rotation; ++i){
+      state_apply_input(state, INPUT_ROTATE_LEFT);
+    }
 
+    while (state_apply_input(state, INPUT_MOVE_LEFT));
 
-  return NULL; //FIXME
+    do{
+      //FIXME SAVE PIECE ?
+      double score = 0;
+      state_apply_input(state, INPUT_HARD_DROP);
+      //FIXME STATE SAVE ?
+
+      if (workingPieceIdx == 1)
+      {
+        score = genetic_get_rank(state);
+      }
+      else
+      {
+        AiBest *aiBest_rec = _genetic_best(state, workingPieceIdx + 1);
+        score = aiBest_rec->score;
+        genetic_aibest_free(aiBest_rec);
+      }
+
+      if (score > bestScore)
+      {
+        bestScore = score;
+        bestPiece = workingPiece;
+      }
+
+    } while(state_apply_input(state, INPUT_MOVE_RIGHT));
+
+  }
+
+  aiBest->score = bestScore;
+  aiBest->piece = bestPiece;
+
+  return aiBest; //FIXME not shure if we do not create an other one
 }
 
 Piece *genetic_best(State *state)
