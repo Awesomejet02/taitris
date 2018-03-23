@@ -60,6 +60,18 @@ void debug_state_print_infos(const State *state, int y) {
       printf("Step: " ANSI_BOLD "%u", state->step); break;
     case 4:
       printf("Input counts: " ANSI_BOLD "%u", state->input_counts); break;
+    case 6:
+      break;
+    case 7:
+      printf("Rank: " ANSI_BOLD "%f", genetic_get_rank(state)); break;
+    case 8:
+      printf("Holes: " ANSI_BOLD "%d", holes(state)); break;
+    case 9:
+      printf("Aggregate height: " ANSI_BOLD "%d", aggregate_height(state)); break;
+    case 10:
+      printf("Clears: " ANSI_BOLD "%d", clears(state)); break;
+    case 11:
+      printf("Bumpiness: " ANSI_BOLD "%d", bumpiness(state)); break;
     default: break;
   }
 

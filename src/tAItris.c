@@ -9,6 +9,7 @@
 
 #include "engine/piece/piece_queue.h"
 #include "engine/state.h"
+#include "ai/genetic/engine.h"
 
 #include "debug/engine/debug_state.h"
 
@@ -21,9 +22,20 @@ int main() {
   State *state = state_create();
   state_init(state, q);
 
-  while (state_step(state));
+  do {
+    //debug_state_print(state);
+    //system("read p");
 
-  debug_state_print(state);
+    Piece *pc = genetic_best(state);
+
+    piece_free(state->current_piece);
+    state->current_piece = pc;
+
+    //debug_state_print(state);
+    //system("read p");
+
+    debug_state_print(state);
+  } while (state_step(state));
 
   state_free(state);
   piece_queue_free(q);

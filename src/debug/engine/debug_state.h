@@ -12,6 +12,7 @@
 #include "../debug.h"
 #include "../../engine/state.h"
 #include "../../utils/ansi_code.h"
+#include "../../ai/genetic/engine.h"
 
 #define DEBUG_STATE_NAME "State"
 #define DEBUG_STATE_COLOR ANSI_FG_MAGENTA
