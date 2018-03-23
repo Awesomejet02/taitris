@@ -79,89 +79,66 @@ void genetic_aibest_free(AiBest *ab) {
   free(ab);
 }
 
-AiBest *_genetic_best(State *state,
-                      Piece *workingPieces[2],
-                      int workingPieceIdx) {
+AiBest *_genetic_best(const State *state, int current, int max) {
   assert(state != NULL);
-  assert(workingPieces != NULL);
-  assert(workingPieceIdx >= 0);
-  assert(workingPieceIdx < 2);
+  assert(current >= 0);
+  assert(max >= current);
 
-  Piece *bestPiece = NULL;
-  double bestScore = LONG_MIN;
-  Piece *workingPiece = NULL;
-  State *state_cpy = NULL;
+  AiBest *aiBest = genetic_aibest_create(
+      piece_copy(state->current_piece),
+      LONG_MIN
+  );
 
-  if (workingPieceIdx == 0) {
-    workingPiece = piece_copy(workingPieces[0]); // FREE OK
-  } else {
-    workingPiece = piece_copy(workingPieces[1]); // FREE OK
-  }
+  State *state_current = state_copy(state);
+  State *state_next = NULL;
+  double score = 0;
 
-  for (int rotation = 0; rotation < 4; ++rotation) {
-    piece_free(state->current_piece);
-    state->current_piece = piece_copy(workingPiece); // FREE avec la state
+  for (int rotation = 0; rotation < ANGLE_ESIZE; ++rotation) {
+    piece_set(state_current->current_piece, state->current_piece);
 
     for (int i = 0; i < rotation; ++i) {
-      state_apply_input(state, INPUT_ROTATE_LEFT);
+      state_apply_input(state_current, INPUT_ROTATE_LEFT);
     }
 
-    while (state_apply_input(state, INPUT_MOVE_LEFT));
+    while (state_apply_input(state_current, INPUT_MOVE_LEFT));
 
     do {
-      state_cpy = state_copy(state); // FREE OK
-      state_apply_input(state_cpy, INPUT_HARD_DROP);
+      state_next = state_copy(state_current);
 
-      double score = 0;
-      if (workingPieceIdx == 1) {
-        score = genetic_get_rank(state_cpy);
+      state_apply_input(state_next, INPUT_HARD_DROP);
+
+      if (current == max) {
+        score = genetic_get_rank(state_next);
       } else {
-        state_step(state_cpy);
+        state_step(state_next);
 
-        AiBest *aiBest_rec = _genetic_best(state_cpy,
-                                           workingPieces,
-                                           workingPieceIdx + 1); // FREE OK
+        AiBest *aiBest_rec = _genetic_best(state_next, current + 1, max);
         score = aiBest_rec->score;
         genetic_aibest_free(aiBest_rec);
       }
 
-      state_free(state_cpy);
+      state_free(state_next);
 
-      if (score > bestScore) {
-        bestScore = score;
-
-        if (bestPiece != NULL)
-          piece_free(bestPiece);
-
-        bestPiece = piece_copy(state->current_piece);
+      if (score > aiBest->score) {
+        aiBest->score = score;
+        piece_set(aiBest->piece, state_current->current_piece);
       }
-
-    } while (state_apply_input(state, INPUT_MOVE_RIGHT));
+    } while (state_apply_input(state_current, INPUT_MOVE_RIGHT));
 
   }
 
-  piece_free(workingPiece);
+  state_free(state_current);
 
-  return genetic_aibest_create(bestPiece, bestScore);
+  return aiBest;
 }
 
-Piece *genetic_best(State *state) {
+Piece *genetic_best(const State *state) {
   assert(state != NULL);
 
-  State *state_cpy = state_copy(state); // FREE OK
-  Piece *workingPieces[2] = {
-      piece_copy(state_cpy->current_piece), // FREE OK
-      piece_copy(state_cpy->next_piece) // FREE OK
-  };
+  AiBest *aiBest = _genetic_best(state, 0, 1);
 
-  AiBest *aiBest = _genetic_best(state_cpy, workingPieces, 0); // FREE OK
-
-  Piece *piece = piece_copy(aiBest->piece); // User need handle the free
-
+  Piece *piece = piece_copy(aiBest->piece);
   genetic_aibest_free(aiBest);
-  piece_free(workingPieces[0]);
-  piece_free(workingPieces[1]);
-  state_free(state_cpy);
 
   return piece;
 }

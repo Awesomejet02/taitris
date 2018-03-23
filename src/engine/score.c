@@ -9,7 +9,7 @@
 unsigned int score_compute_break(const int hist[], size_t len,
                                  unsigned int level) {
   assert(hist != NULL);
-  if (len) return 0;
+  if (len == 0) return 0;
 
   unsigned int score = 0;
   int combo = 0;

@@ -61,8 +61,8 @@ void board_down_lines(Board *brd, int line, int delta) {
 
   if (line < brd->height)
     memmove(brd->cells + delta * brd->width,
-           brd->cells,
-           sizeof(Cell) * brd->width * (brd->height - line));
+                brd->cells,
+                sizeof(Cell) * brd->width * (brd->height - line));
 
   memset(brd->cells, 0, sizeof(Cell) * brd->width * delta);
 }
