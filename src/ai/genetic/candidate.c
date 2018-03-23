@@ -102,3 +102,53 @@ void genetic_candidate_mutate(Candidate *cdt)
   assert(cdt != NULL);
   ((float*)cdt->coefs)[random_int(0, 4)] += random_double(-0.2, 0.2);
 }
+
+
+void array_shift_left(int *tab, size_t *len, size_t pos)
+{
+  assert(*len > pos);
+  for(size_t i = pos; i < *len - 1; i++)
+  {
+    tab[i] = tab[i + 1];
+  }
+  tab[*len - 1] = -1;
+  (*len)--;
+}
+
+Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
+{
+  assert(cdt != NULL);
+
+  size_t cdt_len = sizeof(cdt) / sizeof(cdt[0]);
+  assert(cdt_len >= 2);
+  Candidate **res = malloc(sizeof(Candidate) * 2);
+  int indices[cdt_len];
+  for(size_t i = 0; i < cdt_len; i++)
+  {
+    indices[i] = i;
+  }
+  int fittestCandidateIndex1 = -1;
+  int fittestCandidateIndex2 = -1;
+  int selectedIndex = 0;
+  int toDelete = 0;
+  for(size_t i = 0; i < ways; i++)
+  {
+    toDelete = random_int(0, cdt_len);
+    selectedIndex = indices[toDelete];
+    array_shift_left(indices, &cdt_len, toDelete);
+    if(fittestCandidateIndex1 == -1 || selectedIndex < fittestCandidateIndex1)
+    {
+      fittestCandidateIndex2 = fittestCandidateIndex1;
+      fittestCandidateIndex1 = selectedIndex;
+    }
+    else if(fittestCandidateIndex2 == -1 || selectedIndex < fittestCandidateIndex2)
+    {
+        fittestCandidateIndex2 = selectedIndex;
+    }
+
+    res[1] = cdt[fittestCandidateIndex1];
+    res[2] = cdt[fittestCandidateIndex2];
+
+  }
+  return res;
+}
