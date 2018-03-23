@@ -50,7 +50,11 @@ void state_free(State *state) {
 State *state_copy(const State *state) {
   assert(state != NULL);
 
-  State *cstate = state_create();
+  State *cstate = malloc(sizeof(State));
+
+  if (cstate == NULL)
+    errx(EXIT_FAILURE, "Can't initialize state object");
+
   memcpy(cstate, state, sizeof(State));
 
   cstate->board = board_copy(state->board);
