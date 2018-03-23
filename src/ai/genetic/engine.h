@@ -35,5 +35,6 @@ AiBest *genetic_aibest_create(Piece *p, double s);
 
 void genetic_aibest_free(AiBest *ab);
 
+Piece *genetic_best(State *state);
 
 #endif //TAITRIS_ENGINE_H
