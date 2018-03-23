@@ -10,7 +10,7 @@
 #include "../../engine/state.h"
 #include "../../engine/piece/piece.h"
 
-double genetic_get_rank(State *state) {
+double genetic_get_rank(const State *state) {
   assert(state != NULL);
 
   AiCoefs *coefs = genetic_coefs_get();
@@ -86,7 +86,7 @@ AiBest *_genetic_best(State *state,
   assert(workingPieceIdx < 2);
 
   Piece *bestPiece = NULL;
-  double bestScore = 0;
+  double bestScore = LONG_MIN;
   Piece *workingPiece = NULL;
   State *state_cpy = NULL;
 

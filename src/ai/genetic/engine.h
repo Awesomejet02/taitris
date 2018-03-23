@@ -23,7 +23,7 @@ typedef struct {
     double bumpiness;
 } AiCoefs;
 
-double genetic_get_rank(State *state);
+double genetic_get_rank(const State *state);
 
 AiCoefs *genetic_coefs_get();
 
