@@ -60,7 +60,7 @@ void board_down_lines(Board *brd, int line, int delta) {
   assert((line - delta) >= 0);
 
   if (line < brd->height)
-    memcpy(brd->cells + delta * brd->width,
+    memmove(brd->cells + delta * brd->width,
            brd->cells,
            sizeof(Cell) * brd->width * (brd->height - line));
 
