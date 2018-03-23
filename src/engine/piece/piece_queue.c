@@ -49,7 +49,7 @@ void piece_queue_extend(PieceQueue *q) {
   assert(q != NULL);
 
   size_t newLength = q->length + PIECE_QUEUE_LENGTH;
-  q->data = realloc(q->data, newLength);
+  q->data = realloc(q->data, newLength * sizeof(PieceType));
 
   if (q->data == NULL)
     errx(EXIT_FAILURE, "Can't extend piece queue data of length %zu",

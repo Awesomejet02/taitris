@@ -19,7 +19,7 @@ MKDIR_P ?= mkdir -p
 FIND ?= find
 RSYNC ?= rsync
 
-CC := gcc
+CC := gcc -fsanitize=address
 CPPFLAGS := -MMD `pkg-config --cflags sdl2`
 CFLAGS := -Wall -Wextra -std=c99 -O0 -g3
 LDFLAGS :=

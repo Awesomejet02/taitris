@@ -85,8 +85,6 @@ void state_next_piece(State *state) {
     state->current_piece = NULL;
   }
 
-
-
   if (state->next_piece != NULL) {
     state->current_piece = state->next_piece;
     state->next_piece = NULL;

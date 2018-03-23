@@ -34,9 +34,7 @@ int main() {
     //debug_state_print(state);
     //system("read p");
 
-    //debug_state_print(state);
-
-    state_apply_input(state, INPUT_HARD_DROP);
+    debug_state_print(state);
   } while (state_step(state));
 
   state_free(state);
