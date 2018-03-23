@@ -16,7 +16,7 @@
 #include "seven_bag.h"
 #include "../../utils/random.h"
 
-#define PIECE_QUEUE_LENGTH 100
+#define PIECE_QUEUE_LENGTH 5
 
 typedef struct {
   unsigned int seed;
