@@ -23,16 +23,12 @@ int main() {
   state_init(state, q);
 
   do {
-    //debug_state_print(state);
-    //system("read p");
-
     Piece *pc = genetic_best(state);
 
     piece_free(state->current_piece);
     state->current_piece = pc;
 
-    //debug_state_print(state);
-    //system("read p");
+    state_apply_input(state, INPUT_HARD_DROP);
 
     debug_state_print(state);
   } while (state_step(state));
