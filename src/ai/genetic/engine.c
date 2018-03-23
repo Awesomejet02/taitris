@@ -9,6 +9,8 @@
 #include "../../utils/random.h"
 #include "../../engine/state.h"
 #include "../../engine/piece/piece.h"
+#include "../../debug/engine/debug_state.h"
+#include "../../engine/piece/piece_shape.h"
 
 double genetic_get_rank(const State *state) {
   assert(state != NULL);
@@ -107,12 +109,20 @@ AiBest *_genetic_best(State *state,
     while (state_apply_input(state, INPUT_MOVE_LEFT));
 
     do {
+      if (state_cpy != NULL)
+        state_free(state_cpy);
+
       state_cpy = state_copy(state); // FREE OK
       state_apply_input(state_cpy, INPUT_HARD_DROP);
 
       double score = 0;
       if (workingPieceIdx == 1) {
         score = genetic_get_rank(state_cpy);
+
+        if (score > bestScore) {
+          printf("%f > %f (%d)\n", score, bestScore, state->current_piece->type);
+          debug_state_print(state_cpy);
+        }
       } else {
         state_step(state_cpy);
         
@@ -123,9 +133,11 @@ AiBest *_genetic_best(State *state,
         genetic_aibest_free(aiBest_rec);
       }
 
-      state_free(state_cpy);
+
 
       if (score > bestScore) {
+        //printf("%f > %f (%d)\n", score, bestScore, state->current_piece->type);
+        //debug_state_print(state_cpy);
         bestScore = score;
         bestPiece = state->current_piece;
       }
@@ -133,6 +145,9 @@ AiBest *_genetic_best(State *state,
     } while (state_apply_input(state, INPUT_MOVE_RIGHT));
 
   }
+
+  //debug_state_print(state_cpy);
+  state_free(state_cpy);
 
   piece_free(workingPiece);
 
