@@ -18,22 +18,14 @@ int main() {
   unsigned int seed = (unsigned int) time(NULL);
   PieceQueue *q = piece_queue_create(seed);
 
-  PieceType t;
+  State *state = state_create();
+  state_init(state, q);
 
-  t = piece_queue_get(q, 0);
+  while (state_step(state));
 
-  t = piece_queue_get(q, 1);
+  debug_state_print(state);
 
-  t = piece_queue_get(q, 2);
-
-  t = piece_queue_get(q, 3);
-
-  t = piece_queue_get(q, 4);
-
-  t = piece_queue_get(q, 9);
-
-  t = piece_queue_get(q, 4552);
-
+  state_free(state);
   piece_queue_free(q);
 
   return 0;
