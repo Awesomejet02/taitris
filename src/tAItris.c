@@ -28,7 +28,7 @@ int main() {
   size_t s = 5;
   Input inputs[s];
 
-  for (int i = 0; i < s; i++)
+  for (size_t i = 0; i < s; i++)
     inputs[i] = (Input) random_int(0, 6);
 
   state_apply_inputs(state, inputs, s);
