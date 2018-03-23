@@ -109,9 +109,6 @@ int state_step(State *state) {
 
   state_add_step(state, 1);
 
-  motion_try_move(state->current_piece, state->board, random_int(-1, 2), 0);
-  motion_try_rotate(state->current_piece, state->board, (Rotation) random_int(-1, 2));
-
   if (!motion_try_move(state->current_piece, state->board, 0, -1)) {
     if (!board_merge_piece(state->board, state->current_piece))
       return 0;

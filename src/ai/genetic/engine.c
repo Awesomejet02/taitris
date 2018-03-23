@@ -109,23 +109,15 @@ AiBest *_genetic_best(State *state,
     while (state_apply_input(state, INPUT_MOVE_LEFT));
 
     do {
-      if (state_cpy != NULL)
-        state_free(state_cpy);
-
       state_cpy = state_copy(state); // FREE OK
       state_apply_input(state_cpy, INPUT_HARD_DROP);
 
       double score = 0;
       if (workingPieceIdx == 1) {
         score = genetic_get_rank(state_cpy);
-
-        if (score > bestScore) {
-          printf("%f > %f (%d)\n", score, bestScore, state->current_piece->type);
-          debug_state_print(state_cpy);
-        }
       } else {
         state_step(state_cpy);
-        
+
         AiBest *aiBest_rec = _genetic_best(state_cpy,
                                            workingPieces,
                                            workingPieceIdx + 1); // FREE OK
@@ -133,25 +125,24 @@ AiBest *_genetic_best(State *state,
         genetic_aibest_free(aiBest_rec);
       }
 
-
+      state_free(state_cpy);
 
       if (score > bestScore) {
-        //printf("%f > %f (%d)\n", score, bestScore, state->current_piece->type);
-        //debug_state_print(state_cpy);
         bestScore = score;
-        bestPiece = state->current_piece;
+
+        if (bestPiece != NULL)
+          piece_free(bestPiece);
+
+        bestPiece = piece_copy(state->current_piece);
       }
 
     } while (state_apply_input(state, INPUT_MOVE_RIGHT));
 
   }
 
-  //debug_state_print(state_cpy);
-  state_free(state_cpy);
-
   piece_free(workingPiece);
 
-  return genetic_aibest_create(piece_copy(bestPiece), bestScore);
+  return genetic_aibest_create(bestPiece, bestScore);
 }
 
 Piece *genetic_best(State *state) {
