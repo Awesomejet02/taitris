@@ -22,6 +22,8 @@ int main() {
   State *state = state_create();
   state_init(state, q);
 
+  size_t i = 0;
+
   do {
     Piece *pc = genetic_best(state);
 
@@ -31,7 +33,11 @@ int main() {
     state_apply_input(state, INPUT_HARD_DROP);
 
     debug_state_print(state);
-  } while (state_step(state));
+
+    ++i;
+  } while (i < 10000000 && state_step(state));
+
+  debug_state_print(state);
 
   state_free(state);
   piece_queue_free(q);
