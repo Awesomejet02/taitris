@@ -21,17 +21,7 @@ int main() {
   State *state = state_create();
   state_init(state, q);
 
-  //while (state_step(state));
-
-  debug_state_print(state);
-
-  size_t s = 5;
-  Input inputs[s];
-
-  for (int i = 0; i < s; i++)
-    inputs[i] = (Input) random_int(0, 6);
-
-  state_apply_inputs(state, inputs, s);
+  while (state_step(state));
 
   debug_state_print(state);
 
