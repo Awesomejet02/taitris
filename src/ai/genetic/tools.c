@@ -105,8 +105,7 @@ int clears(const State *state)
 {
   assert(state != NULL);
 
-  size_t c = board_get_completed_lines(state, NULL);
-  return c;
+  return board_get_completed_lines(state->board, NULL);
 }
 
 void show_features(const State *state)
