@@ -84,21 +84,40 @@ void genetic_aibest_free(AiBest *ab)
   free(ab);
 }
 
-AiBest *_genetic_best(State *state, int workingPieceIdx)
+AiBest *_genetic_best(State *state, Piece *workingPieces[2], int workingPieceIdx)
 {//FIXME
   assert(state != NULL);
+  assert(workingPieces != NULL);
   assert(workingPieceIdx >= 0);
-  assert(workingPieceIdx < 3);
+  assert(workingPieceIdx < 2);
 
 
+  AiBest *aiBest = genetic_aibest_create(NULL, 0);
   Piece *bestPiece = NULL;
   double bestScore = 0;
-  //FIXME change this next line to put the working piece as the current_piece in state
-  Piece *workingPiece = (workingPieceIdx) ? state->next_piece : state->current_piece;
-  AiBest *aiBest = genetic_aibest_create(NULL, 0);
+  Piece *workingPiece = NULL;
+  State *state_cpy = state_copy(state);
+
+  //depending on recursion-depth we choose one or the other as current piece
+  //TODO MEMORY
+  //this or leake momery
+  piece_free(state_cpy->current_piece);
+  if (workingPieceIdx == 0)
+  {
+    workingPiece = piece_copy(workingPieces[0]);
+  }
+  else
+  {
+    workingPiece = piece_copy(workingPieces[1]);
+  }
+
 
   for(int rotation = 0; rotation < 4; ++rotation){
-    //FIXME SAVE PIECE ?
+    //TODO MEMORY
+    //EQUIVALENT OF .clone()
+    piece_free(state_cpy->current_piece);
+    state_cpy->current_piece = piece_copy(workingPiece);
+
     for(int i = 0; i < rotation; ++i){
       state_apply_input(state, INPUT_ROTATE_LEFT);
     }
@@ -106,6 +125,7 @@ AiBest *_genetic_best(State *state, int workingPieceIdx)
     while (state_apply_input(state, INPUT_MOVE_LEFT));
 
     do{
+      //Piece *pieceSet =  ????;
       //FIXME SAVE PIECE ?
       double score = 0;
       state_apply_input(state, INPUT_HARD_DROP);
@@ -117,7 +137,7 @@ AiBest *_genetic_best(State *state, int workingPieceIdx)
       }
       else
       {
-        AiBest *aiBest_rec = _genetic_best(state, workingPieceIdx + 1);
+        AiBest *aiBest_rec = _genetic_best(state, workingPieces, workingPieceIdx + 1);
         score = aiBest_rec->score;
         genetic_aibest_free(aiBest_rec);
       }
@@ -125,7 +145,7 @@ AiBest *_genetic_best(State *state, int workingPieceIdx)
       if (score > bestScore)
       {
         bestScore = score;
-        bestPiece = workingPiece;
+        bestPiece = state_cpy->current_piece;
       }
 
     } while(state_apply_input(state, INPUT_MOVE_RIGHT));
@@ -143,8 +163,17 @@ Piece *genetic_best(State *state)
   assert(state != NULL);
 
   State *state_cpy = state_copy(state);
-  AiBest *aiBest = _genetic_best(state_cpy, 0);
+  Piece* workingPieces[2] = {
+          piece_copy(state_cpy->current_piece),
+          piece_copy(state_cpy->next_piece)
+  };
+
+  //compute best move
+  AiBest *aiBest = _genetic_best(state_cpy, workingPieces, 0);
+
   Piece *piece = aiBest->piece;
   genetic_aibest_free(aiBest);
+  piece_free(workingPieces[0]);
+  piece_free(workingPieces[1]);
   return piece;
 }
