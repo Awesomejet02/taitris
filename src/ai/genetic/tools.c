@@ -6,39 +6,44 @@
  */
 
 #include "tools.h"
+#include "../../engine/state.h"
+#include "../../engine/board.h"
 
-void board_heights(const Board *brd, int *heights)
+//TODO
+//FIXME use state_at foncions
+
+void board_heights(const State *state, int *heights)
 {
-  assert(brd != NULL);
+  assert(state != NULL);
   assert(heights != NULL);
 
-  for(int x = 0; x < brd->width; ++x)
+  for(int x = 0; x < state->board->width; ++x)
   {
-    heights[x] = board_height(brd,x);
+    heights[x] = board_height(state,x);
   }
 }
 
-int board_height(const Board *brd, int x)
+int board_height(const State *state, int x)
 {
-  assert(brd != NULL);
-  assert(x < brd->width);
+  assert(state != NULL);
+  assert(x < state->board->width);
 
-  int height = brd->height - 1;
+  int height = state->board->height - 1;
 
-  for(; height >= 0 && board_at(brd, x, height) == CELL_EMPTY; --height);
+  for(; height >= 0 && state_at(state, x, height) == CELL_EMPTY; --height);
 
   return height + 1;
 }
 
-int bumpiness(const Board *brd)
+int bumpiness(const State *state)
 {
-  assert(brd != NULL);
+  assert(state != NULL);
 
   int bumpiness = 0;
-  int *heights = malloc(brd->width * sizeof(int));
-  board_heights(brd, heights);
+  int *heights = malloc(state->board->width * sizeof(int));
+  board_heights(state, heights);
 
-  for(int x = 0; x < brd->width - 1; ++x)
+  for(int x = 0; x < state->board->width - 1; ++x)
   {
     int diff = heights[x] - heights[x + 1]; //TODO fix the ABS macro but not mandatory
     bumpiness += ABS(diff);
@@ -48,21 +53,24 @@ int bumpiness(const Board *brd)
   return bumpiness;
 }
 
-int aggregate_height(const Board *brd)
+int aggregate_height(const State *state)
 {
-  assert(brd != NULL);
+  assert(state != NULL);
 
   int agg_height = 0;
-  for(int x = 0; x < brd->width; ++x)
+  for(int x = 0; x < state->board->width; ++x)
   {
-    agg_height += board_height(brd, x);
+    agg_height += board_height(state, x);
   }
   return agg_height;
 }
 
-int hole(const Board *brd, int x)
+int hole(const State *state, int x)
 {
-  int h = board_height(brd, x);
+  assert(state != NULL);
+  assert(x < state->board->width);
+
+  int h = board_height(state, x);
   if (h == 0)
     return 0;
 
@@ -70,7 +78,7 @@ int hole(const Board *brd, int x)
   int y = 0;
   while(y < h)
   {
-    if(board_at(brd, x, y) == CELL_EMPTY)
+    if(state_at(state, x, y) == CELL_EMPTY)
     {
       ++holes;
     }
@@ -80,27 +88,33 @@ int hole(const Board *brd, int x)
   return holes;
 }
 
-int holes(const Board *brd)
+int holes(const State *state)
 {
+  assert(state != NULL);
+
   int holes = 0;
-  for(int x = 0; x < brd->width; ++x)
+  for(int x = 0; x < state->board->width; ++x)
   {
-    holes += hole(brd, x);
+    holes += hole(state, x);
   }
 
   return holes;
 }
 
-int clears(const Board *brd)
+int clears(const State *state)
 {
-  size_t c = board_get_completed_lines(brd, NULL);
+  assert(state != NULL);
+
+  size_t c = board_get_completed_lines(state, NULL);
   return c;
 }
 
-void show_features(const Board *brd)
+void show_features(const State *state)
 {
-  printf("holes: " ANSI_FG_GREEN "%d\n" ANSI_RESET, holes(brd));
-  printf("aggregate_height: " ANSI_FG_GREEN "%d\n" ANSI_RESET , aggregate_height(brd));
-  printf("clears: " ANSI_FG_GREEN "%d\n" ANSI_RESET, clears(brd));
-  printf("bumpiness: " ANSI_FG_GREEN "%d\n" ANSI_RESET, bumpiness(brd));
+  assert(state != NULL);
+
+  printf("holes: " ANSI_FG_GREEN "%d\n" ANSI_RESET, holes(state));
+  printf("aggregate_height: " ANSI_FG_GREEN "%d\n" ANSI_RESET , aggregate_height(state));
+  printf("clears: " ANSI_FG_GREEN "%d\n" ANSI_RESET, clears(state));
+  printf("bumpiness: " ANSI_FG_GREEN "%d\n" ANSI_RESET, bumpiness(state));
 }

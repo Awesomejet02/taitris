@@ -12,13 +12,14 @@
 
 double genetic_get_rank(State *state)
 {
-  Board *brd = state->board;
+  assert(state != NULL);
+
   AiCoefs *coefs = genetic_coefs_get();
 
-  double rank = coefs->bumpiness * bumpiness(brd);
-  rank += coefs->clears * clears(brd);
-  rank += coefs->agg_height * aggregate_height(brd);
-  rank += coefs->holes * holes(brd);
+  double rank = coefs->bumpiness * bumpiness(state);
+  rank += coefs->clears * clears(state);
+  rank += coefs->agg_height * aggregate_height(state);
+  rank += coefs->holes * holes(state);
 
   return rank;
 }
