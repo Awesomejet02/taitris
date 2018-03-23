@@ -136,11 +136,7 @@ AiBest *_genetic_best(State *state,
 
   piece_free(workingPiece);
 
-  AiBest *aiBest = genetic_aibest_create(NULL, 0);
-  aiBest->score = bestScore;
-  aiBest->piece = piece_copy(bestPiece); // FREE dans le aibest_free
-
-  return aiBest;
+  return genetic_aibest_create(piece_copy(bestPiece), bestScore);
 }
 
 Piece *genetic_best(State *state) {
