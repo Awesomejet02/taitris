@@ -114,6 +114,8 @@ AiBest *_genetic_best(State *state,
       if (workingPieceIdx == 1) {
         score = genetic_get_rank(state_cpy);
       } else {
+        state_step(state_cpy);
+        
         AiBest *aiBest_rec = _genetic_best(state_cpy,
                                            workingPieces,
                                            workingPieceIdx + 1); // FREE OK
@@ -136,7 +138,7 @@ AiBest *_genetic_best(State *state,
 
   AiBest *aiBest = genetic_aibest_create(NULL, 0);
   aiBest->score = bestScore;
-  aiBest->piece = bestPiece;
+  aiBest->piece = piece_copy(bestPiece); // FREE dans le aibest_free
 
   return aiBest;
 }
