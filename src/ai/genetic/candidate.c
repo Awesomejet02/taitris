@@ -152,3 +152,12 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
   }
   return res;
 }
+
+void computeFitness(Candidate **cdt, size_t nbOfGames, size_t maxNbOfMoves)
+{
+  assert(cdt != NULL);
+
+  size_t cdt_len = sizeof(cdt) / sizeof(cdt[0]);
+/*
+  for(size_t i = 0; i < cdt_len; )*/
+}
