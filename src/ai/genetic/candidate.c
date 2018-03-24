@@ -115,14 +115,28 @@ void array_shift_left(int *tab, size_t *len, size_t pos)
   (*len)--;
 }
 
+int *array_remove_one(int* arr, size_t len, size_t pos)
+{
+  assert(arr != NULL);
+  assert(len > 0);
+  assert(pos > 0);
+  assert(pos <= len);
+
+  int *dst = malloc((len - 1) * sizeof(int));
+
+  memcpy(dst, arr, pos * sizeof(int));
+  memcpy(dst + pos, arr + pos + 1, (len - pos - 1) * sizeof(int));
+  return dst;
+}
+
 Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
 {
   assert(cdt != NULL);
 
-  size_t cdt_len = sizeof(cdt) / sizeof(cdt[0]);
+  size_t cdt_len = sizeof(cdt) / sizeof(cdt[0]); //FIXME does not work, use define to 100
   assert(cdt_len >= 2);
   Candidate **res = malloc(sizeof(Candidate) * 2);
-  int indices[cdt_len];
+  int *indices = malloc(cdt_len * sizeof(int)); //TO BE ASSIGNABLE HAVE TO DE MALLOCED
   for(size_t i = 0; i < cdt_len; i++)
   {
     indices[i] = i;
@@ -135,7 +149,10 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
   {
     toDelete = random_int(0, cdt_len);
     selectedIndex = indices[toDelete];
-    array_shift_left(indices, &cdt_len, toDelete);
+    //array_shift_left(indices, &cdt_len, toDelete);
+    int *tmp = array_remove_one(indices, cdt_len--, toDelete);
+    free(indices);
+    indices = tmp;
     if(fittestCandidateIndex1 == -1 || selectedIndex < fittestCandidateIndex1)
     {
       fittestCandidateIndex2 = fittestCandidateIndex1;
@@ -150,5 +167,6 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
     res[2] = cdt[fittestCandidateIndex2];
 
   }
+  free(indices);
   return res;
 }
