@@ -105,7 +105,19 @@ int clears(const State *state)
 {
   assert(state != NULL);
 
-  return board_get_completed_lines(state->board, NULL);
+  int count = 0;
+
+  for (int y = 0; y < state->board->height; y++) {
+    int is_complete = 1;
+    for (int x = 0; x < state->board->width; x++)
+      if(state_at(state, x, y) == CELL_EMPTY)
+      {
+        is_complete = 0;
+        break;
+      }
+    count += is_complete;
+  }
+  return count;
 }
 
 void show_features(const State *state)
