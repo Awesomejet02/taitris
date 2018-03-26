@@ -8,7 +8,15 @@
 #ifndef TAITRIS_ENGINE_H
 #define TAITRIS_ENGINE_H
 
+#include <stdlib.h>
+#include <assert.h>
+#include <err.h>
+#include <limits.h>
+
 #include "tools.h"
+#include "../../engine/state.h"
+#include "../../engine/piece/piece.h"
+#include "../../utils/random.h"
 
 typedef struct
 {
@@ -23,9 +31,7 @@ typedef struct {
     double bumpiness;
 } AiCoefs;
 
-double genetic_get_rank(const State *state);
-
-AiCoefs *genetic_coefs_get();
+AiCoefs *genetic_aicoefs_get();
 
 AiCoefs *genetic_aicoefs_random();
 
@@ -34,6 +40,8 @@ void genetic_aicoefs_free(AiCoefs *coefs);
 AiBest *genetic_aibest_create(Piece *p, double s);
 
 void genetic_aibest_free(AiBest *ab);
+
+double genetic_get_rank(const State *state);
 
 Piece *genetic_best(const State *state);
 

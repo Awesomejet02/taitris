@@ -18,14 +18,6 @@
 #define DEBUG_STATE_COLOR ANSI_FG_MAGENTA
 #define DEBUG_STATE_TAG DEBUG_TAG(DEBUG_STATE_NAME, DEBUG_STATE_COLOR)
 
-void debug_state_print_line_number(const Board *brd, int y);
-
-void debug_state_print_cell(Cell c);
-
-void debug_state_print_infos(const State *state, int y);
-
-void debug_state_print_next_piece(const Piece *pc, int y);
-
 void debug_state_print(const State *state);
 
 #endif //TAITRIS_DEBUG_STATE_H

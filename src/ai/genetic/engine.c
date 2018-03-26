@@ -6,30 +6,16 @@
  */
 
 #include "engine.h"
-#include "../../utils/random.h"
-#include "../../engine/state.h"
-#include "../../engine/piece/piece.h"
-#include "../../debug/engine/debug_state.h"
-#include "../../engine/piece/piece_shape.h"
 
-double genetic_get_rank(const State *state) {
-  assert(state != NULL);
-
-  AiCoefs *coefs = genetic_coefs_get();
-
-  double rank = coefs->bumpiness * bumpiness(state);
-  rank += coefs->clears * clears(state);
-  rank += coefs->agg_height * aggregate_height(state);
-  rank += coefs->holes * holes(state);
-
-  return rank;
-}
-
-AiCoefs *genetic_coefs_get() {
+AiCoefs *genetic_aicoefs_get() {
   static AiCoefs *coefs = NULL;
 
   if (!coefs) {
     coefs = malloc(sizeof(AiCoefs));
+
+    if (coefs == NULL)
+      errx(EXIT_FAILURE, "Can't initialize AiCoefs object");
+
     //precalculated coefs
     coefs->agg_height = -0.510066;
     coefs->clears = 0.760666;
@@ -62,9 +48,8 @@ void genetic_aicoefs_free(AiCoefs *coefs) {
 AiBest *genetic_aibest_create(Piece *p, double s) {
   AiBest *ab = malloc(sizeof(AiBest));
 
-  if (ab == NULL) {
+  if (ab == NULL)
     errx(EXIT_FAILURE, "Can't initialize AiBest.");
-  }
 
   ab->piece = p;
   ab->score = s;
@@ -77,6 +62,19 @@ void genetic_aibest_free(AiBest *ab) {
 
   piece_free(ab->piece);
   free(ab);
+}
+
+double genetic_get_rank(const State *state) {
+  assert(state != NULL);
+
+  AiCoefs *coefs = genetic_aicoefs_get();
+
+  double rank = coefs->bumpiness * genetic_tools_bumpiness(state);
+  rank += coefs->clears * genetic_tools_clears(state);
+  rank += coefs->agg_height * genetic_tools_aggregate_height(state);
+  rank += coefs->holes * genetic_tools_holes(state);
+
+  return rank;
 }
 
 AiBest *_genetic_best(const State *state, int current, int max) {
@@ -96,9 +94,8 @@ AiBest *_genetic_best(const State *state, int current, int max) {
   for (int rotation = 0; rotation < ANGLE_ESIZE; ++rotation) {
     piece_set(state_current->current_piece, state->current_piece);
 
-    for (int i = 0; i < rotation; ++i) {
+    for (int i = 0; i < rotation; ++i)
       state_apply_input(state_current, INPUT_ROTATE_LEFT);
-    }
 
     while (state_apply_input(state_current, INPUT_MOVE_LEFT));
 
@@ -123,6 +120,7 @@ AiBest *_genetic_best(const State *state, int current, int max) {
         aiBest->score = score;
         piece_set(aiBest->piece, state_current->current_piece);
       }
+
     } while (state_apply_input(state_current, INPUT_MOVE_RIGHT));
 
   }
