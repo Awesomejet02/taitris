@@ -45,11 +45,7 @@ void piece_set(Piece *dst, const Piece *src) {
   assert(dst != NULL);
   assert(src != NULL);
 
-  dst->type = src->type;
-  dst->shape = piece_shape(src->type);
-  dst->x = src->x;
-  dst->y = src->y;
-  dst->angle = src->angle;
+  memcpy(dst, src, sizeof(Piece));
 }
 
 Piece *piece_create(PieceType type, int x, int y, Angle angle);

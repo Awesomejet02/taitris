@@ -130,8 +130,4 @@ int state_apply_input(State *state, Input input);
 
 int state_apply_inputs(State *state, Input input[], size_t len);
 
-int state_can_apply_input(State *state, Input input);
-
-int state_can_apply_inputs(State *state, Input input[], size_t len);
-
 #endif //TAITRIS_STATE_H

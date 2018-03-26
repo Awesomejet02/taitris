@@ -35,11 +35,11 @@ int main() {
     debug_state_print(state);
 
     ++i;
-  } while (i < 20 && state_step(state));
+  } while (i < 200000 && state_step(state));
 
   debug_state_print(state);
 
-  genetic_aicoefs_free(genetic_coefs_get());
+  genetic_aicoefs_free(genetic_aicoefs_get());
   state_free(state);
   piece_queue_free(q);
 

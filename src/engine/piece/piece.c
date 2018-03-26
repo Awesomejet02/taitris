@@ -32,7 +32,14 @@ void piece_free(Piece *pc) {
 Piece *piece_copy(const Piece *pc) {
   assert(pc != NULL);
 
-  return piece_create(pc->type, pc->x, pc->y, pc->angle);
+  Piece *cpc = malloc(sizeof(Piece));
+
+  if (cpc == NULL)
+    errx(EXIT_FAILURE, "Can't copy piece");
+
+  piece_set(cpc, pc);
+
+  return cpc;
 }
 
 Piece *piece_random(int x, int y, Angle angle) {

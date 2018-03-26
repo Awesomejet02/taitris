@@ -6,11 +6,3 @@
  */
 
 #include "core.h"
-
-void genetic_show_stats(State *state)
-{
-  assert(state != NULL);
-
-  show_features(state);
-  printf("Rank: " ANSI_FG_RED "%f\n\n" ANSI_RESET, genetic_get_rank(state));
-}

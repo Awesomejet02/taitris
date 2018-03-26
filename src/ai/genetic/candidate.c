@@ -2,11 +2,29 @@
  * @file    candidate.c
  * @author  S4MasterRace
  * @version 2.0
- * @brief   No description
+ * @brief   Candidate
  */
+
 #include "candidate.h"
-#include "math.h"
-#include "engine.h"
+
+Candidate *genetic_candidate_create()
+{
+  Candidate *cdt = malloc(sizeof(Candidate));
+
+  if (cdt == NULL)
+    errx(EXIT_FAILURE, "Can't initialize Candidate object");
+
+  cdt->coefs = malloc(sizeof(AiCoefs));
+
+  if (cdt->coefs == NULL)
+    errx(EXIT_FAILURE, "Can't initialize AiCoefs object");
+
+  memset(cdt->coefs, 0, sizeof(AiCoefs));
+
+  cdt->fitness = 0;
+
+  return cdt;
+}
 
 Candidate *genetic_candidate_create_random()
 {
@@ -19,25 +37,6 @@ Candidate *genetic_candidate_create_random()
   cdt->fitness = 0;
 
   genetic_candidate_normalize(cdt);
-
-  return cdt;
-}
-
-Candidate *genetic_candidate_create()
-{
-  Candidate *cdt = malloc(sizeof (Candidate));
-
-  if (cdt == NULL)
-    errx(EXIT_FAILURE, "Can't initialize Candidate object");
-
-  cdt->coefs = calloc(1, sizeof(AiCoefs));
-
-  if (cdt->coefs == NULL)
-    errx(EXIT_FAILURE, "Can't initialize AiCoefs object");
-
-  memset(cdt->coefs, 0, sizeof(AiCoefs));
-
-  cdt->fitness = 0;
 
   return cdt;
 }

@@ -2,10 +2,12 @@
  * @file    candidate.h
  * @author  S4MasterRace
  * @version 2.0
- * @brief   No description
+ * @brief   Candidate
  */
 #ifndef TAITRIS_CANDIDATE_H
 #define TAITRIS_CANDIDATE_H
+
+#include <math.h>
 
 #include "engine.h"
 
@@ -15,6 +17,8 @@ typedef struct {
 } Candidate;
 
 Candidate *genetic_candidate_create();
+
+Candidate *genetic_candidate_create_random();
 
 void genetic_candidate_free(Candidate *candidate);
 
