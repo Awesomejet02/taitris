@@ -151,11 +151,26 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
   }
   return res;
 }
-void computeFitness(Candidate **cdt, size_t nbOfGames, size_t maxNbOfMoves)
+void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t maxNbOfMoves)
 {
   assert(cdt != NULL);
 
-  size_t cdt_len = sizeof(cdt) / sizeof(cdt[0]);
-/*
-  for(size_t i = 0; i < cdt_len; )*/
+  for(size_t i = 0; i < cdt_len; i++)
+  {
+    Candidate cur_cdt = *cdt[i];
+    AiCoefs* ai= genetic_aicoefs_create(*(cur_cdt->coefs)->holes, *(cur_cdt->coefs)->agg_height, *(cur_cdt->coefs)->bumpiness, *(cur_cdt->coefs)->clears);
+    int totalScore = 0;
+    for(size_t j = 0; j < nbOfGames; j++)
+    {
+      State *state = state_create();
+      //RPG ?
+      //Working piece(s)
+      size_t nbOfMoves = 1; //He starts his while with a "++" on nbOfMoves
+      while(nbOfMoves < maxNbOfMoves /*&& grid_is_exceeded()*/)
+      {
+
+        nbOfMoves++;
+      }
+    }
+  }
 }

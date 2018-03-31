@@ -39,6 +39,21 @@ AiCoefs *genetic_aicoefs_random() {
   return coefs;
 }
 
+AiCoefs *genetic_aicoefs_create(double holes, double agg_height
+  , double bumpiness, double clears) {
+  AiCoefs *coefs = malloc(sizeof(AiCoefs));
+
+  if (coefs == NULL)
+    errx(EXIT_FAILURE, "Can't initialize AiCoefs object");
+
+  coefs->holes = holes;
+  coefs->agg_height = agg_height;
+  coefs->bumpiness = bumpiness;
+  coefs->clears = clears;
+
+  return coefs;
+}
+
 void genetic_aicoefs_free(AiCoefs *coefs) {
   assert(coefs != NULL);
 

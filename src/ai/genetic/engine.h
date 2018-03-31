@@ -35,6 +35,9 @@ AiCoefs *genetic_aicoefs_get();
 
 AiCoefs *genetic_aicoefs_random();
 
+AiCoefs *genetic_aicoefs_create(double holes, double agg_height
+  , double bumpiness, double clears);
+
 void genetic_aicoefs_free(AiCoefs *coefs);
 
 AiBest *genetic_aibest_create(Piece *p, double s);
