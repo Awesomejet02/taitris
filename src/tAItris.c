@@ -51,12 +51,28 @@
 GtkWidget *window, *bg;
  GtkWidget *quit, *start;
 
+ static void menu (GtkWidget * p_wid, gpointer p_data)
+{
+   gtk_window_close(p_data);
+   main();
+}
+
+void update(State *state, GtkBuilder * p_builder)
+{
+  char temp[20];
+  sprintf(temp, "%u", state->score);
+  gtk_label_set_text(gtk_builder_get_object(p_builder, "score"), temp);
+  sprintf(temp, "%u", state->level);
+  gtk_label_set_text(gtk_builder_get_object(p_builder, "lvl"), temp);
+  sprintf(temp, "%u", state->broken_lines);
+  gtk_label_set_text(gtk_builder_get_object(p_builder, "line"), temp);
+}
 
 void on_key_press (GtkWidget *widget, GdkEventKey *event, gpointer data) {
     switch (event->keyval){
         case GDK_KEY_Down:
          state_apply_input(data, INPUT_HARD_DROP);
-         gtk_window_close(widget); break;
+         printf("down!\n"); break;
         case GDK_KEY_Right:
          state_apply_input(data, INPUT_MOVE_RIGHT);
          printf("right!\n"); break;
@@ -66,6 +82,10 @@ void on_key_press (GtkWidget *widget, GdkEventKey *event, gpointer data) {
         case GDK_KEY_Up:
          state_apply_input(data, INPUT_ROTATE_RIGHT);
          printf("rotation!\n"); break;
+        case GDK_KEY_Escape:
+          gtk_main_quit();
+          gtk_window_close(widget);
+          main(); break;
     }
 }
  
@@ -81,9 +101,7 @@ int game()
 
   State *state = state_create();
   state_init(state, q);
-
-  size_t i = 0;
- 
+  
    /* Initialisation de GTK+ */
    gtk_init (NULL, NULL);
  
@@ -106,17 +124,29 @@ int game()
          );
          gtk_widget_add_events(p_win, GDK_KEY_PRESS_MASK);
 
-         if (!state_step(state))
-         {
-            G_CALLBACK(gtk_window_close);
-            main(NULL, NULL);
-         }
-
          g_signal_connect(G_OBJECT (p_win), "key-press-event", G_CALLBACK (on_key_press), state);
 
- 
+         for(int x = 0; x < state->board->width; x++)
+         {
+          for(int y = 0; y < state->board->height; y++)
+          {
+            if (board_at(state->board, x, y))
+            {
+              printf("%d, %d\n", x, y);
+            }
+          }
+         }
+        //Piece *pc = genetic_best(state);
+
+        //piece_free(state->current_piece);
+        //state->current_piece = pc;
+
+        state_apply_input(state, INPUT_HARD_DROP);
+        debug_state_print(state);
+
          gtk_widget_show_all (p_win);
-         gtk_main ();
+         update(state, p_builder);
+
       }
       else
       {
