@@ -21,10 +21,12 @@ RSYNC ?= rsync
 
 CC := gcc -fsanitize=address
 CPPFLAGS := -MMD `pkg-config --cflags sdl2`
-CFLAGS := -Wall -Wextra -std=c99 -O0 -g3
+CFLAGS := -Wall -Wextra -std=c99  -O0 -g3 
 LDFLAGS :=
-LDLIBS := `pkg-config --libs sdl2` -lm
+LDLIBS := `pkg-config --libs sdl2` -lm 
 DEFINES := -D_XOPEN_SOURCE=500
+
+GTK_CFLAGS := `pkg-config --cflags --libs gtk+-3.0`
 
 all: $(BIN_DIR) ## Make the project
 
@@ -33,7 +35,7 @@ $(BIN_DIR): $(BIN_DIR)/$(EXEC) $(BIN_DIR)/$(RES_DIR) $(BIN_DIR)/$(DATA_DIR)
 $(BIN_DIR)/$(EXEC): $(OBJ)
 	@echo "Building executable $(OK_COLOR)$@$(NO_COLOR)"
 	@$(MKDIR_P) $(dir $@)
-	$(CC) $(LDFLAGS) $(DEFINES) $(OBJ) -o $@ $(LDLIBS)
+	$(CC) $(LDFLAGS) $(GTK_CFLAGS) $(DEFINES) $(OBJ) -o $@ $(LDLIBS)
 	@echo ""
 
 $(BIN_DIR)/$(RES_DIR):
@@ -47,7 +49,7 @@ $(BIN_DIR)/$(DATA_DIR):
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@echo "Compiling $(OBJ_COLOR)$<$(NO_COLOR)"
 	@$(MKDIR_P) $(dir $@)
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(DEFINES) -c $< -o $@
+	$(CC) $(CPPFLAGS) $(GTK_CFLAGS) $(CFLAGS) $(DEFINES) -c $< -o $@
 	@echo ""
 
 resources: $(BIN_DIR)/$(RES_DIR) $(BIN_DIR)/$(DATA_DIR) ## Make resources
