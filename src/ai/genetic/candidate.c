@@ -151,6 +151,9 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
   }
   return res;
 }
+
+//grid_is_exceeded()
+
 void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t maxNbOfMoves)
 {
   assert(cdt != NULL);
@@ -158,25 +161,39 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
   for(size_t i = 0; i < cdt_len; i++)
   {
     Candidate cur_cdt = *cdt[i];
-    AiCoefs* ai= genetic_aicoefs_create(*(cur_cdt->coefs)->holes, *(cur_cdt->coefs)->agg_height, *(cur_cdt->coefs)->bumpiness, *(cur_cdt->coefs)->clears);
-    int totalScore = 0;
+    AiCoefs* ai = genetic_aicoefs_create(cur_cdt->coefs->holes, *(cur_cdt->coefs)->agg_height, *(cur_cdt->coefs)->bumpiness, *(cur_cdt->coefs)->clears);
+    double totalScore = 0;
+    double score = 0;
     for(size_t j = 0; j < nbOfGames; j++)
     {
       State *state = state_create();
       //RPG ?
       //Working piece(s)
-      Piece **workingPieces;
+      size_t workingPieces_len = 2;
+      Piece **workingPieces = malloc(sizeof(Piece) * workingPieces_len);// = genetic_best(state);
+      workingPieces[0] = state_create_piece(state);
+      workingPieces[1] = state_create_piece(state);
       Piece *workingPiece = workingPieces[0];
       size_t nbOfMoves = 1; //He starts his while with a "++" on nbOfMoves
       while(nbOfMoves < maxNbOfMoves /*&& grid_is_exceeded()*/)
       {
-        for (size_t k = 0; k < workingPieces_len; k++)
+        workingPiece = genetic_best(state);
+        //Faire descendre la piece
+        score += 1; //A modifier en fonction du calcul de score
+        for (size_t k = 0; k < workingPieces_len - 1; k++)
         {
-          /* code */
-
+          workingPieces[k] = workingPieces[k + 1];
         }
+        workingPieces[workingPieces_len - 1] = state_create_piece(state);
+        workingPiece = workingPieces[0];
         nbOfMoves++;
       }
+      //free
+      free(workingPieces);
+      totalScore += score;
     }
+    cur_cdt->fitness = totalScore;
   }
+  //free
+  free(workingPieces);
 }
