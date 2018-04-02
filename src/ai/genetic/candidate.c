@@ -206,17 +206,17 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
   free(workingPieces);
 }
 
-void deleteNLastReplacement(**Candidate cdt_tab, **Candidate new_cdt_tab)
+void deleteNLastReplacement(Candidate **cdt_tab, Candidate **new_cdt_tab)
 {
   //TODO
 }
 
 void tune(size_t cdt_len, size_t nCdt_len)
 {
-  **Candidate cdt_tab = malloc(sizeof(Candidate) * cdt_len)
+  Candidate **cdt_tab = malloc(sizeof(Candidate) * cdt_len);
   for (size_t i = 0; i < cdt_len; i++)
   {
-    *cdt_tab[i] = genetic_candidate_create_random();
+    cdt_tab[i] = genetic_candidate_create_random();
   }
   printf("Computing fitnesses of initial population...\n");
   computeFitness(cdt_tab, cdt_len, 5, 200);
@@ -225,9 +225,10 @@ void tune(size_t cdt_len, size_t nCdt_len)
   int count = 0;
   Candidate **pair;
   Candidate* cdt;
-  while(true)
+  Candidate **new_cdt_tab = malloc(sizeof(Candidate) * nCdt_len);
+  while(1)
   {
-    new_cdt_tab = malloc(sizeof(Candidate) * nCdt_len);
+    //new_cdt_tab = malloc(sizeof(Candidate) * nCdt_len);
     for (size_t i = 0; i < nCdt_len; i++)
     {
       pair = genetic_tournament_select_pair(cdt_tab, 10, cdt_len);
@@ -247,8 +248,8 @@ void tune(size_t cdt_len, size_t nCdt_len)
     {
       totalFitness += cdt_tab[i]->fitness;
     }
-    printf("Average fitness = %d\n", totalFitness/cdt_len);
-    printf("Highest fitness = %d (%d)\n", cdt_tab[0], count);
+    printf("Average fitness = %zu\n", totalFitness/cdt_len);
+    printf("Highest fitness = %f (%d)\n", cdt_tab[0]->fitness, count);
     //printf("Fittest candidate = %d\n", count);
     count++;
   }
