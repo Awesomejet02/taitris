@@ -165,10 +165,16 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
       State *state = state_create();
       //RPG ?
       //Working piece(s)
+      Piece **workingPieces;
+      Piece *workingPiece = workingPieces[0];
       size_t nbOfMoves = 1; //He starts his while with a "++" on nbOfMoves
       while(nbOfMoves < maxNbOfMoves /*&& grid_is_exceeded()*/)
       {
+        for (size_t k = 0; k < workingPieces_len; k++)
+        {
+          /* code */
 
+        }
         nbOfMoves++;
       }
     }
