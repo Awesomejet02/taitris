@@ -80,6 +80,19 @@ int board_is_line_complete(const Board *brd, int line) {
   return 1;
 }
 
+static inline
+int board_is_line_empty(const Board *brd, int line) {
+  assert(brd != NULL);
+  assert(line >= 0);
+  assert(line < brd->height);
+
+  for (int x = 0; x < brd->width; x++)
+    if(board_at(brd, x, line) != CELL_EMPTY)
+      return 0;
+
+  return 1;
+}
+
 Board *board_create(int width, int height);
 
 void board_init(Board *brd);

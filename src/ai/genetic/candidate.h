@@ -10,6 +10,7 @@
 #include <math.h>
 
 #include "engine.h"
+#include "../../engine/board.h" //Needed ?
 
 typedef struct {
     AiCoefs *coefs;

@@ -114,11 +114,11 @@ void array_shift_left(int *tab, size_t *len, size_t pos)
   (*len)--;
 }
 
-Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
+Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways, size_t cdt_len)
 {
   assert(cdt != NULL);
 
-  size_t cdt_len = sizeof(cdt) / sizeof(cdt[0]);
+  //size_t cdt_len = sizeof(cdt) / sizeof(cdt[0]);
   assert(cdt_len >= 2);
   Candidate **res = malloc(sizeof(Candidate) * 2);
   int indices[cdt_len];
@@ -152,30 +152,39 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways)
   return res;
 }
 
-//grid_is_exceeded()
+int grid_is_exceeded(Board *board)
+{
+  return !board_is_line_empty(board, 0) || !board_is_line_empty(board, 1);
+}
 
 void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t maxNbOfMoves)
 {
   assert(cdt != NULL);
 
+  //Testing
+  size_t workingPieces_len = 2;
+  Piece **workingPieces = malloc(sizeof(Piece) * workingPieces_len);// = genetic_best(state);
+
+  //
+
   for(size_t i = 0; i < cdt_len; i++)
   {
     Candidate cur_cdt = *cdt[i];
-    AiCoefs* ai = genetic_aicoefs_create(cur_cdt->coefs->holes, *(cur_cdt->coefs)->agg_height, *(cur_cdt->coefs)->bumpiness, *(cur_cdt->coefs)->clears);
+    AiCoefs* ai = genetic_aicoefs_create(cur_cdt.coefs->holes, cur_cdt.coefs->agg_height, cur_cdt.coefs->bumpiness, cur_cdt.coefs->clears);
     double totalScore = 0;
     double score = 0;
     for(size_t j = 0; j < nbOfGames; j++)
     {
       State *state = state_create();
-      //RPG ?
+
       //Working piece(s)
-      size_t workingPieces_len = 2;
-      Piece **workingPieces = malloc(sizeof(Piece) * workingPieces_len);// = genetic_best(state);
+      /*size_t workingPieces_len = 2;
+      Piece **workingPieces = malloc(sizeof(Piece) * workingPieces_len);// = genetic_best(state);*/
       workingPieces[0] = state_create_piece(state);
       workingPieces[1] = state_create_piece(state);
       Piece *workingPiece = workingPieces[0];
       size_t nbOfMoves = 1; //He starts his while with a "++" on nbOfMoves
-      while(nbOfMoves < maxNbOfMoves /*&& grid_is_exceeded()*/)
+      while(nbOfMoves < maxNbOfMoves && grid_is_exceeded(state->board))
       {
         workingPiece = genetic_best(state);
         //Faire descendre la piece
@@ -188,12 +197,59 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
         workingPiece = workingPieces[0];
         nbOfMoves++;
       }
-      //free
-      free(workingPieces);
+
       totalScore += score;
     }
-    cur_cdt->fitness = totalScore;
+    cur_cdt.fitness = totalScore;
   }
   //free
   free(workingPieces);
+}
+
+void deleteNLastReplacement(**Candidate cdt_tab, **Candidate new_cdt_tab)
+{
+  //TODO
+}
+
+void tune(size_t cdt_len, size_t nCdt_len)
+{
+  **Candidate cdt_tab = malloc(sizeof(Candidate) * cdt_len)
+  for (size_t i = 0; i < cdt_len; i++)
+  {
+    *cdt_tab[i] = genetic_candidate_create_random();
+  }
+  printf("Computing fitnesses of initial population...\n");
+  computeFitness(cdt_tab, cdt_len, 5, 200);
+  //need to sort cdt_tab
+
+  int count = 0;
+  Candidate **pair;
+  Candidate* cdt;
+  while(true)
+  {
+    new_cdt_tab = malloc(sizeof(Candidate) * nCdt_len);
+    for (size_t i = 0; i < nCdt_len; i++)
+    {
+      pair = genetic_tournament_select_pair(cdt_tab, 10, cdt_len);
+      cdt = genetic_candidate_crossover(pair[0], pair[1]);
+      if(random_double(0, 1) < 0.05)
+      {
+        genetic_candidate_mutate(cdt);
+      }
+      genetic_candidate_normalize(cdt);
+      new_cdt_tab[i] = cdt;
+    }
+    printf("Computing fitnesses of new candidates. (%d)\n", count);
+    computeFitness(new_cdt_tab, nCdt_len, 5, 200);
+    deleteNLastReplacement(cdt_tab, new_cdt_tab);
+    int totalFitness = 0;
+    for (size_t i = 0; i < cdt_len; i++)
+    {
+      totalFitness += cdt_tab[i]->fitness;
+    }
+    printf("Average fitness = %d\n", totalFitness/cdt_len);
+    printf("Highest fitness = %d (%d)\n", cdt_tab[0], count);
+    //printf("Fittest candidate = %d\n", count);
+    count++;
+  }
 }
