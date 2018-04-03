@@ -211,6 +211,23 @@ void deleteNLastReplacement(Candidate **cdt_tab, Candidate **new_cdt_tab)
   //TODO
 }
 
+void sort(Candidate cdt_tab[], int len)
+{
+   int i, j;
+   double key;
+   for (i = 1; i < len; i++)
+   {
+       key = cdt_tab[i].fitness;
+       j = i-1;
+       while (j >= 0 && cdt_tab[j].fitness > key)
+       {
+           cdt_tab[j + 1].fitness = cdt_tab[j].fitness;
+           j = j-1;
+       }
+       cdt_tab[j + 1].fitness = key;
+   }
+}
+
 void tune(size_t cdt_len, size_t nCdt_len)
 {
   Candidate **cdt_tab = malloc(sizeof(Candidate) * cdt_len);
