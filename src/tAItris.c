@@ -6,10 +6,6 @@
  */
 
 #include <gtk/gtk.h>
-
-#include <SDL_image.h>
-#include <SDL2/SDL.h>
-
 #include "utils/random.h"
 
 #include "engine/piece/piece_queue.h"
@@ -18,18 +14,11 @@
 
 #include "debug/engine/debug_state.h"
 
-SDL_Surface *blue;
-SDL_Surface *lblue;
-SDL_Surface *red;
-SDL_Surface *green;
-SDL_Surface *purple;
-SDL_Surface *yellow;
-SDL_Surface *orange;
-
-SDL_Window *pWindow = NULL;
+int IA_mode = 0;
 
 GtkBuilder *p_builder;
 GtkWidget *space;
+
 
 /*int main() {
   random_init();
@@ -64,190 +53,217 @@ GtkWidget *space;
   return 0;
 }*/
 
-GtkWidget *window, *bg;
-GtkWidget *quit, *start;
+GtkWidget *window;
+
+static gboolean on_draw_event(GtkWidget* widget, cairo_t *cr, gpointer state)
+{
+    for (int x = 0; x < 10; x++)
+    {
+        for(int y = 19; y >= 0; y--)
+        {
+            switch (state_at(state, x, y)) {
+                case CELL_EMPTY:
+                break;
+                case CELL_BLUE:
+                cairo_set_source_rgb(cr, 0, 0, 1);
+                cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+                break;
+                case CELL_CYAN:
+                cairo_set_source_rgb(cr, 0, 1, 1);
+                cairo_rectangle(cr, x * 30 +2, 570 - y * 30+ 2, 27, 27);
+                break;
+                case CELL_GREEN:
+                cairo_set_source_rgb(cr, 0, 1, 0);
+                cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+                break;
+                case CELL_YELLOW:
+                cairo_set_source_rgb(cr, 1, 1, 1);
+                cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+                break;
+                case CELL_RED:
+                cairo_set_source_rgb(cr, 1, 0, 0);
+                cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+                break;
+                case CELL_ORANGE:
+                cairo_set_source_rgb(cr, 1, 1, 0);
+                cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+                break;
+                case CELL_PURPLE:
+                cairo_set_source_rgb(cr, 1, 0, 1);
+                cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+                break;
+            }
+            cairo_stroke_preserve(cr);
+            cairo_fill(cr);
+
+        }
+    }
+    return FALSE;
+}
+
+static gboolean nextpiece(GtkWidget* widget, cairo_t *cr, gpointer data)
+{
+  /*  const Piece *np = ((struct State *)data)->next_piece;
+    switch(np->shape->fill) {
+        case CELL_EMPTY:
+            break;
+        case CELL_CYAN:
+            cairo_set_source_rgb(cr, 1, 0, 1);
+            break;
+        case CELL_BLUE:
+            cairo_set_source_rgb(cr, 1, 0, 1);
+            break;
+        case CELL_GREEN:
+            cairo_set_source_rgb(cr, 1, 0, 1);
+            break;
+        case CELL_YELLOW:
+            cairo_set_source_rgb(cr, 1, 0, 1);
+            break;
+        case CELL_PURPLE:
+            cairo_set_source_rgb(cr, 1, 0, 1);
+            break;
+        case CELL_ORANGE:
+            cairo_set_source_rgb(cr, 1, 0, 1);
+            break;
+        case CELL_RED:
+            cairo_set_source_rgb(cr, 1, 0, 1);
+            break;
+    }
+    for (int x = 0; x < 4; x++)
+    {
+        for (int y = 0; y < 4; y++)
+        {
+            if (np->shape->shape[np->angle][y][x])
+            {
+                cairo_rectangle(cr, x * 20, y * 20, 20, 20);
+                cairo_stroke_preserve(cr);
+                cairo_fill(cr);
+            }
+        }
+    }*/
+    return FALSE;
+}
 
 void step(State *state)
 {
- SDL_Renderer *renderer = NULL;
- SDL_Texture *texture = NULL;
 
- renderer = SDL_CreateRenderer(pWindow, -1, SDL_RENDERER_ACCELERATED);
+    g_signal_connect(G_OBJECT(gtk_builder_get_object(p_builder, "DrawGame")), "draw", G_CALLBACK(on_draw_event), state);
+    gtk_widget_queue_draw(G_OBJECT(gtk_builder_get_object(p_builder, "DrawGame")));
+    g_signal_connect(G_OBJECT(gtk_builder_get_object(p_builder, "NextP")), "draw", G_CALLBACK(nextpiece), state);
+    gtk_widget_queue_draw(G_OBJECT(gtk_builder_get_object(p_builder, "NextP")));
 
-for (int x = 0; x < 10; x++)
-{
-    for(int y = 0; y < 20; y++)
-    {
-        SDL_Rect dest = {y * 30, x * 30, 30, 30};
-        switch (state_at(state, x, y)) {
-            case CELL_EMPTY:
-                break;
-            case CELL_BLUE:
-                texture = SDL_CreateTextureFromSurface(renderer, blue);
-                SDL_RenderCopy(renderer, texture, NULL, &dest);
-                break;
-            case CELL_CYAN:
-                texture = SDL_CreateTextureFromSurface(renderer, lblue);
-                SDL_RenderCopy(renderer, texture, NULL, &dest);
-                break;
-            case CELL_GREEN:
-                texture = SDL_CreateTextureFromSurface(renderer, green);
-                SDL_RenderCopy(renderer, texture, NULL, &dest);
-                break;
-            case CELL_YELLOW:
-                texture = SDL_CreateTextureFromSurface(renderer, yellow);
-                SDL_RenderCopy(renderer, texture, NULL, &dest);
-                break;
-            case CELL_RED:
-                texture = SDL_CreateTextureFromSurface(renderer, red);
-                SDL_RenderCopy(renderer, texture, NULL, &dest);
-                break;
-            case CELL_ORANGE:
-                texture = SDL_CreateTextureFromSurface(renderer, orange);
-                SDL_RenderCopy(renderer, texture, NULL, &dest);
-                break;
-            case CELL_PURPLE:
-                texture = SDL_CreateTextureFromSurface(renderer, purple);
-                SDL_RenderCopy(renderer, texture, NULL, &dest);
-                break;
-    }
-    }
-}
 // METTRE SCREEN SUR GTK
-update(state);
-state_step(state);
-debug_state_print(state);
-//  Piece *pc = genetic_best(state);
-//  piece_free(state->current_piece);
-//  state->current_piece = pc;
+    update(state);
+    if (!state_step(state))
+        gtk_main_quit();
+    if (IA_mode == 1)
+    {
+        debug_state_print(state);
+        Piece *pc = genetic_best(state);
+        piece_free(state->current_piece);
+        state->current_piece = pc;
 
-//  state_apply_input(state, INPUT_HARD_DROP);
- SDL_RenderPresent(renderer);
- SDL_DestroyTexture(texture);
- SDL_DestroyRenderer(renderer);
+        state_apply_input(state, INPUT_HARD_DROP);
+    }
 }
 
 static void menu (GtkWidget * p_wid, gpointer p_data)
 {
- gtk_window_close(p_data);
- main();
+    gtk_window_close(p_data);
+    main();
 }
 
 void update(State *state)
 {
-  char temp[20];
-  sprintf(temp, "%u", state->score);
-  gtk_label_set_text(gtk_builder_get_object(p_builder, "score"), temp);
-  sprintf(temp, "%u", state->level);
-  gtk_label_set_text(gtk_builder_get_object(p_builder, "lvl"), temp);
-  sprintf(temp, "%u", state->broken_lines);
-  gtk_label_set_text(gtk_builder_get_object(p_builder, "line"), temp);
+    char temp[20];
+    sprintf(temp, "%u", state->score);
+    gtk_label_set_text(gtk_builder_get_object(p_builder, "score"), temp);
+    sprintf(temp, "%u", state->level);
+    gtk_label_set_text(gtk_builder_get_object(p_builder, "lvl"), temp);
+    sprintf(temp, "%u", state->broken_lines);
+    gtk_label_set_text(gtk_builder_get_object(p_builder, "line"), temp);
 }
 
 void on_key_press (GtkWidget *widget, GdkEventKey *event, gpointer data) {
-  switch (event->keyval){
-    case GDK_KEY_Down:
-    state_apply_input(data, INPUT_HARD_DROP);
-    printf("down!\n");
-    debug_state_print(data); break;
-    case GDK_KEY_Right:
-    state_apply_input(data, INPUT_MOVE_RIGHT);
-    printf("right!\n"); 
-    debug_state_print(data); break;
-    case GDK_KEY_Left: 
-    state_apply_input(data, INPUT_MOVE_LEFT);
-    printf("left!\n");
-    debug_state_print(data); break;
-    case GDK_KEY_Up:
-    state_apply_input(data, INPUT_ROTATE_RIGHT);
-    printf("rotation!\n");
-    debug_state_print(data); break;
-    case GDK_KEY_Escape:
-    gtk_main_quit();
-    gtk_window_close(widget);
-    main(); break;
-}
+    switch (event->keyval){
+        case GDK_KEY_Down:
+        state_apply_input(data, INPUT_HARD_DROP);
+        printf("down!\n");
+        debug_state_print(data); break;
+        case GDK_KEY_Right:
+        state_apply_input(data, INPUT_MOVE_RIGHT);
+        printf("right!\n"); 
+        debug_state_print(data); break;
+        case GDK_KEY_Left: 
+        state_apply_input(data, INPUT_MOVE_LEFT);
+        printf("left!\n");
+        debug_state_print(data); break;
+        case GDK_KEY_Up:
+        state_apply_input(data, INPUT_ROTATE_RIGHT);
+        printf("rotation!\n");
+        debug_state_print(data); break;
+        case GDK_KEY_Escape:
+        gtk_widget_destroy(widget);
+        gtk_main_quit();
+        break;
+    }
 }
 
 int game()
 {
-  GError      *  p_err       = NULL;
-  size_t i = 0;
+    GError      *  p_err       = NULL;
+    size_t i = 0;
 
-  random_init();
+    random_init();
 
-  unsigned int seed = (unsigned int) time(NULL);
-  PieceQueue *q = piece_queue_create(seed);
+    unsigned int seed = (unsigned int) time(NULL);
+    PieceQueue *q = piece_queue_create(seed);
 
-  State *state = state_create();
-  state_init(state, q);
-  
-  gtk_init (NULL, NULL);
+    State *state = state_create();
+    state_init(state, q);
 
-  p_builder = gtk_builder_new ();
-  space = gtk_builder_get_object(p_builder, "space");
+    gtk_init (NULL, NULL);
 
-  update(state);
+    p_builder = gtk_builder_new ();
+    space = gtk_builder_get_object(p_builder, "space");
 
- IMG_Init(IMG_INIT_JPG);
-
-   blue = IMG_Load("./res/pieces/blue.jpg");
- lblue = IMG_Load("./res/pieces/lblue.jpg");
- green = IMG_Load("./res/pieces/green.jpg");
- red = IMG_Load("./res/pieces/red.jpg");
- purple = IMG_Load("./res/pieces/purple.jpg");
- orange = IMG_Load("./res/pieces/orange.jpg");
- yellow = IMG_Load("./res/pieces/yellow.jpg");
+    update(state);
 
 
-  
+    debug_state_print(state);
 
-  debug_state_print(state);
-
-  if (p_builder != NULL)
-  {
+    if (p_builder != NULL)
+    {
       gtk_builder_add_from_file (p_builder, "./res/Gamespace.glade", & p_err);
 
-    if (p_err == NULL)
-    {
-      debug_state_print(state);
+      if (p_err == NULL)
+      {
 
-    pWindow = SDL_CreateWindow("tAItris", SDL_WINDOWPOS_UNDEFINED,
-                                       SDL_WINDOWPOS_UNDEFINED, 300, 600, SDL_WINDOW_SHOWN);
+    //pWindow = SDL_CreateWindow("tAItris", SDL_WINDOWPOS_UNDEFINED,
+      //                                 SDL_WINDOWPOS_UNDEFINED, 300, 600, SDL_WINDOW_SHOWN);
 
-      GtkWidget * p_win = (GtkWidget *) gtk_builder_get_object (
-          p_builder, "window1"
-          );
-      gtk_widget_add_events(p_win, GDK_KEY_PRESS_MASK);
-      space = gtk_builder_get_object(p_builder, "space");
+          GtkWidget * p_win = (GtkWidget *) gtk_builder_get_object (
+              p_builder, "window1"
+              );
+          gtk_widget_add_events(p_win, GDK_KEY_PRESS_MASK);
+          space = gtk_builder_get_object(p_builder, "space");
 
-      g_signal_connect(G_OBJECT (p_win), "key-press-event", G_CALLBACK (on_key_press), state);
+          g_signal_connect(G_OBJECT (p_win), "key-press-event", G_CALLBACK (on_key_press), state);
 
-      g_timeout_add(200, step, state);
+          g_timeout_add(200, step, state);
 
-      gtk_widget_show_all (p_win);
-      update(state);
-      debug_state_print(state);
-      gtk_main();
+          gtk_widget_show_all (p_win);
+          update(state);
+          gtk_main();
+          main(NULL, NULL);
 
+      }
+      else
+      {
 
-  }
-  else
-  {
-
-     g_error ("%s", p_err->message);
-     g_error_free (p_err);
- }
-  SDL_FreeSurface(blue);
- SDL_FreeSurface(lblue);
- SDL_FreeSurface(yellow);
- SDL_FreeSurface(red);
- SDL_FreeSurface(purple);
- SDL_FreeSurface(orange);
- SDL_FreeSurface(green);
-
-      IMG_Quit();
-      SDL_Quit();
+       g_error ("%s", p_err->message);
+       g_error_free (p_err);
+   }
 }
 
 
@@ -256,57 +272,62 @@ return EXIT_SUCCESS;
 
 static void cb_ok (GtkWidget * p_wid, gpointer p_data)
 {
- gtk_window_close(p_data);
- gtk_widget_destroy(p_wid);
- game();
+    IA_mode = 1;
+    gtk_window_close(p_data);
+    gtk_widget_destroy(p_wid);
+    gtk_main_quit();
+    game();
 }
 
 
 int main (int argc, char ** argv)
 {
- GtkBuilder  *  p_builder   = NULL;
- GError      *  p_err       = NULL;
+    GtkBuilder  *  p_builder   = NULL;
+    GError      *  p_err       = NULL;
 
- gtk_init (& argc, & argv);
+    gtk_init (& argc, & argv);
 
- p_builder = gtk_builder_new ();
-
-
- if (p_builder != NULL)
- {
-  gtk_builder_add_from_file (p_builder, "./res/Menu.glade", & p_err);
-
-  if (p_err == NULL)
-  {
-   GtkWidget * p_win = (GtkWidget *) gtk_builder_get_object (
-    p_builder, "window1"
-    );
-
-   g_signal_connect (
-    gtk_builder_get_object (p_builder, "start"),
-    "clicked", G_CALLBACK (cb_ok), p_win
-    );
-
-   g_signal_connect (
-    gtk_builder_get_object (p_builder, "quit"),
-    "clicked", G_CALLBACK (gtk_main_quit), NULL
-    );
-
-   g_signal_connect(window, "delete_event",
-    G_CALLBACK(gtk_main_quit), NULL);
+    p_builder = gtk_builder_new ();
 
 
-   gtk_widget_show_all (p_win);
-   gtk_main();
-}
-else
-{
-   g_error ("%s", p_err->message);
-   g_error_free (p_err);
-}
-}
+    if (p_builder != NULL)
+    {
+        gtk_builder_add_from_file (p_builder, "./res/Menu.glade", & p_err);
+
+        if (p_err == NULL)
+        {
+            GtkWidget * p_win = (GtkWidget *) gtk_builder_get_object (
+                p_builder, "window1"
+                );
+
+            g_signal_connect (
+                gtk_builder_get_object (p_builder, "start"),
+                "clicked", G_CALLBACK (cb_ok), p_win
+                );
+
+            g_signal_connect (
+                gtk_builder_get_object (p_builder, "quit"),
+                "clicked", G_CALLBACK (gtk_main_quit), NULL
+                );
+
+            g_signal_connect(window, "delete_event",
+                G_CALLBACK(gtk_main_quit), NULL);
 
 
-return EXIT_SUCCESS;
+            gtk_widget_show_all (p_win);
+            gtk_main();
+            gtk_widget_destroy(gtk_builder_get_object (p_builder, "quit"));
+            gtk_widget_destroy(gtk_builder_get_object (p_builder, "start"));
+            gtk_widget_destroy(p_win);
+        }
+        else
+        {
+            g_error ("%s", p_err->message);
+            g_error_free (p_err);
+        }
+    }
+
+
+    return EXIT_SUCCESS;
 }
 

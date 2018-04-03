@@ -54,6 +54,22 @@
             <property name="y">518</property>
           </packing>
         </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">button</property>
+            <property name="width_request">201</property>
+            <property name="height_request">33</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="opacity">0</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="x">285</property>
+            <property name="y">436</property>
+          </packing>
+        </child>
       </object>
     </child>
   </object>
