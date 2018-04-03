@@ -23,7 +23,7 @@ CC := gcc -fsanitize=address
 CPPFLAGS := -MMD `pkg-config --cflags sdl2`
 CFLAGS := -Wall -Wextra -std=c99  -O0 -g3 
 LDFLAGS :=
-LDLIBS := `pkg-config --libs sdl2` -lm 
+LDLIBS := `pkg-config --libs sdl2` -lm  -lSDL2 -lSDL2_image
 DEFINES := -D_XOPEN_SOURCE=500
 
 GTK_CFLAGS := `pkg-config --cflags --libs gtk+-3.0`
