@@ -204,22 +204,22 @@ void sort(Candidate **cdt_tab, size_t len)
   qsort(cdt_tab, len, sizeof(Candidate*), compareFitness);
 }
 
-void tune(size_t cdt_len, size_t nCdt_len)
+void tune(size_t cdt_len, size_t nCdt_len, size_t epoch)
 {
-  Candidate **cdt_tab = malloc(sizeof(Candidate) * cdt_len);
+  Candidate **cdt_tab = malloc(sizeof(Candidate*) * cdt_len);
   for (size_t i = 0; i < cdt_len; i++)
   {
     cdt_tab[i] = genetic_candidate_create_random();
   }
   printf("Computing fitnesses of initial population...\n");
   computeFitness(cdt_tab, cdt_len, 5, 200);
-  //need to sort cdt_tab
+  sort(cdt_tab, cdt_len);
 
   int count = 0;
   Candidate **pair;
-  Candidate* cdt;
-  Candidate **new_cdt_tab = malloc(sizeof(Candidate) * nCdt_len);
-  while(1)
+  Candidate *cdt;
+  Candidate **new_cdt_tab = malloc(sizeof(Candidate*) * nCdt_len);
+  while(epoch--)
   {
     //new_cdt_tab = malloc(sizeof(Candidate) * nCdt_len);
     for (size_t i = 0; i < nCdt_len; i++)
@@ -231,6 +231,7 @@ void tune(size_t cdt_len, size_t nCdt_len)
         genetic_candidate_mutate(cdt);
       }
       genetic_candidate_normalize(cdt);
+      free(pair);
       new_cdt_tab[i] = cdt;
     }
     printf("Computing fitnesses of new candidates. (%d)\n", count);
