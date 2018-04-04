@@ -78,7 +78,7 @@ static gboolean on_draw_event(GtkWidget* widget, cairo_t *cr, gpointer state)
                 cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
                 break;
                 case CELL_YELLOW:
-                cairo_set_source_rgb(cr, 1, 1, 1);
+                cairo_set_source_rgb(cr, 1, 1, 0);
                 cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
                 break;
                 case CELL_RED:
@@ -86,7 +86,7 @@ static gboolean on_draw_event(GtkWidget* widget, cairo_t *cr, gpointer state)
                 cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
                 break;
                 case CELL_ORANGE:
-                cairo_set_source_rgb(cr, 1, 1, 0);
+                cairo_set_source_rgb(cr, 1, 0.5, 0.25);
                 cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
                 break;
                 case CELL_PURPLE:
@@ -106,7 +106,7 @@ static gboolean nextpiece(GtkWidget* widget, cairo_t *cr, gpointer cell)
 {
     int array[2][4] = {0,0,0,0,0,0,0,0};
     cairo_set_source_rgb(cr, 0, 0, 0);
-    cairo_rectangle(cr, 0, 0, 80, 40);
+    cairo_rectangle(cr, 0, 0, 85, 45);
     cairo_fill(cr);
     switch((Cell)cell) {
         case CELL_EMPTY:
@@ -137,7 +137,7 @@ static gboolean nextpiece(GtkWidget* widget, cairo_t *cr, gpointer cell)
         array[0][2] = 1; array[0][3] = 0;
         array[1][0] = 0; array[1][1] = 1;
         array[1][2] = 1; array[1][3] = 0;
-        cairo_set_source_rgb(cr, 0, 1, 1);
+        cairo_set_source_rgb(cr, 1, 1, 0);
         break;
         case CELL_PURPLE:
         array[0][0] = 0; array[0][1] = 1;
@@ -151,7 +151,7 @@ static gboolean nextpiece(GtkWidget* widget, cairo_t *cr, gpointer cell)
         array[0][2] = 1; array[0][3] = 0;
         array[1][0] = 1; array[1][1] = 1;
         array[1][2] = 1; array[1][3] = 0;
-        cairo_set_source_rgb(cr, 1, 0.5, 0.5);
+        cairo_set_source_rgb(cr, 1, 0.5, 0.25);
         break;
         case CELL_RED:
         array[0][0] = 1; array[0][1] = 1;
