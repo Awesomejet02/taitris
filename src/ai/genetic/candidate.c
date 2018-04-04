@@ -205,8 +205,9 @@ void sort(Candidate **cdt_tab, size_t len)
   qsort(cdt_tab, len, sizeof(Candidate*), compareFitness);
 }
 
-void tune(size_t cdt_len, size_t nCdt_len, size_t epoch)
+void tune(size_t cdt_len, size_t nCdt_len, size_t epoch, char *path)
 {
+  assert(path != NULL);
   Candidate **cdt_tab = malloc(sizeof(Candidate*) * cdt_len);
   for (size_t i = 0; i < cdt_len; i++)
   {
@@ -248,6 +249,7 @@ void tune(size_t cdt_len, size_t nCdt_len, size_t epoch)
     //printf("Fittest candidate = %d\n", count);
     count++;
   }
+  saveCoefsToFile(path, cdt_tab[0]->coefs);
 }
 
 void saveCoefsToFile(char *path, AiCoefs coefs)
