@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="gamespace">
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkFixed" id="gamecont">
+        <property name="width_request">800</property>
+        <property name="height_request">600</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkImage">
+            <property name="width_request">800</property>
+            <property name="height_request">600</property>
+            <property name="can_focus">False</property>
+            <property name="pixbuf">tetris.jpg</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="score">
+            <property name="width_request">100</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">label</property>
+          </object>
+          <packing>
+            <property name="x">542</property>
+            <property name="y">451</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="line">
+            <property name="width_request">100</property>
+            <property name="height_request">38</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">label</property>
+          </object>
+          <packing>
+            <property name="x">542</property>
+            <property name="y">481</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lvl">
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">label</property>
+          </object>
+          <packing>
+            <property name="x">542</property>
+            <property name="y">493</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkDrawingArea" id="DrawGame">
+            <property name="width_request">300</property>
+            <property name="height_request">600</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">108</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkDrawingArea" id="NextP">
+            <property name="width_request">132</property>
+            <property name="height_request">87</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">629</property>
+            <property name="y">38</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="menu">
+    <property name="can_focus">False</property>
+    <property name="default_width">800</property>
+    <property name="default_height">600</property>
+    <child>
+      <object class="GtkFixed" id="menucont">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkImage" id="bg">
+            <property name="width_request">800</property>
+            <property name="height_request">600</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="vexpand">False</property>
+            <property name="pixbuf">menu.jpg</property>
+            <property name="icon_size">1</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="start">
+            <property name="width_request">177</property>
+            <property name="height_request">40</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
+            <property name="receives_default">True</property>
+            <property name="opacity">0</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="x">299</property>
+            <property name="y">476</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="quit">
+            <property name="width_request">124</property>
+            <property name="height_request">40</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="opacity">0</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="x">324</property>
+            <property name="y">518</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="manual">
+            <property name="label" translatable="yes">button</property>
+            <property name="width_request">201</property>
+            <property name="height_request">33</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="opacity">0</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="x">285</property>
+            <property name="y">436</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

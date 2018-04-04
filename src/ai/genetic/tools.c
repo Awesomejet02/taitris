@@ -39,8 +39,8 @@ int genetic_tools_bumpiness(const State *state)
   for(int x = 0; x < state->board->width - 1; ++x)
   {
     int diff = heights[x] - heights[x + 1];
-    //TODO fix the ABS macro but not mandatory
-    bumpiness += ABS(diff);
+    //TODO fix the TOOLS_ABS macro but not mandatory
+    bumpiness += TOOLS_ABS(diff);
   }
 
   free(heights);
