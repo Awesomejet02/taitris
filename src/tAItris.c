@@ -207,7 +207,8 @@ void stepmanual(State *state)
 
     update(state);
     debug_state_print(state);
-    state_step(state);
+    if(!state_step(state))
+        gtk_main_quit();
 }
 
 void update(State *state)
@@ -287,7 +288,7 @@ int game()
 
           g_signal_connect(G_OBJECT (p_win), "key-press-event", G_CALLBACK (on_key_press), state);
 
-          if (IA_mode == 1)
+        if (IA_mode == 1)
             g_timeout_add(750, step, state);
         else
             g_timeout_add(750, stepmanual, state);
