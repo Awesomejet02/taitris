@@ -6,6 +6,7 @@
  */
 
 #include "candidate.h"
+#include "../../engine/state.h"
 
 Candidate *genetic_candidate_create()
 {
@@ -134,7 +135,7 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways, size_t 
   {
     toDelete = random_int(0, (int)cdt_len);
     selectedIndex = indices[toDelete];
-    array_shift_left(indices, &cdt_len, toDelete);
+    array_shift_left(indices, &cdt_len, (size_t)toDelete);
     if(fittestCandidateIndex1 == -1 || selectedIndex < fittestCandidateIndex1)
     {
       fittestCandidateIndex2 = fittestCandidateIndex1;
@@ -159,51 +160,28 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
 {
   assert(cdt != NULL);
 
-  //Testing
-  size_t workingPieces_len = 2;
-  Piece **workingPieces = malloc(sizeof(Piece) * workingPieces_len);// = genetic_best(state);
-
-  //
-
   for(size_t i = 0; i < cdt_len; i++)
   {
     Candidate cur_cdt = *cdt[i];
     AiCoefs* ai = genetic_aicoefs_create(cur_cdt.coefs->holes, cur_cdt.coefs->agg_height, cur_cdt.coefs->bumpiness, cur_cdt.coefs->clears);
     double totalScore = 0;
-    double score = 0;
+
     for(size_t j = 0; j < nbOfGames; j++)
     {
       State *state = state_create();
+      size_t nbOfMoves = 1;
 
-      //Working piece(s)
-      /*size_t workingPieces_len = 2;
-      Piece **workingPieces = malloc(sizeof(Piece) * workingPieces_len);// = genetic_best(state);*/
-      workingPieces[0] = state_create_piece(state);
-      workingPieces[1] = state_create_piece(state);
-      Piece *workingPiece = workingPieces[0];
-      size_t nbOfMoves = 1; //He starts his while with a "++" on nbOfMoves
-      while(nbOfMoves < maxNbOfMoves && grid_is_exceeded(state->board))
-      {
-        workingPiece = genetic_best(state);
-        //Faire descendre la piece
-        //TODO
-        //
-        score += 1; //A modifier en fonction du calcul de score
-        for (size_t k = 0; k < workingPieces_len - 1; k++)
-        {
-          workingPieces[k] = workingPieces[k + 1];
-        }
-        workingPieces[workingPieces_len - 1] = state_create_piece(state);
-        workingPiece = workingPieces[0];
-        nbOfMoves++;
-      }
+      do {
+        Piece *workingPiece = genetic_best(state); //get the best pos
+        piece_set(state->current_piece, workingPiece); //set the best pos in state
+        state_apply_input(state, INPUT_HARD_DROP);
+      } while(nbOfMoves++ < maxNbOfMoves && state_step(state));
 
-      totalScore += score;
+      totalScore += state->score;
+      state_free(state);
     }
     cur_cdt.fitness = totalScore;
   }
-  //free
-  free(workingPieces);
 }
 
 void deleteNLastReplacement(Candidate **cdt_tab, Candidate **new_cdt_tab, size_t cdt_len, size_t nCdt_len)
