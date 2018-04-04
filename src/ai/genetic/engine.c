@@ -190,7 +190,7 @@ AiBest *_genetic_best(const State *state, const AiCoefs *coefs, int current, int
       } else {
         state_step(state_next);
 
-        AiBest *aiBest_rec = _genetic_best(state_next, NULL, current + 1, max);
+        AiBest *aiBest_rec = _genetic_best(state_next, coefs, current + 1, max);
         score = aiBest_rec->score;
         genetic_aibest_free(aiBest_rec);
       }
