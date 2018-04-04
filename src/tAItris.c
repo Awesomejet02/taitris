@@ -7,14 +7,18 @@
 
 #include "utils/random.h"
 
-#include "engine/piece/piece_queue.h"
-#include "engine/state.h"
-#include "ai/genetic/engine.h"
+#include "ui/ui.h"
+#include "ui/ui_menu.h"
 
-#include "debug/engine/debug_state.h"
-#include "ai/genetic/candidate.h"
-
-int main() {
+int main(int argc, char *argv[]) {
   random_init();
+
+  ui_init(argc, argv);
+  ui_menu_init();
+  ui_gamespace_init();
+
+  ui_menu_show();
+  gtk_main();
+
   return 0;
 }
