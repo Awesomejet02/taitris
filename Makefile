@@ -56,7 +56,7 @@ save: ## Save data from bin
 	@echo "Saving data from $(COM_COLOR)$(BIN_DIR)$(NO_COLOR) to $(COM_COLOR)$(DATA_DIR)$(NO_COLOR)"
 	@$(RSYNC) -rup --delete $(BIN_DIR)/$(DATA_DIR) ./
 
-clean: ## Clean the project
+clean cl: ## Clean the project
 	@echo "Cleaning $(COM_COLOR)$(BUILD_DIR)$(NO_COLOR) and $(COM_COLOR)$(BIN_DIR)$(NO_COLOR)"
 	@$(FIND) $(BUILD_DIR) -mindepth 1 ! -name .gitignore -delete
 	@$(FIND) $(BIN_DIR) -mindepth 1 ! -name .gitignore -delete
