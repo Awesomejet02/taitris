@@ -225,8 +225,6 @@ void saveCoefsToFile(char *path, AiCoefs *coefs)
 void tune(size_t cdt_len, size_t nCdt_len, size_t epoch, char *path)
 {
   assert(path != NULL);
-  unsigned int seed = (unsigned int) time(NULL);
-  PieceQueue *q = piece_queue_create(seed);
 
   Candidate **cdt_tab = malloc(sizeof(Candidate*) * cdt_len);
   for (size_t i = 0; i < cdt_len; i++)
