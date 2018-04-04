@@ -131,7 +131,7 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways, size_t 
   int fittestCandidateIndex2 = -1;
   int selectedIndex = 0;
   int toDelete = 0;
-  for(size_t i = 0; i < ways; i++)
+  for(size_t i = 0; i < ways && cdt_len > 0; i++)
   {
     toDelete = random_int(0, (int)cdt_len);
     selectedIndex = indices[toDelete];
@@ -200,7 +200,7 @@ static int compareFitness(const void *a, const void *b)
 
   int epsilon = 1000000;
 
-  return (int)(((Candidate*)b)->fitness * epsilon - ((Candidate*)a)->fitness * epsilon);
+  return (int)((*(Candidate *) b).fitness * epsilon - (*(Candidate*) a).fitness * epsilon);
 }
 
 void sort(Candidate **cdt_tab, size_t len)
