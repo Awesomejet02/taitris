@@ -20,6 +20,11 @@ State *state_create() {
   return state;
 }
 
+Piece* state_next(State* state)
+{
+  return state->next_piece;
+}
+
 void state_init(State *state, PieceQueue *q) {
   assert(state != NULL);
   assert(q != NULL);

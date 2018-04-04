@@ -14,7 +14,8 @@
 
 #include "debug/engine/debug_state.h"
 
-int IA_mode = 0;
+int IA_mode;
+
 
 GtkBuilder *p_builder;
 GtkWidget *space;
@@ -101,46 +102,77 @@ static gboolean on_draw_event(GtkWidget* widget, cairo_t *cr, gpointer state)
     return FALSE;
 }
 
-static gboolean nextpiece(GtkWidget* widget, cairo_t *cr, gpointer data)
+static gboolean nextpiece(GtkWidget* widget, cairo_t *cr, gpointer cell)
 {
-  /*  const Piece *np = ((struct State *)data)->next_piece;
-    switch(np->shape->fill) {
+    int array[2][4] = {0,0,0,0,0,0,0,0};
+    cairo_set_source_rgb(cr, 0, 0, 0);
+    cairo_rectangle(cr, 0, 0, 80, 40);
+    cairo_fill(cr);
+    switch((Cell)cell) {
         case CELL_EMPTY:
-            break;
+        break;
         case CELL_CYAN:
-            cairo_set_source_rgb(cr, 1, 0, 1);
-            break;
+        array[0][0] = 0; array[0][1] = 0;
+        array[0][2] = 0; array[0][3] = 0;
+        array[1][0] = 1; array[1][1] = 1;
+        array[1][2] = 1; array[1][3] = 1;
+        cairo_set_source_rgb(cr, 0, 1, 1);
+        break;
         case CELL_BLUE:
-            cairo_set_source_rgb(cr, 1, 0, 1);
-            break;
+        array[0][0] = 1; array[0][1] = 0;
+        array[0][2] = 0; array[0][3] = 0;
+        array[1][0] = 1; array[1][1] = 1;
+        array[1][2] = 1; array[1][3] = 0;
+        cairo_set_source_rgb(cr, 0, 0, 1);
+        break;
         case CELL_GREEN:
-            cairo_set_source_rgb(cr, 1, 0, 1);
-            break;
+        array[0][0] = 0; array[0][1] = 1;
+        array[0][2] = 1; array[0][3] = 0;
+        array[1][0] = 1; array[1][1] = 1;
+        array[1][2] = 0; array[1][3] = 0;
+        cairo_set_source_rgb(cr, 0, 1, 0);
+        break;
         case CELL_YELLOW:
-            cairo_set_source_rgb(cr, 1, 0, 1);
-            break;
+        array[0][0] = 0; array[0][1] = 1;
+        array[0][2] = 1; array[0][3] = 0;
+        array[1][0] = 0; array[1][1] = 1;
+        array[1][2] = 1; array[1][3] = 0;
+        cairo_set_source_rgb(cr, 0, 1, 1);
+        break;
         case CELL_PURPLE:
-            cairo_set_source_rgb(cr, 1, 0, 1);
-            break;
+        array[0][0] = 0; array[0][1] = 1;
+        array[0][2] = 0; array[0][3] = 0;
+        array[1][0] = 1; array[1][1] = 1;
+        array[1][2] = 1; array[1][3] = 0;
+        cairo_set_source_rgb(cr, 1, 0, 1);
+        break;
         case CELL_ORANGE:
-            cairo_set_source_rgb(cr, 1, 0, 1);
-            break;
+        array[0][0] = 0; array[0][1] = 0;
+        array[0][2] = 1; array[0][3] = 0;
+        array[1][0] = 1; array[1][1] = 1;
+        array[1][2] = 1; array[1][3] = 0;
+        cairo_set_source_rgb(cr, 1, 0.5, 0.5);
+        break;
         case CELL_RED:
-            cairo_set_source_rgb(cr, 1, 0, 1);
-            break;
+        array[0][0] = 1; array[0][1] = 1;
+        array[0][2] = 0; array[0][3] = 0;
+        array[1][0] = 0; array[1][1] = 1;
+        array[1][2] = 1; array[1][3] = 0;
+        cairo_set_source_rgb(cr, 1, 0, 0);
+        break;
     }
     for (int x = 0; x < 4; x++)
     {
-        for (int y = 0; y < 4; y++)
+        for (int y = 0; y < 2; y++)
         {
-            if (np->shape->shape[np->angle][y][x])
+            if (array[y][x] == 1)
             {
-                cairo_rectangle(cr, x * 20, y * 20, 20, 20);
+                cairo_rectangle(cr, 20*x, 20*y, 20, 20);
                 cairo_stroke_preserve(cr);
                 cairo_fill(cr);
             }
         }
-    }*/
+    }
     return FALSE;
 }
 
@@ -149,16 +181,14 @@ void step(State *state)
 
     g_signal_connect(G_OBJECT(gtk_builder_get_object(p_builder, "DrawGame")), "draw", G_CALLBACK(on_draw_event), state);
     gtk_widget_queue_draw(G_OBJECT(gtk_builder_get_object(p_builder, "DrawGame")));
-    g_signal_connect(G_OBJECT(gtk_builder_get_object(p_builder, "NextP")), "draw", G_CALLBACK(nextpiece), state);
+    g_signal_connect(G_OBJECT(gtk_builder_get_object(p_builder, "NextP")), "draw", G_CALLBACK(nextpiece), (gpointer)(state->next_piece->shape->fill));
     gtk_widget_queue_draw(G_OBJECT(gtk_builder_get_object(p_builder, "NextP")));
 
-// METTRE SCREEN SUR GTK
     update(state);
-    if (!state_step(state))
-        gtk_main_quit();
+    debug_state_print(state);
+    state_step(state);
     if (IA_mode == 1)
     {
-        debug_state_print(state);
         Piece *pc = genetic_best(state);
         piece_free(state->current_piece);
         state->current_piece = pc;
@@ -167,10 +197,17 @@ void step(State *state)
     }
 }
 
-static void menu (GtkWidget * p_wid, gpointer p_data)
+void stepmanual(State *state)
 {
-    gtk_window_close(p_data);
-    main();
+
+    g_signal_connect(G_OBJECT(gtk_builder_get_object(p_builder, "DrawGame")), "draw", G_CALLBACK(on_draw_event), state);
+    gtk_widget_queue_draw(G_OBJECT(gtk_builder_get_object(p_builder, "DrawGame")));
+    g_signal_connect(G_OBJECT(gtk_builder_get_object(p_builder, "NextP")), "draw", G_CALLBACK(nextpiece), (gpointer)(state->next_piece->shape->fill));
+    gtk_widget_queue_draw(G_OBJECT(gtk_builder_get_object(p_builder, "NextP")));
+
+    update(state);
+    debug_state_print(state);
+    state_step(state);
 }
 
 void update(State *state)
@@ -250,29 +287,40 @@ int game()
 
           g_signal_connect(G_OBJECT (p_win), "key-press-event", G_CALLBACK (on_key_press), state);
 
-          g_timeout_add(200, step, state);
+          if (IA_mode == 1)
+            g_timeout_add(750, step, state);
+        else
+            g_timeout_add(750, stepmanual, state);
 
           gtk_widget_show_all (p_win);
           update(state);
           gtk_main();
-          main(NULL, NULL);
 
       }
       else
       {
 
-       g_error ("%s", p_err->message);
-       g_error_free (p_err);
-   }
-}
+         g_error ("%s", p_err->message);
+         g_error_free (p_err);
+     }
+ }
 
 
-return EXIT_SUCCESS;
+ return EXIT_SUCCESS;
 }
 
 static void cb_ok (GtkWidget * p_wid, gpointer p_data)
 {
     IA_mode = 1;
+    gtk_window_close(p_data);
+    gtk_widget_destroy(p_wid);
+    gtk_main_quit();
+    game();
+}
+
+static void cb_manual (GtkWidget * p_wid, gpointer p_data)
+{
+    IA_mode = 0;
     gtk_window_close(p_data);
     gtk_widget_destroy(p_wid);
     gtk_main_quit();
@@ -303,6 +351,11 @@ int main (int argc, char ** argv)
             g_signal_connect (
                 gtk_builder_get_object (p_builder, "start"),
                 "clicked", G_CALLBACK (cb_ok), p_win
+                );
+
+            g_signal_connect (
+                gtk_builder_get_object (p_builder, "manual"),
+                "clicked", G_CALLBACK (cb_manual), p_win
                 );
 
             g_signal_connect (
