@@ -188,6 +188,8 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
       {
         workingPiece = genetic_best(state);
         //Faire descendre la piece
+        //TODO
+        ///
         score += 1; //A modifier en fonction du calcul de score
         for (size_t k = 0; k < workingPieces_len - 1; k++)
         {
@@ -209,7 +211,7 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
 void deleteNLastReplacement(Candidate **cdt_tab, Candidate **new_cdt_tab, size_t cdt_len, size_t nCdt_len)
 {
   assert(nCdt_len < cdt_len);
-  for (size_t i = cdt_len - nCdt_len; i < Cdt_len; i++)
+  for (size_t i = cdt_len - nCdt_len; i < cdt_len; i++)
   {
     cdt_tab[i] = new_cdt_tab[i - cdt_len - nCdt_len];
   }
@@ -264,7 +266,7 @@ void tune(size_t cdt_len, size_t nCdt_len)
     }
     printf("Computing fitnesses of new candidates. (%d)\n", count);
     computeFitness(new_cdt_tab, nCdt_len, 5, 200);
-    deleteNLastReplacement(cdt_tab, new_cdt_tab);
+    deleteNLastReplacement(cdt_tab, new_cdt_tab, cdt_len, nCdt_len);
     int totalFitness = 0;
     for (size_t i = 0; i < cdt_len; i++)
     {
@@ -275,4 +277,18 @@ void tune(size_t cdt_len, size_t nCdt_len)
     //printf("Fittest candidate = %d\n", count);
     count++;
   }
+}
+
+void saveCoefsToFile(char *path, AiCoefs coefs)
+{
+  FILE *f = fopen(path, "w");
+  if (f == NULL)
+  {
+      printf("Error opening file!\n");
+      exit(1);
+  }
+  fprintf(f,"%f\n%f\n%f\n%f\n", coefs.agg_height, coefs.holes, coefs.clears, coefs.bumpiness);
+
+
+  fclose(f);
 }

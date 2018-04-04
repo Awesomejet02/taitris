@@ -25,6 +25,59 @@ AiCoefs *genetic_aicoefs_get() {
   return coefs;
 }
 
+AiCoefs *genetic_aicoefs_get_from_file(char *path) {
+  static AiCoefs *coefs = NULL;
+
+  if (!coefs) {
+    coefs = malloc(sizeof(AiCoefs));
+
+    if (coefs == NULL)
+      errx(EXIT_FAILURE, "Can't initialize AiCoefs object");
+
+    FILE *f = fopen(path, "r");
+    if (f == NULL)
+    {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+    char *line = NULL;
+    size_t len = 0;
+    double d = 0;
+    size_t lCount = 0;
+    if(getline(&line, &len, f) != -1)
+    {
+      sscanf(line, "%lf", &d);
+      coefs->agg_height = d;
+      lCount++;
+    }
+    if(getline(&line, &len, f) != -1)
+    {
+      sscanf(line, "%lf", &d);
+      coefs->clears = d;
+      lCount++;
+    }
+    if(getline(&line, &len, f) != -1)
+    {
+      sscanf(line, "%lf", &d);
+      coefs->holes = d;
+      lCount++;
+    }
+    if(getline(&line, &len, f) != -1)
+    {
+      sscanf(line, "%lf", &d);
+      coefs->bumpiness = d;
+      lCount++;
+    }
+
+    fclose(f);
+    if (line)
+        free(line);
+    if(lCount != 4)
+        errx(EXIT_FAILURE, "Can't initialize AiCoefs object");
+  }
+  return coefs;
+}
+
 AiCoefs *genetic_aicoefs_random() {
   AiCoefs *coefs = malloc(sizeof(AiCoefs));
 
