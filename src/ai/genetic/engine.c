@@ -26,6 +26,7 @@ AiCoefs *genetic_aicoefs_get() {
 }
 
 AiCoefs *genetic_aicoefs_get_from_file(char *path) {
+  assert(path != NULL);
   static AiCoefs *coefs = NULL;
 
   if (!coefs) {

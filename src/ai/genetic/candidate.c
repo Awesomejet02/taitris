@@ -189,7 +189,7 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
         workingPiece = genetic_best(state);
         //Faire descendre la piece
         //TODO
-        ///
+        //
         score += 1; //A modifier en fonction du calcul de score
         for (size_t k = 0; k < workingPieces_len - 1; k++)
         {
