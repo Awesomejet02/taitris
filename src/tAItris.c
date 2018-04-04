@@ -16,9 +16,5 @@
 
 int main() {
   random_init();
-
-  tune(6, 2, 10, "/tmp/save.ai");
-
-  genetic_aicoefs_free(genetic_aicoefs_get());
   return 0;
 }
