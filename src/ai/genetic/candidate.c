@@ -8,6 +8,23 @@
 #include "candidate.h"
 #include "../../engine/state.h"
 
+void genetic_candidate_normalize(Candidate *candidate)
+{
+  assert(candidate != NULL);
+  assert(candidate->coefs != NULL);
+
+  double norm = sqrt(
+          pow(candidate->coefs->agg_height, 2) +
+          pow(candidate->coefs->clears, 2) +
+          pow(candidate->coefs->holes, 2) +
+          pow(candidate->coefs->bumpiness, 2));
+
+  candidate->coefs->clears /= norm;
+  candidate->coefs->bumpiness /= norm;
+  candidate->coefs->holes /= norm;
+  candidate->coefs->agg_height /= norm;
+}
+
 Candidate *genetic_candidate_create()
 {
   Candidate *cdt = malloc(sizeof(Candidate));
@@ -49,23 +66,6 @@ void genetic_candidate_free(Candidate *candidate)
 
   genetic_aicoefs_free(candidate->coefs);
   free(candidate);
-}
-
-void genetic_candidate_normalize(Candidate *candidate)
-{
-  assert(candidate != NULL);
-  assert(candidate->coefs != NULL);
-
-  double norm = sqrt(
-          pow(candidate->coefs->agg_height, 2) +
-          pow(candidate->coefs->clears, 2) +
-          pow(candidate->coefs->holes, 2) +
-          pow(candidate->coefs->bumpiness, 2));
-
-  candidate->coefs->clears /= norm;
-  candidate->coefs->bumpiness /= norm;
-  candidate->coefs->holes /= norm;
-  candidate->coefs->agg_height /= norm;
 }
 
 Candidate *genetic_candidate_crossover(Candidate *cdt1, Candidate *cdt2)
@@ -199,10 +199,23 @@ static int compareFitness(const void *a, const void *b)
   return (int)(((Candidate*)b)->fitness * epsilon - ((Candidate*)a)->fitness * epsilon);
 }
 
-//Need to be tested
 void sort(Candidate **cdt_tab, size_t len)
 {
   qsort(cdt_tab, len, sizeof(Candidate*), compareFitness);
+}
+
+void saveCoefsToFile(char *path, AiCoefs *coefs)
+{
+  FILE *f = fopen(path, "w");
+  if (f == NULL)
+  {
+    printf("Error opening file!\n");
+    exit(1);
+  }
+  fprintf(f,"%f\n%f\n%f\n%f\n", coefs->agg_height, coefs->holes, coefs->clears, coefs->bumpiness);
+
+
+  fclose(f);
 }
 
 void tune(size_t cdt_len, size_t nCdt_len, size_t epoch, char *path)
@@ -250,18 +263,4 @@ void tune(size_t cdt_len, size_t nCdt_len, size_t epoch, char *path)
     count++;
   }
   saveCoefsToFile(path, cdt_tab[0]->coefs);
-}
-
-void saveCoefsToFile(char *path, AiCoefs coefs)
-{
-  FILE *f = fopen(path, "w");
-  if (f == NULL)
-  {
-      printf("Error opening file!\n");
-      exit(1);
-  }
-  fprintf(f,"%f\n%f\n%f\n%f\n", coefs.agg_height, coefs.holes, coefs.clears, coefs.bumpiness);
-
-
-  fclose(f);
 }
