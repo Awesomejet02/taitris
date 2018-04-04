@@ -7,14 +7,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -std=c99 -O0 -g3")
 add_definitions(-D_XOPEN_SOURCE=500)
 
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
-link_directories(${SDL2_LIBRARY_DIRS})
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+include_directories(${GTK3_INCLUDE_DIRS})
+link_directories(${GTK3_LIBRARY_DIRS})
+add_definitions(${GTK3_CFLAGS_OTHER})
 
 file(GLOB_RECURSE source_files src/*)
 add_executable(tAItris ${source_files})
 
-target_link_libraries(tAItris ${SDL2_LIBRARIES})
+target_link_libraries(tAItris ${GTK3_LIBRARIES})
 target_link_libraries(tAItris m)
 
 add_custom_command(TARGET tAItris PRE_BUILD

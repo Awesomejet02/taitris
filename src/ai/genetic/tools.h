@@ -13,7 +13,7 @@
 #include "../../engine/state.h"
 #include "../../utils/ansi_code.h"
 
-#define ABS(X) (((X) < 0) ? (-1 * (X)) : (X))
+#define TOOLS_ABS(X) (((X) < 0) ? (-1 * (X)) : (X))
 
 int genetic_tools_height(const State *state, int x);
 

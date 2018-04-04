@@ -1,7 +1,0 @@
-pixelmap_path "./"
-
-style "Windows"
-{
-	bg_pixmap[NORMAL] = "bg.jpg"
-}
-class "GtkWindow" style "Windows"
