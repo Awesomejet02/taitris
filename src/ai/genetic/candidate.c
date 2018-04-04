@@ -120,9 +120,9 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways, size_t 
 
   //size_t cdt_len = sizeof(cdt) / sizeof(cdt[0]);
   assert(cdt_len >= 2);
-  Candidate **res = malloc(sizeof(Candidate) * 2);
+  Candidate **res = malloc(sizeof(Candidate*) * 2);
   int indices[cdt_len];
-  for(size_t i = 0; i < cdt_len; i++)
+  for(int i = 0; i < cdt_len; i++)
   {
     indices[i] = i;
   }
@@ -132,7 +132,7 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways, size_t 
   int toDelete = 0;
   for(size_t i = 0; i < ways; i++)
   {
-    toDelete = random_int(0, cdt_len);
+    toDelete = random_int(0, (int)cdt_len);
     selectedIndex = indices[toDelete];
     array_shift_left(indices, &cdt_len, toDelete);
     if(fittestCandidateIndex1 == -1 || selectedIndex < fittestCandidateIndex1)
@@ -144,10 +144,8 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways, size_t 
     {
         fittestCandidateIndex2 = selectedIndex;
     }
-
     res[1] = cdt[fittestCandidateIndex1];
     res[2] = cdt[fittestCandidateIndex2];
-
   }
   return res;
 }
