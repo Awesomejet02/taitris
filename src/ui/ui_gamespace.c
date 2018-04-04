@@ -45,9 +45,12 @@ static void stepwithouttime(gpointer ps) {
 
 static void on_key_press(GtkWidget *widget, GdkEventKey *event, gpointer data) {
   switch (event->keyval){
-    case GDK_KEY_Down:
+    case GDK_KEY_space:
       state_apply_input(data, INPUT_HARD_DROP);
       stepwithouttime(data);
+      break;
+    case GDK_KEY_Down:
+      state_apply_input(data, INPUT_SOFT_DROP);
       break;
     case GDK_KEY_Right:
       state_apply_input(data, INPUT_MOVE_RIGHT);
