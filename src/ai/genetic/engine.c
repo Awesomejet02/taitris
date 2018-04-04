@@ -148,7 +148,7 @@ double genetic_get_rank(const State *state) {
 
 double genetic_get_rank_ai(const State *state, const AiCoefs *coefs) {
   assert(state != NULL);
-  assert(state != NULL);
+  assert(coefs != NULL);
 
   double rank = coefs->bumpiness * genetic_tools_bumpiness(state);
   rank += coefs->clears * genetic_tools_clears(state);
