@@ -24,7 +24,7 @@ CPPFLAGS := -MMD `pkg-config --cflags sdl2`
 CFLAGS := -Wall -Wextra -std=c99 -O0 -g3
 LDFLAGS :=
 LDLIBS := `pkg-config --libs sdl2` -lm
-DEFINES := -D_XOPEN_SOURCE=500
+DEFINES := -D_XOPEN_SOURCE=500 -D_GNU_SOURCE
 
 all: $(BIN_DIR) ## Make the project
 
