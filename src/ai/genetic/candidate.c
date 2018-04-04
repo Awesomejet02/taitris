@@ -184,6 +184,7 @@ void deleteNLastReplacement(Candidate **cdt_tab, Candidate **new_cdt_tab, size_t
   assert(nCdt_len < cdt_len);
   for (size_t i = cdt_len - nCdt_len; i < cdt_len; i++)
   {
+    genetic_candidate_free(cdt_tab[i]);
     cdt_tab[i] = new_cdt_tab[i - cdt_len - nCdt_len];
   }
 }
