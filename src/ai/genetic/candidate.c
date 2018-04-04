@@ -206,11 +206,16 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
   free(workingPieces);
 }
 
-void deleteNLastReplacement(Candidate **cdt_tab, Candidate **new_cdt_tab)
+void deleteNLastReplacement(Candidate **cdt_tab, Candidate **new_cdt_tab, size_t cdt_len, size_t nCdt_len)
 {
-  //TODO
+  assert(nCdt_len < cdt_len);
+  for (size_t i = cdt_len - nCdt_len; i < Cdt_len; i++)
+  {
+    cdt_tab[i] = new_cdt_tab[i - cdt_len - nCdt_len];
+  }
 }
 
+//Need to be tested
 void sort(Candidate cdt_tab[], int len)
 {
    int i, j;
