@@ -25,7 +25,7 @@ int main() {
   size_t i = 0;
 
   do {
-    Piece *pc = genetic_best(state);
+    Piece *pc = genetic_best(state, NULL);
 
     piece_free(state->current_piece);
     state->current_piece = pc;

@@ -151,11 +151,6 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways, size_t 
   return res;
 }
 
-int grid_is_exceeded(Board *board)
-{
-  return !board_is_line_empty(board, 0) || !board_is_line_empty(board, 1);
-}
-
 void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t maxNbOfMoves)
 {
   assert(cdt != NULL);
@@ -172,7 +167,7 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
       size_t nbOfMoves = 1;
 
       do {
-        Piece *workingPiece = genetic_best(state); //get the best pos
+        Piece *workingPiece = genetic_best(state, ai); //get the best pos
         piece_set(state->current_piece, workingPiece); //set the best pos in state
         state_apply_input(state, INPUT_HARD_DROP);
       } while(nbOfMoves++ < maxNbOfMoves && state_step(state));

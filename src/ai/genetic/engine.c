@@ -146,7 +146,19 @@ double genetic_get_rank(const State *state) {
   return rank;
 }
 
-AiBest *_genetic_best(const State *state, int current, int max) {
+double genetic_get_rank_ai(const State *state, const AiCoefs *coefs) {
+  assert(state != NULL);
+  assert(state != NULL);
+
+  double rank = coefs->bumpiness * genetic_tools_bumpiness(state);
+  rank += coefs->clears * genetic_tools_clears(state);
+  rank += coefs->agg_height * genetic_tools_aggregate_height(state);
+  rank += coefs->holes * genetic_tools_holes(state);
+
+  return rank;
+}
+
+AiBest *_genetic_best(const State *state, const AiCoefs *coefs, int current, int max) {
   assert(state != NULL);
   assert(current >= 0);
   assert(max >= current);
@@ -174,11 +186,11 @@ AiBest *_genetic_best(const State *state, int current, int max) {
       state_apply_input(state_next, INPUT_HARD_DROP);
 
       if (current == max) {
-        score = genetic_get_rank(state_next);
+        score = genetic_get_rank_ai(state_next, coefs);
       } else {
         state_step(state_next);
 
-        AiBest *aiBest_rec = _genetic_best(state_next, current + 1, max);
+        AiBest *aiBest_rec = _genetic_best(state_next, NULL, current + 1, max);
         score = aiBest_rec->score;
         genetic_aibest_free(aiBest_rec);
       }
@@ -199,10 +211,14 @@ AiBest *_genetic_best(const State *state, int current, int max) {
   return aiBest;
 }
 
-Piece *genetic_best(const State *state) {
+Piece *genetic_best(const State *state, const AiCoefs *coefs) {
   assert(state != NULL);
 
-  AiBest *aiBest = _genetic_best(state, 0, 1);
+  if (coefs == NULL) {
+    coefs = genetic_aicoefs_get();
+  }
+
+  AiBest *aiBest = _genetic_best(state, coefs, 0, 1);
 
   Piece *piece = piece_copy(aiBest->piece);
   genetic_aibest_free(aiBest);
