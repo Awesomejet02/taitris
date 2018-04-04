@@ -163,7 +163,10 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
 
     for(size_t j = 0; j < nbOfGames; j++)
     {
+      unsigned int seed = (unsigned int) time(NULL);
+      PieceQueue *q = piece_queue_create(seed);
       State *state = state_create();
+      state_init(state, q);
       size_t nbOfMoves = 1;
 
       do {
@@ -173,6 +176,7 @@ void computeFitness(Candidate **cdt, size_t cdt_len, size_t nbOfGames, size_t ma
       } while(nbOfMoves++ < maxNbOfMoves && state_step(state));
 
       totalScore += state->score;
+      piece_queue_free(q);
       state_free(state);
     }
     cur_cdt.fitness = totalScore;
@@ -221,6 +225,9 @@ void saveCoefsToFile(char *path, AiCoefs *coefs)
 void tune(size_t cdt_len, size_t nCdt_len, size_t epoch, char *path)
 {
   assert(path != NULL);
+  unsigned int seed = (unsigned int) time(NULL);
+  PieceQueue *q = piece_queue_create(seed);
+
   Candidate **cdt_tab = malloc(sizeof(Candidate*) * cdt_len);
   for (size_t i = 0; i < cdt_len; i++)
   {
