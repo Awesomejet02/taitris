@@ -123,7 +123,7 @@ Candidate **genetic_tournament_select_pair(Candidate **cdt, size_t ways, size_t 
   assert(cdt_len >= 2);
   Candidate **res = malloc(sizeof(Candidate*) * 2);
   int indices[cdt_len];
-  for(int i = 0; i < cdt_len; i++)
+  for(size_t i = 0; i < cdt_len; i++)
   {
     indices[i] = i;
   }
