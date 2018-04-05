@@ -219,13 +219,13 @@ static int step(gpointer ps) {
 
   state_apply_input(state, INPUT_HARD_DROP);
 
-  guint interval = 750;
-  interval -= 50 * state->level;
-  if (interval < 150) interval = 150;
+  //guint interval = 400;
+  //interval -= 50 * state->level;
+  //if (interval < 150) interval = 150;
 
   if (state_step(state)) {
     gtk_widget_queue_draw(ui_get_widget("NextP"));
-    g_timeout_add(interval, step, ps);
+    g_timeout_add(200, step, ps);
   } else {
     gtk_main_quit();
   }
