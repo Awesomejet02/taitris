@@ -214,10 +214,10 @@ static int step(gpointer ps) {
   debug_state_print(state);
 
   Piece *pc = genetic_best(state);
-  piece_free(state->current_piece);
-  state->current_piece = pc;
+  Input next_input = delta_piece(state->current_piece, pc);
+  piece_free(pc);
 
-  state_apply_input(state, INPUT_HARD_DROP);
+  state_apply_input(state, next_input);
 
   //guint interval = 400;
   //interval -= 50 * state->level;
