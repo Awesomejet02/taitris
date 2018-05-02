@@ -29,4 +29,6 @@ int genetic_tools_holes(const State *state);
 
 int genetic_tools_clears(const State *state);
 
+Input delta_piece(const Piece *current, const Piece *target);
+
 #endif //TAITRIS_TOOLS_H

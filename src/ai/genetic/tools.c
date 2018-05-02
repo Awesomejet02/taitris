@@ -6,6 +6,7 @@
  */
 
 #include "tools.h"
+#include "../../engine/piece/piece.h"
 
 int genetic_tools_height(const State *state, int x)
 {
@@ -113,4 +114,21 @@ int genetic_tools_clears(const State *state)
   }
 
   return count;
+}
+
+Input delta_piece(const Piece *current, const Piece *target)
+{
+  assert(current != NULL);
+  assert(target != NULL);
+  if (current->angle != target->angle){
+    return INPUT_ROTATE_RIGHT;
+  } else if (current->x > target->x){
+    return INPUT_MOVE_LEFT;
+  } else if (current->x < target->x){
+    return INPUT_MOVE_RIGHT;
+  } else if (current->y < target->y){
+    return INPUT_SOFT_DROP;
+  } else {
+    return INPUT_SOFT_DROP;
+  }
 }
