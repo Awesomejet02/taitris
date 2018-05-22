@@ -73,44 +73,47 @@ static gboolean on_draw_event(GtkWidget* widget, cairo_t *cr, gpointer ps)
   UNUSED(widget);
   State *state = (State *)ps;
 
+  cairo_surface_t *lblue = cairo_image_surface_create_from_png("res/pieces/lblue.png"); 
+  cairo_surface_t *blue = cairo_image_surface_create_from_png("res/pieces/blue.png"); 
+  cairo_surface_t *red = cairo_image_surface_create_from_png("res/pieces/red.png"); 
+  cairo_surface_t *green = cairo_image_surface_create_from_png("res/pieces/green.png"); 
+  cairo_surface_t *purple = cairo_image_surface_create_from_png("res/pieces/purple.png"); 
+  cairo_surface_t *yellow = cairo_image_surface_create_from_png("res/pieces/yellow.png"); 
+  cairo_surface_t *orange = cairo_image_surface_create_from_png("res/pieces/orange.png"); 
+  cairo_surface_t *empty = cairo_image_surface_create_from_png("res/pieces/vide.png"); 
+
+
   for (int x = 0; x < 10; x++)
   {
     for(int y = 19; y >= 0; y--)
     {
       switch (state_at(state, x, y)) {
         case CELL_EMPTY:
+          cairo_set_source_surface(cr, empty, x * 30, 570 - y * 30+ 1);
           break;
         case CELL_BLUE:
-          cairo_set_source_rgb(cr, 0, 0, 1);
-          cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+          cairo_set_source_surface(cr, blue, x * 30, 570 - y * 30+ 1);
           break;
         case CELL_CYAN:
-          cairo_set_source_rgb(cr, 0, 1, 1);
-          cairo_rectangle(cr, x * 30 +2, 570 - y * 30+ 2, 27, 27);
+          cairo_set_source_surface(cr, lblue, x * 30, 570 - y * 30+ 1);
           break;
         case CELL_GREEN:
-          cairo_set_source_rgb(cr, 0, 1, 0);
-          cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+          cairo_set_source_surface(cr, green, x * 30, 570 - y * 30+ 1);
           break;
         case CELL_YELLOW:
-          cairo_set_source_rgb(cr, 1, 1, 0);
-          cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+          cairo_set_source_surface(cr, yellow, x * 30, 570 - y * 30+ 1);
           break;
         case CELL_RED:
-          cairo_set_source_rgb(cr, 1, 0, 0);
-          cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+          cairo_set_source_surface(cr, red, x * 30, 570 - y * 30+ 1);
           break;
         case CELL_ORANGE:
-          cairo_set_source_rgb(cr, 1, 0.5, 0.25);
-          cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+          cairo_set_source_surface(cr, orange, x * 30, 570 - y * 30+ 1);
           break;
         case CELL_PURPLE:
-          cairo_set_source_rgb(cr, 1, 0, 1);
-          cairo_rectangle(cr, x * 30+ 2, 570 - y * 30+ 2, 27, 27);
+          cairo_set_source_surface(cr, purple, x * 30, 570 - y * 30+ 1);
           break;
       }
-      cairo_stroke_preserve(cr);
-      cairo_fill(cr);
+      cairo_paint_with_alpha (cr, 1);
 
     }
   }
@@ -127,9 +130,9 @@ static gboolean nextpiece(GtkWidget* widget, cairo_t *cr, gpointer ps)
       {0,0,0,0}
   };
 
-  cairo_set_source_rgb(cr, 0, 0, 0);
-  cairo_rectangle(cr, 0, 0, 85, 45);
-  cairo_fill(cr);
+ // cairo_set_source_rgb(cr, 0, 0, 0);
+ // cairo_rectangle(cr, 0, 0, 85, 45);
+ // cairo_fill(cr);
   switch((Cell)state->next_piece->shape->fill) {
     case CELL_EMPTY:
       break;
@@ -261,6 +264,7 @@ void game(GtkWidget *win, int mode) {
 
   State *state = state_create();
   state_init(state, q);
+
 
   update(state);
 
