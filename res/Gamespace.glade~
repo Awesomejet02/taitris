@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkWindow" id="window1">
+  <object class="GtkWindow" id="gamespace">
     <property name="can_focus">False</property>
     <child>
       <object class="GtkFixed" id="gamecont">
@@ -25,10 +25,14 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">label</property>
+            <attributes>
+              <attribute name="scale" value="2"/>
+              <attribute name="foreground" value="#eeeeeeeeecec"/>
+            </attributes>
           </object>
           <packing>
-            <property name="x">542</property>
-            <property name="y">451</property>
+            <property name="x">632</property>
+            <property name="y">346</property>
           </packing>
         </child>
         <child>
@@ -38,10 +42,14 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">label</property>
+            <attributes>
+              <attribute name="scale" value="2"/>
+              <attribute name="foreground" value="#eeeeeeeeecec"/>
+            </attributes>
           </object>
           <packing>
-            <property name="x">542</property>
-            <property name="y">481</property>
+            <property name="x">633</property>
+            <property name="y">380</property>
           </packing>
         </child>
         <child>
@@ -51,10 +59,14 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">label</property>
+            <attributes>
+              <attribute name="scale" value="2"/>
+              <attribute name="foreground" value="#eeeeeeeeecec"/>
+            </attributes>
           </object>
           <packing>
-            <property name="x">542</property>
-            <property name="y">493</property>
+            <property name="x">633</property>
+            <property name="y">287</property>
           </packing>
         </child>
         <child>
@@ -76,8 +88,8 @@
             <property name="can_focus">False</property>
           </object>
           <packing>
-            <property name="x">629</property>
-            <property name="y">38</property>
+            <property name="x">545</property>
+            <property name="y">153</property>
           </packing>
         </child>
       </object>
