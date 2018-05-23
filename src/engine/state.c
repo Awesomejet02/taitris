@@ -142,6 +142,8 @@ int state_step(State *state) {
 int state_apply_input(State *state, Input input) {
   assert(state != NULL);
 
+  if (input == INPUT_EMPTY) return 1;
+
   state_add_input_counts(state, 1);
 
   int moved = 0;

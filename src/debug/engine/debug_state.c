@@ -111,6 +111,8 @@ void debug_state_print_next_piece(const Piece *pc, int y) {
 }
 
 void debug_state_print(const State *state) {
+  return;
+
   printf(DEBUG_STATE_TAG "Printing state ");
 
   if (state == NULL) {

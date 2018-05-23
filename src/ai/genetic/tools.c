@@ -126,9 +126,7 @@ Input delta_piece(const Piece *current, const Piece *target)
     return INPUT_MOVE_LEFT;
   } else if (current->x < target->x){
     return INPUT_MOVE_RIGHT;
-  } else if (current->y < target->y){
-    return INPUT_SOFT_DROP;
   } else {
-    return INPUT_SOFT_DROP;
+    return INPUT_EMPTY;
   }
 }

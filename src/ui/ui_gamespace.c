@@ -222,13 +222,13 @@ static int step(gpointer ps) {
 
   state_apply_input(state, next_input);
 
-  //guint interval = 400;
-  //interval -= 50 * state->level;
-  //if (interval < 150) interval = 150;
+  int interval = 100;
+  interval -= 20 * state->level;
+  interval = interval < 1 ? 1 : interval;
 
   if (state_step(state)) {
     gtk_widget_queue_draw(ui_get_widget("NextP"));
-    g_timeout_add(200, step, ps);
+    g_timeout_add((guint)interval, step, ps);
   } else {
     gtk_main_quit();
   }
@@ -244,13 +244,13 @@ static int stepmanual(gpointer ps) {
   update(state);
   debug_state_print(state);
 
-  guint interval = 750;
-  interval -= 50 * state->level;
-  if (interval < 150) interval = 150;
+  int interval = 750;
+  interval -= 20 * state->level;
+  interval = interval < 1 ? 1 : interval;
 
   if (state_step(state)) {
     gtk_widget_queue_draw(ui_get_widget("NextP"));
-    g_timeout_add(interval, stepmanual, ps);
+    g_timeout_add((guint)interval, stepmanual, ps);
   } else {
     gtk_main_quit();
   }
@@ -292,7 +292,7 @@ void game(GtkWidget *win, int mode) {
 
     g_timeout_add(750, stepmanual, state);
   } else {
-    g_timeout_add(750, step, state);
+    g_timeout_add(400, step, state);
   }
 
   g_timeout_add(50, redraw, state);
