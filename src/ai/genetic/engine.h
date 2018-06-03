@@ -41,8 +41,6 @@ AiBest *genetic_aibest_create(Piece *p, double s);
 
 void genetic_aibest_free(AiBest *ab);
 
-double genetic_get_rank(const State *state);
-
-Piece *genetic_best(const State *state);
+Piece *genetic_best(const State *state,  AiCoefs *coefs) ;
 
 #endif //TAITRIS_ENGINE_H

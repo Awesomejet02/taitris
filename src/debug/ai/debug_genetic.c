@@ -33,5 +33,5 @@ void debug_genetic_print_stats(const State *state) {
 
   printf("---------\n");
 
-  printf("Rank: " ANSI_FG_RED "%f\n\n" ANSI_RESET, genetic_get_rank(state));
+  //printf("Rank: " ANSI_FG_RED "%f\n\n" ANSI_RESET, genetic_get_rank(state));
 }

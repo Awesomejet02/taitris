@@ -21,7 +21,9 @@ RSYNC ?= rsync
 
 CC := gcc
 CPPFLAGS := -MMD `pkg-config --cflags --libs gtk+-3.0`
-CFLAGS := -Wall -Wextra -std=c99  -O0 -g3 
+#CFLAGS := -Wall -Wextra -std=c99  -O0 -g3
+CFLAGS := -Wall -Wextra -std=c99  -O3
+#LDFLAGS := -fsanitize=address
 LDFLAGS :=
 LDLIBS := -lm `pkg-config --cflags --libs gtk+-3.0`
 DEFINES := -D_XOPEN_SOURCE=500
@@ -31,33 +33,33 @@ all: $(BIN_DIR) ## Make the project
 $(BIN_DIR): $(BIN_DIR)/$(EXEC) $(BIN_DIR)/$(RES_DIR) $(BIN_DIR)/$(DATA_DIR)
 
 $(BIN_DIR)/$(EXEC): $(OBJ)
-	@echo "Building executable $(OK_COLOR)$@$(NO_COLOR)"
+	@echo -e "Building executable $(OK_COLOR)$@$(NO_COLOR)"
 	@$(MKDIR_P) $(dir $@)
 	$(CC) $(LDFLAGS) $(DEFINES) $(OBJ) -o $@ $(LDLIBS)
-	@echo ""
+	@echo -e ""
 
 $(BIN_DIR)/$(RES_DIR):
-	@echo "Syncing $(COM_COLOR)$(RES_DIR)$(NO_COLOR) to $(COM_COLOR)$(BIN_DIR)$(NO_COLOR)"
+	@echo -e "Syncing $(COM_COLOR)$(RES_DIR)$(NO_COLOR) to $(COM_COLOR)$(BIN_DIR)$(NO_COLOR)"
 	@$(RSYNC) -rup --delete $(RES_DIR) $(BIN_DIR)
 
 $(BIN_DIR)/$(DATA_DIR):
-	@echo "Syncing $(COM_COLOR)$(DATA_DIR)$(NO_COLOR) to $(COM_COLOR)$(BIN_DIR)$(NO_COLOR)"
+	@echo -e "Syncing $(COM_COLOR)$(DATA_DIR)$(NO_COLOR) to $(COM_COLOR)$(BIN_DIR)$(NO_COLOR)"
 	@$(RSYNC) -rup --delete $(DATA_DIR) $(BIN_DIR)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
-	@echo "Compiling $(OBJ_COLOR)$<$(NO_COLOR)"
+	@echo -e "Compiling $(OBJ_COLOR)$<$(NO_COLOR)"
 	@$(MKDIR_P) $(dir $@)
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(DEFINES) -c $< -o $@
-	@echo ""
+	@echo -e ""
 
 resources: $(BIN_DIR)/$(RES_DIR) $(BIN_DIR)/$(DATA_DIR) ## Make resources
 
 save: ## Save data from bin
-	@echo "Saving data from $(COM_COLOR)$(BIN_DIR)$(NO_COLOR) to $(COM_COLOR)$(DATA_DIR)$(NO_COLOR)"
+	@echo -e "Saving data from $(COM_COLOR)$(BIN_DIR)$(NO_COLOR) to $(COM_COLOR)$(DATA_DIR)$(NO_COLOR)"
 	@$(RSYNC) -rup --delete $(BIN_DIR)/$(DATA_DIR) ./
 
-clean: ## Clean the project
-	@echo "Cleaning $(COM_COLOR)$(BUILD_DIR)$(NO_COLOR) and $(COM_COLOR)$(BIN_DIR)$(NO_COLOR)"
+clean cl: ## Clean the project
+	@echo -e "Cleaning $(COM_COLOR)$(BUILD_DIR)$(NO_COLOR) and $(COM_COLOR)$(BIN_DIR)$(NO_COLOR)"
 	@$(FIND) $(BUILD_DIR) -mindepth 1 ! -name .gitignore -delete
 	@$(FIND) $(BIN_DIR) -mindepth 1 ! -name .gitignore -delete
 
