@@ -62,8 +62,8 @@ void debug_state_print_infos(const State *state, int y) {
       printf("Input counts: " ANSI_BOLD "%u", state->input_counts); break;
     case 6:
       break;
-    case 7:
-      printf("Rank: " ANSI_BOLD "%f", genetic_get_rank(state)); break;
+//    case 7:
+//      printf("Rank: " ANSI_BOLD "%f", genetic_get_rank(state)); break;
     case 8:
       printf("Holes: " ANSI_BOLD "%d", genetic_tools_holes(state)); break;
     case 9:

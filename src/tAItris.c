@@ -9,16 +9,31 @@
 
 #include "ui/ui.h"
 #include "ui/ui_menu.h"
+#include "ai/genetic/candidate.h"
+#include "ai/genetic/engine.h"
 
 int main(int argc, char *argv[]) {
-  random_init();
+    random_init();
 
-  ui_init(argc, argv);
-  ui_menu_init();
-  ui_gamespace_init();
+    if(argc > 1){
+        Candidate * best = learn();
+        AiCoefs *c = best->coefs;
+        printf("\n\nfitness: %f\nholes: %f\nclears: %f\nbumpiness: %f\nagg_height: %f\n",
+               best->fitness,
+               c->holes,
+               c->clears,
+               c->bumpiness,
+               c->agg_height);
+        genetic_candidate_free(best);
+        return 0;
+    }
 
-  ui_menu_show();
-  gtk_main();
+    ui_init(argc, argv);
+    ui_menu_init();
+    ui_gamespace_init();
 
-  return 0;
+    ui_menu_show();
+    gtk_main();
+
+    return 0;
 }
